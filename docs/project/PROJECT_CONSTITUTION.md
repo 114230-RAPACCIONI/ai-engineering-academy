@@ -342,3 +342,199 @@ Cuando ese momento llegue, queremos que Project ZUZU haya contribuido a formar a
 No aspiramos únicamente a enseñar.
 
 Aspiramos a cambiar la forma en que la industria aprende.
+
+# Capítulo V
+## Nuestros Valores
+
+Los valores de Project ZUZU no existen para decorar una página web.
+
+Existen para ayudarnos a tomar decisiones.
+
+Cuando tengamos dudas sobre una tecnología, una arquitectura, una funcionalidad o una estrategia, volveremos a este capítulo.
+
+Los valores son nuestra brújula.
+
+Las herramientas cambiarán.
+
+Las tecnologías evolucionarán.
+
+Los modelos de Inteligencia Artificial serán reemplazados.
+
+Nuestros valores deberían seguir siendo válidos.
+
+---
+
+## Valor 1
+# Los principios sobreviven a las herramientas.
+
+### Creemos que...
+
+Las herramientas tienen fecha de vencimiento.
+
+Los principios de ingeniería no.
+
+Aprender una tecnología puede abrir una puerta.
+
+Aprender principios permite abrir cualquier puerta.
+
+### Esto significa que...
+
+Nunca diseñaremos un contenido cuya utilidad dependa exclusivamente de una herramienta específica.
+
+Cada tecnología será utilizada como un medio para enseñar un concepto más profundo.
+
+### En la práctica...
+
+No enseñamos React.
+
+Enseñamos arquitectura de interfaces.
+
+No enseñamos Spring Boot.
+
+Enseñamos diseño de sistemas backend.
+
+No enseñamos Cursor.
+
+Enseñamos colaboración efectiva con agentes de IA.
+
+### Nunca...
+
+Nunca construiremos conocimiento cuyo valor desaparezca cuando aparezca una nueva versión de una herramienta.
+
+---
+
+## Valor 2
+# Comprender antes de construir.
+
+### Creemos que...
+
+La mayoría de los errores de software nacen de comprender mal el problema, no de escribir mal el código.
+
+Una hora de diseño puede ahorrar días de implementación.
+
+### Esto significa que...
+
+Antes de escribir código debemos comprender el contexto, las restricciones y el objetivo.
+
+Pensar no retrasa el desarrollo.
+
+Es parte del desarrollo.
+
+### En la práctica...
+
+Investigamos.
+
+Preguntamos.
+
+Diseñamos.
+
+Validamos.
+
+Y recién después implementamos.
+
+### Nunca...
+
+Nunca empezaremos una solución sin entender claramente el problema.
+
+---
+
+## Valor 3
+# La documentación también es producto.
+
+### Creemos que...
+
+Una buena documentación no explica el software.
+
+Forma parte del software.
+
+El conocimiento que no queda documentado termina perdiéndose.
+
+### Esto significa que...
+
+Cada decisión importante debe quedar registrada.
+
+La documentación evoluciona junto con el producto.
+
+No es una tarea secundaria.
+
+### En la práctica...
+
+Los artefactos tienen el mismo nivel de importancia que el código.
+
+Una mejora en la documentación tiene el mismo valor que una mejora técnica.
+
+### Nunca...
+
+Nunca consideraremos terminada una funcionalidad cuya documentación no refleje su estado real.
+
+---
+
+## Valor 4
+# La IA amplifica al ingeniero.
+
+### Creemos que...
+
+La Inteligencia Artificial no reemplaza el criterio humano.
+
+Lo potencia.
+
+Los mejores ingenieros no competirán contra la IA.
+
+Aprenderán a colaborar con ella.
+
+### Esto significa que...
+
+La IA participa del proceso.
+
+Pero las decisiones continúan siendo responsabilidad del ingeniero.
+
+### En la práctica...
+
+Utilizamos IA para investigar.
+
+Diseñar.
+
+Prototipar.
+
+Documentar.
+
+Programar.
+
+Revisar.
+
+Pero siempre validamos el resultado.
+
+### Nunca...
+
+Nunca aceptaremos una respuesta únicamente porque fue generada por una Inteligencia Artificial.
+
+---
+
+## Valor 5
+# La simplicidad es una decisión de diseño.
+
+### Creemos que...
+
+Un sistema simple suele ser más difícil de diseñar que uno complejo.
+
+La simplicidad requiere comprensión.
+
+No improvisación.
+
+### Esto significa que...
+
+Preferimos soluciones fáciles de entender antes que soluciones técnicamente impresionantes.
+
+### En la práctica...
+
+Reducimos complejidad.
+
+Eliminamos duplicaciones.
+
+Nombramos claramente.
+
+Diseñamos interfaces intuitivas.
+
+### Nunca...
+
+Nunca agregaremos complejidad únicamente porque una tecnología lo permita.
