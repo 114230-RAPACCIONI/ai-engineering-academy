@@ -2336,3 +2336,302 @@ Project ZUZU será construido siguiendo estos principios.
 Porque nuestro objetivo no es crear una herramienta más.
 
 Nuestro objetivo es crear una experiencia capaz de transformar la manera en que las personas aprenden ingeniería.
+
+# Capítulo XI
+# Decision Making Framework
+
+Las organizaciones no se definen solamente por las decisiones correctas.
+
+Se definen por la calidad de su proceso de decisión.
+
+En un mundo donde las tecnologías cambian constantemente, intentar conocer todas las respuestas es imposible.
+
+La habilidad más importante no será tener siempre la respuesta correcta.
+
+Será tener un sistema para encontrar mejores respuestas.
+
+Project ZUZU utiliza este marco para tomar decisiones técnicas, educativas y estratégicas.
+
+---
+
+# Principio 1
+## Decidimos desde el problema, no desde la solución.
+
+### Creemos que...
+
+Muchas malas decisiones comienzan buscando una solución antes de comprender la necesidad.
+
+La tecnología puede resolver muchos problemas.
+
+Pero no todos los problemas necesitan tecnología.
+
+### Esto significa que...
+
+Antes de elegir una herramienta preguntamos:
+
+- ¿Qué problema intentamos resolver?
+- ¿Quién tiene este problema?
+- ¿Qué resultado esperamos obtener?
+
+### En la práctica...
+
+Una decisión comienza con contexto.
+
+No con código.
+
+No con una herramienta.
+
+No con una tendencia.
+
+### Nunca...
+
+Elegiremos una tecnología solamente porque es nueva o popular.
+
+---
+
+# Principio 2
+## Las decisiones importantes necesitan contexto.
+
+### Creemos que...
+
+Una decisión aislada pierde significado.
+
+El contexto explica por qué una alternativa fue elegida sobre otra.
+
+### Esto significa que...
+
+Toda decisión relevante debe incluir:
+
+- situación actual;
+- problema;
+- alternativas consideradas;
+- consecuencias;
+- decisión final.
+
+### En la práctica...
+
+Utilizamos artefactos como:
+
+- Specifications;
+- ADRs;
+- documentos de diseño;
+- análisis técnicos.
+
+### Nunca...
+
+Guardaremos decisiones críticas únicamente en conversaciones privadas.
+
+---
+
+# Principio 3
+## Preferimos decisiones reversibles cuando existe incertidumbre.
+
+### Creemos que...
+
+No todas las decisiones tienen el mismo costo.
+
+Algunas pueden modificarse fácilmente.
+
+Otras generan grandes compromisos.
+
+### Esto significa que...
+
+Cuando existe incertidumbre, buscamos mantener opciones abiertas.
+
+### En la práctica...
+
+Preferimos:
+
+- prototipos;
+- experimentos;
+- validaciones pequeñas;
+- arquitecturas flexibles.
+
+### Nunca...
+
+Invertiremos grandes cantidades de tiempo antes de validar una hipótesis importante.
+
+---
+
+# Principio 4
+## Diferenciamos opiniones de evidencia.
+
+### Creemos que...
+
+Las opiniones son útiles.
+
+Pero no deben confundirse con conocimiento.
+
+### Esto significa que...
+
+Una decisión debe separar:
+
+- lo que sabemos;
+- lo que creemos;
+- lo que necesitamos investigar.
+
+### En la práctica...
+
+Utilizamos experimentación, métricas y documentación para reducir incertidumbre.
+
+### Nunca...
+
+Presentaremos una preferencia personal como una verdad técnica.
+
+---
+
+# Principio 5
+## La velocidad importa, pero la dirección importa más.
+
+### Creemos que...
+
+Moverse rápido en la dirección equivocada no es progreso.
+
+La velocidad sin claridad genera desperdicio.
+
+### Esto significa que...
+
+Primero buscamos alineación.
+
+Después aceleramos.
+
+### En la práctica...
+
+Invertimos tiempo en comprender antes de ejecutar.
+
+### Nunca...
+
+Sacrificaremos comprensión únicamente por avanzar más rápido.
+
+---
+
+# Principio 6
+## La IA participa en las decisiones, pero no las gobierna.
+
+### Creemos que...
+
+Los agentes inteligentes pueden analizar información, proponer alternativas y detectar riesgos.
+
+Pero una decisión requiere contexto humano.
+
+### Esto significa que...
+
+La IA puede recomendar.
+
+El ingeniero decide.
+
+### En la práctica...
+
+Utilizamos IA para:
+
+- explorar opciones;
+- generar hipótesis;
+- revisar diseños;
+- encontrar problemas.
+
+Pero validamos sus conclusiones.
+
+### Nunca...
+
+Delegaremos una decisión crítica sin comprender sus implicancias.
+
+---
+
+# Principio 7
+## Las decisiones evolucionan.
+
+### Creemos que...
+
+Una decisión correcta hoy puede dejar de serlo mañana.
+
+Cambiar de opinión no significa equivocarse.
+
+Significa aprender.
+
+### Esto significa que...
+
+Los sistemas deben permitir evolución.
+
+### En la práctica...
+
+Revisamos decisiones importantes cuando cambia el contexto.
+
+Actualizamos documentación.
+
+Registramos nuevos aprendizajes.
+
+### Nunca...
+
+Defenderemos una decisión únicamente porque fue tomada anteriormente.
+
+---
+
+# Nuestro proceso de decisión
+
+Ante una decisión importante seguimos este proceso:
+
+```
+1. Comprender el problema.
+
+        ↓
+
+2. Definir objetivos y restricciones.
+
+        ↓
+
+3. Explorar alternativas.
+
+        ↓
+
+4. Evaluar consecuencias.
+
+        ↓
+
+5. Elegir conscientemente.
+
+        ↓
+
+6. Documentar la decisión.
+
+        ↓
+
+7. Ejecutar y aprender.
+```
+
+---
+
+# Decisiones pequeñas vs decisiones grandes
+
+No todas las decisiones necesitan el mismo nivel de análisis.
+
+Una decisión pequeña puede resolverse rápidamente.
+
+Una decisión que afecta:
+
+- arquitectura;
+- seguridad;
+- costos;
+- experiencia del usuario;
+- estrategia;
+
+requiere mayor profundidad.
+
+La ingeniería consiste también en saber cuánto pensar sobre cada decisión.
+
+---
+
+# Conclusión
+
+La calidad de un producto depende de la calidad de sus decisiones.
+
+Las herramientas cambian.
+
+Los contextos cambian.
+
+Las soluciones cambian.
+
+Pero una organización con un buen sistema de pensamiento puede adaptarse a cualquier cambio.
+
+Project ZUZU no busca tener siempre la respuesta.
+
+Busca tener siempre una mejor forma de encontrarla.
