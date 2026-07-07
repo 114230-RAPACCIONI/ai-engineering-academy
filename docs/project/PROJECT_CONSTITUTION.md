@@ -1,6 +1,7 @@
 ---
 
 ## document:
+
   id: CONST-001
   name: Project Constitution
   version: 0.1.0
@@ -344,6 +345,9 @@ No aspiramos únicamente a enseñar.
 Aspiramos a cambiar la forma en que la industria aprende.
 
 # Capítulo V
+
+
+
 ## Nuestros Valores
 
 Los valores de Project ZUZU no existen para decorar una página web.
@@ -364,8 +368,15 @@ Nuestros valores deberían seguir siendo válidos.
 
 ---
 
+
+
 ## Valor 1
+
+
+
 # Los principios sobreviven a las herramientas.
+
+
 
 ### Creemos que...
 
@@ -403,8 +414,15 @@ Nunca construiremos conocimiento cuyo valor desaparezca cuando aparezca una nuev
 
 ---
 
+
+
 ## Valor 2
+
+
+
 # Comprender antes de construir.
+
+
 
 ### Creemos que...
 
@@ -438,8 +456,15 @@ Nunca empezaremos una solución sin entender claramente el problema.
 
 ---
 
+
+
 ## Valor 3
+
+
+
 # La documentación también es producto.
+
+
 
 ### Creemos que...
 
@@ -469,8 +494,15 @@ Nunca consideraremos terminada una funcionalidad cuya documentación no refleje 
 
 ---
 
+
+
 ## Valor 4
+
+
+
 # La IA amplifica al ingeniero.
+
+
 
 ### Creemos que...
 
@@ -510,8 +542,15 @@ Nunca aceptaremos una respuesta únicamente porque fue generada por una Intelige
 
 ---
 
+
+
 ## Valor 5
+
+
+
 # La simplicidad es una decisión de diseño.
+
+
 
 ### Creemos que...
 
@@ -539,11 +578,17 @@ Diseñamos interfaces intuitivas.
 
 Nunca agregaremos complejidad únicamente porque una tecnología lo permita.
 
-
 ---
 
+
+
 ## Valor 6
+
+
+
 # Todo cambio debe ser trazable.
+
+
 
 ### Creemos que...
 
@@ -577,8 +622,15 @@ Nunca aceptaremos decisiones importantes que no puedan explicarse o justificarse
 
 ---
 
+
+
 ## Valor 7
+
+
+
 # Aprender es una responsabilidad permanente.
+
+
 
 ### Creemos que...
 
@@ -610,8 +662,15 @@ Nunca dejaremos de cuestionar lo que creemos saber.
 
 ---
 
+
+
 ## Valor 8
+
+
+
 # El contexto vale más que el código.
+
+
 
 ### Creemos que...
 
@@ -643,8 +702,15 @@ Nunca copiaremos una solución únicamente porque funcionó en otro proyecto.
 
 ---
 
+
+
 ## Valor 9
+
+
+
 # La calidad no se inspecciona. Se construye.
+
+
 
 ### Creemos que...
 
@@ -682,8 +748,15 @@ Nunca consideraremos la calidad como una tarea exclusiva del testing.
 
 ---
 
+
+
 ## Valor 10
+
+
+
 # Construimos valor antes de optimizar procesos.
+
+
 
 ### Creemos que...
 
@@ -723,6 +796,8 @@ Y repetimos.
 
 ---
 
+
+
 ## Cierre del capítulo
 
 Estos valores representan los principios sobre los cuales se construye Project ZUZU.
@@ -744,6 +819,9 @@ Sus valores también pueden hacerlo.
 Lo importante es que ese cambio sea consciente, documentado y compartido.
 
 # Capítulo VI
+
+
+
 # Engineering Principles
 
 La ingeniería no consiste únicamente en construir software.
@@ -772,7 +850,12 @@ Cuando exista una duda, un conflicto o varias alternativas posibles, estos princ
 
 ---
 
+
+
 ## Principio 1
+
+
+
 # Los principios son más importantes que las herramientas.
 
 Las herramientas evolucionan constantemente.
@@ -791,7 +874,12 @@ La ingeniería es permanente.
 
 ---
 
+
+
 ## Principio 2
+
+
+
 # Diseñar antes de construir.
 
 Todo sistema existe dos veces.
@@ -814,7 +902,12 @@ Pensar forma parte del desarrollo.
 
 ---
 
+
+
 ## Principio 3
+
+
+
 # La documentación es parte del producto.
 
 El software no termina donde termina el código.
@@ -833,7 +926,12 @@ La documentación representa esa memoria.
 
 ---
 
+
+
 ## Principio 4
+
+
+
 # Los artefactos son ciudadanos de primera clase.
 
 Los documentos, especificaciones, ADRs, diagramas, modelos y decisiones poseen el mismo valor estratégico que el código fuente.
@@ -846,7 +944,12 @@ No como documentos secundarios.
 
 ---
 
+
+
 ## Principio 5
+
+
+
 # Todo cambio debe ser trazable.
 
 Cada decisión tiene un motivo.
@@ -863,7 +966,12 @@ Documentamos para facilitar el futuro.
 
 ---
 
+
+
 ## Principio 6
+
+
+
 # La Inteligencia Artificial es un colaborador.
 
 La IA amplifica nuestras capacidades.
@@ -886,7 +994,12 @@ La decisión final siempre pertenece a quien construye el sistema.
 
 ---
 
+
+
 ## Principio 7
+
+
+
 # Automatizar todo lo repetitivo.
 
 Las personas deberían dedicar su tiempo a pensar.
@@ -901,7 +1014,12 @@ Automatizamos cuando genera valor.
 
 ---
 
+
+
 ## Principio 8
+
+
+
 # La simplicidad es una característica de calidad.
 
 Agregar complejidad suele ser sencillo.
@@ -920,7 +1038,12 @@ Significa claridad.
 
 ---
 
+
+
 ## Principio 9
+
+
+
 # Pensar en sistemas.
 
 Nunca diseñamos componentes aislados.
@@ -937,7 +1060,12 @@ No solamente funcionalidades.
 
 ---
 
+
+
 ## Principio 10
+
+
+
 # Aprender continuamente.
 
 El conocimiento nunca permanece estático.
@@ -956,6 +1084,8 @@ Project ZUZU existe para desarrollar esa capacidad.
 
 ---
 
+
+
 # Conclusión
 
 Estos principios representan la forma en que entendemos la ingeniería de software.
@@ -971,6 +1101,9 @@ Si en el futuro cambian los lenguajes, los frameworks, las herramientas o inclus
 Porque fueron escritos para sobrevivir al cambio.
 
 # Capítulo VII
+
+
+
 # Learning Principles
 
 Aprender no consiste en consumir información.
@@ -993,8 +1126,15 @@ Los siguientes principios describen cómo entendemos el aprendizaje.
 
 ---
 
+
+
 ## Principio 1
+
+
+
 # Comprender antes de memorizar.
+
+
 
 ### Por qué creemos esto
 
@@ -1020,8 +1160,15 @@ Antes de escribir código, el estudiante comprenderá el problema que ese códig
 
 ---
 
+
+
 ## Principio 2
+
+
+
 # Aprender haciendo.
+
+
 
 ### Por qué creemos esto
 
@@ -1051,8 +1198,15 @@ La termina con una nueva capacidad.
 
 ---
 
+
+
 ## Principio 3
+
+
+
 # El error forma parte del aprendizaje.
+
+
 
 ### Por qué creemos esto
 
@@ -1078,8 +1232,15 @@ Los desafíos estarán diseñados para provocar preguntas, no solamente respuest
 
 ---
 
+
+
 ## Principio 4
+
+
+
 # Aprender es desarrollar criterio.
+
+
 
 ### Por qué creemos esto
 
@@ -1105,8 +1266,15 @@ Será aprender a justificar una decisión.
 
 ---
 
+
+
 ## Principio 5
+
+
+
 # La IA acelera el aprendizaje, pero no reemplaza el pensamiento.
+
+
 
 ### Por qué creemos esto
 
@@ -1130,8 +1298,15 @@ Cada actividad enseñará también a colaborar correctamente con agentes intelig
 
 ---
 
+
+
 ## Principio 6
+
+
+
 # El contexto da significado al conocimiento.
+
+
 
 ### Por qué creemos esto
 
@@ -1153,8 +1328,15 @@ Cada tema responderá primero a la pregunta:
 
 ---
 
+
+
 ## Principio 7
+
+
+
 # Aprender es conectar ideas.
+
+
 
 ### Por qué creemos esto
 
@@ -1186,8 +1368,15 @@ Cada nuevo aprendizaje se relacionará explícitamente con conocimientos adquiri
 
 ---
 
+
+
 ## Principio 8
+
+
+
 # El aprendizaje debe generar autonomía.
+
+
 
 ### Por qué creemos esto
 
@@ -1205,8 +1394,15 @@ Cada Journey aumenta gradualmente la responsabilidad del estudiante hasta que pu
 
 ---
 
+
+
 ## Principio 9
+
+
+
 # La motivación nace del progreso.
+
+
 
 ### Por qué creemos esto
 
@@ -1224,8 +1420,15 @@ Cada Challenge superado demostrará una nueva capacidad adquirida, no solamente 
 
 ---
 
+
+
 ## Principio 10
+
+
+
 # Nunca dejamos de aprender.
+
+
 
 ### Por qué creemos esto
 
@@ -1247,6 +1450,8 @@ Significa haber desarrollado la capacidad de seguir aprendiendo durante toda la 
 
 ---
 
+
+
 # Conclusión
 
 Aprender ingeniería no consiste en acumular información.
@@ -1260,6 +1465,9 @@ Ese es el aprendizaje que buscamos provocar.
 Y ese será siempre el objetivo de Project ZUZU.
 
 # Capítulo VIII
+
+
+
 # AI Principles
 
 La Inteligencia Artificial representa uno de los mayores cambios en la historia de la ingeniería de software.
@@ -1278,7 +1486,12 @@ Los siguientes principios describen esa relación.
 
 ---
 
+
+
 ## Principio 1
+
+
+
 # La IA es un colaborador.
 
 Una Inteligencia Artificial participa del proceso de ingeniería.
@@ -1295,7 +1508,12 @@ Nunca delegamos responsabilidad.
 
 ---
 
+
+
 ## Principio 2
+
+
+
 # La responsabilidad siempre permanece en el ingeniero.
 
 Toda respuesta producida por una IA debe ser evaluada.
@@ -1308,7 +1526,12 @@ Aceptar una respuesta sin comprenderla contradice los principios de Project ZUZU
 
 ---
 
+
+
 ## Principio 3
+
+
+
 # La calidad del contexto determina la calidad del resultado.
 
 Una IA responde utilizando el contexto que recibe.
@@ -1321,7 +1544,12 @@ No un truco.
 
 ---
 
+
+
 ## Principio 4
+
+
+
 # Preguntar es una habilidad de ingeniería.
 
 La calidad de una respuesta depende de la calidad de la pregunta.
@@ -1340,7 +1568,12 @@ Una buena pregunta genera mejores decisiones.
 
 ---
 
+
+
 ## Principio 5
+
+
+
 # Toda respuesta es una hipótesis.
 
 Las respuestas generadas por una IA representan propuestas.
@@ -1353,7 +1586,12 @@ Confiar ciegamente contradice el propósito mismo de la ingeniería.
 
 ---
 
+
+
 ## Principio 6
+
+
+
 # La IA acelera el trabajo repetitivo.
 
 La creatividad.
@@ -1378,7 +1616,12 @@ No automatizamos el pensamiento.
 
 ---
 
+
+
 ## Principio 7
+
+
+
 # La colaboración es iterativa.
 
 La mejor interacción con una IA rara vez ocurre en un único intercambio.
@@ -1395,7 +1638,12 @@ La colaboración continua produce mejores soluciones que las instrucciones aisla
 
 ---
 
+
+
 ## Principio 8
+
+
+
 # El conocimiento permanece fuera del modelo.
 
 Los modelos cambian.
@@ -1410,7 +1658,12 @@ Nunca depender exclusivamente de la memoria de un modelo.
 
 ---
 
+
+
 ## Principio 9
+
+
+
 # La IA debe aumentar la comprensión.
 
 Si utilizar una IA produce dependencia.
@@ -1427,7 +1680,12 @@ Consiste en comprender mejor.
 
 ---
 
+
+
 ## Principio 10
+
+
+
 # Aprender a colaborar con IA será una habilidad permanente.
 
 Las herramientas cambiarán.
@@ -1444,6 +1702,8 @@ Enseña una forma de trabajar.
 
 ---
 
+
+
 # Conclusión
 
 La Inteligencia Artificial no representa el final de la ingeniería de software.
@@ -1457,6 +1717,9 @@ Serán quienes aprendan a pensar mejor junto a ella.
 Ese es el tipo de profesional que Project ZUZU aspira a formar.
 
 # Capítulo IX
+
+
+
 # La Transformación
 
 Project ZUZU no existe para transmitir información.
@@ -1472,6 +1735,8 @@ Nuestro objetivo no es llenar la mente de una persona con conceptos.
 Nuestro objetivo es cambiar la manera en la que observa los problemas.
 
 ---
+
+
 
 # El viaje del estudiante
 
@@ -1493,6 +1758,8 @@ Project ZUZU existe para acompañar esa evolución.
 
 ---
 
+
+
 # Antes de Project ZUZU
 
 Muchas personas llegan con una percepción equivocada de la ingeniería de software.
@@ -1508,6 +1775,8 @@ Creen que necesitan tener todas las respuestas antes de empezar.
 Estas creencias limitan su crecimiento.
 
 ---
+
+
 
 # Después de Project ZUZU
 
@@ -1537,6 +1806,8 @@ En lugar de:
 
 ---
 
+
+
 # La transformación que buscamos
 
 Project ZUZU busca transformar:
@@ -1549,6 +1820,8 @@ en
 
 ---
 
+
+
 ## Personas que siguen instrucciones
 
 en
@@ -1556,6 +1829,8 @@ en
 ## Personas capaces de diseñar soluciones.
 
 ---
+
+
 
 ## Usuarios de herramientas
 
@@ -1565,6 +1840,8 @@ en
 
 ---
 
+
+
 ## Personas que temen los cambios tecnológicos
 
 en
@@ -1572,6 +1849,8 @@ en
 ## Profesionales preparados para adaptarse a ellos.
 
 ---
+
+
 
 # Nuestra definición de éxito
 
@@ -1595,6 +1874,8 @@ Una persona habrá completado su transformación cuando sea capaz de:
 
 ---
 
+
+
 # El objetivo final
 
 La meta de Project ZUZU no es que una persona dependa de nosotros.
@@ -1608,6 +1889,8 @@ Porque enseñar realmente no consiste en entregar respuestas.
 Consiste en desarrollar la capacidad de encontrar respuestas.
 
 ---
+
+
 
 # La emoción detrás del aprendizaje
 
@@ -1633,6 +1916,8 @@ Pero aprender a comprenderla puede ser una de las experiencias más satisfactori
 
 ---
 
+
+
 # Nuestra promesa
 
 Project ZUZU no promete convertir a nadie en experto de la noche a la mañana.
@@ -1644,3 +1929,410 @@ Promete acompañar a una persona en el proceso de convertirse en alguien capaz d
 Porque el futuro no pertenece a quienes conocen todas las respuestas.
 
 Pertenece a quienes saben encontrar nuevas respuestas.
+
+# Capítulo X
+
+
+
+# Product Principles
+
+Construir un producto no consiste únicamente en desarrollar funcionalidades.
+
+Consiste en resolver problemas reales de personas reales.
+
+Un producto exitoso no nace de agregar más características.
+
+Nace de comprender profundamente una necesidad y crear una solución que genere valor.
+
+Project ZUZU aplica estos principios para tomar decisiones sobre qué construir, cómo construirlo y cuándo construirlo.
+
+---
+
+
+
+# Principio 1
+
+
+
+## El usuario es el centro de todas las decisiones.
+
+
+
+### Creemos que...
+
+Un producto existe porque alguien necesita resolver un problema.
+
+La tecnología es un medio.
+
+Nunca es el objetivo final.
+
+### Esto significa que...
+
+Cada decisión debe responder una pregunta:
+
+"¿Qué valor aporta esto al usuario?"
+
+### En la práctica...
+
+Antes de construir una funcionalidad analizamos:
+
+- qué problema resuelve;
+- para quién existe;
+- qué impacto genera;
+- cómo sabremos si funciona.
+
+
+
+### Nunca...
+
+Construiremos una funcionalidad únicamente porque sea técnicamente interesante.
+
+---
+
+
+
+# Principio 2
+
+
+
+## Construimos problemas resueltos, no funcionalidades.
+
+
+
+### Creemos que...
+
+Una lista de funcionalidades no constituye un producto.
+
+Un producto existe cuando una persona logra alcanzar un objetivo.
+
+### Esto significa que...
+
+Pensamos primero en resultados.
+
+Después en características.
+
+### En la práctica...
+
+No preguntamos:
+
+"¿Qué pantalla necesitamos?"
+
+Preguntamos:
+
+"¿Qué experiencia necesita vivir el usuario?"
+
+### Nunca...
+
+Confundiremos cantidad de funcionalidades con valor.
+
+---
+
+
+
+# Principio 3
+
+
+
+## La simplicidad guía nuestras decisiones.
+
+
+
+### Creemos que...
+
+La complejidad aumenta el costo de construir, mantener y comprender un producto.
+
+La mejor solución suele ser la más simple que resuelve correctamente el problema.
+
+### Esto significa que...
+
+Preferimos empezar pequeño.
+
+Aprender.
+
+Validar.
+
+Evolucionar.
+
+### En la práctica...
+
+Priorizamos MVPs.
+
+Reducimos dependencias.
+
+Eliminamos pasos innecesarios.
+
+### Nunca...
+
+Construiremos sistemas complejos para problemas simples.
+
+---
+
+
+
+# Principio 4
+
+
+
+## Diseñamos desde la experiencia completa.
+
+
+
+### Creemos que...
+
+Un usuario no experimenta una funcionalidad aislada.
+
+Experimenta un recorrido.
+
+La percepción del producto nace de todos los puntos de contacto.
+
+### Esto significa que...
+
+Pensamos en:
+
+- descubrimiento;
+- aprendizaje;
+- interacción;
+- progreso;
+- resultado.
+
+
+
+### En la práctica...
+
+Cada parte del producto debe formar parte de una experiencia coherente.
+
+### Nunca...
+
+Diseñaremos piezas independientes sin considerar el viaje completo.
+
+---
+
+
+
+# Principio 5
+
+
+
+## La documentación forma parte del producto.
+
+
+
+### Creemos que...
+
+En una plataforma educativa, el conocimiento es el producto.
+
+La documentación no acompaña al producto.
+
+Es parte del producto.
+
+### Esto significa que...
+
+Cada concepto, decisión y aprendizaje debe poder transmitirse claramente.
+
+### En la práctica...
+
+Los artefactos educativos son tratados con el mismo cuidado que el software.
+
+### Nunca...
+
+Publicaremos contenido sin una estructura clara de aprendizaje.
+
+---
+
+
+
+# Principio 6
+
+
+
+## Validamos antes de escalar.
+
+
+
+### Creemos que...
+
+Construir más rápido no sirve si construimos algo incorrecto.
+
+La validación reduce desperdicio.
+
+### Esto significa que...
+
+Preferimos aprender con pequeños experimentos antes de realizar grandes inversiones.
+
+### En la práctica...
+
+Creamos prototipos.
+
+Medimos.
+
+Escuchamos.
+
+Iteramos.
+
+### Nunca...
+
+Escalaremos una solución que todavía no demostró valor.
+
+---
+
+
+
+# Principio 7
+
+
+
+## El progreso debe ser visible.
+
+
+
+### Creemos que...
+
+Las personas necesitan sentir que avanzan.
+
+Especialmente cuando aprenden algo difícil.
+
+### Esto significa que...
+
+El producto debe mostrar evolución.
+
+No solamente contenido completado.
+
+### En la práctica...
+
+Diseñamos:
+
+- objetivos claros;
+- desafíos progresivos;
+- logros significativos;
+- feedback constante.
+
+
+
+### Nunca...
+
+Reduciremos el aprendizaje a una lista de videos vistos.
+
+---
+
+
+
+# Principio 8
+
+
+
+## Construimos para el largo plazo.
+
+
+
+### Creemos que...
+
+Un producto importante no se construye pensando únicamente en la primera versión.
+
+Pero tampoco debe quedar atrapado esperando la versión perfecta.
+
+### Esto significa que...
+
+Equilibramos velocidad y calidad.
+
+### En la práctica...
+
+Tomamos decisiones simples hoy que permitan evolucionar mañana.
+
+### Nunca...
+
+Sacrificaremos completamente el futuro por resolver únicamente el presente.
+
+---
+
+
+
+# Principio 9
+
+
+
+## La comunidad multiplica el conocimiento.
+
+
+
+### Creemos que...
+
+El aprendizaje mejora cuando las personas comparten experiencias.
+
+Una comunidad fuerte puede aportar conocimiento que ningún contenido individual podría ofrecer.
+
+### Esto significa que...
+
+Project ZUZU no será solamente una plataforma.
+
+Será un ecosistema.
+
+### En la práctica...
+
+Fomentamos:
+
+- colaboración;
+- intercambio;
+- construcción conjunta;
+- aprendizaje entre pares.
+
+
+
+### Nunca...
+
+Construiremos una experiencia donde el estudiante sea únicamente consumidor.
+
+---
+
+
+
+# Principio 10
+
+
+
+## Construimos con intención.
+
+
+
+### Creemos que...
+
+Cada línea de código.
+
+Cada documento.
+
+Cada funcionalidad.
+
+Cada decisión.
+
+Representa tiempo y energía.
+
+Por eso debemos construir conscientemente.
+
+### Esto significa que...
+
+No hacemos cosas porque podemos.
+
+Las hacemos porque debemos.
+
+### En la práctica...
+
+Cada elemento del producto debe tener un propósito claro.
+
+### Nunca...
+
+Confundiremos actividad con progreso.
+
+---
+
+
+
+# Conclusión
+
+Un gran producto no es la suma de sus funcionalidades.
+
+Es la suma de decisiones correctas tomadas consistentemente.
+
+Project ZUZU será construido siguiendo estos principios.
+
+Porque nuestro objetivo no es crear una herramienta más.
+
+Nuestro objetivo es crear una experiencia capaz de transformar la manera en que las personas aprenden ingeniería.
