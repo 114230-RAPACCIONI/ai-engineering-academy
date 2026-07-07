@@ -538,3 +538,207 @@ Diseñamos interfaces intuitivas.
 ### Nunca...
 
 Nunca agregaremos complejidad únicamente porque una tecnología lo permita.
+
+
+---
+
+## Valor 6
+# Todo cambio debe ser trazable.
+
+### Creemos que...
+
+Las decisiones importantes no deberían depender de la memoria de las personas.
+
+Toda decisión que impacte el producto, la arquitectura o la forma de trabajar debe poder reconstruirse incluso años después.
+
+La trazabilidad es una herramienta para aprender, no para controlar.
+
+### Esto significa que...
+
+Cada cambio tiene un motivo.
+
+Cada decisión tiene un contexto.
+
+Cada artefacto tiene una historia.
+
+### En la práctica...
+
+Documentamos decisiones relevantes.
+
+Versionamos nuestros artefactos.
+
+Relacionamos Issues, Pull Requests, ADRs y documentación.
+
+Cuando alguien pregunte "¿por qué hicimos esto?", la respuesta debe existir en el repositorio.
+
+### Nunca...
+
+Nunca aceptaremos decisiones importantes que no puedan explicarse o justificarse.
+
+---
+
+## Valor 7
+# Aprender es una responsabilidad permanente.
+
+### Creemos que...
+
+La tecnología cambia constantemente.
+
+La curiosidad y la capacidad de aprender son ventajas competitivas mucho más duraderas que cualquier conocimiento puntual.
+
+Un ingeniero nunca termina de formarse.
+
+### Esto significa que...
+
+Cada proyecto es también una oportunidad para aprender.
+
+Cada error es información.
+
+Cada revisión es una oportunidad de crecimiento.
+
+### En la práctica...
+
+Investigamos antes de opinar.
+
+Reconocemos cuando no sabemos algo.
+
+Buscamos mejorar continuamente nuestros procesos, nuestro producto y nuestra forma de pensar.
+
+### Nunca...
+
+Nunca dejaremos de cuestionar lo que creemos saber.
+
+---
+
+## Valor 8
+# El contexto vale más que el código.
+
+### Creemos que...
+
+Un mismo fragmento de código puede ser excelente en un proyecto y una mala decisión en otro.
+
+Las soluciones no se evalúan de forma aislada.
+
+Se evalúan dentro del contexto donde viven.
+
+### Esto significa que...
+
+Antes de elegir una tecnología, una arquitectura o una implementación debemos comprender las necesidades reales del problema.
+
+Las mejores prácticas siempre dependen del contexto.
+
+### En la práctica...
+
+Analizamos restricciones.
+
+Evaluamos alternativas.
+
+Tomamos decisiones conscientes.
+
+Explicamos por qué elegimos una solución y no otra.
+
+### Nunca...
+
+Nunca copiaremos una solución únicamente porque funcionó en otro proyecto.
+
+---
+
+## Valor 9
+# La calidad no se inspecciona. Se construye.
+
+### Creemos que...
+
+La calidad no aparece al final del proyecto.
+
+Se incorpora desde el primer día.
+
+Cada decisión, cada documento y cada línea de código contribuyen a la calidad del producto.
+
+### Esto significa que...
+
+Diseñar bien es construir calidad.
+
+Documentar bien es construir calidad.
+
+Revisar bien es construir calidad.
+
+Automatizar bien es construir calidad.
+
+### En la práctica...
+
+Revisamos nuestro trabajo.
+
+Automatizamos tareas repetitivas.
+
+Escribimos documentación clara.
+
+Validamos nuestras decisiones.
+
+Aceptamos la mejora continua como parte natural del desarrollo.
+
+### Nunca...
+
+Nunca consideraremos la calidad como una tarea exclusiva del testing.
+
+---
+
+## Valor 10
+# Construimos valor antes de optimizar procesos.
+
+### Creemos que...
+
+Los procesos existen para ayudar al producto.
+
+No al revés.
+
+Un proceso excesivamente complejo puede impedir que el equipo entregue valor.
+
+### Esto significa que...
+
+Diseñamos procesos simples.
+
+Los mejoramos cuando la experiencia demuestra que es necesario.
+
+No agregamos reglas sin un problema real que resolver.
+
+### En la práctica...
+
+Preferimos una solución suficientemente buena hoy antes que una solución perfecta que nunca llegue a implementarse.
+
+Documentamos las mejoras futuras.
+
+Las incorporamos cuando generan un beneficio claro.
+
+### Nunca...
+
+Nunca caeremos en la parálisis por análisis.
+
+Construimos.
+
+Aprendemos.
+
+Mejoramos.
+
+Y repetimos.
+
+---
+
+## Cierre del capítulo
+
+Estos valores representan los principios sobre los cuales se construye Project ZUZU.
+
+No son reglas inmutables.
+
+Son compromisos.
+
+Cada nueva decisión deberá poder explicarse utilizando alguno de estos valores.
+
+Si en algún momento un valor deja de representar nuestra forma de trabajar, modificaremos este documento.
+
+Pero nunca ignoraremos nuestros propios principios.
+
+Una organización evoluciona.
+
+Sus valores también pueden hacerlo.
+
+Lo importante es que ese cambio sea consciente, documentado y compartido.
