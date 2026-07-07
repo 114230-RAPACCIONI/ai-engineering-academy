@@ -1,6 +1,6 @@
 ---
 artifact:
-  id: ART-014
+  id: ART-013
   type: Security Model
   status: Draft
   version: 0.1.0

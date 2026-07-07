@@ -1,6 +1,6 @@
 ---
 artifact:
-  id: ART-012
+  id: ART-011
   type: Domain Model
   status: Draft
   version: 0.1.0

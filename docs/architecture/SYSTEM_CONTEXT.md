@@ -1,6 +1,6 @@
 ---
 artifact:
-  id: ART-011
+  id: ART-010
   type: System Context
   status: Draft
   version: 0.1.0
