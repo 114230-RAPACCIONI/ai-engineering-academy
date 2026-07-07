@@ -4010,3 +4010,318 @@ Busca construir mejor.
 Porque en ingeniería, la velocidad sin calidad genera deuda.
 
 Pero la calidad con propósito genera evolución.
+
+# Capítulo XVI
+# Security & Responsibility Principles
+
+La ingeniería tiene impacto sobre personas, organizaciones y sistemas.
+
+Cada producto construido puede generar beneficios.
+
+Pero también puede generar riesgos.
+
+Por esa razón, la seguridad y la responsabilidad no representan obstáculos para innovar.
+
+Representan las condiciones necesarias para construir confianza.
+
+En Project ZUZU creemos que una tecnología verdaderamente avanzada no es únicamente aquella capaz de hacer más.
+
+Es aquella capaz de hacerlo de manera responsable.
+
+---
+
+# Principio 1
+## La seguridad se diseña desde el inicio.
+
+### Creemos que...
+
+La seguridad no debe ser una corrección posterior.
+
+Agregar seguridad al final de un sistema suele ser más costoso y menos efectivo.
+
+### Esto significa que...
+
+La seguridad debe considerarse desde:
+
+- el diseño;
+- la arquitectura;
+- los datos;
+- la implementación;
+- la operación.
+
+### Nunca...
+
+Construiremos primero y pensaremos en seguridad después.
+
+---
+
+# Principio 2
+## Proteger datos es proteger personas.
+
+### Creemos que...
+
+Los datos representan información sobre individuos, organizaciones y comportamientos.
+
+Gestionarlos implica responsabilidad.
+
+### Esto significa que...
+
+Debemos comprender:
+
+- qué datos almacenamos;
+- por qué los necesitamos;
+- cómo los protegemos;
+- cuándo debemos eliminarlos.
+
+### Nunca...
+
+Recolectaremos información innecesaria únicamente porque es técnicamente posible.
+
+---
+
+# Principio 3
+## La privacidad es una característica del producto.
+
+### Creemos que...
+
+La privacidad no es solamente una obligación legal.
+
+Es parte de la experiencia de confianza del usuario.
+
+### Esto significa que...
+
+Los usuarios deben comprender:
+
+- qué información utilizan nuestros sistemas;
+- cómo se utiliza;
+- qué control poseen sobre ella.
+
+### Nunca...
+
+Diseñaremos sistemas donde el usuario pierda completamente el control sobre su información.
+
+---
+
+# Principio 4
+## La IA requiere supervisión responsable.
+
+### Creemos que...
+
+Los sistemas inteligentes pueden cometer errores.
+
+Pueden generar información incorrecta.
+
+Pueden producir resultados inesperados.
+
+### Esto significa que...
+
+Toda integración con IA debe considerar:
+
+- límites;
+- validaciones;
+- monitoreo;
+- revisión humana cuando corresponda.
+
+### Nunca...
+
+Consideraremos una respuesta generada por IA como verdad absoluta.
+
+---
+
+# Principio 5
+## La transparencia genera confianza.
+
+### Creemos que...
+
+Las personas deben comprender cómo funcionan los sistemas que afectan sus experiencias.
+
+### Esto significa que...
+
+Comunicamos:
+
+- capacidades;
+- limitaciones;
+- decisiones relevantes;
+- posibles riesgos.
+
+### Nunca...
+
+Ocultaremos intencionalmente cómo funciona una tecnología para generar una falsa percepción de capacidad.
+
+---
+
+# Principio 6
+## El poder tecnológico implica responsabilidad.
+
+### Creemos que...
+
+Cuanto mayor es la capacidad de una herramienta, mayor es la responsabilidad de utilizarla correctamente.
+
+### Esto significa que...
+
+Los ingenieros deben considerar:
+
+- consecuencias;
+- usuarios afectados;
+- posibles usos incorrectos.
+
+### Nunca...
+
+Mediremos el éxito únicamente por lo que un sistema puede hacer.
+
+También debemos considerar lo que podría causar.
+
+---
+
+# Principio 7
+## La seguridad requiere pensamiento preventivo.
+
+### Creemos que...
+
+Un buen ingeniero no solamente resuelve problemas existentes.
+
+También anticipa problemas posibles.
+
+### Esto significa que...
+
+Pensamos en:
+
+- escenarios negativos;
+- fallos;
+- ataques;
+- errores humanos.
+
+### Nunca...
+
+Esperaremos a que un problema ocurra para comenzar a pensar en él.
+
+---
+
+# Principio 8
+## La simplicidad mejora la seguridad.
+
+### Creemos que...
+
+Los sistemas complejos tienen más posibilidades de contener errores.
+
+La complejidad innecesaria aumenta riesgos.
+
+### Esto significa que...
+
+Preferimos:
+
+- arquitecturas comprensibles;
+- dependencias controladas;
+- responsabilidades claras.
+
+### Nunca...
+
+Crearemos complejidad sin una razón válida.
+
+---
+
+# Principio 9
+## La responsabilidad pertenece al creador.
+
+### Creemos que...
+
+Una herramienta puede asistir.
+
+Pero la decisión final pertenece a quien diseña y construye.
+
+### Esto significa que...
+
+Los ingenieros son responsables de comprender el impacto de sus decisiones.
+
+### Nunca...
+
+Utilizaremos la tecnología como excusa para evitar responsabilidad humana.
+
+---
+
+# Principio 10
+## Construimos confianza a largo plazo.
+
+### Creemos que...
+
+La confianza tarda años en construirse y puede perderse en segundos.
+
+### Esto significa que...
+
+Cada decisión debe considerar:
+
+- usuarios actuales;
+- usuarios futuros;
+- reputación del producto;
+- impacto social.
+
+### Nunca...
+
+Sacrificaremos confianza permanente por beneficios temporales.
+
+---
+
+# Modelo de responsabilidad Project ZUZU
+
+Toda decisión tecnológica debe considerar cuatro dimensiones:
+
+```
+              RESPONSABILIDAD
+
+                    |
+        ----------------------------
+
+        Usuario
+          |
+        Seguridad
+          |
+        Impacto
+          |
+        Futuro
+```
+
+Una solución correcta necesita considerar todas.
+
+---
+
+# Preguntas antes de implementar una tecnología nueva
+
+Antes de incorporar una tecnología, sistema o agente preguntamos:
+
+## Seguridad
+
+¿Puede generar nuevos riesgos?
+
+## Privacidad
+
+¿Estamos protegiendo correctamente la información?
+
+## Transparencia
+
+¿Podemos explicar cómo funciona?
+
+## Control
+
+¿Existe supervisión adecuada?
+
+## Impacto
+
+¿Estamos generando valor real?
+
+---
+
+# Conclusión
+
+La ingeniería no consiste únicamente en crear posibilidades.
+
+Consiste en crear posibilidades responsables.
+
+La tecnología más poderosa no será aquella que haga más cosas.
+
+Será aquella en la que las personas puedan confiar.
+
+Project ZUZU tiene como objetivo formar ingenieros capaces de construir el futuro.
+
+Pero construir el futuro implica una responsabilidad:
+
+hacerlo de una manera que merezca existir.
