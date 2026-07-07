@@ -2922,3 +2922,360 @@ Los mejores equipos serán aquellos capaces de combinar:
 - aprendizaje continuo.
 
 Project ZUZU existe para preparar a las personas para esa nueva forma de construir.
+
+# Capítulo XIII
+# Engineering Workflow
+
+Construir software profesional no consiste únicamente en escribir código.
+
+Consiste en transformar una idea incierta en una solución confiable.
+
+Un buen proceso de ingeniería reduce incertidumbre, mejora la calidad y permite que los equipos colaboren eficientemente.
+
+Project ZUZU utiliza un workflow basado en claridad, trazabilidad y evolución continua.
+
+---
+
+# Nuestro ciclo de ingeniería
+
+Todo desarrollo dentro de Project ZUZU sigue este ciclo:
+
+```
+Idea
+
+↓
+
+Comprender
+
+↓
+
+Especificar
+
+↓
+
+Diseñar
+
+↓
+
+Construir
+
+↓
+
+Validar
+
+↓
+
+Documentar
+
+↓
+
+Evolucionar
+```
+
+Cada etapa existe para resolver un problema diferente.
+
+---
+
+# Fase 1
+# Comprender
+
+## Antes de construir debemos entender.
+
+La mayoría de los errores costosos ocurren cuando se desarrolla una solución correcta para un problema incorrectamente entendido.
+
+Antes de escribir código buscamos responder:
+
+- ¿Qué problema existe?
+- ¿Quién lo tiene?
+- ¿Por qué importa?
+- ¿Qué resultado esperamos?
+
+Una solución sin problema definido es solamente una implementación buscando una necesidad.
+
+---
+
+# Fase 2
+# Especificar
+
+## La especificación representa el contrato del desarrollo.
+
+Antes del código creamos claridad.
+
+Una especificación define:
+
+- objetivo;
+- alcance;
+- restricciones;
+- comportamiento esperado;
+- criterios de aceptación.
+
+La especificación permite que humanos y agentes IA compartan el mismo entendimiento.
+
+---
+
+# Spec-Driven Development
+
+Project ZUZU adopta una filosofía Spec-Driven.
+
+Esto significa:
+
+La especificación no es documentación posterior.
+
+Es una herramienta activa de diseño.
+
+El código implementa una intención previamente definida.
+
+---
+
+# Fase 3
+# Diseñar
+
+## Diseñar significa tomar decisiones antes de implementarlas.
+
+Un diseño puede incluir:
+
+- arquitectura;
+- modelos;
+- flujos;
+- componentes;
+- responsabilidades;
+- integraciones.
+
+Diseñar no significa buscar perfección.
+
+Significa reducir errores previsibles.
+
+---
+
+# Fase 4
+# Construir
+
+## La implementación transforma diseño en realidad.
+
+Durante esta fase:
+
+- escribimos código;
+- utilizamos herramientas;
+- colaboramos con agentes IA;
+- ejecutamos pruebas;
+- generamos aprendizaje.
+
+La velocidad importa.
+
+Pero siempre dentro del contexto definido.
+
+---
+
+# Fase 5
+# Validar
+
+## Todo lo construido debe ser comprobado.
+
+Validar significa confirmar que:
+
+- funciona;
+- cumple la especificación;
+- mantiene calidad;
+- no genera problemas nuevos.
+
+La validación puede incluir:
+
+- pruebas automáticas;
+- revisión humana;
+- pruebas con usuarios;
+- análisis técnico.
+
+---
+
+# Fase 6
+# Documentar
+
+## El conocimiento debe permanecer.
+
+Una implementación sin contexto pierde valor con el tiempo.
+
+Documentamos:
+
+- decisiones;
+- cambios importantes;
+- aprendizajes;
+- arquitectura;
+- funcionamiento.
+
+El repositorio representa la memoria del proyecto.
+
+---
+
+# Fase 7
+# Evolucionar
+
+## Todo software está vivo.
+
+Un producto cambia porque:
+
+- aparecen nuevos usuarios;
+- cambian necesidades;
+- evolucionan tecnologías;
+- aprendemos información nueva.
+
+Por eso nuestro objetivo no es construir sistemas terminados.
+
+Es construir sistemas capaces de evolucionar.
+
+---
+
+# Los artefactos como núcleo del workflow
+
+Project ZUZU considera los artefactos ciudadanos de primera clase.
+
+Los principales artefactos incluyen:
+
+## Problem Statement
+
+Define el problema.
+
+---
+
+## Product Requirement Document (PRD)
+
+Define qué debe resolver el producto.
+
+---
+
+## Specification
+
+Define cómo debe comportarse una solución.
+
+---
+
+## Architecture Decision Record (ADR)
+
+Documenta decisiones técnicas importantes.
+
+---
+
+## Implementation Plan
+
+Define cómo será construida una solución.
+
+---
+
+## Review
+
+Evalúa calidad y alineación.
+
+---
+
+# Git como sistema de trazabilidad
+
+Git no es únicamente una herramienta para guardar código.
+
+Es un sistema histórico.
+
+Cada cambio importante debe poder responder:
+
+- ¿qué cambió?
+- ¿por qué cambió?
+- ¿quién lo decidió?
+- ¿cuándo ocurrió?
+
+---
+
+# Branching Strategy
+
+Project ZUZU utiliza ramas con intención.
+
+Ejemplo:
+
+```
+main
+
+ |
+ |
+ ├── feature/user-authentication
+ |
+ ├── artifact/problem-statement
+ |
+ ├── fix/security-validation
+```
+
+Cada rama representa una unidad de trabajo.
+
+---
+
+# Pull Requests
+
+Una Pull Request no representa solamente una unión de código.
+
+Representa una conversación.
+
+Una revisión busca:
+
+- mejorar;
+- detectar riesgos;
+- compartir conocimiento;
+- mantener calidad.
+
+---
+
+# La IA dentro del workflow
+
+La IA participa en todas las fases.
+
+Puede ayudar a:
+
+Comprender:
+- analizar problemas;
+- investigar alternativas.
+
+Especificar:
+- encontrar casos faltantes;
+- mejorar claridad.
+
+Diseñar:
+- proponer arquitecturas;
+- detectar riesgos.
+
+Construir:
+- generar código;
+- automatizar tareas.
+
+Validar:
+- revisar implementaciones;
+- sugerir mejoras.
+
+Pero siempre bajo revisión humana.
+
+---
+
+# Nuestro principio operativo
+
+Antes de construir:
+
+Pensar.
+
+Antes de implementar:
+
+Especificar.
+
+Antes de aceptar:
+
+Validar.
+
+Antes de olvidar:
+
+Documentar.
+
+---
+
+# Conclusión
+
+Un workflow profesional no existe para agregar burocracia.
+
+Existe para proteger la calidad del pensamiento.
+
+Project ZUZU no busca producir código más rápido.
+
+Busca producir mejores decisiones que eventualmente generan mejor software.
+
+Porque el código es solamente la consecuencia final de un proceso de ingeniería bien realizado.
