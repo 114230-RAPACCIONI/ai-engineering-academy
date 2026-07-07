@@ -5256,3 +5256,201 @@ No buscamos enseñar únicamente lo que sabemos hoy.
 Buscamos desarrollar la capacidad necesaria para descubrir lo que todavía no sabemos.
 
 Esa es nuestra promesa.
+
+# Capítulo XX
+# Constitution Closing Statement
+
+## Project ZUZU
+
+---
+
+## Más vale perder un minuto en la vida que perder la vida en un minuto.
+
+Esta frase representa una idea simple:
+
+Las decisiones importan.
+
+El tiempo importa.
+
+La atención importa.
+
+Una pequeña pausa para pensar puede evitar grandes errores.
+
+En ingeniería, como en la vida, avanzar rápido sin dirección puede alejarnos de nuestro verdadero objetivo.
+
+Por eso Project ZUZU elige construir con intención.
+
+---
+
+# Nuestro propósito
+
+El mundo tecnológico cambia a una velocidad nunca antes vista.
+
+Nuevas herramientas aparecen.
+
+Nuevas formas de construir software emergen.
+
+La inteligencia artificial transforma la manera en que las personas crean.
+
+Pero una verdad permanece:
+
+Las personas que saben pensar siempre podrán adaptarse.
+
+---
+
+# Nuestra misión
+
+Formar ingenieros capaces de construir, aprender y evolucionar junto a la tecnología.
+
+No personas dependientes de herramientas.
+
+No usuarios que solamente siguen instrucciones.
+
+Constructores.
+
+Personas capaces de comprender problemas, diseñar soluciones y crear sistemas que generen valor.
+
+---
+
+# Nuestra filosofía
+
+Creemos que:
+
+Los principios son más importantes que las herramientas.
+
+El pensamiento es más importante que la velocidad.
+
+La comprensión es más importante que la memorización.
+
+La calidad es más importante que la cantidad.
+
+La evolución es más importante que la perfección.
+
+---
+
+# Nuestro compromiso con la Inteligencia Artificial
+
+La inteligencia artificial representa una de las mayores transformaciones de la ingeniería moderna.
+
+Pero la tecnología nunca reemplazará la necesidad de:
+
+- criterio;
+- creatividad;
+- responsabilidad;
+- empatía;
+- pensamiento crítico.
+
+El futuro no será humano contra máquinas.
+
+Será humano junto a máquinas.
+
+Los mejores ingenieros serán aquellos capaces de colaborar con inteligencia artificial sin perder su capacidad de pensar.
+
+---
+
+# Nuestra visión de aprendizaje
+
+Aprender no consiste en acumular información.
+
+Consiste en desarrollar capacidad.
+
+Una persona preparada para el futuro no es aquella que conoce todas las respuestas.
+
+Es aquella que sabe encontrar nuevas respuestas.
+
+---
+
+# Nuestra visión de ingeniería
+
+Construir software es construir sistemas que afectan personas.
+
+Cada línea de código representa una decisión.
+
+Cada decisión tiene consecuencias.
+
+Por eso la ingeniería requiere:
+
+- conocimiento;
+- responsabilidad;
+- humildad;
+- mejora continua.
+
+---
+
+# Nuestra visión del futuro
+
+No sabemos exactamente qué tecnologías existirán dentro de diez años.
+
+Y esa es precisamente la razón por la que construimos esta filosofía.
+
+Porque no queremos preparar personas para una tecnología específica.
+
+Queremos preparar personas para cualquier tecnología.
+
+---
+
+# La promesa final
+
+A quien decida recorrer este camino junto a Project ZUZU:
+
+No prometemos un camino fácil.
+
+Prometemos un camino con sentido.
+
+No prometemos respuestas para siempre.
+
+Prometemos herramientas para encontrar nuevas respuestas.
+
+No prometemos eliminar la dificultad.
+
+Prometemos ayudarte a desarrollar la capacidad para enfrentarla.
+
+---
+
+# El inicio de algo más grande
+
+Esta Constitución no representa el final.
+
+Representa el comienzo.
+
+A partir de estos principios construiremos:
+
+- productos;
+- experiencias;
+- comunidades;
+- sistemas;
+- conocimiento.
+
+Cada decisión futura deberá responder una pregunta:
+
+> "¿Esto representa quiénes decidimos ser?"
+
+Si la respuesta es sí, avanzamos.
+
+Si la respuesta es no, aprendemos y corregimos.
+
+---
+
+# Project ZUZU
+
+Una plataforma.
+
+Una comunidad.
+
+Una filosofía.
+
+Un compromiso:
+
+formar a los constructores del futuro.
+
+---
+
+# Fin de la Constitución
+
+Versión inicial:
+
+v1.0.0
+
+Estado:
+
+Foundation Established
