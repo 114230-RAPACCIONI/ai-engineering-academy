@@ -2635,3 +2635,290 @@ Pero una organización con un buen sistema de pensamiento puede adaptarse a cual
 Project ZUZU no busca tener siempre la respuesta.
 
 Busca tener siempre una mejor forma de encontrarla.
+
+# Capítulo XII
+# Collaboration Model
+
+La ingeniería moderna ya no se desarrolla únicamente entre personas.
+
+La aparición de modelos de Inteligencia Artificial y agentes autónomos introduce una nueva forma de colaboración.
+
+Sin embargo, agregar inteligencia artificial a un equipo no significa simplemente incorporar una herramienta más.
+
+Significa redefinir la manera en que pensamos, comunicamos y construimos.
+
+Project ZUZU adopta un modelo donde humanos e inteligencia artificial trabajan juntos como un sistema colaborativo.
+
+La IA aumenta las capacidades humanas.
+
+Los humanos aportan propósito, criterio y responsabilidad.
+
+---
+
+# Principio 1
+## La intención pertenece al humano.
+
+La Inteligencia Artificial puede generar soluciones.
+
+Pero no define por sí sola qué problema debe resolverse.
+
+El propósito nace de una necesidad humana.
+
+El contexto nace de la experiencia.
+
+La visión nace de una persona.
+
+La IA ayuda a construir el camino.
+
+Pero el destino debe estar definido por humanos.
+
+---
+
+# Principio 2
+## La IA es un miembro del equipo, no un reemplazo.
+
+Un agente inteligente puede:
+
+- investigar;
+- analizar;
+- generar propuestas;
+- crear prototipos;
+- revisar código;
+- detectar problemas.
+
+Pero no posee responsabilidad sobre el resultado.
+
+La IA participa del trabajo.
+
+No reemplaza el pensamiento ingenieril.
+
+---
+
+# Principio 3
+## Cada rol tiene responsabilidades claras.
+
+Un equipo efectivo necesita claridad.
+
+La colaboración entre humanos e IA requiere definir qué aporta cada parte.
+
+---
+
+# Rol del Founder
+
+El Founder representa:
+
+- visión;
+- propósito;
+- dirección del producto;
+- comprensión del usuario;
+- prioridades estratégicas.
+
+Su responsabilidad principal es asegurar que el proyecto construya algo valioso.
+
+No debe delegar completamente la visión.
+
+---
+
+# Rol del CTO
+
+El CTO representa:
+
+- excelencia técnica;
+- arquitectura;
+- calidad;
+- decisiones de ingeniería;
+- evolución tecnológica.
+
+Su responsabilidad principal es asegurar que el producto pueda crecer de forma sostenible.
+
+No debe perseguir tecnología por moda.
+
+---
+
+# Rol de los agentes IA
+
+Los agentes IA representan:
+
+- capacidad de análisis;
+- velocidad de ejecución;
+- generación de alternativas;
+- asistencia técnica;
+- automatización.
+
+Su responsabilidad es aumentar la capacidad del equipo.
+
+No tomar decisiones críticas sin supervisión.
+
+---
+
+# Principio 4
+## El contexto es responsabilidad del equipo.
+
+Una IA sin contexto produce resultados genéricos.
+
+Una IA con contexto puede convertirse en un colaborador poderoso.
+
+Por eso Project ZUZU prioriza:
+
+- documentación;
+- artefactos;
+- especificaciones;
+- decisiones registradas;
+- conocimiento compartido.
+
+El contexto es el puente entre la inteligencia artificial y la ingeniería real.
+
+---
+
+# Principio 5
+## Las conversaciones importantes deben convertirse en conocimiento.
+
+Una conversación puede contener una gran decisión.
+
+Pero una conversación perdida no es conocimiento.
+
+Por eso:
+
+Las ideas importantes se transforman en documentos.
+
+Las decisiones importantes se transforman en artefactos.
+
+Los aprendizajes importantes se transforman en principios.
+
+---
+
+# Principio 6
+## La revisión humana es obligatoria.
+
+La IA puede acelerar la creación.
+
+Pero la revisión mantiene la calidad.
+
+Toda contribución generada con ayuda de IA debe evaluarse considerando:
+
+- corrección;
+- seguridad;
+- mantenimiento;
+- impacto;
+- alineación con principios.
+
+---
+
+# Principio 7
+## La mejor interacción con IA es colaborativa.
+
+Un mal uso de IA consiste en pedir:
+
+"Construye esto."
+
+Un mejor uso consiste en trabajar mediante iteraciones:
+
+"Analicemos el problema."
+
+"Propón alternativas."
+
+"Cuestiona esta decisión."
+
+"Encuentra riesgos."
+
+"Mejora esta solución."
+
+La IA alcanza su máximo potencial cuando participa del razonamiento.
+
+---
+
+# Modelo de colaboración Project ZUZU
+
+Nuestro modelo puede resumirse así:
+
+```
+Humano
+  |
+  | Define propósito
+  | Aporta contexto
+  | Decide
+  |
+  ↓
+IA
+  |
+  | Analiza
+  | Propone
+  | Automatiza
+  | Acelera
+  |
+  ↓
+Humano
+  |
+  | Valida
+  | Aprende
+  | Mejora
+```
+
+La inteligencia artificial aumenta el ciclo.
+
+No reemplaza el ciclo.
+
+---
+
+# Principio 8
+## Nunca construimos una dependencia peligrosa.
+
+La IA debe aumentar nuestras capacidades.
+
+No disminuirlas.
+
+Si una persona deja de comprender aquello que construye, estamos utilizando la IA incorrectamente.
+
+El objetivo no es producir más código.
+
+El objetivo es producir mejores ingenieros.
+
+---
+
+# Principio 9
+## La comunicación debe ser explícita.
+
+Los equipos humanos tienen conversaciones.
+
+Los agentes necesitan contexto.
+
+Los productos necesitan documentación.
+
+Por eso una comunicación clara es una habilidad técnica.
+
+Un buen ingeniero no solamente escribe código.
+
+También transmite intención.
+
+---
+
+# Principio 10
+## La colaboración mejora con el tiempo.
+
+Cada interacción genera aprendizaje.
+
+Cada proyecto mejora nuestros procesos.
+
+Cada decisión aporta experiencia.
+
+Un equipo AI-Native no nace perfecto.
+
+Se construye mediante ciclos constantes de aprendizaje y mejora.
+
+---
+
+# Conclusión
+
+El futuro del desarrollo de software no será humano contra inteligencia artificial.
+
+Será humano junto a inteligencia artificial.
+
+Los mejores equipos serán aquellos capaces de combinar:
+
+- creatividad humana;
+- criterio profesional;
+- conocimiento del dominio;
+- velocidad artificial;
+- aprendizaje continuo.
+
+Project ZUZU existe para preparar a las personas para esa nueva forma de construir.
