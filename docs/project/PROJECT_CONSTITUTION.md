@@ -969,3 +969,292 @@ Describen una manera de pensar.
 Si en el futuro cambian los lenguajes, los frameworks, las herramientas o incluso la forma en que interactuamos con la Inteligencia Artificial, estos principios deberán seguir siendo útiles.
 
 Porque fueron escritos para sobrevivir al cambio.
+
+# Capítulo VII
+# Learning Principles
+
+Aprender no consiste en consumir información.
+
+Consiste en transformar la forma en que pensamos.
+
+En Project ZUZU creemos que enseñar ingeniería de software implica mucho más que explicar conceptos técnicos.
+
+Implica desarrollar criterio.
+
+Implica construir confianza.
+
+Implica entrenar la capacidad de resolver problemas que todavía no existen.
+
+Por esa razón, nuestra metodología de aprendizaje no está organizada alrededor de tecnologías.
+
+Está organizada alrededor del desarrollo progresivo del pensamiento ingenieril.
+
+Los siguientes principios describen cómo entendemos el aprendizaje.
+
+---
+
+## Principio 1
+# Comprender antes de memorizar.
+
+### Por qué creemos esto
+
+La memoria tiene un límite.
+
+La comprensión permite reconstruir el conocimiento incluso cuando olvidamos los detalles.
+
+Quien comprende un concepto puede adaptarlo a nuevas situaciones.
+
+Quien solamente memoriza depende del contexto original.
+
+### Qué significa para Project ZUZU
+
+No enseñamos recetas.
+
+Enseñamos el porqué detrás de cada decisión.
+
+Cada concepto debe responder una pregunta antes de presentar una solución.
+
+### Cómo se refleja en la experiencia del estudiante
+
+Antes de escribir código, el estudiante comprenderá el problema que ese código intenta resolver.
+
+---
+
+## Principio 2
+# Aprender haciendo.
+
+### Por qué creemos esto
+
+El conocimiento pasivo desaparece rápidamente.
+
+La experiencia práctica construye conexiones mucho más profundas.
+
+No se aprende ingeniería observando.
+
+Se aprende construyendo.
+
+### Qué significa para Project ZUZU
+
+Cada concepto importante termina en una acción.
+
+Cada Journey incluye desafíos.
+
+Cada Lesson conduce a una práctica.
+
+Cada módulo construye algo real.
+
+### Cómo se refleja en la experiencia del estudiante
+
+El estudiante no termina una lección con más teoría.
+
+La termina con una nueva capacidad.
+
+---
+
+## Principio 3
+# El error forma parte del aprendizaje.
+
+### Por qué creemos esto
+
+Los errores no representan fracaso.
+
+Representan información.
+
+Cada error correctamente analizado mejora nuestro modelo mental.
+
+### Qué significa para Project ZUZU
+
+No penalizamos equivocarse.
+
+Enseñamos a investigar.
+
+A depurar.
+
+A formular mejores hipótesis.
+
+### Cómo se refleja en la experiencia del estudiante
+
+Los desafíos estarán diseñados para provocar preguntas, no solamente respuestas correctas.
+
+---
+
+## Principio 4
+# Aprender es desarrollar criterio.
+
+### Por qué creemos esto
+
+En ingeniería rara vez existe una única respuesta correcta.
+
+Las mejores decisiones dependen del contexto.
+
+Por eso enseñar únicamente respuestas limita el crecimiento profesional.
+
+### Qué significa para Project ZUZU
+
+Mostramos alternativas.
+
+Comparamos soluciones.
+
+Explicamos ventajas, desventajas y consecuencias.
+
+### Cómo se refleja en la experiencia del estudiante
+
+El objetivo no será elegir la respuesta correcta.
+
+Será aprender a justificar una decisión.
+
+---
+
+## Principio 5
+# La IA acelera el aprendizaje, pero no reemplaza el pensamiento.
+
+### Por qué creemos esto
+
+La Inteligencia Artificial puede explicar, generar ejemplos, revisar código y responder preguntas.
+
+Pero no puede aprender por otra persona.
+
+El aprendizaje sigue siendo un proceso humano.
+
+### Qué significa para Project ZUZU
+
+La IA estará presente durante todo el recorrido.
+
+No como una fuente absoluta de verdad.
+
+Sino como un compañero de aprendizaje.
+
+### Cómo se refleja en la experiencia del estudiante
+
+Cada actividad enseñará también a colaborar correctamente con agentes inteligentes.
+
+---
+
+## Principio 6
+# El contexto da significado al conocimiento.
+
+### Por qué creemos esto
+
+Los conceptos aislados son difíciles de recordar.
+
+Cuando entendemos dónde y por qué se utilizan, adquieren sentido.
+
+### Qué significa para Project ZUZU
+
+Todo nuevo concepto aparecerá dentro de un problema real.
+
+Nunca enseñaremos contenido desconectado de un propósito.
+
+### Cómo se refleja en la experiencia del estudiante
+
+Cada tema responderá primero a la pregunta:
+
+"¿Por qué necesito aprender esto?"
+
+---
+
+## Principio 7
+# Aprender es conectar ideas.
+
+### Por qué creemos esto
+
+La ingeniería surge de relacionar conocimientos provenientes de distintas disciplinas.
+
+Arquitectura.
+
+Programación.
+
+Negocio.
+
+Diseño.
+
+Comunicación.
+
+Inteligencia Artificial.
+
+Todas forman parte del mismo sistema.
+
+### Qué significa para Project ZUZU
+
+No enseñamos materias aisladas.
+
+Construimos conexiones.
+
+### Cómo se refleja en la experiencia del estudiante
+
+Cada nuevo aprendizaje se relacionará explícitamente con conocimientos adquiridos anteriormente.
+
+---
+
+## Principio 8
+# El aprendizaje debe generar autonomía.
+
+### Por qué creemos esto
+
+El objetivo de un profesor no es crear dependencia.
+
+Es hacer que deje de ser necesario.
+
+### Qué significa para Project ZUZU
+
+Todo nuestro contenido apunta a desarrollar independencia intelectual.
+
+### Cómo se refleja en la experiencia del estudiante
+
+Cada Journey aumenta gradualmente la responsabilidad del estudiante hasta que pueda construir soluciones sin guía.
+
+---
+
+## Principio 9
+# La motivación nace del progreso.
+
+### Por qué creemos esto
+
+Las personas no permanecen motivadas únicamente por inspiración.
+
+Permanecen motivadas cuando perciben que están avanzando.
+
+### Qué significa para Project ZUZU
+
+Diseñaremos experiencias donde el progreso sea visible, medible y significativo.
+
+### Cómo se refleja en la experiencia del estudiante
+
+Cada Challenge superado demostrará una nueva capacidad adquirida, no solamente un contenido completado.
+
+---
+
+## Principio 10
+# Nunca dejamos de aprender.
+
+### Por qué creemos esto
+
+La ingeniería es una profesión de aprendizaje continuo.
+
+La curiosidad constituye una ventaja competitiva permanente.
+
+### Qué significa para Project ZUZU
+
+No enseñamos para aprobar un curso.
+
+Enseñamos para desarrollar una mentalidad.
+
+### Cómo se refleja en la experiencia del estudiante
+
+Graduarse en Project ZUZU no significa terminar el aprendizaje.
+
+Significa haber desarrollado la capacidad de seguir aprendiendo durante toda la vida.
+
+---
+
+# Conclusión
+
+Aprender ingeniería no consiste en acumular información.
+
+Consiste en transformar la forma en que observamos el mundo.
+
+Cuando una persona cambia su manera de pensar, cambia también su manera de diseñar, construir y resolver problemas.
+
+Ese es el aprendizaje que buscamos provocar.
+
+Y ese será siempre el objetivo de Project ZUZU.
