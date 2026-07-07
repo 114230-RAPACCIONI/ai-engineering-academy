@@ -1258,3 +1258,200 @@ Cuando una persona cambia su manera de pensar, cambia también su manera de dise
 Ese es el aprendizaje que buscamos provocar.
 
 Y ese será siempre el objetivo de Project ZUZU.
+
+# Capítulo VIII
+# AI Principles
+
+La Inteligencia Artificial representa uno de los mayores cambios en la historia de la ingeniería de software.
+
+No porque escriba código.
+
+Sino porque modifica la manera en que los ingenieros piensan, investigan, diseñan, construyen y aprenden.
+
+En Project ZUZU no enseñamos herramientas de Inteligencia Artificial.
+
+Enseñamos una disciplina.
+
+La disciplina de colaborar con inteligencia artificial de forma responsable, crítica y estratégica.
+
+Los siguientes principios describen esa relación.
+
+---
+
+## Principio 1
+# La IA es un colaborador.
+
+Una Inteligencia Artificial participa del proceso de ingeniería.
+
+Nunca lo reemplaza.
+
+Su propósito consiste en ampliar nuestras capacidades.
+
+No sustituir nuestro criterio.
+
+Delegamos tareas.
+
+Nunca delegamos responsabilidad.
+
+---
+
+## Principio 2
+# La responsabilidad siempre permanece en el ingeniero.
+
+Toda respuesta producida por una IA debe ser evaluada.
+
+Toda decisión debe ser comprendida.
+
+Toda implementación debe poder justificarse.
+
+Aceptar una respuesta sin comprenderla contradice los principios de Project ZUZU.
+
+---
+
+## Principio 3
+# La calidad del contexto determina la calidad del resultado.
+
+Una IA responde utilizando el contexto que recibe.
+
+Por esa razón, aprender a construir contexto constituye una habilidad fundamental para cualquier AI Engineer.
+
+La ingeniería del contexto es una disciplina.
+
+No un truco.
+
+---
+
+## Principio 4
+# Preguntar es una habilidad de ingeniería.
+
+La calidad de una respuesta depende de la calidad de la pregunta.
+
+Un ingeniero no utiliza la IA únicamente para obtener respuestas.
+
+La utiliza para explorar alternativas.
+
+Cuestionar hipótesis.
+
+Identificar riesgos.
+
+Descubrir perspectivas.
+
+Una buena pregunta genera mejores decisiones.
+
+---
+
+## Principio 5
+# Toda respuesta es una hipótesis.
+
+Las respuestas generadas por una IA representan propuestas.
+
+Nunca verdades absolutas.
+
+Cada resultado debe validarse utilizando evidencia, documentación, experimentación y pensamiento crítico.
+
+Confiar ciegamente contradice el propósito mismo de la ingeniería.
+
+---
+
+## Principio 6
+# La IA acelera el trabajo repetitivo.
+
+La creatividad.
+
+El juicio.
+
+La ética.
+
+La comprensión del negocio.
+
+La comunicación.
+
+La negociación.
+
+La definición de prioridades.
+
+Todas continúan siendo responsabilidades humanas.
+
+Automatizamos tareas.
+
+No automatizamos el pensamiento.
+
+---
+
+## Principio 7
+# La colaboración es iterativa.
+
+La mejor interacción con una IA rara vez ocurre en un único intercambio.
+
+Construimos conocimiento mediante conversación.
+
+Refinamos ideas.
+
+Ajustamos contexto.
+
+Validamos resultados.
+
+La colaboración continua produce mejores soluciones que las instrucciones aisladas.
+
+---
+
+## Principio 8
+# El conocimiento permanece fuera del modelo.
+
+Los modelos cambian.
+
+Las versiones cambian.
+
+Los proveedores cambian.
+
+El conocimiento del proyecto debe permanecer documentado dentro del propio proyecto.
+
+Nunca depender exclusivamente de la memoria de un modelo.
+
+---
+
+## Principio 9
+# La IA debe aumentar la comprensión.
+
+Si utilizar una IA produce dependencia.
+
+Estamos utilizándola incorrectamente.
+
+Si utilizar una IA mejora nuestra comprensión.
+
+Estamos desarrollando criterio.
+
+El objetivo nunca consiste en terminar más rápido.
+
+Consiste en comprender mejor.
+
+---
+
+## Principio 10
+# Aprender a colaborar con IA será una habilidad permanente.
+
+Las herramientas cambiarán.
+
+Los modelos evolucionarán.
+
+Los agentes serán cada vez más autónomos.
+
+Pero la capacidad de colaborar eficazmente con sistemas inteligentes continuará siendo una competencia esencial para cualquier ingeniero.
+
+Por esa razón, Project ZUZU no enseña una herramienta.
+
+Enseña una forma de trabajar.
+
+---
+
+# Conclusión
+
+La Inteligencia Artificial no representa el final de la ingeniería de software.
+
+Representa el comienzo de una nueva etapa.
+
+Los mejores ingenieros no serán quienes compitan contra la IA.
+
+Serán quienes aprendan a pensar mejor junto a ella.
+
+Ese es el tipo de profesional que Project ZUZU aspira a formar.
