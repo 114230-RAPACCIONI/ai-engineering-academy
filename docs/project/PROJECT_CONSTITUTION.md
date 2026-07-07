@@ -3279,3 +3279,394 @@ Project ZUZU no busca producir código más rápido.
 Busca producir mejores decisiones que eventualmente generan mejor software.
 
 Porque el código es solamente la consecuencia final de un proceso de ingeniería bien realizado.
+
+# Capítulo XIV
+# Knowledge Management
+
+El conocimiento representa uno de los activos más importantes de cualquier organización.
+
+El código puede cambiar.
+
+Las herramientas pueden cambiar.
+
+Los equipos pueden cambiar.
+
+Pero el conocimiento acumulado permite que un proyecto continúe evolucionando.
+
+En Project ZUZU entendemos el conocimiento como un sistema vivo.
+
+No como una colección de documentos aislados.
+
+---
+
+# Principio 1
+## El conocimiento debe permanecer en el sistema.
+
+### Creemos que...
+
+Un proyecto no debe depender exclusivamente de la memoria de una persona.
+
+Cuando el conocimiento existe únicamente en conversaciones privadas, se pierde fácilmente.
+
+### Esto significa que...
+
+Las decisiones importantes deben transformarse en artefactos.
+
+Los aprendizajes importantes deben documentarse.
+
+Las experiencias importantes deben compartirse.
+
+### En la práctica...
+
+El repositorio representa la memoria principal del proyecto.
+
+---
+
+# Principio 2
+## La documentación es conocimiento estructurado.
+
+### Creemos que...
+
+Escribir información no significa necesariamente documentar.
+
+Una buena documentación organiza conocimiento para que pueda ser comprendido y utilizado.
+
+### Esto significa que...
+
+La documentación debe tener:
+
+- propósito;
+- contexto;
+- estructura;
+- responsables;
+- evolución.
+
+### Nunca...
+
+Crearemos documentación únicamente para cumplir un requisito.
+
+---
+
+# Principio 3
+## El contexto es un producto.
+
+### Creemos que...
+
+En sistemas AI-Native, el contexto determina la calidad de las respuestas.
+
+Un agente inteligente necesita comprender:
+
+- objetivos;
+- restricciones;
+- decisiones previas;
+- arquitectura;
+- convenciones.
+
+### Esto significa que...
+
+Construir contexto es parte del desarrollo.
+
+No una tarea secundaria.
+
+---
+
+# Principio 4
+## Los artefactos son unidades de conocimiento.
+
+Un artefacto no es solamente un archivo.
+
+Es una representación formal de una idea.
+
+Ejemplos:
+
+```
+Problem Statement
+        ↓
+Define el problema
+
+Specification
+        ↓
+Define comportamiento esperado
+
+ADR
+        ↓
+Define decisiones técnicas
+
+Documentation
+        ↓
+Define conocimiento compartido
+```
+
+Cada artefacto existe para preservar una parte del razonamiento.
+
+---
+
+# Principio 5
+## La información debe ser descubrible.
+
+### Creemos que...
+
+El conocimiento que no puede encontrarse tiene poco valor.
+
+### Esto significa que...
+
+La organización del conocimiento importa.
+
+Un buen sistema debe permitir responder:
+
+- ¿Dónde está esta información?
+- ¿Por qué existe?
+- ¿Quién la mantiene?
+- ¿Cuál es su estado actual?
+
+---
+
+# Arquitectura del conocimiento
+
+Project ZUZU organiza el conocimiento en diferentes capas.
+
+```
+                    PROJECT KNOWLEDGE
+
+                          |
+        -------------------------------------
+
+        Filosofía
+             |
+             |
+        Producto
+             |
+             |
+        Ingeniería
+             |
+             |
+        Implementación
+             |
+             |
+        Experiencia
+```
+
+Cada capa tiene un propósito diferente.
+
+---
+
+# Capa 1
+# Filosofía
+
+Define:
+
+- propósito;
+- valores;
+- principios;
+- identidad.
+
+Ejemplo:
+
+```
+PROJECT_CONSTITUTION.md
+```
+
+Responde:
+
+"¿Por qué hacemos esto?"
+
+---
+
+# Capa 2
+# Producto
+
+Define:
+
+- usuarios;
+- problemas;
+- funcionalidades;
+- objetivos.
+
+Ejemplo:
+
+```
+PRD
+User Stories
+Product Specs
+```
+
+Responde:
+
+"¿Qué estamos construyendo?"
+
+---
+
+# Capa 3
+# Ingeniería
+
+Define:
+
+- arquitectura;
+- decisiones técnicas;
+- estándares;
+- procesos.
+
+Ejemplo:
+
+```
+ADR
+Architecture Docs
+Engineering Handbook
+```
+
+Responde:
+
+"¿Cómo lo construimos?"
+
+---
+
+# Capa 4
+# Implementación
+
+Define:
+
+- código;
+- configuración;
+- pruebas;
+- despliegues.
+
+Responde:
+
+"¿Cómo funciona actualmente?"
+
+---
+
+# Capa 5
+# Aprendizaje
+
+Define:
+
+- experimentos;
+- resultados;
+- errores;
+- mejoras.
+
+Responde:
+
+"¿Qué aprendimos?"
+
+---
+
+# Principio 6
+## La documentación debe evolucionar.
+
+### Creemos que...
+
+Una documentación desactualizada puede ser más peligrosa que no tener documentación.
+
+### Esto significa que...
+
+Los documentos tienen ciclo de vida.
+
+Pueden estar:
+
+- Draft;
+- Review;
+- Approved;
+- Deprecated.
+
+### Nunca...
+
+Consideraremos un documento terminado para siempre.
+
+---
+
+# Principio 7
+## Diseñamos conocimiento para humanos y máquinas.
+
+### Creemos que...
+
+El futuro del desarrollo incluirá agentes capaces de leer, analizar y trabajar sobre repositorios completos.
+
+### Esto significa que...
+
+Nuestros documentos deben ser:
+
+- claros;
+- estructurados;
+- consistentes;
+- ricos en contexto.
+
+### En la práctica...
+
+Utilizamos formatos que puedan ser interpretados tanto por personas como por sistemas inteligentes.
+
+---
+
+# Principio 8
+## El conocimiento debe tener propietario.
+
+### Creemos que...
+
+Un documento sin responsable tiende a quedar abandonado.
+
+### Esto significa que...
+
+Todo artefacto importante debe tener:
+
+- owner;
+- estado;
+- versión;
+- fecha;
+- propósito.
+
+---
+
+# Principio 9
+## Compartir conocimiento aumenta la capacidad del equipo.
+
+### Creemos que...
+
+Una organización inteligente no protege información.
+
+La distribuye.
+
+### Esto significa que...
+
+El conocimiento debe ser accesible para quienes lo necesitan.
+
+---
+
+# Principio 10
+## El conocimiento es una ventaja competitiva.
+
+### Creemos que...
+
+En el futuro muchas organizaciones tendrán acceso a herramientas similares.
+
+La diferencia estará en:
+
+- cómo piensan;
+- qué saben;
+- cómo utilizan ese conocimiento.
+
+### Project ZUZU construye una memoria viva.
+
+Una memoria capaz de ayudar a personas e inteligencias artificiales a trabajar juntas.
+
+---
+
+# Conclusión
+
+El conocimiento no es un subproducto del trabajo.
+
+Es parte del trabajo.
+
+Cada decisión.
+
+Cada aprendizaje.
+
+Cada descubrimiento.
+
+Cada error.
+
+Todo forma parte de la inteligencia colectiva del proyecto.
+
+Project ZUZU no solamente construye software.
+
+Construye conocimiento capaz de evolucionar con el tiempo.
