@@ -4325,3 +4325,307 @@ Project ZUZU tiene como objetivo formar ingenieros capaces de construir el futur
 Pero construir el futuro implica una responsabilidad:
 
 hacerlo de una manera que merezca existir.
+
+# Capítulo XVII
+# Open Source & Community Principles
+
+El conocimiento crece cuando se comparte.
+
+La industria tecnológica existe gracias a millones de personas que durante décadas compartieron ideas, herramientas, documentación y experiencias.
+
+Desde lenguajes de programación hasta frameworks, librerías y metodologías, gran parte del progreso tecnológico nació de comunidades colaborativas.
+
+Project ZUZU reconoce que aprender ingeniería no significa únicamente adquirir conocimiento.
+
+Significa formar parte de una comunidad de personas que construyen el futuro.
+
+---
+
+# Principio 1
+## Aprender significa participar.
+
+### Creemos que...
+
+El aprendizaje más profundo ocurre cuando una persona deja de ser solamente consumidora y comienza a aportar.
+
+### Esto significa que...
+
+Un estudiante debe desarrollar la capacidad de:
+
+- construir;
+- explicar;
+- compartir;
+- colaborar.
+
+### En la práctica...
+
+El conocimiento adquirido debe transformarse en contribuciones.
+
+Pueden ser:
+
+- código;
+- documentación;
+- tutoriales;
+- experiencias;
+- feedback.
+
+### Nunca...
+
+Consideraremos el aprendizaje como una actividad completamente individual.
+
+---
+
+# Principio 2
+## Compartir conocimiento multiplica valor.
+
+### Creemos que...
+
+Cuando una persona comparte lo que aprende, no pierde conocimiento.
+
+Lo transforma en algo más grande.
+
+### Esto significa que...
+
+La documentación, los ejemplos y las experiencias deben poder beneficiar a otros.
+
+### Nunca...
+
+Crearemos una cultura donde guardar conocimiento sea considerado una ventaja individual.
+
+---
+
+# Principio 3
+## La comunidad mejora las soluciones.
+
+### Creemos que...
+
+Una sola perspectiva tiene límites.
+
+Muchas perspectivas generan mejores resultados.
+
+### Esto significa que...
+
+Aceptamos:
+
+- preguntas;
+- críticas;
+- sugerencias;
+- nuevas ideas.
+
+### En la práctica...
+
+Las soluciones deben poder ser discutidas y mejoradas.
+
+### Nunca...
+
+Confundiremos una revisión con un ataque personal.
+
+---
+
+# Principio 4
+## Construimos con mentalidad abierta.
+
+### Creemos que...
+
+El ecosistema tecnológico avanza porque las personas construyen sobre ideas existentes.
+
+### Esto significa que...
+
+Valoramos:
+
+- estándares abiertos;
+- colaboración;
+- interoperabilidad;
+- aprendizaje compartido.
+
+### Nunca...
+
+Reinventaremos soluciones únicamente por orgullo técnico.
+
+---
+
+# Principio 5
+## La comunidad requiere respeto.
+
+### Creemos que...
+
+Una comunidad saludable necesita confianza.
+
+La diversidad de experiencias mejora el aprendizaje.
+
+### Esto significa que...
+
+Promovemos:
+
+- respeto;
+- inclusión;
+- colaboración;
+- comunicación constructiva.
+
+### Nunca...
+
+Utilizaremos el conocimiento como una forma de superioridad.
+
+---
+
+# Principio 6
+## Enseñar demuestra comprensión.
+
+### Creemos que...
+
+Una persona realmente entiende algo cuando puede explicarlo a otra.
+
+### Esto significa que...
+
+La capacidad de comunicar es una habilidad fundamental de ingeniería.
+
+### En la práctica...
+
+Un buen ingeniero puede:
+
+- escribir código;
+- diseñar sistemas;
+- explicar decisiones.
+
+### Nunca...
+
+Mediremos conocimiento únicamente por capacidad de resolver problemas individuales.
+
+---
+
+# Principio 7
+## Contribuir requiere responsabilidad.
+
+### Creemos que...
+
+Compartir algo públicamente implica responsabilidad sobre su calidad.
+
+### Esto significa que...
+
+Antes de contribuir debemos considerar:
+
+- claridad;
+- seguridad;
+- mantenimiento;
+- impacto.
+
+### Nunca...
+
+Compartiremos soluciones sin comprender sus consecuencias.
+
+---
+
+# Principio 8
+## La comunidad también construye producto.
+
+### Creemos que...
+
+Los usuarios no solamente reciben valor.
+
+También pueden participar en su evolución.
+
+### Esto significa que...
+
+Escuchamos:
+
+- feedback;
+- experiencias;
+- necesidades;
+- propuestas.
+
+### Nunca...
+
+Construiremos ignorando a las personas que utilizan nuestras soluciones.
+
+---
+
+# Principio 9
+## La inteligencia colectiva supera la individual.
+
+### Creemos que...
+
+La combinación de muchas experiencias genera conocimiento imposible de obtener individualmente.
+
+### Esto significa que...
+
+Diseñamos sistemas que permiten colaboración.
+
+### En la práctica...
+
+La comunidad puede convertirse en una extensión del equipo.
+
+---
+
+# Principio 10
+## Dejamos el ecosistema mejor de como lo encontramos.
+
+### Creemos que...
+
+Construir tecnología también significa aportar al futuro.
+
+### Esto significa que...
+
+Cada generación de ingenieros tiene la responsabilidad de mejorar las herramientas y conocimientos disponibles.
+
+### Nunca...
+
+Utilizaremos el conocimiento únicamente para beneficio propio.
+
+---
+
+# Modelo de comunidad Project ZUZU
+
+```
+                 CONOCIMIENTO
+
+                      |
+        --------------------------------
+
+        Aprender
+           |
+        Construir
+           |
+        Compartir
+           |
+        Mejorar
+           |
+        Enseñar
+```
+
+El ciclo nunca termina.
+
+Una persona aprende.
+
+Luego construye.
+
+Después comparte.
+
+Y ayuda a otra persona a comenzar.
+
+---
+
+# La comunidad como sistema de aprendizaje
+
+Project ZUZU entiende la comunidad como una extensión del aprendizaje.
+
+El contenido enseña conceptos.
+
+Los proyectos desarrollan habilidades.
+
+La comunidad desarrolla criterio.
+
+Los tres elementos forman ingenieros completos.
+
+---
+
+# Conclusión
+
+El futuro de la ingeniería no será construido por personas aisladas.
+
+Será construido por comunidades capaces de aprender, colaborar y evolucionar juntas.
+
+Project ZUZU no quiere formar únicamente usuarios de tecnología.
+
+Quiere formar personas capaces de contribuir al ecosistema tecnológico.
+
+Porque el verdadero progreso ocurre cuando una persona aprende algo y decide compartirlo con alguien más.
