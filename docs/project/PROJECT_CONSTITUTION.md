@@ -742,3 +742,230 @@ Una organización evoluciona.
 Sus valores también pueden hacerlo.
 
 Lo importante es que ese cambio sea consciente, documentado y compartido.
+
+# Capítulo VI
+# Engineering Principles
+
+La ingeniería no consiste únicamente en construir software.
+
+Consiste en tomar decisiones.
+
+Cada arquitectura elegida.
+
+Cada tecnología adoptada.
+
+Cada línea de código escrita.
+
+Cada documento redactado.
+
+Cada conversación mantenida.
+
+Todo representa una decisión.
+
+Project ZUZU define estos principios para asegurar que esas decisiones sean consistentes a lo largo del tiempo.
+
+No son reglas rígidas.
+
+Son criterios para pensar mejor.
+
+Cuando exista una duda, un conflicto o varias alternativas posibles, estos principios deberán servir como guía.
+
+---
+
+## Principio 1
+# Los principios son más importantes que las herramientas.
+
+Las herramientas evolucionan constantemente.
+
+Los principios permanecen.
+
+Aprender una tecnología puede resolver un problema inmediato.
+
+Comprender un principio permite resolver problemas que todavía no existen.
+
+Por esa razón evitamos construir conocimiento dependiente de una herramienta específica.
+
+Las herramientas son temporales.
+
+La ingeniería es permanente.
+
+---
+
+## Principio 2
+# Diseñar antes de construir.
+
+Todo sistema existe dos veces.
+
+Primero en la mente.
+
+Después en la realidad.
+
+Diseñar no retrasa el desarrollo.
+
+Evita recorrer caminos equivocados.
+
+Antes de implementar buscamos comprender.
+
+Antes de programar buscamos modelar.
+
+Antes de optimizar buscamos validar.
+
+Pensar forma parte del desarrollo.
+
+---
+
+## Principio 3
+# La documentación es parte del producto.
+
+El software no termina donde termina el código.
+
+La documentación también transmite conocimiento.
+
+Permite comprender decisiones.
+
+Facilita el mantenimiento.
+
+Reduce la dependencia de personas específicas.
+
+Todo sistema complejo necesita una memoria.
+
+La documentación representa esa memoria.
+
+---
+
+## Principio 4
+# Los artefactos son ciudadanos de primera clase.
+
+Los documentos, especificaciones, ADRs, diagramas, modelos y decisiones poseen el mismo valor estratégico que el código fuente.
+
+Construir un producto implica construir conocimiento.
+
+Por esa razón tratamos los artefactos como elementos versionados, revisados y mantenidos.
+
+No como documentos secundarios.
+
+---
+
+## Principio 5
+# Todo cambio debe ser trazable.
+
+Cada decisión tiene un motivo.
+
+Cada modificación tiene un contexto.
+
+Cada versión cuenta una parte de la historia del proyecto.
+
+La trazabilidad permite comprender cómo evolucionó un sistema.
+
+No documentamos para justificar el pasado.
+
+Documentamos para facilitar el futuro.
+
+---
+
+## Principio 6
+# La Inteligencia Artificial es un colaborador.
+
+La IA amplifica nuestras capacidades.
+
+Nos ayuda a investigar.
+
+Diseñar.
+
+Programar.
+
+Documentar.
+
+Revisar.
+
+Aprender.
+
+Pero nunca reemplaza nuestra responsabilidad como ingenieros.
+
+La decisión final siempre pertenece a quien construye el sistema.
+
+---
+
+## Principio 7
+# Automatizar todo lo repetitivo.
+
+Las personas deberían dedicar su tiempo a pensar.
+
+Las máquinas deberían encargarse de las tareas repetitivas.
+
+Automatizar libera tiempo para resolver problemas más importantes.
+
+No automatizamos por moda.
+
+Automatizamos cuando genera valor.
+
+---
+
+## Principio 8
+# La simplicidad es una característica de calidad.
+
+Agregar complejidad suele ser sencillo.
+
+Eliminarla requiere comprensión.
+
+Preferimos sistemas fáciles de explicar.
+
+Interfaces fáciles de utilizar.
+
+Arquitecturas fáciles de evolucionar.
+
+La simplicidad no significa falta de capacidad.
+
+Significa claridad.
+
+---
+
+## Principio 9
+# Pensar en sistemas.
+
+Nunca diseñamos componentes aislados.
+
+Todo cambio afecta a otros elementos.
+
+Todo producto forma parte de un sistema mayor.
+
+Pensar sistémicamente implica comprender relaciones, dependencias, restricciones y consecuencias antes de actuar.
+
+Construimos sistemas.
+
+No solamente funcionalidades.
+
+---
+
+## Principio 10
+# Aprender continuamente.
+
+El conocimiento nunca permanece estático.
+
+Cada proyecto enseña.
+
+Cada error enseña.
+
+Cada revisión enseña.
+
+Cada conversación enseña.
+
+La capacidad de aprender con rapidez constituye una de las habilidades más importantes para cualquier ingeniero moderno.
+
+Project ZUZU existe para desarrollar esa capacidad.
+
+---
+
+# Conclusión
+
+Estos principios representan la forma en que entendemos la ingeniería de software.
+
+No describen tecnologías.
+
+No describen procesos.
+
+Describen una manera de pensar.
+
+Si en el futuro cambian los lenguajes, los frameworks, las herramientas o incluso la forma en que interactuamos con la Inteligencia Artificial, estos principios deberán seguir siendo útiles.
+
+Porque fueron escritos para sobrevivir al cambio.
