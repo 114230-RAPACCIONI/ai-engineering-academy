@@ -3670,3 +3670,343 @@ Todo forma parte de la inteligencia colectiva del proyecto.
 Project ZUZU no solamente construye software.
 
 Construye conocimiento capaz de evolucionar con el tiempo.
+
+# Capítulo XV
+# Quality Standards
+
+La calidad no es una etapa final del desarrollo.
+
+No es una revisión realizada antes de entregar.
+
+No es una tarea exclusiva de un equipo de testing.
+
+La calidad es una propiedad que se construye desde la primera decisión.
+
+Cada conversación.
+
+Cada especificación.
+
+Cada línea de código.
+
+Cada diseño.
+
+Cada interacción.
+
+Todo contribuye a la calidad final del producto.
+
+En Project ZUZU entendemos la calidad como una responsabilidad colectiva.
+
+---
+
+# Principio 1
+## La calidad comienza antes del código.
+
+### Creemos que...
+
+Los problemas más costosos no aparecen durante la programación.
+
+Aparecen cuando comenzamos a construir sin comprender.
+
+### Esto significa que...
+
+Una buena calidad comienza con:
+
+- problemas bien definidos;
+- requisitos claros;
+- contexto suficiente;
+- decisiones conscientes.
+
+### Nunca...
+
+Compensaremos una mala definición del problema escribiendo más código.
+
+---
+
+# Principio 2
+## La calidad técnica es necesaria, pero no suficiente.
+
+### Creemos que...
+
+Un sistema técnicamente excelente que no resuelve una necesidad real no es un buen producto.
+
+La ingeniería existe para generar valor.
+
+### Esto significa que...
+
+Evaluamos:
+
+- funcionamiento;
+- mantenibilidad;
+- escalabilidad;
+- seguridad;
+- utilidad.
+
+### Nunca...
+
+Confundiremos complejidad técnica con excelencia.
+
+---
+
+# Principio 3
+## El código debe ser comprendido, no solamente ejecutado.
+
+### Creemos que...
+
+El software vive durante años.
+
+Personas diferentes deberán modificarlo, mantenerlo y evolucionarlo.
+
+### Esto significa que...
+
+Un código de calidad debe ser:
+
+- claro;
+- simple;
+- consistente;
+- testeable.
+
+### Nunca...
+
+Escribiremos código que solamente funcione pero sea imposible de mantener.
+
+---
+
+# Principio 4
+## La simplicidad es una forma de calidad.
+
+### Creemos que...
+
+Cada elemento innecesario aumenta la superficie de error.
+
+La complejidad tiene un costo.
+
+### Esto significa que...
+
+Preferimos:
+
+- diseños simples;
+- soluciones pequeñas;
+- decisiones explícitas.
+
+### Nunca...
+
+Agregaremos complejidad para demostrar capacidad técnica.
+
+---
+
+# Principio 5
+## La seguridad forma parte de la calidad.
+
+### Creemos que...
+
+Un sistema inseguro es un sistema incompleto.
+
+La seguridad no debe agregarse después.
+
+Debe formar parte del diseño.
+
+### Esto significa que...
+
+Consideramos:
+
+- privacidad;
+- autenticación;
+- autorización;
+- manejo de datos;
+- riesgos.
+
+### Nunca...
+
+Sacrificaremos seguridad por velocidad sin comprender las consecuencias.
+
+---
+
+# Principio 6
+## La experiencia del usuario también es calidad.
+
+### Creemos que...
+
+Un sistema existe para personas.
+
+La excelencia técnica pierde valor si la experiencia es frustrante.
+
+### Esto significa que...
+
+Consideramos:
+
+- facilidad de uso;
+- claridad;
+- accesibilidad;
+- confianza.
+
+### Nunca...
+
+Diseñaremos únicamente pensando en la implementación interna.
+
+---
+
+# Principio 7
+## La calidad educativa también importa.
+
+### Creemos que...
+
+Project ZUZU no solamente construye software.
+
+Construye aprendizaje.
+
+### Esto significa que...
+
+Cada contenido debe:
+
+- tener propósito;
+- explicar contexto;
+- desarrollar criterio;
+- generar capacidad.
+
+### Nunca...
+
+Crearemos contenido únicamente para aumentar cantidad.
+
+---
+
+# Principio 8
+## La revisión mejora la calidad.
+
+### Creemos que...
+
+Ninguna persona tiene una perspectiva completa.
+
+La colaboración mejora las decisiones.
+
+### Esto significa que...
+
+Revisamos:
+
+- código;
+- documentos;
+- especificaciones;
+- decisiones.
+
+### Nunca...
+
+Consideraremos una revisión como una crítica personal.
+
+---
+
+# Principio 9
+## La automatización protege la calidad.
+
+### Creemos que...
+
+Las máquinas son excelentes detectando errores repetitivos.
+
+Los humanos son mejores resolviendo problemas complejos.
+
+### Esto significa que...
+
+Automatizamos:
+
+- pruebas;
+- validaciones;
+- verificaciones;
+- procesos repetitivos.
+
+### Nunca...
+
+Confiamos únicamente en revisiones manuales cuando pueden existir controles automáticos.
+
+---
+
+# Principio 10
+## La excelencia es un proceso continuo.
+
+### Creemos que...
+
+La calidad nunca está completamente terminada.
+
+Siempre existe una oportunidad de mejorar.
+
+### Esto significa que...
+
+Aprendemos de:
+
+- errores;
+- feedback;
+- métricas;
+- experiencias.
+
+### Nunca...
+
+Pensaremos que un producto llegó a un estado perfecto.
+
+---
+
+# Modelo de calidad Project ZUZU
+
+La calidad puede representarse como un sistema:
+
+```
+                CALIDAD
+
+                    |
+        -------------------------
+        |           |           |
+
+   Producto    Ingeniería   Aprendizaje
+
+        |           |           |
+
+    Usuario     Sistema     Persona
+```
+
+Si una dimensión falla, la calidad completa disminuye.
+
+---
+
+# Checklist mental antes de considerar algo terminado
+
+Antes de decir:
+
+"Esto está listo."
+
+Preguntamos:
+
+## Problema
+
+¿Entendemos qué problema resolvemos?
+
+## Diseño
+
+¿Pensamos antes de construir?
+
+## Implementación
+
+¿La solución es mantenible?
+
+## Usuario
+
+¿Genera valor real?
+
+## Documentación
+
+¿Otra persona puede comprenderlo?
+
+## Aprendizaje
+
+¿Sabemos qué aprendimos?
+
+---
+
+# Conclusión
+
+La calidad no aparece al final del proceso.
+
+Es el resultado acumulado de miles de pequeñas decisiones correctas.
+
+Project ZUZU no busca simplemente construir más.
+
+Busca construir mejor.
+
+Porque en ingeniería, la velocidad sin calidad genera deuda.
+
+Pero la calidad con propósito genera evolución.
