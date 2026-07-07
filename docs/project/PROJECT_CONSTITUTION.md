@@ -1455,3 +1455,192 @@ Los mejores ingenieros no serán quienes compitan contra la IA.
 Serán quienes aprendan a pensar mejor junto a ella.
 
 Ese es el tipo de profesional que Project ZUZU aspira a formar.
+
+# Capítulo IX
+# La Transformación
+
+Project ZUZU no existe para transmitir información.
+
+Existe para provocar una transformación.
+
+La diferencia entre una persona que sabe utilizar una herramienta y una persona capaz de construir soluciones reales no está determinada únicamente por la cantidad de conocimientos técnicos que posee.
+
+Está determinada por su forma de pensar.
+
+Nuestro objetivo no es llenar la mente de una persona con conceptos.
+
+Nuestro objetivo es cambiar la manera en la que observa los problemas.
+
+---
+
+# El viaje del estudiante
+
+Toda persona que llega a Project ZUZU comienza desde un punto diferente.
+
+Algunas tendrán experiencia previa.
+
+Otras estarán comenzando desde cero.
+
+Algunas llegarán con confianza.
+
+Otras llegarán pensando que la programación no es para ellas.
+
+No importa el punto inicial.
+
+Lo importante es el camino.
+
+Project ZUZU existe para acompañar esa evolución.
+
+---
+
+# Antes de Project ZUZU
+
+Muchas personas llegan con una percepción equivocada de la ingeniería de software.
+
+Creen que programar consiste en memorizar sintaxis.
+
+Creen que los mejores ingenieros son aquellos que conocen más herramientas.
+
+Creen que la Inteligencia Artificial hará innecesario aprender.
+
+Creen que necesitan tener todas las respuestas antes de empezar.
+
+Estas creencias limitan su crecimiento.
+
+---
+
+# Después de Project ZUZU
+
+Queremos que una persona pueda mirar un problema complejo y pensar:
+
+"¿Cómo puedo entender esto?"
+
+En lugar de:
+
+"No sé hacerlo."
+
+Queremos que pueda preguntar:
+
+"¿Qué principios aplican aquí?"
+
+En lugar de:
+
+"¿Qué tutorial necesito buscar?"
+
+Queremos que pueda colaborar con Inteligencia Artificial pensando:
+
+"¿Cómo puedo utilizar esta herramienta para mejorar mi razonamiento?"
+
+En lugar de:
+
+"Que la IA lo haga por mí."
+
+---
+
+# La transformación que buscamos
+
+Project ZUZU busca transformar:
+
+## Consumidores de tecnología
+
+en
+
+## Constructores de tecnología.
+
+---
+
+## Personas que siguen instrucciones
+
+en
+
+## Personas capaces de diseñar soluciones.
+
+---
+
+## Usuarios de herramientas
+
+en
+
+## Ingenieros que entienden sistemas.
+
+---
+
+## Personas que temen los cambios tecnológicos
+
+en
+
+## Profesionales preparados para adaptarse a ellos.
+
+---
+
+# Nuestra definición de éxito
+
+El éxito de Project ZUZU no será medido únicamente por cursos completados.
+
+No será medido por horas vistas.
+
+No será medido por certificados entregados.
+
+Nuestro éxito será medido por la capacidad adquirida.
+
+Una persona habrá completado su transformación cuando sea capaz de:
+
+- enfrentar problemas desconocidos;
+- investigar de forma autónoma;
+- utilizar Inteligencia Artificial con criterio;
+- diseñar soluciones antes de implementarlas;
+- comprender sistemas complejos;
+- aprender nuevas tecnologías rápidamente;
+- tomar decisiones fundamentadas.
+
+---
+
+# El objetivo final
+
+La meta de Project ZUZU no es que una persona dependa de nosotros.
+
+Es exactamente lo contrario.
+
+El mejor resultado posible es que una persona llegue a un punto donde pueda continuar creciendo sin necesitar constantemente una guía.
+
+Porque enseñar realmente no consiste en entregar respuestas.
+
+Consiste en desarrollar la capacidad de encontrar respuestas.
+
+---
+
+# La emoción detrás del aprendizaje
+
+Creemos que aprender ingeniería debería generar curiosidad.
+
+No miedo.
+
+Debería generar entusiasmo.
+
+No frustración permanente.
+
+Debería hacer que una persona mire un problema difícil y piense:
+
+"Quiero entender cómo funciona."
+
+No:
+
+"Espero que alguien me diga la solución."
+
+La tecnología puede ser compleja.
+
+Pero aprender a comprenderla puede ser una de las experiencias más satisfactorias que existen.
+
+---
+
+# Nuestra promesa
+
+Project ZUZU no promete convertir a nadie en experto de la noche a la mañana.
+
+Promete algo más importante.
+
+Promete acompañar a una persona en el proceso de convertirse en alguien capaz de aprender, construir y evolucionar durante toda su carrera.
+
+Porque el futuro no pertenece a quienes conocen todas las respuestas.
+
+Pertenece a quienes saben encontrar nuevas respuestas.
