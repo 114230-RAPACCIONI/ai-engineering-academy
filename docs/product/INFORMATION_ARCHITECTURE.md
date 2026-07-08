@@ -1,372 +1,195 @@
----
+﻿---
 artifact:
   id: ART-047
   type: Information Architecture
   status: Draft
-  version: 1.0.0
+  version: 0.3.0
+  owner: Founder
+  reviewers:
+    - CTO
+  created: 2026-07-08
+  revised: 2026-07-08
+  initiative: INIT-001
+  tags:
+    - product
+    - information-architecture
+    - learning
+  supersedes: "0.1.0 Project-centric draft"
 ---
 
 # Information Architecture
 
-> "Everything revolves around the Project."
+> Ley vinculante: [PRODUCT_THESIS.md](../00-constitution/PRODUCT_THESIS.md)
+>
+> Learning es el producto. Los projects son el entorno de aprendizaje.
 
 ---
 
-# 1. Purpose
+## 1. Propósito
 
-Este documento define cómo se organiza toda la información dentro de Project ZUZU.
+Define cómo se organiza la información en Project ZUZU.
 
 No describe pantallas.
 
-Describe el modelo mental del producto.
-
-Toda la aplicación se construye alrededor de un único concepto:
-
-# Project
-
-Todo lo demás existe para enriquecerlo.
+Describe el **modelo mental del learner**.
 
 ---
 
-# 2. Core Entity
+## 2. Jerarquía central (Learning First)
 
 ```
-Workspace
-
-↓
-
-Projects
-
-↓
-
-Knowledge
-
-↓
-
-Everything Else
+Learner (User)
+  ?
+Learning Journey / Learning Path
+  ?
+Modules — Knowledge — Skills
+  ?
+Project (entorno de práctica)
+  ?
+Artifacts — conversaciones con el Mentor — evidencia de Progress
 ```
 
-El proyecto es la unidad principal de trabajo.
+**El sol del sistema es el learner y su journey.**
+
+Project no es un Product OS.
+
+Project es donde el learner **practica** ingeniería.
 
 ---
 
-# 3. Workspace Hierarchy
+## 3. Superficie de cuenta (MVP)
 
 ```
-Workspace
-
-├── Members
-
-├── Projects
-
-├── AI Settings
-
-├── Billing
-
-├── Integrations
-
-└── Knowledge Library
+Cuenta del learner
+├── Profile (objetivos, experiencia)
+├── Learning Path
+├── Acceso a Knowledge
+├── Projects (práctica)
+├── Mentor
+└── Progress
 ```
 
-Un Workspace representa una organización o un equipo.
+**Fuera del modelo informacional del MVP:**
+
+- Workspace organizacional
+- Billing
+- Members / admin de org
+- Releases, Metrics dashboards como superficies de producto
+- Árboles tipo IDE (Code / APIs / Database) como navegación de primer nivel
 
 ---
 
-# 4. Project Hierarchy
+## 4. Jerarquía del Learning Path
 
-Cada proyecto contiene:
+```
+Learning Path
+├── Goal
+├── Stages / Modules
+├── Concepts (Knowledge)
+├── Skills a desarrollar
+├── Practice Projects
+└── Checkpoints de Progress
+```
+
+---
+
+## 5. Project como entorno de práctica
+
+Cada project de aprendizaje contiene solo lo necesario para practicar y evidenciar capability:
 
 ```
 Project
-
-├── Overview
-
-├── AI Companion
-
-├── Conversations
-
-├── Tasks
-
-├── Architecture
-
+├── Goal (¿qué capability practico?)
+├── Requirements / planteo del problema
+├── Decisions (livianas)
 ├── Documentation
-
-├── Decisions (ADR)
-
-├── Knowledge
-
-├── Code
-
-├── APIs
-
-├── Database
-
-├── Roadmap
-
-├── Releases
-
-├── Metrics
-
-├── Files
-
-└── Settings
+├── Conversaciones con el Mentor (atadas a esta práctica)
+└── Progress / reflexión
 ```
 
-Este árbol no representa un menú rígido, sino las capacidades del proyecto.
+Si una superficie no responde a la regla de oro — *¿ayuda a pensar, diseñar y construir mejor con IA, independiente del stack?* — no entra en el árbol del MVP.
 
 ---
 
-# 5. Knowledge Graph
+## 6. Knowledge (no plataforma Knowledge Graph)
 
-La información no debe almacenarse de forma aislada.
+El MVP usa una **Knowledge Base curada**:
 
-Debe estar conectada.
+- conceptos;
+- explicaciones;
+- ejemplos;
+- relaciones simples entre conceptos.
 
-```
-Decision
-
-↓
-
-Architecture
-
-↓
-
-API
-
-↓
-
-Feature
-
-↓
-
-Task
-
-↓
-
-Conversation
-
-↓
-
-Code
-
-↓
-
-Documentation
-```
-
-Cada entidad referencia a las demás cuando existe una relación.
+Un “Knowledge Graph” industrial queda en `docs/99-future/` hasta que mida outcomes de learning.
 
 ---
 
-# 6. Context Layers
+## 7. Capas de contexto (para el Mentor)
 
-La IA trabaja con distintos niveles de contexto.
+| Capa | Contenido |
+|------|----------|
+| Learner | Objetivos, nivel, preferencias, progreso |
+| Path | Module actual, conceptos en foco |
+| Project | Goal de práctica, decisiones, artifacts |
+| Session | Conversación actual |
+| Task | Actividad de aprendizaje inmediata |
 
-## Global
-
-Información del Workspace.
-
----
-
-## Project
-
-Información específica del proyecto.
+La memoria sirve al **progreso del learner** y al project como práctica — no a un work OS de equipo.
 
 ---
 
-## Session
-
-Lo ocurrido durante la sesión actual.
-
----
-
-## User
-
-Preferencias personales.
-
----
-
-## Task
-
-Contexto inmediato de la actividad.
-
----
-
-# 7. Information Ownership
-
-Cada dato tiene un propietario claro.
+## 8. Ownership de información (MVP)
 
 | Entidad | Owner |
-|----------|-------|
-| Proyecto | Workspace |
-| Conversación | Proyecto |
-| ADR | Proyecto |
-| Código | Repositorio |
-| Tarea | Proyecto |
-| Documento | Proyecto |
-| Memoria IA | Proyecto |
+|---------|-------|
+| Progreso del Learning Path | Learner |
+| Artículos de Knowledge | Platform |
+| Project (práctica) | Learner |
+| Conversación con el Mentor | Learner (+ scope de project cuando está atada a práctica) |
+| Decisions / docs en el project | Learner |
+
+Ownership de team/workspace = Future.
 
 ---
 
-# 8. Navigation Philosophy
+## 9. Filosofía de navegación
 
-La navegación no se organiza por herramientas.
-
-Se organiza por intención.
-
-Ejemplo:
-
-No:
+Navegación por **intención de aprendizaje**, no por herramientas:
 
 ```
-Chat
-
-Editor
-
-Documentos
-
-```
-
-Sí:
-
-```
-Quiero entender
-
-↓
-
-Quiero planificar
-
-↓
-
-Quiero construir
-
-↓
-
-Quiero revisar
-
-↓
-
-Quiero entregar
+Quiero entender (Knowledge / Mentor)
+?
+Quiero practicar (Project)
+?
+Quiero revisar (Mentor / reflexión)
+?
+Quiero ver mi progreso (Progress)
 ```
 
 ---
 
-# 9. Search First
+## 10. Anti-patterns (rechazados)
 
-Todo debe poder encontrarse desde un único punto.
-
-La búsqueda debe incluir:
-
-- documentos;
-- conversaciones;
-- decisiones;
-- tareas;
-- APIs;
-- código;
-- conocimiento generado por IA.
+- Everything revolves around the Project
+- Árboles SaaS Workspace-first (Billing, Members, Releases)
+- Superficies Project OS (Code, APIs, Database, Metrics como raíces de nav)
+- Chatbot sin Path ni Practice
+- Duplicar el Domain Model con vocabulario `Course`
 
 ---
 
-# 10. AI Memory
+## 11. Criterios de éxito
 
-Cada proyecto posee una memoria viva.
+El learner nunca debería preguntarse: “¿Dónde está el work OS?”
 
-La IA conoce:
-
-- objetivos;
-- arquitectura;
-- convenciones;
-- historial;
-- decisiones;
-- tareas abiertas;
-- riesgos.
-
-La memoria no pertenece al usuario.
-
-Pertenece al proyecto.
+Debería preguntarse: “¿Qué estoy aprendiendo y qué practico a continuación?”
 
 ---
 
-# 11. Living Documentation
+## Relacionados
 
-Toda modificación importante actualiza automáticamente:
-
-- documentación;
-- decisiones;
-- conocimiento.
-
-La documentación deja de ser un módulo.
-
-Se convierte en una propiedad del sistema.
-
----
-
-# 12. Information Lifecycle
-
-Todo elemento atraviesa un ciclo.
-
-```
-Created
-
-↓
-
-Connected
-
-↓
-
-Used
-
-↓
-
-Updated
-
-↓
-
-Archived
-
-↓
-
-Deleted
-```
-
----
-
-# 13. Design Rules
-
-Nunca duplicar conocimiento.
-
-Siempre reutilizar contexto.
-
-Relacionar toda la información.
-
-Eliminar información huérfana.
-
-Mantener trazabilidad completa.
-
----
-
-# 14. Anti-Patterns
-
-❌ Documentación separada del proyecto.
-
-❌ Conversaciones sin contexto.
-
-❌ Código desconectado de decisiones.
-
-❌ Archivos aislados.
-
-❌ Información duplicada.
-
----
-
-# 15. Success Criteria
-
-El usuario nunca debería preguntarse:
-
-"¿Dónde estaba eso?"
-
-Debería preguntarse únicamente:
-
-"¿Qué quiero hacer?"
-
-Y ZUZU debería llevarlo automáticamente a la información correcta.
+- [PRODUCT_THESIS](../00-constitution/PRODUCT_THESIS.md)
+- [PRODUCT_VISION](./PRODUCT_VISION.md)
+- [USER_JOURNEY](./USER_JOURNEY.md)
+- [DOMAIN_MODEL](../architecture/DOMAIN_MODEL.md)
+- [MVP_SCOPE](./MVP_SCOPE.md)

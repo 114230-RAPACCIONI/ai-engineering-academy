@@ -1,4 +1,4 @@
----
+﻿---
 artifact:
   id: ART-029
   type: Database Architecture
@@ -18,7 +18,10 @@ artifact:
 
 # Database Architecture
 
-> "Data is not just stored information. It is the memory of the system."
+> Ley vinculante: [PRODUCT_THESIS.md](../00-constitution/PRODUCT_THESIS.md)
+>
+> Learning posee **LearningPaths / Modules / Progress** — no `Courses`.
+> Sin schema de Billing en el MVP. Alinear con [DOMAIN_MODEL.md](./DOMAIN_MODEL.md).
 
 ---
 
@@ -41,7 +44,7 @@ Los datos representan:
 
 ---
 
-# Core Principle
+# Principio central
 
 
 Data
@@ -227,7 +230,9 @@ Permissions
 Learning owns:
 
 
-Courses
+LearningPaths
+
+Modules
 
 Progress
 
@@ -416,8 +421,7 @@ Debe existir:
 
 ---
 
-# Anti Patterns
-
+# Anti-patterns
 ## Database As Integration Layer
 
 Usar tablas compartidas para comunicación.
@@ -442,8 +446,7 @@ Perder evolución.
 
 ---
 
-# Final Statement
-
+# Declaración final
 La base de datos de Project ZUZU no será solamente almacenamiento.
 
 Será la memoria estructurada del sistema, permitiendo aprendizaje, evolución e inteligencia.

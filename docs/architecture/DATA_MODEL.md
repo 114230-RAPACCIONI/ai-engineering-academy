@@ -1,4 +1,4 @@
----
+﻿---
 artifact:
   id: ART-014
   type: Data Model
@@ -17,7 +17,11 @@ artifact:
 
 # Data Model
 
-> "Data is the memory of the system."
+> Ley vinculante: [PRODUCT_THESIS.md](../00-constitution/PRODUCT_THESIS.md)
+>
+> Subordinado a [DOMAIN_MODEL.md](./DOMAIN_MODEL.md) (Canonical).
+> Project = entorno de práctica. Vocabulario: **LearningPath / Module — no Course**.
+> Los campos de Profile pueden vivir en User o Profile 1:1 — preferir simplicidad en el MVP.
 
 ---
 
@@ -667,8 +671,7 @@ Analytics
 
 ---
 
-# Final Statement
-
+# Declaración final
 El modelo de datos de Project ZUZU representa la memoria del sistema.
 
 No almacena solamente información.

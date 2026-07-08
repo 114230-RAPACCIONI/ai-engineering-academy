@@ -1,13 +1,14 @@
----
+﻿---
 artifact:
   id: ART-022
   type: AI Evaluation Framework
   status: Draft
-  version: 0.1.0
+  version: 0.2.0
   owner: CTO
   reviewers:
     - Founder
   created: 2026-07-07
+  revised: 2026-07-08
   initiative: INIT-001
   tags:
     - artificial-intelligence
@@ -16,444 +17,256 @@ artifact:
     - reliability
 ---
 
-# AI Evaluation Framework
+# Framework de evaluación de IA
 
-> "What cannot be measured cannot be improved."
-
----
-
-# Introduction
-
-Este documento define cómo Project ZUZU evalúa la calidad, confiabilidad y evolución de sus sistemas de inteligencia artificial.
-
-El objetivo es tratar la IA como un sistema de ingeniería medible.
+> Ley vinculante: [PRODUCT_THESIS.md](../00-constitution/PRODUCT_THESIS.md)
+>
+> Éxito primario: lift de **capability** del learner (pensar — diseñar — construir con IA), no solo satisfacción del chat ni accuracy cruda.
+> Mentorship quality > velocidad de codegen. Alinear con la Capability rubric del MVP.
 
 ---
 
-# Evaluation Philosophy
+## Introducción
 
-Una respuesta correcta no siempre significa una buena respuesta.
+Este documento define cómo Project ZUZU evalúa la calidad, confiabilidad y evolución de sus sistemas de inteligencia artificial — en particular el **Mentor**.
 
-La calidad de una IA depende de múltiples dimensiones:
-
-- precisión;
-- utilidad;
-- contexto;
-- seguridad;
-- experiencia.
+El objetivo es tratar la IA como un sistema de ingeniería medible al servicio del Learning.
 
 ---
 
-# Core Principle
+## Filosofía de evaluación
 
+Una respuesta “correcta” no siempre es una buena respuesta pedagógica.
 
-AI Output
+La calidad del Mentor depende de múltiples dimensiones; la métrica que manda es:
 
-Evaluation
+> ¿El learner queda más capaz de pensar, diseñar y construir?
 
-Feedback
-
-=
-
-AI Improvement
-
+Chat satisfaction, latencia y accuracy son secundarias.
 
 ---
 
-# Evaluation Objectives
+## Principio central
+
+```text
+Output del Mentor → Evaluation → Feedback → Mejora del Mentor
+```
+
+Sin golden set, sin rúbrica de Capability y sin regresión: no hay release.
+
+---
+
+## Objetivos del framework
 
 El framework busca responder:
 
-- ¿La IA ayuda realmente al usuario?
-- ¿La respuesta es correcta?
-- ¿Utiliza el contexto adecuado?
-- ¿Respeta límites?
-- ¿Está mejorando con el tiempo?
+- ¿El Mentor ayuda realmente a formar capability?
+- ¿La respuesta es correcta *y* pedagógica?
+- ¿Utiliza el contexto adecuado (Path — Practice — Knowledge — Progress)?
+- ¿Respeta límites de safety y ownership humano?
+- ¿Mejora con el tiempo sin romper lo que ya funciona?
 
 ---
 
-# Evaluation Dimensions
+## Dimensiones de evaluación
 
----
-
-# Accuracy
-
-## Question
+### Accuracy
 
 ¿La información entregada es correcta?
 
-Ejemplos:
-
-- conceptos técnicos;
-- recomendaciones;
-- explicaciones.
+Ejemplos: conceptos técnicos, recomendaciones, explicaciones.
 
 ---
 
-# Relevance
+### Relevance
 
-## Question
-
-¿La respuesta responde al objetivo real?
+¿La respuesta responde al objetivo real de aprendizaje o de diseño?
 
 Una respuesta correcta pero irrelevante es una mala respuesta.
 
 ---
 
-# Context Quality
+### Calidad de contexto
 
-## Question
+¿El Mentor utilizó el contexto correcto?
 
-¿La IA utilizó el contexto correcto?
-
-Evaluamos:
-
-- información utilizada;
-- información omitida;
-- información innecesaria.
+Evaluamos: información usada, omitida e innecesaria (ver CONTEXT_ENGINEERING).
 
 ---
 
-# Reasoning Quality
+### Calidad de razonamiento
 
-## Question
+¿El Mentor explica decisiones y trade-offs?
 
-¿La IA explica decisiones y trade-offs?
-
-Especialmente importante en ingeniería.
+Especialmente crítico en ingeniería: enseñar a pensar > entregar código.
 
 ---
 
-# Safety
+### Safety
 
-## Question
+¿La respuesta respeta reglas, límites y learning safety?
 
-¿La respuesta respeta reglas y límites?
-
----
-
-# User Value
-
-## Question
-
-¿La interacción mejora la capacidad del usuario?
-
-Esta dimensión es especialmente importante para ZUZU.
+Completar la tarea a costa de seguridad pedagógica o de riesgo inaceptable es fallo.
 
 ---
 
-# Evaluation Levels
+### Valor para el learner (User Value / Capability)
 
-La evaluación se realiza en diferentes niveles.
+¿La interacción mejora la capability del learner?
 
----
-
-# Level 1 — Model Evaluation
-
-Evalúa:
-
-- modelo utilizado;
-- capacidades;
-- limitaciones.
+Esta dimensión es la **primaria** para ZUZU.
 
 ---
 
-# Level 2 — Agent Evaluation
+### Mentorship quality
 
-Evalúa:
+¿Guía, pregunta y scaffolding — o solo codegen?
 
-- comportamiento del agente;
-- instrucciones;
-- herramientas.
+Mentor quality > codegen. Si acelera código y no forma criterio, falla la tesis.
 
 ---
 
-# Level 3 — Workflow Evaluation
+## Niveles de evaluación
 
-Evalúa:
+### Nivel 1 — Evaluación del model
 
-- procesos completos.
-
-Ejemplo:
-
-
-User Request
-
-↓
-
-Agent
-
-↓
-
-Recommendation
-
-↓
-
-User Outcome
-
+Modelo utilizado, capacidades y limitaciones.
 
 ---
 
-# Evaluation Methods
+### Nivel 2 — Evaluación del Mentor (agente)
+
+Comportamiento, prompt / instrucciones, tools permitidas, límites.
+
+En MVP: **un** Mentor — no flota multi-agent.
 
 ---
 
-# Automated Evaluation
+### Nivel 3 — Evaluación del workflow de aprendizaje
 
-Usa métricas automáticas.
+Procesos completos learner → Mentor → outcome de capability.
 
-Ejemplos:
-
-- validaciones;
-- reglas;
-- comparación de resultados.
-
----
-
-# Human Evaluation
-
-Los usuarios evalúan:
-
-- utilidad;
-- claridad;
-- confianza.
+```text
+Learner request
+      ?
+Mentor
+      ?
+Explicación / guía / revisión
+      ?
+Outcome del learner (capability)
+```
 
 ---
 
-# Expert Review
+## Métodos de evaluación
 
-Especialistas revisan:
+### Evaluación automatizada
 
-- arquitectura;
-- decisiones;
-- calidad técnica.
+Validaciones, reglas, comparación contra golden set / expected behavior.
 
 ---
 
-# Evaluation Dataset
+### Evaluación humana (learner)
 
-Los agentes deben evaluarse utilizando casos conocidos.
-
-Ejemplo:
-
-
-Input
-
-Expected Behavior
-
-Actual Result
-
-Score
-
+Utilidad pedagógica, claridad, confianza, sensación de progreso.
 
 ---
 
-# AI Test Cases
+### Expert review
 
-Cada agente debe tener escenarios de prueba.
-
-Ejemplo:
-
-
-Agent:
-
-Architecture Mentor
-
-Scenario:
-
-Design API architecture
-
-Expected:
-
-Explain trade-offs
-
+Especialistas revisan: arquitectura de la respuesta, trade-offs, calidad técnica y pedagógica.
 
 ---
 
-# Regression Testing
+## Dataset y casos de prueba
 
-Los cambios de IA deben validarse.
+El Mentor debe evaluarse con casos conocidos (golden set).
 
-Una mejora no debe romper capacidades existentes.
+```text
+Input → Expected Behavior → Actual Result → Score
+```
 
----
+Ejemplo de scenario:
 
-# Evaluation Pipeline
+| Campo | Valor |
+|-------|--------|
+| Agente | Mentor |
+| Scenario | Diseñar arquitectura de API en un Practice Project |
+| Expected | Explicar trade-offs; preguntar; no imponer stack; ownership del diseño en el learner |
 
-
-Change
-
-↓
-
-Test Cases
-
-↓
-
-Evaluation
-
-↓
-
-Analysis
-
-↓
-
-Approval
-
-↓
-
-Release
-
+Cada change relevante del Mentor debe pasar regression testing: una mejora no debe romper capabilities existentes.
 
 ---
 
-# Feedback Loop
+## Pipeline de evaluación
 
-La mejora continua funciona:
-
-
-User Interaction
-
-↓
-
-Feedback
-
-↓
-
-Analysis
-
-↓
-
-Improvement
-
-↓
-
-New Version
-
+```text
+Change → Test Cases / golden set → Evaluation → Analysis → Approval → Release
+```
 
 ---
 
-# Metrics
+## Feedback loop
 
-Ejemplos:
-
-## Success Rate
-
-Porcentaje de interacciones satisfactorias.
+```text
+Interacción del learner → Feedback → Analysis → Improvement → Nueva versión
+```
 
 ---
 
-## Correction Rate
+## Métricas
 
-Cuántas respuestas necesitan corrección.
+| Métrica | Rol |
+|---------|-----|
+| **Capability lift** (rúbrica pensar — diseñar — construir) | Primaria |
+| Mentorship quality score | Primaria / proxy |
+| Correction rate | Secundaria |
+| Success rate (interacciones útiles) | Secundaria |
+| User satisfaction | Secundaria |
+| Efficiency (costo / latencia) | Terciaria |
 
----
-
-## User Satisfaction
-
-Valoración del usuario.
-
----
-
-## Efficiency
-
-Costo y velocidad.
+No optimizar codegen speed ni activity metrics a costa de capability.
 
 ---
 
-# Agent Scorecard
+## Scorecard del Mentor
 
-Cada agente debe tener:
+Cada versión del Mentor debe tener scores explícitos:
 
-
-Quality Score
-
-Safety Score
-
-Context Score
-
-User Value Score
-
+- Quality Score
+- Safety Score
+- Context Score
+- Capability / User Value Score
+- Mentorship Score
 
 ---
 
-# Version Evaluation
+## Análisis de fallos
 
-Toda versión importante debe evaluarse.
+Cuando el Mentor falla, no solo corregimos la respuesta: analizamos la causa.
 
-Ejemplo:
-
-
-Architecture Agent v1.0
-
-Evaluation
-
-↓
-
-Architecture Agent v1.1
-
+Puede ser: mal contexto, prompt incorrecto, tool incorrecta, model insuficiente, o métrica alineada al producto equivocado (p. ej. maximizar codegen).
 
 ---
 
-# Failure Analysis
+## Anti-patrones
 
-Cuando la IA falla:
-
-No solamente corregimos la respuesta.
-
-Analizamos la causa.
-
-Puede ser:
-
-- mal contexto;
-- instrucciones incorrectas;
-- herramienta incorrecta;
-- modelo insuficiente.
+- **Sin evaluación** — “funciona porque parece bueno”.
+- **Solo benchmarking** — medir números sin capability.
+- **Ignorar al learner** — no usar feedback real de aprendizaje.
+- **Sin regression testing** — mejorar una cosa y romper otra.
+- **Optimizar codegen** — velocidad de generación > mentorship.
 
 ---
 
-# Anti Patterns
+## Evolución futura
 
-## No Evaluation
-
-"Funciona porque parece bueno."
+Evaluación automática avanzada, scorecards más ricos y observabilidad completa — solo después de que el Mentor MVP demuestre lift de capability. Capacidades multi-agent o autonomía no forman parte del MVP de evaluación activa.
 
 ---
 
-## Only Benchmarking
+## Declaración final
 
-Medir solamente números.
+Project ZUZU trata la inteligencia artificial como un sistema crítico al servicio del Learning:
 
----
-
-## Ignoring Users
-
-No utilizar feedback real.
-
----
-
-## No Regression Testing
-
-Mejorar una cosa y romper otra.
-
----
-
-# Future Evolution
-
-Permitirá:
-
-- evaluación automática avanzada;
-- agentes autoevaluables;
-- mejora continua;
-- observabilidad completa.
-
----
-
-# Final Statement
-
-Project ZUZU tratará la inteligencia artificial como cualquier sistema crítico:
-
-Debe medirse.
-
-Debe probarse.
-
-Debe evolucionar.
+Debe medirse. Debe probarse. Debe evolucionar — con **capability del learner** como métrica que manda.

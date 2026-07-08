@@ -1,301 +1,107 @@
----
+﻿---
 artifact:
   id: ART-043
   type: Cost Optimization Architecture
   status: Draft
-  version: 1.0.0
+  version: 0.2.0
   owner: CTO
   reviewers:
     - Founder
-    - Engineering Team
   created: 2026-07-08
+  revised: 2026-07-08
   initiative: INIT-001
   tags:
     - architecture
     - costs
-    - sustainability
     - ai
 ---
 
 # Cost Optimization Architecture
 
-> "A scalable platform must also be financially sustainable."
+> Ley vinculante: [PRODUCT_THESIS.md](../00-constitution/PRODUCT_THESIS.md)
+>
+> **Crítico para el MVP:** budgets de tokens del Mentor, model routing, quotas por learner.
+> **Future / des-enfatizar:** FinOps de equipo, chargeback multi-service, plataformas de auto-optimización.
+> Pendiente: ADR dedicado de AI cost budgets.
 
 ---
 
-# 1. Purpose
+## 1. Propósito
 
-Este documento define la estrategia para optimizar el costo operativo de Project ZUZU.
+Proteger el runway y la UX de aprendizaje.
 
-El objetivo es maximizar el valor entregado por cada recurso consumido, asegurando que el crecimiento del producto sea económicamente sostenible.
-
----
-
-# 2. Guiding Principles
-
-Toda decisión deberá equilibrar:
-
-- costo;
-- rendimiento;
-- confiabilidad;
-- mantenibilidad;
-- experiencia del usuario.
-
-Nunca optimizaremos únicamente por precio si eso compromete la calidad del producto.
+El costo dominante de ZUZU será la IA del Mentor — no Kubernetes ni multi-region.
 
 ---
 
-# 3. Cost Domains
+## 2. Principios guía
 
-La optimización se analiza en seis dominios:
-
-| Dominio | Objetivo |
-|----------|----------|
-| Compute | Reducir costo de procesamiento |
-| Storage | Optimizar almacenamiento |
-| Network | Minimizar transferencia innecesaria |
-| Database | Optimizar consultas y capacidad |
-| AI | Controlar consumo de modelos |
-| Observability | Mantener visibilidad sin exceso de datos |
+1. Medir tokens y costo por sesión / learner.  
+2. Preferir el modelo más barato que preserve calidad pedagógica.  
+3. El contexto tiene budget — no dump del project entero.  
+4. Cuotas por learner antes de “scale.”  
+5. FinOps enterprise espera al PMF.
 
 ---
 
-# 4. AI Cost Strategy
+## 3. Dominios de costo (prioridad)
 
-La IA representa uno de los principales costos variables de ZUZU.
-
-La arquitectura deberá permitir:
-
-- seleccionar el modelo adecuado para cada tarea;
-- reutilizar respuestas cuando sea posible;
-- limitar contexto innecesario;
-- cambiar de proveedor sin modificar la aplicación.
+| Prioridad | Dominio | Acción MVP |
+|-----------|---------|------------|
+| P0 | Tokens / calls del Mentor | Budgets, routing, logging de uso |
+| P1 | Storage de conversaciones / embeddings | Retention y límites |
+| P2 | Compute / hosting del monolith | Right-size aburrido |
+| Future | Network, Obs platform, FinOps team | Después de validar learning |
 
 ---
 
-## Modelo de Selección
+## 4. Estrategia de costo de IA
 
-No todas las tareas requieren el modelo más potente.
+- Routing por difficulty / tipo de tarea pedagógica (no siempre el modelo más caro).
+- Truncado y ranking de contexto (ver CONTEXT_ENGINEERING / MEMORY).
+- Límite de steps / tools del Mentor.
+- Alertas cuando un learner o el sistema se salen del budget.
 
-| Tipo de tarea | Modelo recomendado |
-|----------------|--------------------|
-| Clasificación simple | Modelo económico |
-| Resumen | Modelo intermedio |
-| Arquitectura compleja | Modelo avanzado |
-| Generación crítica | Mejor modelo disponible |
+Pendiente ADR: budgets concretos (por request, sesión, día, learner).
 
 ---
 
-# 5. Token Optimization
+## 5. Optimización de tokens
 
-Reducir el consumo de tokens mediante:
+Maximizar **calidad pedagógica por token**, no tokens totales.
 
-- prompts reutilizables;
-- contexto incremental;
-- eliminación de información redundante;
-- compresión de historial.
-
-Objetivo:
-
-> Maximizar la calidad por token consumido.
+Anti-patterns: reenviar historial completo; re-embeber sin necesidad; Mentor verboso sin pedagogía.
 
 ---
 
-# 6. Multi-Provider Strategy
+## 6. Multi-provider
 
-La plataforma debe soportar múltiples proveedores de IA.
+Alineado a ADR-001: abstracción de provider permite arbitrage de precio/calidad.
 
-Beneficios:
-
-- comparar costos;
-- evitar dependencia;
-- seleccionar el proveedor óptimo según la tarea.
+No es permiso para over-engineering de failover multi-region en el MVP.
 
 ---
 
-# 7. Infrastructure Optimization
+## 7. Infra / DB / storage / cache
 
-## MVP
+Solo lo necesario para el learning loop. Ver [INFRASTRUCTURE_ARCHITECTURE](./INFRASTRUCTURE_ARCHITECTURE.md).
 
-- una región;
-- instancias compartidas;
-- escalado manual.
+Growth / Enterprise de compute, DR y FinOps: `docs/90-archive/` o `docs/99-future/`.
 
 ---
 
-## Growth
+## 8. KPIs (MVP)
 
-- autoescalado;
-- recursos reservados;
-- optimización de contenedores.
-
----
-
-## Enterprise
-
-- escalado predictivo;
-- optimización por región;
-- balanceo global.
+- Costo de IA por learner activo  
+- Tokens p50/p95 por sesión Mentor  
+- % sesiones sobre budget  
+- Quality/capability vs costo (no optimizar costo destruyendo learning)
 
 ---
 
-# 8. Database Optimization
+## 9. Relacionados
 
-Estrategias:
-
-- índices eficientes;
-- consultas optimizadas;
-- archivado de datos históricos;
-- particionamiento cuando sea necesario.
-
-Evitar almacenamiento de información sin valor operativo.
-
----
-
-# 9. Storage Lifecycle
-
-Todo dato deberá tener un ciclo de vida definido.
-
-| Estado | Acción |
-|----------|--------|
-| Activo | Acceso frecuente |
-| Tibio | Bajo costo |
-| Archivo | Largo plazo |
-| Eliminado | Según políticas de retención |
-
----
-
-# 10. Cache Strategy
-
-Utilizar caché para reducir:
-
-- consultas repetidas;
-- llamadas a IA;
-- acceso a bases de datos;
-- procesamiento costoso.
-
-La caché nunca reemplaza la fuente de verdad.
-
----
-
-# 11. Observability Cost
-
-La observabilidad debe ser útil.
-
-No registrar:
-
-- logs duplicados;
-- métricas sin uso;
-- trazas innecesarias.
-
-Aplicar políticas de retención según el valor de la información.
-
----
-
-# 12. Capacity Planning
-
-Revisar periódicamente:
-
-- utilización de CPU;
-- memoria;
-- almacenamiento;
-- consumo de IA;
-- crecimiento de usuarios.
-
-Objetivo:
-
-Evitar sobreaprovisionamiento.
-
----
-
-# 13. FinOps Principles
-
-Project ZUZU adopta prácticas FinOps.
-
-Cada equipo será responsable de comprender el impacto económico de sus decisiones.
-
-Toda nueva funcionalidad deberá estimar:
-
-- costo de infraestructura;
-- costo de IA;
-- costo operativo mensual.
-
----
-
-# 14. Cost KPIs
-
-Medir:
-
-| Indicador | Objetivo |
-|------------|-----------|
-| Costo por usuario activo | Tendencia estable |
-| Costo por proyecto | Controlado |
-| Costo por interacción IA | Optimizado |
-| Costo por documento generado | Medible |
-| Margen bruto por cliente | Positivo |
-
----
-
-# 15. Alerts
-
-Generar alertas cuando:
-
-- consumo IA supere umbrales;
-- costos crezcan de forma inesperada;
-- un servicio exceda su presupuesto.
-
----
-
-# 16. Evolution Roadmap
-
-## MVP
-
-Visibilidad básica de costos.
-
----
-
-## Growth
-
-Dashboards por servicio.
-
----
-
-## Enterprise
-
-Optimización automática basada en métricas y demanda.
-
----
-
-# 17. Risks
-
-- dependencia de un único proveedor;
-- prompts ineficientes;
-- infraestructura sobredimensionada;
-- almacenamiento ilimitado;
-- crecimiento del costo más rápido que el ingreso.
-
----
-
-# 18. Success Criteria
-
-La estrategia será exitosa cuando:
-
-- el costo por usuario disminuya con el crecimiento;
-- el costo de IA sea predecible;
-- cada servicio tenga métricas financieras;
-- las decisiones técnicas consideren su impacto económico.
-
----
-
-# 19. Related Artifacts
-
-- ART-030 — Infrastructure Architecture
-- ART-034 — Observability Architecture
-- ART-041 — Scalability Architecture
-- ART-042 — Disaster Recovery Architecture
-
----
-
-# Final Statement
-
-La optimización de costos en Project ZUZU no busca minimizar el gasto, sino maximizar el valor generado por cada recurso consumido. Una arquitectura sostenible es aquella que puede crecer técnica y económicamente al mismo tiempo.
+- [PRODUCT_THESIS](../00-constitution/PRODUCT_THESIS.md)
+- [AI_ARCHITECTURE](../ai/AI_ARCHITECTURE.md)
+- [ADR-001](./adr/ADR-001-ai-provider-independence.md)
+- [ADR-006](./adr/ADR-006-simplicity-first.md)

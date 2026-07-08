@@ -1,13 +1,14 @@
----
+﻿---
 artifact:
   id: ART-018
   type: Context Engineering Strategy
   status: Draft
-  version: 0.1.0
+  version: 0.2.0
   owner: CTO
   reviewers:
     - Founder
   created: 2026-07-07
+  revised: 2026-07-08
   initiative: INIT-001
   tags:
     - artificial-intelligence
@@ -16,457 +17,271 @@ artifact:
     - rag
 ---
 
-# Context Engineering Strategy
+# Estrategia de context engineering
 
-> "The quality of AI depends on the quality of context."
-
----
-
-# Introduction
-
-Este documento define cómo Project ZUZU construye, administra y entrega contexto a los sistemas de inteligencia artificial.
-
-El objetivo es que los agentes puedan tomar mejores decisiones utilizando la información adecuada en el momento adecuado.
+> Ley vinculante: [PRODUCT_THESIS.md](../00-constitution/PRODUCT_THESIS.md)
+>
+> El contexto existe para que el **Mentor** ayude a los learners a **pensar, diseñar y construir** — no para que flotas de agentes “decidan” como un work OS.
+> Preferir slices de Path + Practice + Knowledge frente a volcar todo.
 
 ---
 
-# Context Engineering Philosophy
+## Introducción
 
-En ZUZU el contexto es considerado un recurso estratégico.
+Este documento define cómo Project ZUZU construye, administra y entrega contexto al Mentor (y, en el futuro, a otros agentes solo si la tesis lo exige).
+
+El objetivo: mejor mentoreo con la información adecuada en el momento adecuado.
+
+---
+
+## Filosofía
+
+En ZUZU el contexto es un recurso estratégico.
 
 No se trata de enviar más información.
 
-Se trata de enviar la información correcta.
+Se trata de enviar la información correcta para Learning.
 
 ---
 
-# Core Principle
+## Principio central
 
+```text
+Más contexto ≠ mejor contexto
+```
 
-More Context ≠ Better Context
-
-
-Un exceso de información puede reducir la calidad de una respuesta.
+El exceso de información puede reducir la calidad de la respuesta del Mentor.
 
 ---
 
-# Context Definition
+## Definición de contexto
 
 Dentro de ZUZU, contexto es:
 
-
-Información relevante
-
-Estado actual
-
-Objetivo
-
-Restricciones
-
-Historial necesario
-
+- información relevante al Learning Path y a la Practice;
+- estado actual (Progress);
+- objetivo del learner;
+- restricciones y ownership;
+- historial mínimo necesario.
 
 ---
 
-# Context Sources
+## Fuentes de contexto
 
 El contexto puede provenir de:
 
-
-User Profile
-
-Learning Progress
-
-Current Project
-
-Artifacts
-
-Knowledge Base
-
-Conversation History
-
-System Rules
-
+| Fuente | Uso |
+|--------|-----|
+| Perfil del learner | Identidad, nivel, preferencias |
+| Learning Progress | Qué ya se formó |
+| Practice Project actual | Diseño / construcción en curso |
+| Artifacts | Entregables de práctica |
+| Knowledge Base | Conceptos y principios |
+| Conversation History | Hilo reciente con el Mentor |
+| System Rules | Límites, safety, tesis |
 
 ---
 
-# Context Architecture
+## Arquitectura de contexto (conceptual)
 
-          User Request
-
-                |
-
-                |
-
-       Context Engineering Layer
-
-                |
-
-  ---------------------------------
-
-  |        |        |       |
-
-User Project Knowledge Memory
-
-                |
-
-                |
-
+```text
+          Learner request
+                 │
+      Context Engineering Layer
+                 │
+   ┌─────────────┼─────────────┐
+   │             │             │
+ Learner      Practice      Knowledge
+ Progress      Project       Base
+   │             │             │
+   └─────────────┼─────────────┘
+                 │
           Context Builder
+                 │
+              Mentor
+                 │
+               Model
+```
 
-                |
-
-                |
-
-              Agent
-
-                |
-
-                |
-
-              Model
+No es un multi-agent OS: es una capa que alimenta **un** Mentor en el MVP.
 
 ---
 
-# Context Engineering Layer
+## Capa de context engineering
 
-Responsabilidad:
-
-Construir el contexto necesario antes de ejecutar un agente.
-
----
-
-# Responsibilities
+Responsabilidad: construir el contexto necesario **antes** de ejecutar el Mentor.
 
 Debe:
 
-- identificar intención;
-- seleccionar información;
+- identificar intención (aprender / diseñar / construir / revisar);
+- seleccionar información (Path — Practice — Knowledge — Progress);
 - aplicar permisos;
 - ordenar prioridad;
 - reducir ruido.
 
 ---
 
-# Context Assembly Process
+## Proceso de ensamblado
 
-Proceso:
-
-
+```text
 Request
-
-↓
-
-Intent Analysis
-
-↓
-
-Context Retrieval
-
-↓
-
-Permission Validation
-
-↓
-
-Context Ranking
-
-↓
-
-Context Compression
-
-↓
-
-Agent Execution
-
+  → Intent analysis
+  → Context retrieval
+  → Permission validation
+  → Context ranking
+  → Context compression
+  → Mentor execution
+```
 
 ---
 
-# Context Categories
+## Categorías de contexto
 
-## Identity Context
+### Identity context
 
-Información sobre quién es el usuario.
-
-Ejemplos:
-
-- experiencia;
-- objetivos;
-- preferencias.
+Quién es el learner: experiencia, objetivos, preferencias.
 
 ---
 
-## Learning Context
+### Learning context
 
-Información educativa.
-
-Ejemplos:
-
-- progreso;
-- habilidades;
-- conceptos aprendidos.
+Progress, skills en formación, conceptos ya trabajados en el Path.
 
 ---
 
-## Project Context
+### Practice / Project context
 
-Información relacionada a construcción.
-
-Ejemplos:
-
-- requisitos;
-- arquitectura;
-- decisiones.
+Requisitos de práctica, arquitectura en construcción, decisiones de diseño.
 
 ---
 
-## Knowledge Context
+### Knowledge context
 
-Información técnica relevante.
-
-Ejemplos:
-
-- documentación;
-- principios;
-- ejemplos.
+Documentación, principios, ejemplos pedagógicos.
 
 ---
 
-## Conversation Context
+### Conversation context
 
-Información de interacción actual.
-
-Ejemplos:
-
-- preguntas;
-- decisiones recientes.
+Preguntas y decisiones recientes en el hilo con el Mentor.
 
 ---
 
-# Context Priority
+## Prioridad de contexto
 
-No toda información tiene el mismo valor.
+No toda información tiene el mismo valor. Orden inicial:
 
-Orden inicial:
-
-
-Current Goal
-
-↓
-
-Project Context
-
-↓
-
-User Context
-
-↓
-
+```text
+Current Goal (capability / práctica)
+      ?
+Practice Project context
+      ?
+Learning / Progress context
+      ?
 Relevant Knowledge
+      ?
+Historical context
+```
 
-↓
-
-Historical Context
-
+Evitar volcar el corpus completo o el historial entero.
 
 ---
 
-# Retrieval Strategy
-
-ZUZU utilizará recuperación de información para encontrar conocimiento relevante.
+## Estrategia de retrieval
 
 Conceptualmente:
 
-
-Question
-
-↓
-
-Search
-
-↓
-
-Relevant Knowledge
-
-↓
-
-Context
-
-↓
-
-Agent
-
+```text
+Question → Search → Relevant Knowledge → Context → Mentor
+```
 
 ---
 
-# RAG Strategy
+## Estrategia RAG
 
-Retrieval Augmented Generation permite combinar:
+Retrieval Augmented Generation combina:
 
+- conocimiento general del model;
+- Knowledge de ZUZU (Path, principios, práctica).
 
-General Model Knowledge
-
-ZUZU Knowledge
-
-
----
-
-# RAG Principles
-
-Debe:
-
-- recuperar información relevante;
-- mantener fuentes;
-- evitar información innecesaria.
+Principios: recuperar lo relevante; mantener fuentes; evitar ruido.
 
 ---
 
-# Memory Strategy
+## Estrategia de memoria
 
 La memoria debe ser selectiva.
 
----
+### Short-term memory
 
-# Short Term Memory
+Conversación actual y contexto temporal de la sesión.
 
-Contiene:
+### Long-term memory
 
-- conversación actual;
-- contexto temporal.
+Preferencias, evolución del learner, Practice Projects relevantes, aprendizajes (Capability / Progress).
 
----
+### Reglas
 
-# Long Term Memory
-
-Contiene:
-
-- preferencias;
-- evolución;
-- proyectos;
-- aprendizajes.
+Nunca guardar: información innecesaria; datos sensibles sin autorización; contexto irrelevante al Learning.
 
 ---
 
-# Memory Rules
+## Seguridad de contexto
 
-Nunca guardar:
+Todo contexto debe pasar validación:
 
-- información innecesaria;
-- datos sensibles sin autorización;
-- contexto irrelevante.
-
----
-
-# Context Security
-
-Todo contexto debe pasar por validación.
-
-Flujo:
-
-
-Data
-
-↓
-
-Permission Check
-
-↓
-
-Context Layer
-
-↓
-
-Agent
-
+```text
+Data → Permission check → Context Layer → Mentor
+```
 
 ---
 
-# Context Isolation
+## Aislamiento de contexto
 
-Los agentes no deben recibir información completa del sistema.
+El Mentor no debe recibir el sistema entero.
 
-Deben recibir solamente:
-
-
-Minimum Required Context
-
+Solo: **Minimum Required Context**.
 
 ---
 
-# Context Optimization
+## Optimización
 
-El sistema debe optimizar:
-
-- relevancia;
-- tamaño;
-- costo;
-- velocidad.
+Optimizar: relevancia, tamaño, costo, latencia — sin sacrificar pedagogía.
 
 ---
 
-# Context Evaluation
+## Evaluación de contexto
 
-Mediremos:
+| Dimensión | Pregunta |
+|-----------|----------|
+| Relevance | ¿La información era útil para mentorear? |
+| Accuracy | ¿El contexto era correcto? |
+| Efficiency | ¿Cuánto contexto fue realmente necesario? |
 
-## Relevance
-
-¿La información era útil?
-
----
-
-## Accuracy
-
-¿El contexto era correcto?
+Alinear con AI_EVALUATION_FRAMEWORK (capability primary).
 
 ---
 
-## Efficiency
+## Anti-patrones
 
-¿Cuánto contexto fue necesario?
-
----
-
-# Context Anti Patterns
-
-## Context Overflow
-
-Enviar demasiada información.
+- **Context overflow** — enviar demasiada información.
+- **Missing context** — omitir Path / Practice / Progress necesarios.
+- **Wrong context** — información incorrecta o de otro learner.
+- **Unsafe context** — exponer información privada.
+- **Work-OS dump** — contexto pensado para “decidir y entregar” en vez de formar.
 
 ---
 
-## Missing Context
+## Evolución futura
 
-No enviar información necesaria.
-
----
-
-## Wrong Context
-
-Enviar información incorrecta.
+Memoria avanzada, personalización más fina e integraciones — solo tras validar el Mentor con contexto Path + Practice + Knowledge. Flotas multi-agent: fuera del MVP (ver `docs/99-future/`).
 
 ---
 
-## Unsafe Context
+## Declaración final
 
-Exponer información privada.
+La estrategia de contexto define cómo Project ZUZU convierte información en mentoreo útil.
 
----
+La ventaja competitiva no será solo usar models avanzados.
 
-# Future Evolution
-
-Esta arquitectura permitirá:
-
-- memoria avanzada;
-- agentes personalizados;
-- aprendizaje adaptativo;
-- conocimiento empresarial.
-
----
-
-# Final Statement
-
-La estrategia de contexto define cómo Project ZUZU convierte información en inteligencia útil.
-
-La ventaja competitiva no será solamente utilizar modelos avanzados.
-
-Será saber construir el contexto correcto para cada situación.
+Será construir el contexto correcto — Path, Practice, Knowledge, Progress — para que el Mentor forme ingenieros capaces de pensar, diseñar y construir.

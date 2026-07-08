@@ -1,13 +1,14 @@
----
+﻿---
 artifact:
   id: ART-010
   type: System Context
   status: Draft
-  version: 0.1.0
+  version: 0.2.0
   owner: CTO
   reviewers:
     - Founder
   created: 2026-07-07
+  revised: 2026-07-08
   initiative: INIT-001
   tags:
     - architecture
@@ -15,13 +16,16 @@ artifact:
     - context
 ---
 
-# System Context
+# Contexto del sistema
 
-> "Before designing components, understand the system boundaries."
+> Ley vinculante: [PRODUCT_THESIS.md](../00-constitution/PRODUCT_THESIS.md)
+>
+> El sistema existe para formar ingenieros capaces de **pensar, diseñar y construir** con IA — independientemente del stack.
+> Actores: Learner — Mentor — Knowledge — Practice — Progress.
 
 ---
 
-# Introduction
+## Introducción
 
 Este documento define el contexto general de Project ZUZU.
 
@@ -34,248 +38,199 @@ Su objetivo es identificar:
 
 ---
 
-# System Overview
+## Visión general del sistema
 
-Project ZUZU es una plataforma AI-Native orientada a desarrollar capacidades de ingeniería moderna.
+Project ZUZU es una plataforma AI-Native orientada a desarrollar capabilities de ingeniería moderna.
 
-El sistema permite que usuarios aprendan, construyan proyectos y colaboren con inteligencia artificial.
+El sistema permite que learners aprendan en un Path, practiquen en Projects, preserven Knowledge y Progress, y colaboren con un Mentor de inteligencia artificial.
 
----
-
-# Context Diagram
-                ┌─────────────────┐
-                │     User        │
-                │  Student / Dev  │
-                └────────┬────────┘
-                         │
-                         │
-                         ▼
-             ┌────────────────────┐
-             │                    │
-             │    Project ZUZU    │
-             │                    │
-             └────────────────────┘
-                │        │       │
-                │        │       │
-                ▼        ▼       ▼
-
-          AI Providers  Storage  External Tools
-
+No es un delivery OS, un clon de IDE ni un codegen toy.
 
 ---
 
-# System Actors
+## Diagrama de contexto
 
-## User
-
-### Description
-
-Persona que utiliza ZUZU para aprender y construir.
-
----
-
-### Goals
-
-- mejorar habilidades;
-- aprender ingeniería;
-- construir proyectos;
-- trabajar con IA.
-
----
-
-### Interactions
-
-El usuario:
-
-- consume conocimiento;
-- conversa con agentes;
-- crea proyectos;
-- recibe feedback.
+```text
+                    ┌─────────────────┐
+                    │     Learner     │
+                    └────────┬────────┘
+                             │
+                             ▼
+                  ┌─────────────────────┐
+                  │    Project ZUZU     │
+                  │                     │
+                  │  Path — Practice    │
+                  │  Knowledge — Progress│
+                  │  Mentor             │
+                  └─────────┬───────────┘
+            ┌───────────────┼───────────────┐
+            ▼               ▼               ▼
+     AI Providers       Storage      External Tools
+```
 
 ---
 
-# AI Providers
+## Actores del sistema
 
-## Description
+### Learner
 
-Servicios externos que proporcionan modelos de inteligencia artificial.
+Persona que utiliza ZUZU para formarse y practicar.
 
----
+**Objetivos:** mejorar capability (pensar — diseñar — construir); aprender ingeniería; completar Practice; colaborar con el Mentor.
 
-## Responsibilities
-
-- procesamiento de lenguaje;
-- generación;
-- análisis;
-- asistencia.
+**Interacciones:** consume Knowledge; habla con el Mentor; trabaja en Practice Projects; ve Progress.
 
 ---
 
-## Examples
+### Mentor
 
-- modelos comerciales;
-- modelos open source;
-- proveedores futuros.
+Agente de IA (uno en el MVP) que mentorea: explica, pregunta, guía y revisa — sin reemplazar el ownership del learner.
 
----
-
-# Storage Systems
-
-## Description
-
-Sistemas responsables de almacenar información.
+**Objetivos:** elevar capability; respetar learning safety; usar contexto Path + Practice + Knowledge + Progress.
 
 ---
 
-## Responsibilities
+### Knowledge
 
-Guardar:
+Cuerpo de conceptos, principios y materiales educativos que el Path y el Mentor utilizan.
 
-- usuarios;
-- progreso;
-- proyectos;
-- conocimiento;
-- conversaciones.
+No es un dump de tickets de entrega: es curriculum y referencia pedagógica.
 
 ---
 
-# External Development Tools
+### Practice (Practice Projects)
 
-## Description
+Entorno donde el learner diseña y construye para aprender.
 
-Herramientas utilizadas por usuarios para construir.
-
----
-
-## Examples
-
-- repositorios;
-- editores;
-- plataformas cloud.
+Los Projects son el medio de práctica — no el producto (el producto es Learning).
 
 ---
 
-# System Boundary
+### Progress
 
-## Inside ZUZU
-
-Responsabilidades propias:
-
-- experiencia de aprendizaje;
-- gestión de usuarios;
-- conocimiento;
-- agentes;
-- proyectos;
-- progreso.
+Registro del crecimiento del learner: posición en el Path, evidencia de capability, continuidad entre sesiones.
 
 ---
 
-## Outside ZUZU
+## Proveedores de IA (externos)
 
-Responsabilidades externas:
+Servicios externos que proporcionan models.
 
-- ejecución de modelos IA;
-- infraestructura externa;
-- herramientas de desarrollo.
+**Responsabilidades:** procesamiento de lenguaje; generación; análisis; asistencia al Mentor.
 
----
+**Ejemplos:** modelos comerciales; open source; proveedores futuros.
 
-# Core System Responsibilities
-
-ZUZU debe encargarse de:
-
-## Learning Management
-
-Gestionar caminos de aprendizaje.
+El sistema no debe acoplarse a un único proveedor (ver ADR-001).
 
 ---
 
-## Knowledge Management
+## Sistemas de almacenamiento
 
-Organizar conocimiento.
+Sistemas responsables de persistir:
 
----
-
-## AI Orchestration
-
-Coordinar interacción con agentes.
-
----
-
-## Project Management
-
-Gestionar proyectos educativos.
+- learners;
+- Progress;
+- Practice Projects / artifacts;
+- Knowledge;
+- conversaciones con el Mentor (según política).
 
 ---
 
-## User Evolution
+## Herramientas externas de desarrollo
 
-Registrar crecimiento.
+Herramientas que el learner puede usar fuera o junto a ZUZU: repositorios, editores, plataformas cloud.
 
----
-
-# Initial System View
-
-La visión inicial del sistema:
-             User
-
-              |
-              |
-
-          ZUZU Platform
-
-    ┌─────────┼─────────┐
-
-    |         |         |
-    Learning AI Layer Projects
-    |         |         |
-    Knowledge Models Documentation
+ZUZU no necesita ser el IDE.
 
 ---
 
-# Architectural Principles
+## Límite del sistema
 
-El diseño del sistema debe respetar:
+### Dentro de ZUZU
 
-## Separation of Concerns
-
-Cada responsabilidad debe estar claramente separada.
-
----
-
-## Replaceable AI Providers
-
-El sistema no debe depender de un único modelo.
+- experiencia de Learning (Path);
+- gestión del learner;
+- Knowledge;
+- Mentor (orquestación mínima);
+- Practice Projects educativos;
+- Progress.
 
 ---
 
-## Data Ownership
+### Fuera de ZUZU
 
-El usuario debe conservar control sobre su información.
+- ejecución de models de IA;
+- infraestructura cloud genérica del proveedor;
+- herramientas de desarrollo del usuario (IDE, CI externos, etc.).
 
 ---
 
-## Evolution Over Optimization
+## Responsabilidades centrales
 
-Primero diseñamos para cambiar.
+| Capacidad | Responsabilidad |
+|-----------|-----------------|
+| Learning Path | Gestionar caminos de aprendizaje |
+| Knowledge | Organizar y servir conocimiento |
+| Mentor | Mentoreo con un agente (MVP) |
+| Practice | Gestionar Practice Projects pedagógicos |
+| Progress | Registrar y mostrar crecimiento de capability |
+
+En MVP, “AI Orchestration” = invocar y contextualizar **un** Mentor — no una plataforma multi-agent.
+
+---
+
+## Vista inicial del sistema
+
+```text
+              Learner
+                 │
+           ZUZU Platform
+    ┌────────────┼────────────┐
+    │            │            │
+ Learning      Mentor      Practice
+   Path                     Projects
+    │            │            │
+ Knowledge    Models      Progress
+```
+
+---
+
+## Principios arquitectónicos
+
+### Separación de responsabilidades
+
+Cada preocupación (Path, Knowledge, Mentor, Practice, Progress) debe estar claramente separada.
+
+---
+
+### Proveedores de IA reemplazables
+
+El sistema no debe depender de un único model o vendor.
+
+---
+
+### Ownership de datos
+
+El learner debe conservar control sobre su información.
+
+---
+
+### Evolución antes que optimización prematura
+
+Primero diseñamos para cambiar y para validar Learning.
 
 Después optimizamos.
 
 ---
 
-# Future Considerations
+## Consideraciones futuras
 
-El sistema deberá permitir:
-
-- múltiples agentes;
-- memoria contextual;
-- integración con herramientas externas;
-- colaboración entre usuarios.
+Capacidades como múltiples agentes, memoria avanzada, integración profunda con tools externas o colaboración multi-usuario viven en `docs/99-future/` hasta que el Mentor MVP demuestre lift de capability.
 
 ---
 
-# Final Statement
+## Declaración final
 
 El System Context define los límites iniciales de Project ZUZU.
 
-Antes de construir componentes internos, entendemos qué existe alrededor del sistema y qué responsabilidad pertenece realmente al producto.
+Antes de construir componentes internos, entendemos qué existe alrededor del sistema y qué responsabilidad pertenece realmente al producto: **formar ingenieros** — Learner, Mentor, Knowledge, Practice, Progress — no operar un work OS.

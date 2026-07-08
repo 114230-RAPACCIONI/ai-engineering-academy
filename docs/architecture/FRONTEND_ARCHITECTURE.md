@@ -1,4 +1,4 @@
----
+﻿---
 artifact:
   id: ART-028
   type: Frontend Architecture
@@ -17,6 +17,12 @@ artifact:
 ---
 
 # Frontend Architecture
+
+> Ley vinculante: [PRODUCT_THESIS.md](../00-constitution/PRODUCT_THESIS.md)
+>
+> El frontend expone el **learning loop**: Path — Knowledge — Mentor — Practice — Progress.
+> No es un cascarón de work OS. La elección de stack es un ADR — nunca identidad del curriculum.
+
 
 > "The interface is where users experience the intelligence of the system."
 
@@ -43,7 +49,7 @@ Es el espacio donde:
 
 ---
 
-# Core Principle
+# Principio central
 
 
 User Experience
@@ -431,8 +437,7 @@ Frontend Ecosystem
 
 ---
 
-# Anti Patterns
-
+# Anti-patterns
 ## Giant Components
 
 Componentes con demasiada responsabilidad.
@@ -457,6 +462,5 @@ Sin capa de comunicación.
 
 ---
 
-# Final Statement
-
+# Declaración final
 El frontend de Project ZUZU debe convertirse en una interfaz inteligente donde humanos y sistemas de IA colaboren para aprender y construir.

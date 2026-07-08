@@ -3,14 +3,35 @@
 ## document:
 
   id: CONST-001
-  name: Project Constitution
-  version: 0.1.0
+  name: Project Constitution (Company Narrative)
+  version: 0.1.1
   status: Draft
   owner: Founder & CTO
-  source_of_truth: true
+  source_of_truth: false
   created: 2026-07-07
+  revised: 2026-07-08
 
 # Constitución de Project ZUZU
+
+> **AUTORIDAD — 2026-07-08 (recuperación de coherencia)**
+>
+> Este archivo es **narrativa de compañía/marca**, no ley del repositorio.
+>
+> Si algo aquí conflictúa con la Product Thesis, **gana la Tesis**:
+>
+> - [`docs/00-constitution/PRODUCT_THESIS.md`](../00-constitution/PRODUCT_THESIS.md)
+> - [`docs/00-constitution/REPO_CONSTITUTION.md`](../00-constitution/REPO_CONSTITUTION.md)
+> - [ADR-007 — Learning First](../architecture/adr/ADR-007-product-identity-learning-first.md)
+>
+> **No negociable:** Learning es el producto. Los projects son el entorno de aprendizaje.
+> La IA es el Mentor. Engineering es la práctica. ZUZU no es Cursor, ChatGPT, un IDE,
+> una herramienta de PM, un cascarón de LMS, un clon de bootcamp ni un producto de codegen.
+>
+> Un rewrite completo de esta narrativa larga queda diferido. Hasta entonces: úsala para cultura;
+> usa la Tesis para decisiones de producto/ingeniería.
+> Prosa de trabajo del repo: **español** (términos técnicos en inglés cuando corresponda).
+
+---
 
 > "Más vale perder un minuto en la vida que perder la vida en un minuto."
 

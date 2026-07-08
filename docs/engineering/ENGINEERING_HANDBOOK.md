@@ -2,309 +2,150 @@
 artifact:
   id: ART-000
   type: Engineering Handbook
-  status: Draft
-  version: 0.1.0
+  status: Canonical
+  version: 0.3.0
   owner: CTO
   reviewers:
     - Founder
   created: 2026-07-07
+  revised: 2026-07-08
   initiative: INIT-001
   tags:
     - engineering
     - culture
-    - principles
     - governance
+    - learning
+  absorbs:
+    - ART-039 Engineering Governance Architecture
 ---
 
 # Engineering Handbook
 
-> "Great products are built by great systems of thinking."
+> Ley vinculante: [PRODUCT_THESIS.md](../00-constitution/PRODUCT_THESIS.md) — [REPO_CONSTITUTION.md](../00-constitution/REPO_CONSTITUTION.md)
+>
+> No estamos construyendo un work OS para nosotros en los docs.
+> Toda elección de ingeniería debe servir a: **learners que piensan, diseñan y construyen con IA**.
+>
+> Prosa en español; términos del oficio (MVP, ADR, Mentor, stack…) en inglés cuando corresponda.
 
 ---
 
-# Purpose
+## 1. Por qué ingeniería
 
-Este documento define los principios, prácticas y estándares que guían la construcción de Project ZUZU.
+El producto de ZUZU es **Learning**.
 
-No define tecnologías específicas.
+La ingeniería existe para shippear el learning loop:
 
-Define cómo pensamos.
+`Path → Knowledge → Mentor → Practice Project → Progress (evidencia)`
 
----
-
-# Engineering Philosophy
-
-Project ZUZU se construye bajo una idea central:
-
-> La ingeniería de software es un proceso de resolución de problemas, no solamente producción de código.
+Si una propuesta técnica no hace ese loop mejor, más barato, más seguro o más claro — espera.
 
 ---
 
-# Engineering Principles
+## 2. Regla de oro (edición ingeniería)
+
+Antes de construir:
+
+> ¿Esto ayuda al learner a pensar, diseñar y construir mejor — con IA — independientemente del stack?
+
+Antes de infra compleja:
+
+> ¿Esto nos ayuda a validar esa hipótesis más rápido?
+
+Si no está claro → lo más simple (ADR-006).
 
 ---
 
-# 1. Los principios son más importantes que las herramientas.
+## 3. Orden de autoridad
 
-Las herramientas cambian.
+1. Product Thesis  
+2. Repo Constitution  
+3. ADRs aceptados (`docs/architecture/adr/`)  
+4. Docs canónicos de producto (Vision, Journey, Domain, MVP, Security)  
+5. Este Handbook  
+6. Todo lo demás  
 
-Los principios permanecen.
+Archive / Future nunca son requisitos.
 
-Un ingeniero debe comprender:
-
-- por qué existe una solución;
-- qué problema resuelve;
-- cuáles son sus trade-offs.
-
----
-
-# 2. Diseñar antes de construir.
-
-Antes de escribir código debemos entender:
-
-- problema;
-- contexto;
-- restricciones;
-- solución propuesta.
-
-Código sin diseño genera complejidad.
+Los ensayos archivados de Platform/Application no mandan. Preferir [SYSTEM_ARCHITECTURE](../architecture/SYSTEM_ARCHITECTURE.md).
 
 ---
 
-# 3. La documentación es parte del producto.
+## 4. Principios de ingeniería
 
-La documentación no es una tarea secundaria.
-
-Es conocimiento acumulado.
-
-Todo sistema debe poder ser comprendido por personas y agentes.
-
----
-
-# 4. Los artefactos son ciudadanos de primera clase.
-
-Los documentos de diseño tienen valor propio.
-
-Un artefacto:
-
-- explica decisiones;
-- conserva contexto;
-- permite evolución.
+1. **Principios over tools** — juicio duradero.  
+2. **Diseñar antes de codear** — problema, constraints, opciones, luego implementar.  
+3. **Documentación = memoria de producto** — corta, coherente, alineada a la Tesis — no teatro de volumen.  
+4. **Simplicity first** — modular monolith; no gateway/events/K8s por moda.  
+5. **IA = Mentor** — capa de abstracción (ADR-001); un Mentor en el MVP (ADR-004, ADR-007).  
+6. **Medir impacto de aprendizaje** — no solo vanity metrics de shipping.  
+7. **Secure by default** — ownership del learner; AI safety = learning safety ([SECURITY](../security/SECURITY.md)).
 
 ---
 
-# 5. Todo cambio debe ser trazable.
+## 5. Proceso de decisión (equipo chico)
 
-Toda modificación importante debe responder:
+| Impacto | Ejemplos | Quién |
+|--------|----------|-----|
+| Local | Refactor de clase, test | Engineer |
+| Módulo | Nuevo endpoint en Learning | Engineer + nota rápida a un peer |
+| Arquitectura | Nuevo patrón de persistencia, boundary de módulo | CTO + ADR si es estructural |
+| Identidad / tesis | “¿Project debe ser el sol?” | Founder + CTO + **ADR** (nunca silencioso) |
 
-- qué cambió;
-- por qué cambió;
-- quién decidió;
-- qué impacto tiene.
+**Reglas**
 
----
-
-# 6. La IA es un colaborador, no un reemplazo.
-
-La IA aumenta capacidades humanas.
-
-No elimina:
-
-- pensamiento crítico;
-- responsabilidad;
-- criterio.
+- Cambio estructural → ADR antes del merge.  
+- No Architecture Board / ceremonia enterprise pre-PMF.  
+- Citar la regla de oro en PRs que agregan superficie de producto.
 
 ---
 
-# 7. Automatizar lo repetitivo.
+## 6. Definition of Done (barra MVP)
 
-El tiempo humano debe utilizarse para:
+Un cambio está done cuando:
 
-- crear;
-- analizar;
-- decidir.
-
-Lo repetitivo debe automatizarse.
-
----
-
-# 8. Simplicidad antes que sofisticación.
-
-La solución más compleja no siempre es la mejor.
-
-Preferimos:
-
-- claridad;
-- mantenibilidad;
-- evolución.
+1. Avanza una capability Canonical del MVP (o infra explícitamente necesaria para ella).  
+2. No contradice Tesis / ADRs.  
+3. Se actualizan docs si cambió comportamiento o contrato.  
+4. Tests o fixtures de eval del Mentor actualizados cuando el comportamiento es visible al usuario.  
+5. Ningún contenido Archive/Future se trata como “tenemos que construirlo”.
 
 ---
 
-# 9. Pensar en sistemas.
+## 7. Deuda técnica
 
-Cada decisión afecta:
+Ver [TECHNICAL_DEBT_MANAGEMENT](./TECHNICAL_DEBT_MANAGEMENT.md).
 
-- producto;
-- usuarios;
-- arquitectura;
-- negocio.
+**La deuda documental cuenta.** Contradecir la Tesis es deuda P0.
 
-No diseñamos componentes aislados.
-
-Diseñamos sistemas.
+Reservar capacidad para deuda; no inventar plataformas FinOps para sentir madurez.
 
 ---
 
-# 10. Aprender continuamente.
+## 8. Stack y adopción de tecnología
 
-Todo sistema debe mejorar.
+No colar elecciones de stack en ensayos de scalability.
 
-Todo error debe generar aprendizaje.
+- Nuevo language/framework/DB/queue/hosting → **ADR**.  
+- Preguntar: ¿sirve al learning loop? ¿Lo podemos operar con un equipo chico?  
 
----
-
-# Decision Framework
-
-Antes de tomar una decisión técnica preguntamos:
-
-
-¿Qué problema resuelve?
-
-¿Qué alternativas existen?
-
-¿Qué trade-offs tiene?
-
-¿Puede evolucionar?
-
-¿Es simple?
-
+ADRs pendientes: Auth — Stack — Mentor runtime — AI cost budgets — Retention.
 
 ---
 
-# Documentation Standards
+## 9. Anti-patterns (rechazar)
 
-Todo conocimiento importante debe existir como artefacto.
-
-Ejemplos:
-
-- decisiones;
-- arquitectura;
-- requisitos;
-- procesos.
+- Implementar desde `docs/90-archive/` o `docs/99-future/`  
+- Multi-agent / Project OS / superficies de Billing “por las dudas”  
+- Nuevo `*_ARCHITECTURE.md` sin necesidad de producto  
+- Cosplay de governance enterprise (boards, multi-region) antes de que los learners aprendan  
+- Optimizar el workflow del founder en vez de la capability del learner  
 
 ---
 
-# AI Collaboration Rules
+## 10. Relacionados
 
-Cuando trabajamos con IA:
-
-La IA debe:
-
-- entender contexto;
-- respetar principios;
-- explicar decisiones;
-- pedir información cuando falta.
-
----
-
-# Git Workflow
-
-Todo cambio sigue:
-
-
-Branch
-
-↓
-
-Change
-
-↓
-
-Commit
-
-↓
-
-Pull Request
-
-↓
-
-Review
-
-↓
-
-Merge
-
-
----
-
-# Branch Naming
-
-Formato:
-
-
-type/name
-
-
-Ejemplos:
-
-
-artifact/security-model-art-013
-
-feature/user-authentication
-
-fix/login-validation
-
-
----
-
-# Commit Convention
-
-Formato:
-
-
-type(scope): description
-
-
-Ejemplos:
-
-
-docs(ai): define agent model
-
-feat(auth): add login flow
-
-
----
-
-# Pull Request Philosophy
-
-Un PR debe explicar:
-
-- qué cambió;
-- por qué;
-- impacto.
-
----
-
-# Engineering Culture
-
-Buscamos ingenieros que:
-
-- comprendan problemas;
-- cuestionen decisiones;
-- documenten conocimiento;
-- aprendan constantemente.
-
----
-
-# Final Statement
-
-Project ZUZU no se construye solamente con código.
-
-Se construye con:
-
-- pensamiento;
-- diseño;
-- colaboración;
-- aprendizaje.
-
-Este handbook representa la forma en que construimos.
+- [MVP_SCOPE](../product/MVP_SCOPE.md)  
+- [Índice ADR](../architecture/ADR.md)  
+- [DOCUMENTATION_ARCHITECTURE](../knowledge/DOCUMENTATION_ARCHITECTURE.md)  
+- Historia de governance: [archive](../90-archive/engineering/ENGINEERING_GOVERNANCE_ARCHITECTURE.md)

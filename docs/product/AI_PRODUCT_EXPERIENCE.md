@@ -1,388 +1,197 @@
----
+﻿---
 artifact:
   id: ART-023
   type: AI Product Experience
   status: Draft
-  version: 0.1.0
+  version: 0.3.0
   owner: CTO
   reviewers:
     - Founder
   created: 2026-07-07
+  revised: 2026-07-08
   initiative: INIT-001
   tags:
     - artificial-intelligence
     - ux
     - product
-    - experience
+    - learning
 ---
 
 # AI Product Experience
 
-> "The best AI experience is not replacing the user. It is amplifying the user."
+> Ley vinculante: [PRODUCT_THESIS.md](../00-constitution/PRODUCT_THESIS.md)
+>
+> MVP = un Mentor. Sin modes. Sin agent swarms.
+> Éxito = ganancia de capability del learner, no velocidad de respuesta.
 
 ---
 
-# Introduction
+## Introducción
 
-Este documento define cómo los usuarios interactúan con la inteligencia artificial dentro de Project ZUZU.
+Define cómo los learners interactúan con la IA en ZUZU.
 
-La IA debe sentirse como un compañero de ingeniería, no como una herramienta externa.
+La IA es el **Mentor**.
 
----
-
-# Experience Philosophy
-
-La experiencia de ZUZU se basa en colaboración.
-
-El usuario no delega completamente su pensamiento.
-
-El usuario aprende, decide y construye junto a la IA.
+No es un copiloto de productividad ni un agent de Product OS.
 
 ---
 
-# Core Principle
+## Filosofía de experiencia
 
+Colaboración pedagógica.
 
-Human Intent
+El learner no delega su pensamiento.
 
-AI Capability
-
-Engineering Process
-
-=
-
-Better Outcomes
-
+Aprende, decide y practica junto al Mentor.
 
 ---
 
-# The ZUZU Experience Model
+## Principio central
 
-La experiencia principal:
+```
+Intención del learner
++ guía del Mentor
++ práctica de engineering
+= mejor ingeniero
+```
 
+---
 
+## Learning loop (con Mentor)
+
+```
 Understand
+?
+Practice (Project)
+?
+Decide
+?
+Reflect
+?
+Improve capability
+```
 
-↓
+El Mentor acompaña el loop.
 
-Design
-
-↓
-
-Build
-
-↓
-
-Review
-
-↓
-
-Improve
-
-
-La IA acompaña cada etapa.
+No lo reemplaza.
 
 ---
 
-# AI Interaction Modes
+## MVP: un Mentor
 
-La IA puede aparecer en diferentes modos.
+En el MVP existe **un único agent de producto: el Mentor**.
 
----
-
-# Mentor Mode
-
-Objetivo:
-
-Enseñar.
-
-La IA ayuda a comprender.
-
-Ejemplos:
+El Mentor puede:
 
 - explicar conceptos;
-- crear ejemplos;
-- adaptar dificultad.
+- adaptar dificultad;
+- preguntar antes de asumir;
+- enseñar antes de responder;
+- desafiar decisiones débiles;
+- revisar practice work con criterio pedagógico;
+- orientar próximos pasos en el Learning Path.
+
+El Mentor **no** es:
+
+- un builder autónomo;
+- un swarm de agents especializados;
+- un “mode” por etapa de delivery de producto.
 
 ---
 
-# Architect Mode
+## Comportamientos pedagógicos (no modes de producto)
 
-Objetivo:
+Las siguientes son **comportamientos del mismo Mentor**, no superficies separadas:
 
-Pensar sistemas.
+| Comportamiento | Meta pedagógica |
+|-----------|------------------|
+| Explain | Comprensión |
+| Challenge | Criterio |
+| Scaffold design | Pensamiento de sistemas |
+| Review practice | Calidad + aprendizaje |
+| Coach next step | Continuidad en el Path |
 
-La IA ayuda a:
-
-- analizar requisitos;
-- evaluar decisiones;
-- explicar trade-offs.
-
----
-
-# Builder Mode
-
-Objetivo:
-
-Acompañar construcción.
-
-La IA ayuda a:
-
-- generar código;
-- proponer estructuras;
-- automatizar tareas.
+Implementar “especialistas” solo si la regla de oro lo exige y el Mentor único ya validó retención.
 
 ---
 
-# Reviewer Mode
+## Presencia de la IA
 
-Objetivo:
+**Useful Presence > Constant Presence**
 
-Mejorar calidad.
+### Cuándo debe aparecer el Mentor
 
-La IA analiza:
+- bloqueo de aprendizaje;
+- concepto nuevo;
+- decisión con trade-offs;
+- reflexión post-práctica;
+- riesgo de dependencia (el Mentor empuja al learner a decidir).
 
-- código;
-- documentación;
-- arquitectura.
-
----
-
-# Coach Mode
-
-Objetivo:
-
-Acompañar evolución.
-
-La IA ayuda con:
-
-- objetivos;
-- progreso;
-- próximos pasos.
-
----
-
-# AI Presence
-
-La IA no debe aparecer siempre.
-
-Principio:
-
-
-Useful Presence > Constant Presence
-
-
----
-
-# When AI Should Appear
-
-La IA debe intervenir cuando:
-
-- existe complejidad;
-- existe bloqueo;
-- existe oportunidad de aprendizaje;
-- existe necesidad de revisión.
-
----
-
-# When AI Should Not Appear
-
-La IA no debe:
+### Cuándo no debe aparecer
 
 - interrumpir constantemente;
-- reemplazar descubrimiento;
-- eliminar práctica;
-- generar dependencia.
+- reemplazar el descubrimiento;
+- eliminar la práctica;
+- entregar código listo para copiar sin pedagogía.
 
 ---
 
-# User Journey With AI
+## Anti-dependencia
 
-## Starting Point
-
-Usuario entra con:
-
-- conocimientos previos;
-- objetivos;
-- experiencia.
-
-La IA ayuda a construir un camino personalizado.
+| Malo | Bueno |
+|-----|------|
+| “Create app” → aquí está el código | Requirements → opciones → trade-offs → practice → review |
+| El usuario copia | El usuario explica y decide |
 
 ---
 
-## Learning Phase
+## Personalización (MVP liviano)
 
-La IA:
+Basada en: experiencia declarada, objetivo, module actual, progreso.
 
-- explica;
-- pregunta;
-- desafía.
-
-No solamente entrega respuestas.
+No requiere plataforma multi-agent.
 
 ---
 
-## Building Phase
+## Transparencia y confianza
 
-La IA:
+El learner debe ver: qué hace el Mentor, por qué sugiere, qué no sabe.
 
-- ayuda a diseñar;
-- revisa decisiones;
-- acompaña implementación.
+Explanation — Consistency — Control — Feedback.
 
 ---
 
-## Reflection Phase
+## Vínculo con evaluación
 
-La IA ayuda a analizar:
-
-- qué se aprendió;
-- qué mejorar;
-- próximos desafíos.
+La experiencia se evalúa por **learning outcomes** (ver AI Evaluation Framework), no solo por satisfacción del chat.
 
 ---
 
-# Collaboration Pattern
+## Non-goals explícitos (MVP)
 
-Modelo:
+- Fleets multi-agent Product / Architecture / QA / Security
+- Builder Mode como superficie de producto
+- Workflows de ingeniería autónomos
+- Agents creados por usuarios
 
-
-Human
-
-↓
-
-Intent
-
-↓
-
-AI Assistance
-
-↓
-
-Human Decision
-
-↓
-
-Execution
-
-↓
-
-Feedback
-
+Eso vive en `docs/99-future/` si se revisita.
 
 ---
 
-# Avoiding AI Dependency
+## Relacionados
 
-ZUZU debe evitar que el usuario solamente copie resultados.
-
----
-
-# Anti Dependency Principles
-
-La IA debe:
-
-- explicar;
-- enseñar;
-- cuestionar;
-- justificar.
+- [PRODUCT_THESIS](../00-constitution/PRODUCT_THESIS.md)
+- [PRODUCT_EXPERIENCE_VISION](./PRODUCT_EXPERIENCE_VISION.md)
+- [MVP_SCOPE](./MVP_SCOPE.md)
+- [AI_ARCHITECTURE](../ai/AI_ARCHITECTURE.md)
+- [AI_GOVERNANCE_MODEL](../ai/AI_GOVERNANCE_MODEL.md)
 
 ---
 
-# Bad Experience
+## Declaración final
 
+ZUZU no usa IA para crear dependencia.
 
-User:
+Usa IA para crear ingenieros más capaces.
 
-Create application
-
-AI:
-
-Here is the code.
-
-User:
-
-Copies.
-
-
----
-
-# Good Experience
-
-
-User:
-
-Create application
-
-AI:
-
-Let's define requirements.
-
-Let's design architecture.
-
-Let's evaluate options.
-
-Let's implement.
-
-Let's review.
-
-
----
-
-# Personalization
-
-Cada usuario debe experimentar una IA diferente.
-
-Basado en:
-
-- experiencia;
-- objetivos;
-- progreso;
-- estilo de aprendizaje.
-
----
-
-# Transparency
-
-El usuario debe comprender:
-
-- qué hace la IA;
-- por qué recomienda algo;
-- qué limitaciones tiene.
-
----
-
-# Trust Model
-
-La confianza se construye con:
-
-
-Explanation
-
-Consistency
-
-Control
-
-Feedback
-
-
----
-
-# Future Evolution
-
-Permitirá:
-
-- copilotos personales;
-- equipos de agentes;
-- experiencias adaptativas;
-- aprendizaje continuo.
-
----
-
-# Final Statement
-
-Project ZUZU no utiliza IA para hacer usuarios más dependientes.
-
-Utiliza IA para crear usuarios más capaces.
-
-La mejor experiencia de IA es aquella que aumenta la capacidad humana.
+Un Mentor bien diseñado vence a cinco modes mal justificados.

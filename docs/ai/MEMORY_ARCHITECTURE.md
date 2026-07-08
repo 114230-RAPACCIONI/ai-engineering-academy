@@ -3,393 +3,103 @@ artifact:
   id: ART-019
   type: Memory Architecture
   status: Draft
-  version: 0.1.0
+  version: 0.3.0
   owner: CTO
   reviewers:
     - Founder
   created: 2026-07-07
+  revised: 2026-07-08
   initiative: INIT-001
   tags:
     - artificial-intelligence
     - memory
-    - agents
-    - architecture
+    - learning
 ---
 
 # Memory Architecture
 
-> "A system that remembers everything understands nothing."
+> Ley vinculante: [PRODUCT_THESIS.md](../00-constitution/PRODUCT_THESIS.md)
+>
+> La memoria sirve al **progreso del learner** y al **project como práctica**.
+> No crea un plano de memoria de Project OS de equipo.
+> Useful memory > complete memory.
 
 ---
 
-# Introduction
+## Propósito
 
-Este documento define cómo Project ZUZU gestiona memoria dentro de sus sistemas de inteligencia artificial.
-
-El objetivo es permitir que los agentes puedan mantener continuidad, aprendizaje y contexto sin comprometer seguridad ni calidad.
+Definir qué puede recordar el Mentor, por qué, y con qué ownership — para que el aprendizaje continúe sin envenenar el contexto ni filtrar datos entre learners.
 
 ---
 
-# Memory Philosophy
+## Precedencia (escritura / lectura)
 
-La memoria no consiste en almacenar todo.
+1. **Stores canónicos** — entidades en DB (progreso del Path, artefactos del Practice Project, profile)  
+2. **Índices derivados** — embeddings / RAG sobre Knowledge + docs de práctica accesibles al learner  
+3. **Sesión episódica** — working set de la conversación actual  
+4. **Inferencias durables del Mentor** — solo con provenance, confidence, scope, TTL  
 
-La memoria consiste en conservar información valiosa para futuras decisiones.
-
----
-
-# Core Principle
-
-
-Useful Memory > Complete Memory
-
+Si hay conflicto, gana lo canónico. Las memories nunca pisan en silencio hechos del Path o del Project.
 
 ---
 
-# Why Memory Matters
+## Scopes de memoria
 
-Sin memoria:
-
-
-Usuario
-
-↓
-
-Pregunta
-
-↓
-
-Respuesta
-
-↓
-
-Fin
-
+| Scope | Posee | MVP |
+|-------|------|-----|
+| **Learner** | Objetivos, nivel, preferencias, señales de estilo, resúmenes de progreso del Path | Sí |
+| **Practice Project** | Goal, decisiones, preguntas abiertas, punteros a artefactos de esa práctica | Sí |
+| **Session** | Working set del turno / thread actual | Sí |
+| **Knowledge (platform)** | Conceptos curados vía RAG — no una “Knowledge Memory” rival | Sí (lectura) |
+| **Workspace / Org / Team** | Memoria compartida de org | **No — Future** |
+| **Stores opacos privados del agent** | Diarios de agent no auditables | **No** |
 
 ---
 
-Con memoria:
+## Principios
 
-
-Usuario
-
-↓
-
-Historial
-
-↓
-
-Contexto
-
-↓
-
-Evolución
-
-↓
-
-Mejor colaboración
-
+1. Preferir enlazar artefactos canónicos a copiar prosa en “memories”.  
+2. Toda inferencia durable: `source` — `confidence` — `scope` — `ttl` — `created_by`.  
+3. Olvidar / invalidar cuando cambia el module del Path o el goal de Practice.  
+4. Nunca mezclar embeddings o memories del Learner A en el contexto del Learner B.  
+5. Enseñar mal con memory stale = incidente de calidad **y** de safety.
 
 ---
 
-# Memory Architecture Overview
+## Ensamblado del Mentor (MVP)
 
-ZUZU utilizará diferentes tipos de memoria.
+```
+System + spec del Mentor
++ slice de perfil del learner
++ module / conceptos actuales del Path
++ slice del Practice Project activo (si hay)
++ turnos de sesión (con budget)
++ snippets de Knowledge recuperados (con cita)
+```
 
-                MEMORY SYSTEM
-
-
-    --------------------------------
-
-    |              |               |
-
-Short Term Long Term Project Memory
-
-    |              |               |
-
-Conversation User Profile Artifacts
-
-    --------------------------------
-
-                |
-
-          Context Engine
-
-                |
-
-              Agent
+El budget de tokens/contexto lo posee el runtime del Mentor (ADR pendiente). Tirar el project entero al contexto es un anti-pattern.
 
 ---
 
-# Memory Types
+## Non-goals explícitos (MVP)
+
+- Transcripción infinita del chat como memoria  
+- Memoria de IA compartida entre learners / orgs  
+- “Cerebro vivo de Project OS” que se auto-actualiza  
+- Memoria que bypasea artefactos visibles para el humano  
 
 ---
 
-# Short Term Memory
+## Relacionados
 
-## Purpose
-
-Mantener información durante una interacción activa.
-
----
-
-## Contains
-
-- conversación actual;
-- preguntas recientes;
-- decisiones temporales.
+- [CONTEXT_ENGINEERING](./CONTEXT_ENGINEERING.md)
+- [AI_ARCHITECTURE](./AI_ARCHITECTURE.md)
+- [AGENT_MODEL](./AGENT_MODEL.md)
+- [INFORMATION_ARCHITECTURE](../product/INFORMATION_ARCHITECTURE.md)
+- [SECURITY](../security/SECURITY.md)
 
 ---
 
-## Lifecycle
+## Nota sobre el draft anterior
 
-
-Created
-
-↓
-
-Used
-
-↓
-
-Expired
-
-
----
-
-# Long Term Memory
-
-## Purpose
-
-Guardar información relevante sobre el usuario.
-
----
-
-## Examples
-
-- objetivos;
-- preferencias;
-- conocimientos adquiridos;
-- estilo de aprendizaje.
-
----
-
-## Example
-
-```text
-User prefers:
-
-Detailed explanations
-
-Learning by building projects
-
-Architecture first approach
-Project Memory
-Purpose
-
-Mantener contexto específico de construcción.
-
-Contains
-requisitos;
-decisiones;
-arquitectura;
-problemas resueltos.
-Example
-Project:
-
-AI Engineering Academy
-
-
-Architecture Decision:
-
-Use Modular Monolith
-Knowledge Memory
-Purpose
-
-Mantener conocimiento estructurado.
-
-Contains
-conceptos;
-documentación;
-referencias;
-ejemplos.
-Agent Memory
-Purpose
-
-Permitir evolución del comportamiento del agente.
-
-Contains
-aprendizajes operativos;
-evaluaciones;
-mejoras.
-Memory Flow
-Interaction
-
-↓
-
-Memory Evaluation
-
-↓
-
-Storage Decision
-
-↓
-
-Memory Layer
-
-↓
-
-Future Context
-Memory Decision Process
-
-Antes de guardar información:
-
-El sistema debe evaluar:
-
-Is it useful?
-
-Is it stable?
-
-Is it allowed?
-
-Is it relevant?
-Memory Classification
-
-Toda información puede clasificarse como:
-
-Temporary
-
-Información de corto plazo.
-
-Ejemplo:
-
-"Estoy trabajando ahora en este archivo."
-
-Persistent
-
-Información útil a futuro.
-
-Ejemplo:
-
-"El usuario prefiere entender arquitectura antes de código."
-
-Disposable
-
-Información sin valor futuro.
-
-Ejemplo:
-
-"Hoy preguntó algo puntual."
-
-Memory Security
-
-La memoria debe respetar:
-
-privacidad;
-permisos;
-control del usuario.
-User Control
-
-El usuario debe poder:
-
-conocer qué recuerda el sistema;
-modificar información;
-eliminar memoria.
-Memory Isolation
-
-Los diferentes contextos deben estar separados.
-
-Ejemplo:
-
-User Memory
-
-≠
-
-Project Memory
-
-≠
-
-Organization Memory
-Memory Quality
-
-Una memoria incorrecta puede ser peor que no tener memoria.
-
-Por eso debe evaluarse:
-
-Accuracy
-
-¿La información sigue siendo correcta?
-
-Relevance
-
-¿Sigue siendo útil?
-
-Freshness
-
-¿Está actualizada?
-
-Memory Lifecycle
-Created
-
-↓
-
-Validated
-
-↓
-
-Stored
-
-↓
-
-Retrieved
-
-↓
-
-Updated
-
-↓
-
-Archived
-Future Memory Capabilities
-
-La arquitectura permitirá:
-
-memoria semántica;
-memoria basada en embeddings;
-aprendizaje personalizado;
-memoria compartida empresarial.
-Anti Patterns
-Remember Everything
-
-Guardar absolutamente todo.
-
-Problema:
-
-Ruido y costos.
-
-Hidden Memory
-
-Recordar información sin transparencia.
-
-Problema:
-
-Falta de confianza.
-
-Permanent Memory
-
-Información que nunca cambia.
-
-Problema:
-
-Datos obsoletos.
-
-Final Statement
-
-La memoria convierte una interacción aislada en una relación continua.
-
-Project ZUZU no busca crear una IA que recuerde todo.
-
-Busca crear una IA que recuerde lo importante.
-
-
----
+El catálogo largo de “tipos de memoria” superpuestos queda reemplazado por la tabla de scopes. El detalle de implementación pertenece al ADR de Mentor runtime + schema — no a mitologías paralelas.

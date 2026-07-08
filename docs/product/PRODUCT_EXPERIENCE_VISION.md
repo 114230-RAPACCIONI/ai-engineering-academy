@@ -1,310 +1,210 @@
----
+﻿---
 artifact:
   id: ART-044
   type: Product Experience Vision
   status: Draft
-  version: 1.0.0
+  version: 0.3.0
   owner: Founder
   reviewers:
     - CTO
-    - Product Team
   created: 2026-07-08
+  revised: 2026-07-08
   initiative: INIT-001
   tags:
     - product
     - experience
     - vision
     - ux
+    - learning
 ---
 
 # Product Experience Vision
 
-> "Project ZUZU is not software that uses AI.
+> Ley vinculante: [PRODUCT_THESIS.md](../00-constitution/PRODUCT_THESIS.md)
 >
-> It is an AI companion that helps people build software."
+> Project ZUZU no es un AI companion que construye software por las personas.
+> Es un entorno de aprendizaje donde las personas se vuelven mejores ingenieros con un Mentor de IA.
 
 ---
 
-# 1. Purpose
+## 1. Propósito
 
-Este documento define la experiencia que Project ZUZU quiere generar en cada persona que utiliza la plataforma.
+Define la experiencia que ZUZU debe generar.
 
-No describe funcionalidades.
+No describe features.
 
-Describe emociones, percepciones y principios que guiarán todas las decisiones de producto.
-
----
-
-# 2. The Promise
-
-Cuando alguien termina una sesión utilizando ZUZU debería pensar:
-
-> "Hoy pude avanzar más de lo que hubiera podido hacer solo."
-
-Si el usuario siente únicamente que "usó una herramienta", hemos fallado.
+Describe cómo se siente **aprender ingeniería** con un Mentor de IA.
 
 ---
 
-# 3. Product Identity
+## 2. La promesa
 
-ZUZU no quiere comportarse como:
+Cuando alguien termina una sesión debería pensar:
+
+> "Hoy soy un poco mejor ingeniero que ayer — y entiendo por qué."
+
+Si solo siente que “avanzó un ticket” u “obtuvo código más rápido”, fallamos la tesis.
+
+---
+
+## 3. Identidad de producto
+
+ZUZU no se comporta como:
 
 - un editor de código;
 - un gestor de tareas;
-- un chatbot;
-- un buscador de documentación.
+- un chatbot genérico;
+- un LMS de videos;
+- un Product OS / workbench.
 
-ZUZU quiere convertirse en un entorno de trabajo inteligente donde todas esas capacidades conviven de forma natural.
+ZUZU se comporta como:
 
----
-
-# 4. Experience Principles
-
-## Clarity over Complexity
-
-La plataforma debe reducir complejidad, nunca aumentarla.
-
-El usuario no debería preguntarse:
-
-> "¿Dónde está esta opción?"
-
-Sino:
-
-> "¿Qué quiero lograr?"
+**un entorno de aprendizaje** donde el learner entiende, practica, decide y reflexiona — con un Mentor de IA.
 
 ---
 
-## Conversation before Configuration
+## 4. Principios de experiencia
 
-Siempre que sea posible, el usuario debería expresar una intención antes que completar formularios.
+### Learning over Throughput
 
-Ejemplo:
+La velocidad de entrega no es el KPI primario.
 
-"No quiero crear un proyecto."
+La capability del learner sí lo es.
 
-Quiero decir:
+### Clarity over Complexity
 
-> "Necesito una API para gestionar inventario."
+Reducir complejidad cognitiva del aprendizaje — no del work management.
 
----
+### Mentor before Automation
 
-## Progress over Perfection
+La IA enseña, pregunta y desafía antes de hacer el trabajo por el usuario.
 
-El sistema debe ayudar al usuario a avanzar rápidamente.
+### Progress over Perfection
 
-Una primera solución imperfecta es mejor que una página en blanco.
+Avanzar en el Learning Path importa más que pulir un árbol de features.
 
----
+### Confidence over Blind Trust
 
-## Confidence over Automation
+Explicaciones, incertidumbre honesta, control humano en las decisiones.
 
-La IA puede sugerir.
+### Context over Commands
 
-El usuario siempre mantiene el control sobre las decisiones importantes.
-
----
-
-## Context over Commands
-
-Cada interacción debe considerar el contexto existente:
-
-- proyecto;
-- arquitectura;
-- documentación;
-- decisiones previas.
-
-El usuario no debería repetir información innecesariamente.
+El Mentor usa Path + Project-as-practice + progreso — el learner no reinventa su contexto cada sesión.
 
 ---
 
-# 5. Emotional Goals
+## 5. Metas emocionales
 
-Queremos que el usuario sienta:
+Queremos: confianza, claridad, curiosidad, control, progreso de capability.
 
-- confianza;
-- claridad;
-- curiosidad;
-- control;
-- progreso.
-
-Queremos evitar:
-
-- frustración;
-- incertidumbre;
-- saturación;
-- miedo a equivocarse.
+Evitamos: dependencia de IA, saturación de tools, miedo a equivocarse, “productividad” vacía.
 
 ---
 
-# 6. Product Personality
+## 6. Personalidad del producto (Mentor)
 
-Si ZUZU fuera una persona sería:
+Paciente, técnica, organizada, honesta, proactiva, humilde.
 
-- paciente;
-- técnica;
-- organizada;
-- honesta;
-- proactiva;
-- humilde.
-
-Nunca sería:
-
-- arrogante;
-- invasiva;
-- impredecible;
-- excesivamente optimista.
+Nunca arrogante, invasiva, impredecible, ni excesivamente optimista.
 
 ---
 
-# 7. The Ideal Session
+## 7. La sesión ideal
 
-```text
-Tengo una idea
-
-↓
-
-La comparto
-
-↓
-
-ZUZU la entiende
-
-↓
-
-Organizamos el problema
-
-↓
-
-Exploramos alternativas
-
-↓
-
-Tomamos decisiones
-
-↓
-
-Construimos
-
-↓
-
-Aprendemos
-
-↓
-
-Documentamos automáticamente
+```
+Objetivo de aprendizaje
+?
+Entender el concepto / problema
+?
+Practicar en un Project
+?
+El Mentor pregunta, explica, desafía
+?
+El learner decide
+?
+Reflexión: ¿qué capability gané?
 ```
 
-Al finalizar, el usuario siente que el proyecto avanzó y que comprende mejor el problema.
+Al finalizar: el Path avanzó **y** el learner puede explicar qué aprendió.
 
 ---
 
-# 8. Friction Budget
+## 8. Friction budget
 
-Cada paso adicional consume atención.
+Cada paso consume atención.
 
-Antes de agregar una nueva pantalla o configuración debemos preguntarnos:
+Antes de agregar pantalla o config:
 
-- ¿Es realmente necesaria?
-- ¿Puede inferirse automáticamente?
-- ¿Puede resolverse mediante conversación?
+1. ¿Hace al learner mejor ingeniero (pensar — diseñar — construir)?
+2. ¿Puede esperar al post-MVP?
+3. ¿Es ritual de work OS disfrazado de pedagogía?
 
----
-
-# 9. Trust Model
-
-La confianza se construye mediante:
-
-- transparencia;
-- explicaciones;
-- referencias al contexto;
-- trazabilidad de las decisiones.
-
-Nunca mediante respuestas que aparenten certeza cuando no la hay.
+La fricción productiva (pedir requirements antes de código) es **método de enseñanza**, no bloqueo ceremonial.
 
 ---
 
-# 10. Human + AI Collaboration
+## 9. Modelo de confianza
 
-La IA no reemplaza al desarrollador.
+Transparencia — explicaciones — referencias a Path/Project — trazabilidad de consejos.
 
-El desarrollador aporta:
-
-- intención;
-- criterio;
-- experiencia;
-- decisión final.
-
-La IA aporta:
-
-- velocidad;
-- contexto;
-- exploración;
-- automatización.
+Nunca certeza fingida.
 
 ---
 
-# 11. Success Metrics
+## 10. Colaboración humano + IA
 
-Más allá de métricas tradicionales, mediremos:
+El learner aporta intención, criterio y decisión final.
 
-- tiempo hasta el primer avance significativo;
-- frecuencia de reutilización del contexto;
-- porcentaje de tareas completadas con ayuda de IA;
-- satisfacción del usuario;
-- percepción de productividad.
+El Mentor aporta explicación, exploración, feedback y desafío pedagógico.
+
+La IA **no** reemplaza al ingeniero en formación.
 
 ---
 
-# 12. Anti-Patterns
+## 11. Métricas de éxito (experiencia)
 
-No queremos construir:
-
-## Un ChatGPT con pestañas
-
-La conversación por sí sola no es un producto.
-
----
-
-## Un IDE con IA pegada
-
-La inteligencia artificial no debe sentirse como un complemento.
-
-Debe formar parte de la experiencia principal.
+- Tiempo hasta primera evidencia de aprendizaje (no solo “primer click”)
+- Retorno al Path
+- Uso del Mentor como colaborador (no como codegen)
+- Capability demostrable en Practice Projects (rúbrica)
+- Percepción de “soy mejor en X” (auto + evidencia)
 
 ---
 
-## Un gestor de tareas complejo
+## 12. Anti-patterns
 
-El usuario busca avanzar, no administrar herramientas.
-
----
-
-## Automatización sin explicación
-
-Cada acción importante debe poder entenderse y revisarse.
-
----
-
-# 13. Design Question
-
-Antes de implementar cualquier funcionalidad, el equipo deberá responder:
-
-> ¿Esta funcionalidad mejora realmente la experiencia prometida por ZUZU?
-
-Si la respuesta es "no", probablemente no deba desarrollarse.
+| Rechazado | Por qué |
+|----------|-----|
+| ChatGPT con tabs | Chat sin Path ni practice |
+| IDE con IA pegada | No somos editor |
+| Nav de gestor de tareas / Releases / Billing | Drift work OS |
+| Companion que “construye el producto por ti” | Viola la tesis |
+| Automatización sin explicación | Destruye learning |
 
 ---
 
-# 14. Related Artifacts
+## 13. Pregunta de diseño
 
-- ART-002 — Product Vision
-- ART-025 — Platform Architecture
-- ART-038 — Developer Experience Architecture
+> ¿Esta feature hace al learner un mejor ingeniero — pensar, diseñar y construir con IA, independiente del stack?
+
+Si no es claramente **sí**, no va al MVP.
 
 ---
 
-# Final Statement
+## Relacionados
 
-Project ZUZU aspira a convertirse en el lugar donde las personas transforman ideas en software con la ayuda de inteligencia artificial.
+- [PRODUCT_THESIS](../00-constitution/PRODUCT_THESIS.md)
+- [PRODUCT_VISION](./PRODUCT_VISION.md)
+- [USER_JOURNEY](./USER_JOURNEY.md)
+- [AI_PRODUCT_EXPERIENCE](./AI_PRODUCT_EXPERIENCE.md)
+- [MVP_SCOPE](./MVP_SCOPE.md)
 
-El éxito no se medirá por la cantidad de funcionalidades, sino por la confianza, claridad y capacidad de progreso que experimenten sus usuarios.
+---
+
+## Declaración final
+
+ZUZU aspira a ser el lugar donde las personas **aprenden a pensar y construir como ingenieros** con ayuda de inteligencia artificial.
+
+El éxito no se mide por features ni por throughput de código.
+
+Se mide por capability.

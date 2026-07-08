@@ -1,32 +1,33 @@
----
+﻿---
 artifact:
   id: ART-045
   type: User Mental Model
   status: Draft
-  version: 1.0.0
+  version: 0.3.0
   owner: Founder
   reviewers:
-    - Product Team
-    - UX Team
     - CTO
   created: 2026-07-08
+  revised: 2026-07-08
   initiative: INIT-001
   tags:
     - product
     - ux
     - cognition
-    - ai
+    - learning
 ---
 
-# User Mental Model
+# Modelo mental del usuario
 
-> "The best interface is the one that matches how people already think."
+> Ley vinculante: [PRODUCT_THESIS.md](../00-constitution/PRODUCT_THESIS.md)
+>
+> Modelo primario: cómo piensa un **learner** mientras se convierte en mejor ingeniero — no el operador de un delivery OS.
 
 ---
 
-# 1. Purpose
+## 1. Propósito
 
-Este documento describe cómo piensan los usuarios de Project ZUZU cuando transforman una idea en un producto de software.
+Este documento describe cómo piensan los usuarios de Project ZUZU cuando **aprenden ingeniería** y practican en Projects.
 
 No modela perfiles demográficos.
 
@@ -34,324 +35,331 @@ Modela procesos mentales, necesidades cognitivas y patrones de toma de decisione
 
 ---
 
-# 2. Core Assumption
+## 2. Supuesto central
 
-Los desarrolladores no trabajan escribiendo código.
+Los learners no trabajan “escribiendo código”.
 
-Trabajan resolviendo problemas.
+Trabajan resolviendo problemas de ingeniería: pensar, diseñar y construir.
 
-El código es únicamente una consecuencia.
+El código es una consecuencia — nunca el centro del modelo mental.
 
-Por lo tanto, ZUZU debe alinearse con el proceso mental de resolución de problemas, no con la edición de archivos.
+Por lo tanto, ZUZU debe alinearse con el proceso cognitivo de aprendizaje y resolución de problemas, no con la edición de archivos ni con un work OS de entrega.
 
 ---
 
-# 3. The Developer Mindset
+## 3. Mentalidad del learner-ingeniero
 
-Cuando un desarrollador comienza un proyecto normalmente no piensa:
+Cuando un learner aborda un Practice Project normalmente no piensa:
 
 > "Voy a crear una clase."
 
 Piensa:
 
 - ¿Qué estoy intentando resolver?
+- ¿Qué debo entender antes de construir?
 - ¿Por dónde empiezo?
-- ¿Qué riesgos existen?
-- ¿Cuál es la mejor arquitectura?
-- ¿Qué debería construir primero?
+- ¿Qué riesgos y trade-offs existen?
+- ¿Cuál es una arquitectura razonable?
+- ¿Qué debería diseñar o construir primero?
+- ¿Cómo colaboro con el Mentor sin perder criterio?
 
 ---
 
-# 4. Mental States
+## 4. Estados mentales
 
-Durante un proyecto el usuario atraviesa distintos estados.
+Durante el Learning Path y la práctica, el learner atraviesa distintos estados.
 
-## Inspiration
+### Inspiración
 
-Tiene una idea.
+Tiene una idea o un objetivo de aprendizaje.
 
 Todavía es difusa.
 
-Necesita explorar.
+Necesita explorar conceptos y el problema.
 
 ---
 
-## Structuring
+### Estructuración
 
 Empieza a ordenar pensamientos.
 
-Busca relaciones.
+Busca relaciones entre conceptos.
 
-Define prioridades.
+Define prioridades de aprendizaje y de diseño.
 
 ---
 
-## Decision
+### Decisión
 
 Compara alternativas.
 
-Evalúa ventajas y riesgos.
+Evalúa ventajas, riesgos y trade-offs — con ayuda del Mentor, no en su lugar.
 
 ---
 
-## Construction
+### Construcción
 
-Implementa.
+Implementa en el Practice Project.
 
 Itera.
 
 Corrige.
 
+Aprende del resultado.
+
 ---
 
-## Validation
+### Validación
 
 Comprueba resultados.
 
-Busca errores.
+Busca errores de razonamiento y de implementación.
 
-Refina.
+Refina comprensión y artefacto.
 
 ---
 
-## Evolution
+### Evolución
 
-El proyecto cambia.
+El Path y el Project cambian.
 
 Aparecen nuevas necesidades.
 
-Debe mantener coherencia.
+Debe mantener coherencia entre lo aprendido y lo construido.
 
 ---
 
-# 5. Cognitive Frictions
+## 5. Fricciones cognitivas
 
-Las mayores dificultades no suelen ser técnicas.
+Las mayores dificultades no suelen ser de sintaxis.
 
 Son cognitivas.
 
 ### Sobrecarga de información
 
-Demasiadas decisiones al mismo tiempo.
+Demasiados conceptos, stacks o decisiones al mismo tiempo — sin un Path claro.
 
 ---
 
 ### Pérdida de contexto
 
-No recordar por qué se tomó una decisión.
+No recordar por qué se tomó una decisión de diseño o qué ya se aprendió.
 
 ---
 
 ### Página en blanco
 
-No saber cómo empezar.
+No saber cómo empezar a pensar o a practicar.
 
 ---
 
 ### Fatiga de decisión
 
-Elegir constantemente entre muchas alternativas.
+Elegir constantemente entre muchas alternativas (herramientas, stacks, enfoques) sin criterio.
 
 ---
 
 ### Cambio de contexto
 
-Interrumpir el trabajo para buscar documentación, ejemplos o decisiones previas.
+Interrumpir el aprendizaje para buscar documentación, ejemplos o decisiones previas que el sistema debería preservar.
 
 ---
 
-# 6. What Users Want to Remember
+## 6. Qué el learner quiere recordar
 
-El usuario quiere recordar:
+El learner quiere recordar (o recuperar fácilmente):
 
-- visión del producto;
-- decisiones importantes;
-- arquitectura;
-- prioridades.
+- objetivo de aprendizaje y posición en el Path;
+- decisiones importantes de diseño;
+- arquitectura y trade-offs;
+- qué capability está formando (pensar — diseñar — construir);
+- feedback del Mentor que cambia su criterio.
 
 No quiere recordar:
 
 - rutas de archivos;
 - comandos repetitivos;
-- detalles triviales;
+- detalles triviales del stack;
 - información ya conocida por el sistema.
 
 ---
 
-# 7. What Users Want AI to Remember
+## 7. Qué el learner quiere que el Mentor recuerde
 
-La IA debe recordar:
+El Mentor debe recordar:
 
-- contexto del proyecto;
-- decisiones arquitectónicas;
-- convenciones del equipo;
-- documentación;
-- conversaciones relevantes;
-- objetivos de negocio.
+- contexto del Path y del Practice Project;
+- decisiones arquitectónicas relevantes a la práctica;
+- progreso y conceptos ya trabajados;
+- conversaciones educativas recientes;
+- objetivos de capability del learner.
 
-Nunca debería obligar al usuario a repetir esa información.
+Nunca debería obligar al learner a repetir esa información.
 
 ---
 
-# 8. Trust Boundaries
+## 8. Límites de confianza
 
-Hay decisiones que el usuario quiere delegar.
+Hay acciones que el learner quiere delegar al Mentor.
 
 Ejemplos:
 
-- generar documentación;
-- crear pruebas;
-- buscar información;
-- detectar problemas.
+- explicar conceptos;
+- formular buenas preguntas;
+- generar ejemplos pedagógicos;
+- revisar un artefacto y señalar trade-offs;
+- detectar inconsistencias en el razonamiento.
 
 Hay decisiones que quiere conservar.
 
 Ejemplos:
 
-- arquitectura;
-- reglas de negocio;
-- prioridades;
-- aceptación de cambios.
+- arquitectura y diseño;
+- priorizar qué practicar;
+- aceptar o rechazar cambios;
+- criterio técnico final.
+
+Autonomy nunca es el default: el Mentor enseña; el learner decide.
 
 ---
 
-# 9. The Ideal Cognitive Loop
+## 9. Bucle cognitivo ideal
 
 ```text
-Idea
-
-↓
-
-Conversation
-
-↓
-
-Understanding
-
-↓
-
-Planning
-
-↓
-
-Building
-
-↓
-
-Learning
-
-↓
-
-Knowledge Preservation
+Idea / Objetivo de aprendizaje
+        ?
+Conversación con el Mentor
+        ?
+Comprensión
+        ?
+Diseño / Planning
+        ?
+Construcción (Practice)
+        ?
+Validación y feedback
+        ?
+Learning (capability ↑)
+        ?
+Preservación de Knowledge + Progress
 ```
 
-Cada ciclo debería enriquecer el conocimiento del proyecto.
+Cada ciclo debería enriquecer Capability, Knowledge y Progress — no solo “cerrar un ticket”.
 
 ---
 
-# 10. Attention Economy
+## 10. Economía de la atención
 
-La atención es el recurso más escaso.
+La atención es el recurso más escaso del learner.
 
 ZUZU debe protegerla.
 
 Reglas:
 
-- una tarea principal por pantalla;
+- una tarea cognitiva principal por pantalla;
 - minimizar interrupciones;
-- reducir decisiones innecesarias;
-- mostrar solo el contexto relevante.
+- reducir elecciones de stack innecesarias;
+- mostrar solo el contexto relevante al Path y a la Practice;
+- el Mentor no satura: guía.
 
 ---
 
-# 11. Product Responsibilities
+## 11. Responsabilidades del producto
 
 ZUZU debe encargarse de:
 
-- organizar información;
-- recordar contexto;
-- detectar inconsistencias;
-- sugerir próximos pasos;
-- documentar automáticamente.
+- organizar el Learning Path y el Knowledge;
+- recordar contexto de Practice y Progress;
+- detectar inconsistencias de aprendizaje o diseño;
+- sugerir próximos pasos formativos;
+- documentar lo aprendido mientras se practica.
 
-El usuario debe encargarse de:
+El learner debe encargarse de:
 
-- definir objetivos;
+- definir objetivos de aprendizaje;
 - validar decisiones;
 - aportar criterio;
-- aprobar cambios.
+- pensar, diseñar y construir (con el Mentor como colaborador).
 
 ---
 
-# 12. Learning Model
+## 12. Modelo de aprendizaje
 
 Cada interacción debería producir dos resultados:
 
-1. Avanzar el proyecto.
-2. Incrementar el conocimiento compartido.
+1. Avanzar capability (pensar — diseñar — construir).
+2. Incrementar Knowledge compartido y Progress visible.
 
-Así, cada sesión hace más inteligente al espacio de trabajo, no solo al usuario.
+Así, cada sesión hace más capaz al learner — no solo más “productivo” en un work OS.
 
 ---
 
-# 13. Experience Principles
+## 13. Principios de experiencia
 
 - Pensar antes que programar.
-- Conversar antes que configurar.
+- Conversar con el Mentor antes que configurar el stack.
 - Entender antes que ejecutar.
-- Documentar mientras se trabaja.
-- Aprender continuamente.
+- Diseñar antes (o mientras) se construye.
+- Documentar mientras se aprende.
+- Aprender continuamente — independientemente del stack.
 
 ---
 
-# 14. Anti-Patterns
+## 14. Anti-patrones
 
-## La IA pregunta siempre lo mismo
+### El Mentor pregunta siempre lo mismo
 
-Indica pérdida de memoria contextual.
-
----
-
-## El usuario busca información que ya existe
-
-Indica mala organización del conocimiento.
+Indica pérdida de memoria contextual (Path / Practice / Progress).
 
 ---
 
-## La IA genera código sin explicar el impacto
+### El learner busca información que ya existe en Knowledge
 
-Reduce la confianza.
-
----
-
-## La herramienta obliga al usuario a adaptarse
-
-El producto debe adaptarse al usuario, no al revés.
+Indica mala organización del conocimiento o del contexto.
 
 ---
 
-# 15. Success Criteria
+### La IA genera código sin explicar impacto ni trade-offs
+
+Reduce aprendizaje y confianza. Mentorship quality > codegen.
+
+---
+
+### La herramienta obliga al learner a adaptarse a un delivery OS
+
+El producto debe adaptarse al journey del learner, no al revés.
+
+---
+
+### El stack define la identidad
+
+Contradice la tesis: los stacks son detalle; la capability es el producto.
+
+---
+
+## 15. Criterios de éxito
 
 Este modelo será exitoso cuando:
 
-- el usuario sienta que ZUZU comprende su proyecto;
-- disminuya el tiempo dedicado a buscar información;
-- aumente la continuidad entre sesiones;
-- la IA actúe como memoria extendida y colaborador, no como un simple generador de texto.
+- el learner sienta que ZUZU y el Mentor comprenden su Path y su Practice;
+- disminuya el tiempo perdido buscando contexto ya conocido;
+- aumente la continuidad entre sesiones (Progress);
+- el Mentor actúe como memoria extendida y colaborador pedagógico, no como un generador de texto o un clon de IDE;
+- la evidencia de capability (pensar — diseñar — construir) mejore con el tiempo.
 
 ---
 
-# 16. Related Artifacts
+## 16. Artefactos relacionados
 
+- ART-THESIS-001 — Product Thesis
 - ART-002 — Product Vision
 - ART-044 — Product Experience Vision
 - ART-037 — Documentation Architecture
-- ART-050 — AI Experience Architecture
+- Journey del learner — `docs/product/USER_JOURNEY.md`
 
 ---
 
-# Final Statement
+## Declaración final
 
-Project ZUZU no está diseñado para reemplazar el pensamiento humano.
+Project ZUZU no está diseñado para reemplazar el pensamiento humano ni para operar un delivery OS.
 
-Está diseñado para eliminar la carga cognitiva innecesaria, preservar el conocimiento del proyecto y permitir que las personas concentren su energía en resolver problemas y crear productos de mayor calidad.
+Está diseñado para eliminar la carga cognitiva innecesaria, preservar Knowledge y Progress, y permitir que el learner concentre su energía en **pensar, diseñar y construir** software — colaborando con el Mentor — independientemente del stack.

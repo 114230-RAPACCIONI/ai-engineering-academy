@@ -17,7 +17,10 @@ artifact:
 
 # AI Architecture
 
-> "AI is not a feature. AI is a new interaction model."
+> Ley vinculante: [PRODUCT_THESIS.md](../00-constitution/PRODUCT_THESIS.md) — [ADR-007](../architecture/adr/ADR-007-product-identity-learning-first.md)
+>
+> Runtime del MVP: **un Mentor** al servicio del Learning Path + Practice Project.
+> Fleets multi-agent y workflows autónomos **no** son requisitos del MVP.
 
 ---
 
@@ -27,10 +30,10 @@ Este documento define la arquitectura de inteligencia artificial de Project ZUZU
 
 El objetivo es establecer cómo la IA participa dentro del sistema:
 
-- cómo interactúa con usuarios;
+- cómo interactúa con learners;
 - cómo utiliza conocimiento;
 - cómo mantiene contexto;
-- cómo evoluciona.
+- cómo evoluciona **sin abandonar Learning First**.
 
 ---
 
@@ -38,18 +41,21 @@ El objetivo es establecer cómo la IA participa dentro del sistema:
 
 Project ZUZU no busca reemplazar al ingeniero.
 
-Busca crear un entorno donde humanos e inteligencia artificial colaboren.
+Busca un entorno donde humanos e IA colaboren para **pensar, diseñar y construir** mejor — independientemente del stack.
 
-La IA debe actuar como:
+La IA debe actuar como **Mentor**:
 
-- mentor;
-- compañero;
-- crítico;
+- enseña;
+- pregunta;
+- desafía;
+- acompaña la práctica.
+
+No debe actuar como code generator que elimina el criterio.
 - asistente.
 
 ---
 
-# Core Principle
+# Principio central
 
 La IA no debe ser utilizada para responder más rápido.
 
@@ -95,7 +101,7 @@ Arquitectura conceptual:
 
 # AI Orchestrator
 
-## Purpose
+## Propósito
 
 El AI Orchestrator es el cerebro de coordinación.
 
@@ -109,84 +115,57 @@ Coordina capacidades.
 
 Debe manejar:
 
-- selección de agentes;
-- recuperación de contexto;
+- un Mentor (única superficie de producto en el MVP);
+- recuperación de contexto (Path + Practice + Knowledge);
 - permisos;
 - memoria;
-- herramientas;
-- evaluación.
+- tools (deny-by-default);
+- evaluación pedagógica.
 
 ---
 
 # Agent Layer
 
-Un agente representa una inteligencia especializada.
+En el MVP existe **un agent de producto: el Mentor**.
 
-No todos los agentes deben hacer todo.
+Otros nombres (Architecture, Reviewer, Coach) son **comportamientos pedagógicos del mismo Mentor**, no agents/shippable surfaces separados.
+
+Multi-agent fleets = Future (`docs/99-future/`), solo después de validar capability del Mentor.
 
 ---
 
-# Agent Types
+# Tipos de agent (MVP)
 
-## Mentor Agent
+## Mentor Agent (canónico)
 
 Responsabilidad:
 
-Ayudar a aprender.
+Ayudar a **pensar, diseñar y construir** — enseñando.
 
 Ejemplos:
 
 - explicar conceptos;
 - proponer ejercicios;
-- adaptar dificultad.
+- adaptar dificultad;
+- cuestionar decisiones;
+- revisar practice work con foco pedagógico;
+- orientar el siguiente paso en el Learning Path.
 
 ---
 
-## Architecture Agent
+## Comportamientos futuros (no agents de producto)
 
-Responsabilidad:
-
-Ayudar a diseñar sistemas.
-
-Ejemplos:
-
-- revisar decisiones;
-- detectar problemas;
-- proponer alternativas.
-
----
-
-## Code Review Agent
-
-Responsabilidad:
-
-Analizar implementaciones.
-
-Ejemplos:
-
-- calidad;
-- seguridad;
-- mantenibilidad.
-
----
-
-## Learning Coach Agent
-
-Responsabilidad:
-
-Acompañar evolución.
-
-Ejemplos:
-
-- seguimiento;
-- recomendaciones;
-- objetivos.
+| Nombre | Cómo aparece en el MVP |
+|--------|------------------------|
+| Architecture | El Mentor explora trade-offs y diseño |
+| Code Review | El Mentor revisa artefactos de práctica |
+| Learning Coach | El Mentor orienta progreso en el Path |
 
 ---
 
 # Agent Model
 
-Cada agente contiene:
+El Mentor contiene:
 
 
 Agent
@@ -237,23 +216,23 @@ Conversation History
 
 User Request
 
-↓
+?
 
 Context Resolver
 
-↓
+?
 
 Permission Check
 
-↓
+?
 
 Context Assembly
 
-↓
+?
 
 Agent
 
-↓
+?
 
 Model
 
@@ -273,15 +252,15 @@ Debe utilizar conocimiento propio de ZUZU.
 
 Knowledge Base
 
-↓
+?
 
 Retrieval
 
-↓
+?
 
 Relevant Context
 
-↓
+?
 
 Agent
 
@@ -399,8 +378,7 @@ La arquitectura permitirá:
 
 ---
 
-# Final Statement
-
+# Declaración final
 La arquitectura de IA de Project ZUZU define una nueva forma de interacción.
 
 La IA no es una herramienta externa.

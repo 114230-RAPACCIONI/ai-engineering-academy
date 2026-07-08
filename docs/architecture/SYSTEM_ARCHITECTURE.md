@@ -1,4 +1,4 @@
----
+﻿---
 artifact:
   id: ART-015
   type: System Architecture
@@ -17,7 +17,10 @@ artifact:
 
 # System Architecture
 
-> "Architecture is the set of decisions that are expensive to change."
+> Ley vinculante: [PRODUCT_THESIS.md](../00-constitution/PRODUCT_THESIS.md)
+>
+> Documento de sistema canónico para trabajo activo. PLATFORM y APPLICATION Architecture están archivados como duplicados.
+> Estilo: Modular Monolith (ADR-006). Sin gateway/event-bus como default del MVP.
 
 ---
 
@@ -369,8 +372,7 @@ No construiremos inicialmente:
 
 ---
 
-# Final Statement
-
+# Declaración final
 La arquitectura inicial de Project ZUZU prioriza claridad y evolución.
 
 El objetivo no es construir el sistema más complejo.

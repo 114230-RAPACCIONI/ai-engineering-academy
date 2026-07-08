@@ -1,4 +1,4 @@
----
+﻿---
 artifact:
   id: ART-017
   type: Agent Model
@@ -17,7 +17,9 @@ artifact:
 
 # Agent Model
 
-> "An agent is not a chatbot. An agent is a system with purpose."
+> Ley vinculante: [PRODUCT_THESIS.md](../00-constitution/PRODUCT_THESIS.md)
+>
+> Agent de producto en el MVP = **solo Mentor**. Otros nombres son pedagogía futura, no superficies shippeables.
 
 ---
 
@@ -38,10 +40,10 @@ El objetivo es establecer:
 
 Dentro de ZUZU, un agente es una entidad inteligente especializada que colabora con el usuario para alcanzar un objetivo específico.
 
-Un agente combina:
+Un agent combina:
 
 
-Purpose
+Propósito
 
 Instructions
 
@@ -68,7 +70,7 @@ Existen para aumentar sus capacidades.
 
 # Agent Principles
 
-## Principle 1 — Purpose Driven
+## Principio 1 — Orientado a propósito
 
 Cada agente debe tener una responsabilidad clara.
 
@@ -135,7 +137,7 @@ Name:
 
 Architecture Mentor Agent
 
-Purpose:
+Propósito:
 
 Help users design software systems.
 
@@ -286,95 +288,49 @@ Improved
 
 # Agent Types
 
-Inicialmente ZUZU tendrá agentes conceptuales.
+## MVP (Canonical)
 
----
+### Mentor Agent
 
-# Mentor Agent
-
-## Objective
-
-Acompañar aprendizaje.
-
----
+**Objective:** Acompañar aprendizaje y práctica.
 
 Capabilities:
 
 - explicar;
 - adaptar dificultad;
-- proponer ejercicios.
+- proponer ejercicios;
+- cuestionar decisiones;
+- revisar practice work con foco pedagógico;
+- orientar próximos pasos en el Learning Path.
+
+Superficie shippeable del MVP = **solo Mentor**.
 
 ---
 
-# Architecture Agent
+## Comportamientos futuros (no agents de producto separados)
 
-## Objective
+Estos nombres pueden describir **comportamientos del Mentor** o especialistas posteriores.
+**No** son agents shippeables del MVP hasta que pasen las métricas de Capability del Mentor.
 
-Ayudar a diseñar sistemas.
-
----
-
-Capabilities:
-
-- analizar requisitos;
-- evaluar decisiones;
-- detectar riesgos.
+| Nombre | Como pedagogía dentro del Mentor |
+|------|---------------------------|
+| Architecture | Trade-offs, requisitos, riesgos |
+| Reviewer | Calidad de practice artifacts |
+| Project | Contexto de Practice Project + próximos pasos |
 
 ---
 
-# Reviewer Agent
+# Colaboración entre agents
 
-## Objective
+La colaboración multi-agent es **Future** (`docs/99-future/`).
 
-Mejorar calidad.
+No implementar grafos de orquestación en el MVP.
 
----
+Patrón MVP:
 
-Capabilities:
-
-- revisar código;
-- revisar documentación;
-- detectar problemas.
-
----
-
-# Project Agent
-
-## Objective
-
-Acompañar construcción.
-
----
-
-Capabilities:
-
-- organizar tareas;
-- mantener contexto;
-- sugerir próximos pasos.
-
----
-
-# Agent Collaboration
-
-En el futuro múltiples agentes podrán colaborar.
-
-Ejemplo:
-
-
-User
-
-|
-
-Project Agent
-
-|
-
-| |
-
-Architecture Review
-
-Agent Agent
-
+```
+Learner → Mentor (single) → Path + Practice context
+```
 
 ---
 
@@ -466,8 +422,7 @@ Cambios importantes deben generar nuevo registro.
 
 ---
 
-# Anti Patterns
-
+# Anti-patterns
 ZUZU evitará:
 
 ## Generic Agent
@@ -505,8 +460,7 @@ La arquitectura permitirá:
 
 ---
 
-# Final Statement
-
+# Declaración final
 Un agente dentro de Project ZUZU no es una interfaz conversacional.
 
 Es una entidad inteligente diseñada para colaborar, enseñar y mejorar la capacidad humana.

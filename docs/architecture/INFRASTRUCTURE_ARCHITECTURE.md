@@ -1,467 +1,85 @@
----
+﻿---
 artifact:
   id: ART-030
   type: Infrastructure Architecture
   status: Draft
-  version: 0.1.0
+  version: 0.2.0
   owner: CTO
   reviewers:
     - Founder
   created: 2026-07-07
+  revised: 2026-07-08
   initiative: INIT-001
   tags:
     - infrastructure
-    - cloud
     - deployment
-    - devops
+    - mvp
 ---
 
 # Infrastructure Architecture
 
-> "Reliable systems are built intentionally, not accidentally."
+> Ley vinculante: [PRODUCT_THESIS.md](../00-constitution/PRODUCT_THESIS.md) — [ADR-006](./adr/ADR-006-simplicity-first.md)
+>
+> Infra del MVP = hosting aburrido que hace correr el learning loop.
+> Sin multi-region / DR theater como requisitos. Etapas distribuidas = Future (ver archive).
 
 ---
 
-# Introduction
+## Propósito
 
-Este documento define la arquitectura de infraestructura de Project ZUZU.
+Definir lo mínimo para ejecutar ZUZU mientras validamos:
 
-El objetivo es establecer cómo la plataforma será ejecutada, desplegada, monitoreada y evolucionada.
-
----
-
-# Infrastructure Philosophy
-
-La infraestructura debe permitir:
-
-- velocidad de desarrollo;
-- estabilidad;
-- seguridad;
-- crecimiento progresivo.
+**Path → Knowledge → Mentor → Practice Project → Progress**
 
 ---
 
-# Core Principle
+## Filosofía
 
-
-Simple Operations
-
-Automation
-
-Observability
-
-=
-
-Reliable Platform
-
+1. Simplicidad operativa > sofisticación premature.
+2. Un camino de deploy reproducible.
+3. Observabilidad básica (logs + errores), no un portal enterprise.
+4. El costo del Mentor (tokens) es el riesgo #1 de scale — ver Cost / ADR pendiente de budgets.
 
 ---
 
-# Infrastructure Goals
+## MVP (target)
 
-La infraestructura debe soportar:
+| Pieza | Expectativa |
+|-------|-------------|
+| Runtime de aplicación | Un servicio (modular monolith) |
+| Base de datos | Una DB primaria (elección vía ADR de stack) |
+| Cache / jobs (si hace falta) | Solo cuando un use case del learning loop lo exija |
+| Frontend | SPA desplegada de forma simple |
+| Secrets | Secret manager / env seguros — nunca en el repo |
+| Environments | Development → Staging (o Testing) → Production |
 
-- desarrollo local;
-- ambientes de prueba;
-- producción;
-- crecimiento futuro.
-
----
-
-# Environment Strategy
-
-ZUZU tendrá diferentes ambientes.
+El stack concreto (lenguaje, cloud, Angular/otro, provider) se decide en **ADRs**, no en este ensayo.
 
 ---
 
-# Development Environment
+## Explicitamente fuera del MVP
 
-Objetivo:
+- Kubernetes como default  
+- Multi-region / DR geográfico activo  
+- Event bus / message broker obligatorio  
+- Blue/Green / Canary como ceremonia  
+- Developer portal / FinOps platform  
 
-Permitir construcción local.
-
-Incluye:
-
-- aplicación;
-- base de datos;
-- servicios necesarios.
+Esos temas viven en `docs/90-archive/` o `docs/99-future/` si se revisitan.
 
 ---
 
-# Testing Environment
+## Evolución
 
-Objetivo:
+Cuando el learning loop esté validado **y** el dolor operativo sea real, se escriben ADRs nuevos.
 
-Validar cambios antes de producción.
-
-Incluye:
-
-- pruebas automáticas;
-- integración;
-- validaciones.
+Hasta entonces: este documento no autoriza complejidad distribuida.
 
 ---
 
-# Production Environment
-
-Objetivo:
-
-Proveer servicio real.
-
-Incluye:
-
-- disponibilidad;
-- seguridad;
-- monitoreo.
-
----
-
-# Environment Flow
-
-
-Development
-
-↓
-
-Testing
-
-↓
-
-Production
-
-
----
-
-# Deployment Philosophy
-
-Los despliegues deben ser:
-
-- repetibles;
-- automatizados;
-- auditables.
-
----
-
-# Deployment Pipeline
-
-
-Code Change
-
-↓
-
-Pull Request
-
-↓
-
-Automated Tests
-
-↓
-
-Build
-
-↓
-
-Deploy
-
-↓
-
-Monitoring
-
-
----
-
-# Infrastructure Components
-
----
-
-# Application Runtime
-
-Responsabilidad:
-
-Ejecutar aplicaciones.
-
-Incluye:
-
-- frontend;
-- backend;
-- servicios IA.
-
----
-
-# Database Infrastructure
-
-Responsabilidad:
-
-Persistencia.
-
-Incluye:
-
-- almacenamiento;
-- backups;
-- recuperación.
-
----
-
-# AI Infrastructure
-
-Responsabilidad:
-
-Ejecutar capacidades inteligentes.
-
-Incluye:
-
-- modelos externos;
-- proveedores IA;
-- procesamiento.
-
----
-
-# Storage
-
-Responsabilidad:
-
-Archivos y conocimiento.
-
-Incluye:
-
-- documentos;
-- recursos;
-- información generada.
-
----
-
-# Networking
-
-Responsabilidad:
-
-Comunicación segura.
-
-Incluye:
-
-- dominios;
-- certificados;
-- acceso interno.
-
----
-
-# Container Strategy
-
-Inicialmente:
-
-
-Application Containers
-
-
-Beneficios:
-
-- ambientes consistentes;
-- despliegues simples;
-- portabilidad.
-
----
-
-# Evolution
-
-Cuando sea necesario:
-
-
-Containers
-
-↓
-
-Orchestration
-
-↓
-
-Cloud Platform
-
-
----
-
-# CI/CD Strategy
-
-Toda modificación debe pasar por:
-
-
-Commit
-
-↓
-
-Build
-
-↓
-
-Test
-
-↓
-
-Deploy
-
-
----
-
-# Configuration Management
-
-La configuración debe estar separada del código.
-
-Ejemplos:
-
-- variables de entorno;
-- secretos;
-- configuraciones externas.
-
----
-
-# Secrets Management
-
-Nunca almacenar:
-
-- contraseñas;
-- claves;
-- tokens.
-
-Deben utilizarse sistemas seguros.
-
----
-
-# Observability
-
-La plataforma debe poder responder:
-
-- ¿Está funcionando?
-- ¿Qué falló?
-- ¿Por qué ocurrió?
-
----
-
-# Logging
-
-Registrar:
-
-- errores;
-- eventos importantes;
-- acciones del sistema.
-
----
-
-# Metrics
-
-Medir:
-
-- rendimiento;
-- uso;
-- disponibilidad.
-
----
-
-# Monitoring
-
-Controlar:
-
-- salud del sistema;
-- recursos;
-- comportamiento.
-
----
-
-# Alerting
-
-Detectar:
-
-- fallos;
-- degradación;
-- problemas críticos.
-
----
-
-# Backup Strategy
-
-Debe existir:
-
-- copia de datos;
-- recuperación;
-- pruebas de restauración.
-
----
-
-# Disaster Recovery
-
-El sistema debe contemplar:
-
-- pérdida de servicios;
-- recuperación;
-- continuidad.
-
----
-
-# Security Infrastructure
-
-Incluye:
-
-- acceso controlado;
-- cifrado;
-- actualización constante.
-
----
-
-# Scalability Strategy
-
-La evolución será:
-
-
-Single Environment
-
-↓
-
-Multiple Instances
-
-↓
-
-Distributed Infrastructure
-
-
----
-
-# Cost Management
-
-La infraestructura debe crecer con el producto.
-
-Principio:
-
-
-Pay For Real Need
-
-
----
-
-# Anti Patterns
-
-## Manual Deployments
-
-Cambios manuales sin trazabilidad.
-
----
-
-## No Monitoring
-
-No saber qué ocurre.
-
----
-
-## Premature Cloud Complexity
-
-Arquitectura excesiva sin necesidad.
-
----
-
-## Secrets In Repository
-
-Información sensible expuesta.
-
----
-
-# Final Statement
-
-La infraestructura de Project ZUZU debe ser invisible para el usuario.
-
-Su objetivo es permitir que el producto evolucione con seguridad, velocidad y confiabilidad.
+## Relacionados
+
+- [SYSTEM_ARCHITECTURE](./SYSTEM_ARCHITECTURE.md)
+- [SECURITY](../security/SECURITY.md)
+- [COST_OPTIMIZATION_ARCHITECTURE](./COST_OPTIMIZATION_ARCHITECTURE.md) (priorizar budgets del Mentor)
+- [ADR-006](./adr/ADR-006-simplicity-first.md)

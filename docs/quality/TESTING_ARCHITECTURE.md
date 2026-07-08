@@ -1,415 +1,119 @@
----
+﻿---
 artifact:
   id: ART-035
   type: Testing Architecture
   status: Draft
-  version: 0.1.0
+  version: 0.2.0
   owner: CTO
   reviewers:
     - Founder
   created: 2026-07-07
+  revised: 2026-07-08
   initiative: INIT-001
   tags:
     - testing
     - quality
-    - validation
-    - engineering
+    - learning
 ---
 
 # Testing Architecture
 
-> "Quality is not checked at the end. Quality is built from the beginning."
+> Ley vinculante: [PRODUCT_THESIS.md](../00-constitution/PRODUCT_THESIS.md)
+>
+> Prioridad de tests en el MVP: corrección del Learning Path — flows de Practice Project —
+> **evals de capability del Mentor** — security de ownership.
+> Pirámides event/load/enterprise esperan. La regla de oro decide qué testeamos.
 
 ---
 
-# Introduction
+## 1. Propósito
 
-Este documento define la estrategia de testing de Project ZUZU.
-
-El objetivo es establecer cómo validamos que cada parte del sistema cumple con sus responsabilidades antes de llegar a usuarios reales.
+Definir cómo aseguramos calidad **sin** teatro de testing enterprise antes de validar Learning.
 
 ---
 
-# Testing Philosophy
+## 2. Filosofía
 
-Las pruebas no son solamente una actividad de QA.
+Quality se construye desde el diseño.
 
-Son una herramienta de diseño.
+Testear lo que protege el learning loop:
 
-Permiten:
-
-- detectar errores temprano;
-- documentar comportamiento esperado;
-- permitir evolución segura.
+`Path → Knowledge → Mentor → Practice → Progress`
 
 ---
 
-# Core Principle
+## 3. Prioridades del MVP
 
-
-Build
-
-↓
-
-Validate
-
-↓
-
-Learn
-
-↓
-
-Improve
-
+| Prioridad | Qué | Por qué |
+|-----------|-----|---------|
+| P0 | Auth + ownership (un learner no ve datos de otro) | Confianza |
+| P0 | Learning Path / Progress básicos | Producto |
+| P0 | Practice Project CRUD + artefactos mínimos | Producto |
+| P0 | Evals del Mentor (golden set pedagógico) | Tesis |
+| P1 | API contracts de módulos canónicos | Estabilidad |
+| P2 | E2E smoke del journey feliz | Regresión |
+| Future | Event testing, load masivo, perf theater | Pós-PMF |
 
 ---
 
-# Testing Goals
+## 4. Tipos de test (MVP)
 
-ZUZU debe garantizar:
+### Unit
 
-- funcionamiento correcto;
-- estabilidad;
-- seguridad;
-- confianza.
+Reglas de dominio (Path, Progress, ownership).
 
----
+### Integration / API
 
-# Testing Pyramid
+Módulos Identity, Learning, Knowledge, Projects, AI (Mentor), Progress.
 
-La estrategia utiliza una pirámide:
+### AI / Mentor
 
-          E2E Tests
+- Casos golden: enseña antes de codear; pregunta; admite incertidumbre.
+- Regresión cuando cambia prompt/spec del Mentor.
+- Métrica primaria: lift de capability / adherencia pedagógica — no solo accuracy.
 
-      Integration Tests
+### Security
 
-    Unit Tests
+Auth, autorización por ownership, no filtrado de contexto entre learners.
 
----
+### E2E smoke
 
-# Unit Testing
-
-Responsabilidad:
-
-Validar unidades pequeñas de código.
-
-Ejemplos:
-
-- funciones;
-- componentes;
-- servicios;
-- reglas de negocio.
+Registro → Path → Mentor → Practice (camino feliz mínimo).
 
 ---
 
-# Principles
+## 5. Explicitamente diferido
 
-Los tests unitarios deben ser:
-
-- rápidos;
-- independientes;
-- repetibles.
-
----
-
-# Backend Testing
-
-Validar:
-
-- lógica de negocio;
-- servicios;
-- validaciones;
-- casos extremos.
-
-Ejemplo:
-
-
-Create Project
-
-↓
-
-Validate Rules
-
-↓
-
-Persist Result
-
+- Event Testing (broker, retries, duplicates)
+- Performance testing a escala
+- Coverage vanity metrics como gate único
+- Suites que no toquen el learning loop
 
 ---
 
-# Frontend Testing
+## 6. Quality gates (MVP)
 
-Validar:
+Merge bloqueado si:
 
-- componentes;
-- interacción;
-- estados;
-- navegación.
-
----
-
-# Integration Testing
-
-Valida comunicación entre componentes.
-
-Ejemplos:
-
-
-Frontend
-
-↓
-
-API
-
-↓
-
-Database
-
+1. Rompe ownership / auth  
+2. Rompe el journey Path?Mentor?Practice smoke  
+3. Degrada el golden set del Mentor bajo umbral acordado  
 
 ---
 
-# API Testing
+## 7. Anti-patterns
 
-Debe validar:
-
-- contratos;
-- respuestas;
-- errores;
-- seguridad.
-
----
-
-# Database Testing
-
-Validar:
-
-- migraciones;
-- integridad;
-- relaciones.
+- “Funciona en local, no hay tests”
+- Solo happy path
+- Mocks eternos sin contrato real
+- Regresión 100% manual para siempre
+- Testear event bus que no vamos a construir
 
 ---
 
-# Event Testing
-
-Validar:
-
-- emisión correcta;
-- consumo;
-- reintentos;
-- duplicados.
-
----
-
-# End-To-End Testing
-
-Simula experiencias reales.
-
-Ejemplo:
-
-
-User Registration
-
-↓
-
-Create Project
-
-↓
-
-AI Analysis
-
-↓
-
-Receive Feedback
-
-
----
-
-# AI Testing
-
-La inteligencia artificial requiere pruebas diferentes.
-
-No solamente:
-
-"¿Respondió?"
-
-Sino:
-
-"¿Respondió correctamente?"
-
----
-
-# AI Quality Testing
-
-Evaluar:
-
-- precisión;
-- consistencia;
-- relevancia;
-- seguridad.
-
----
-
-# AI Regression Testing
-
-Cambios en modelos pueden modificar resultados.
-
-Debemos comparar:
-
-
-Previous Behavior
-
-vs
-
-New Behavior
-
-
----
-
-# Prompt Testing
-
-Los prompts son componentes del sistema.
-
-Deben probarse:
-
-- instrucciones;
-- límites;
-- comportamiento.
-
----
-
-# Security Testing
-
-Incluye:
-
-- autenticación;
-- permisos;
-- entradas maliciosas;
-- vulnerabilidades.
-
----
-
-# Performance Testing
-
-Evaluar:
-
-- carga;
-- velocidad;
-- consumo.
-
----
-
-# Test Automation
-
-Las pruebas repetibles deben automatizarse.
-
-Flujo:
-
-
-Code Change
-
-↓
-
-Automatic Tests
-
-↓
-
-Validation
-
-↓
-
-Deployment
-
-
----
-
-# Continuous Testing
-
-Las pruebas deben integrarse en:
-
-- desarrollo;
-- integración;
-- despliegue.
-
----
-
-# Test Environment
-
-Debe existir separación:
-
-
-Development
-
-↓
-
-Testing
-
-↓
-
-Production
-
-
----
-
-# Quality Gates
-
-Un cambio no avanza si no cumple:
-
-- tests;
-- revisión;
-- seguridad.
-
----
-
-# Test Coverage
-
-La cobertura ayuda a medir calidad.
-
-Pero:
-
-
-Coverage ≠ Quality
-
-
-La calidad depende del valor de las pruebas.
-
----
-
-# Testing Documentation
-
-Cada funcionalidad importante debe documentar:
-
-- comportamiento esperado;
-- casos críticos;
-- escenarios.
-
----
-
-# Anti Patterns
-
-## No Tests Because It Works
-
-El funcionamiento actual no garantiza evolución.
-
----
-
-## Only Happy Path
-
-Ignorar errores.
-
----
-
-## Too Many Mocked Tests
-
-No validar realidad.
-
----
-
-## Manual Regression Forever
-
-No automatizar.
-
----
-
-# Final Statement
-
-La arquitectura de testing de Project ZUZU busca crear un sistema donde la calidad sea una propiedad continua del desarrollo y no una etapa final.
+## 8. Relacionados
+
+- [MVP_SCOPE](../product/MVP_SCOPE.md)
+- [AI_EVALUATION_FRAMEWORK](../ai/AI_EVALUATION_FRAMEWORK.md)
+- [SECURITY](../security/SECURITY.md)
+- [ENGINEERING_HANDBOOK](../engineering/ENGINEERING_HANDBOOK.md)

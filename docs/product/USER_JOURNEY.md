@@ -1,10 +1,11 @@
----
+﻿---
 
 artifact:
   id: ART-004
   type: User Journey
-  status: Draft
-  version: 0.1.0
+  status: Canonical
+  version: 0.2.0
+  revised: 2026-07-08
   owner: Founder
   reviewers:
     - CTO
@@ -14,19 +15,23 @@ artifact:
     - product
     - experience
     - journey
-- user
+    - learning
 
 ---
 
 # User Journey
 
-> "A great product does not only solve a problem. It guides a transformation."
+> Ley vinculante: [PRODUCT_THESIS.md](../00-constitution/PRODUCT_THESIS.md)
+>
+> Producto: Learning — formar ingenieros capaces de **pensar, diseñar y construir** software
+> colaborando con IA, **independientemente del stack**.
+> Este journey es transformación del learner — no un pipeline de entrega de software.
 
 ---
 
 # Introduction
 
-El User Journey de Project ZUZU representa el recorrido completo que una persona atraviesa desde su primer contacto con la plataforma hasta convertirse en un ingeniero capaz de construir soluciones modernas utilizando inteligencia artificial.
+El User Journey de Project ZUZU es el recorrido desde el primer contacto hasta formar capacidad de **pensar, diseñar y construir** software colaborando con un Mentor de IA — sin atarse a un stack como identidad.
 
 Project ZUZU no está diseñado como un curso tradicional.
 
@@ -261,6 +266,8 @@ Y acepta:
 
 Crear los fundamentos necesarios para pensar como ingeniero.
 
+**Curriculum (entrada al Stage 4):** [Capítulo 1 — De la idea al scope](../../knowledge/curriculum/chapters/CHAPTER_01_FROM_IDEA_TO_SCOPE.md) — problem statement, scope, decisiones y Practice Project en fase Planning **antes** de codear.
+
 ---
 
 
@@ -341,13 +348,15 @@ La ingeniería se aprende construyendo.
 
 ## Rol de la IA
 
-La inteligencia artificial funciona como:
+La inteligencia artificial funciona como **Mentor**:
 
-- asistente;
-- colaborador;
-- acelerador.
+- colaborador pedagógico;
+- desafía y explica;
+- acompaña thinking — design — build.
 
-Pero las decisiones siguen perteneciendo al ingeniero.
+No es un acelerador de codegen que sustituya el criterio.
+
+Las decisiones siguen perteneciendo al learner.
 
 ---
 
@@ -504,7 +513,7 @@ Aprender nuevamente
 
 
 
-# Final Statement
+# Declaración final
 
 Project ZUZU no acompaña a una persona a completar un curso.
 

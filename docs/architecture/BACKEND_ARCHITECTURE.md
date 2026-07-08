@@ -1,4 +1,4 @@
----
+﻿---
 artifact:
   id: ART-027
   type: Backend Architecture
@@ -18,7 +18,11 @@ artifact:
 
 # Backend Architecture
 
-> "A backend is not a collection of endpoints. It is the engine that protects business rules."
+> Ley vinculante: [PRODUCT_THESIS.md](../00-constitution/PRODUCT_THESIS.md)
+>
+> Módulos del MVP: Identity, Learning, Knowledge, Projects (práctica), AI (Mentor), Progress.
+> **No** tratar Billing / Course / marketplace de Evaluation como módulos del MVP.
+> Vocabulario: LearningPath — no Course.
 
 ---
 
@@ -41,7 +45,7 @@ El backend debe ser responsable de:
 
 ---
 
-# Core Principle
+# Principio central
 
 
 API
@@ -294,9 +298,9 @@ Knowledge
 
 AI
 
-Evaluation
+Progress
 
-Billing
+Evaluation and Billing are **Future** — not MVP modules.
 
 
 ---
@@ -326,13 +330,14 @@ Permission
 Learning:
 
 
-Course
+LearningPath
+
+Module
 
 Progress
 
-Achievement
 
-
+Projects:
 Projects:
 
 
@@ -515,8 +520,7 @@ Engineering Organization
 
 ---
 
-# Anti Patterns
-
+# Anti-patterns
 ## Fat Controllers
 
 Toda la lógica en endpoints.
@@ -541,8 +545,7 @@ Dependencias ocultas.
 
 ---
 
-# Final Statement
-
+# Declaración final
 El backend de Project ZUZU debe ser una plataforma de capacidades.
 
 Debe proteger el dominio, permitir evolución y mantenerse independiente de tecnologías específicas.

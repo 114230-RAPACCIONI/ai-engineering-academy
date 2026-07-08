@@ -1,4 +1,4 @@
----
+﻿---
 artifact:
   id: ART-031
   type: API Design
@@ -18,7 +18,10 @@ artifact:
 
 # API Design
 
-> "An API is a contract between systems."
+> Ley vinculante: [PRODUCT_THESIS.md](../00-constitution/PRODUCT_THESIS.md)
+>
+> MVP: Application API de un modular monolith (sin requisito de API Gateway).
+> Reparación de formato + ejemplos OpenAPI aún pendientes.
 
 ---
 
@@ -41,7 +44,7 @@ Una API debe ser:
 
 ---
 
-# Core Principle
+# Principio central
 
 
 Consumers
@@ -72,23 +75,17 @@ Las APIs deben permitir:
 
 # Communication Model
 
-La arquitectura utiliza:
+La arquitectura del MVP utiliza un **modular monolith**:
 
+```
+Frontend (SPA)
+    ↓
+Application API (mismo deploy backend)
+    ↓
+Módulos de dominio + Data Layer
+```
 
-Frontend
-
-↓
-
-API Gateway
-
-↓
-
-Backend Services
-
-↓
-
-Data Layer
-
+**No** hay API Gateway ni "Backend Services" distribuidos como requisito del MVP (ADR-006).
 
 ---
 
@@ -380,8 +377,7 @@ Hidden Contracts
 
 Dependencias no documentadas.
 
-Final Statement
-
+Declaración final
 Las APIs de Project ZUZU deben funcionar como contratos estables que permitan evolucionar la plataforma sin bloquear innovación.
 
 

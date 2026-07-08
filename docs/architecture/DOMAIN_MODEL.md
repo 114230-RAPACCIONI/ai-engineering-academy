@@ -1,23 +1,29 @@
----
+﻿---
 artifact:
   id: ART-011
   type: Domain Model
-  status: Draft
-  version: 0.1.0
+  status: Canonical
+  version: 0.2.0
   owner: CTO
   reviewers:
     - Founder
   created: 2026-07-07
+  revised: 2026-07-08
   initiative: INIT-001
   tags:
     - architecture
     - domain
     - modeling
+    - learning
 ---
 
 # Domain Model
 
-> "Software reflects the way we understand the world."
+> Ley vinculante: [PRODUCT_THESIS.md](../00-constitution/PRODUCT_THESIS.md)
+>
+> El dominio canónico está centrado en el learner. Project es práctica — no el sol del sistema.
+> Capability que formamos: **pensar — diseñar — construir** con IA — **stack-independent**.
+> Vocabulario: LearningPath / Module — no Course.
 
 ---
 
@@ -43,29 +49,18 @@ Este modelo representa el lenguaje común entre:
 
 # Domain Overview
 
-El dominio principal de ZUZU puede resumirse como:
-Una persona
+El dominio principal de ZUZU:
 
-↓
+```
+Learner
+  → aprende (Knowledge + Path)
+  → desarrolla Skills
+  → practica en Projects (learning environment)
+  → colabora con Mentor (AI)
+  → evidenció Progress / capability
+```
 
-aprende conocimiento
-
-↓
-
-desarrolla habilidades
-
-↓
-
-construye proyectos
-
-↓
-
-recibe acompañamiento IA
-
-↓
-
-evoluciona como ingeniero
-
+**Project is practice — not the sun of the system.**
 ---
 
 # Core Domain Entities
@@ -99,7 +94,7 @@ Progress
 
 # Entity: User
 
-## Purpose
+## Propósito
 
 Representa a la persona que utiliza Project ZUZU.
 
@@ -133,7 +128,7 @@ interests
 
 # Entity: Learning Journey
 
-## Purpose
+## Propósito
 
 Representa la transformación completa del usuario dentro de ZUZU.
 
@@ -161,7 +156,7 @@ Learning Journey
 
 # Entity: Learning Path
 
-## Purpose
+## Propósito
 
 Representa un camino estructurado de aprendizaje.
 
@@ -193,7 +188,7 @@ Learning Paths
 
 # Entity: Module
 
-## Purpose
+## Propósito
 
 Unidad de aprendizaje dentro de un camino.
 
@@ -210,7 +205,7 @@ Unidad de aprendizaje dentro de un camino.
 
 # Entity: Knowledge
 
-## Purpose
+## Propósito
 
 Representa información estructurada disponible para aprendizaje.
 
@@ -238,7 +233,7 @@ Application
 
 # Entity: Concept
 
-## Purpose
+## Propósito
 
 Unidad fundamental de conocimiento.
 
@@ -260,7 +255,7 @@ Transformers
 
 # Entity: Skill
 
-## Purpose
+## Propósito
 
 Representa una capacidad desarrollada por el usuario.
 
@@ -280,7 +275,7 @@ Architecture Thinking
 
 # Entity: Project
 
-## Purpose
+## Propósito
 
 Representa una construcción realizada por el usuario.
 
@@ -308,7 +303,7 @@ Projects
 
 # Entity: Artifact
 
-## Purpose
+## Propósito
 
 Representa documentación o evidencia creada durante el proceso.
 
@@ -336,7 +331,7 @@ La documentación representa aprendizaje y pensamiento.
 
 # Entity: Agent
 
-## Purpose
+## Propósito
 
 Representa una inteligencia especializada que colabora con el usuario.
 
@@ -367,7 +362,7 @@ Un agente puede:
 
 # Entity: Conversation
 
-## Purpose
+## Propósito
 
 Representa interacción entre usuario y agentes.
 
@@ -384,7 +379,7 @@ Representa interacción entre usuario y agentes.
 
 # Entity: Progress
 
-## Purpose
+## Propósito
 
 Representa evolución del usuario.
 
@@ -512,8 +507,7 @@ Certification
 Analytics
 ---
 
-# Final Statement
-
+# Declaración final
 El Domain Model define el lenguaje interno de Project ZUZU.
 
 Antes de crear tablas o APIs, definimos qué significa cada elemento dentro del sistema.

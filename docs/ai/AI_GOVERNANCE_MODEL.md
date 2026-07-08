@@ -1,13 +1,14 @@
----
+﻿---
 artifact:
   id: ART-021
   type: AI Governance Model
   status: Draft
-  version: 0.1.0
+  version: 0.2.0
   owner: CTO
   reviewers:
     - Founder
   created: 2026-07-07
+  revised: 2026-07-08
   initiative: INIT-001
   tags:
     - artificial-intelligence
@@ -16,28 +17,26 @@ artifact:
     - ethics
 ---
 
-# AI Governance Model
+# Modelo de gobernanza de IA
 
-> "Powerful systems require responsible boundaries."
+> Ley vinculante: [PRODUCT_THESIS.md](../00-constitution/PRODUCT_THESIS.md) — [SECURITY.md](../security/SECURITY.md)
+>
+> Learning safety > task completion. El Mentor enseña; la autonomy nunca es el default.
+> Un Mentor en el MVP — no teatro de gobernanza multi-agent.
 
 ---
 
-# Introduction
+## Introducción
 
 Este documento define cómo Project ZUZU controla, supervisa y evoluciona sus sistemas de inteligencia artificial.
 
-La gobernanza permite que la IA sea:
-
-- útil;
-- segura;
-- transparente;
-- confiable.
+La gobernanza permite que la IA sea útil, segura, transparente y confiable — **sin** sacrificar el aprendizaje por completar una tarea.
 
 ---
 
-# Governance Philosophy
+## Filosofía de gobernanza
 
-La IA debe aumentar la capacidad humana.
+La IA debe aumentar la capability humana (pensar — diseñar — construir).
 
 Nunca debe eliminar:
 
@@ -45,323 +44,211 @@ Nunca debe eliminar:
 - responsabilidad;
 - decisión humana.
 
+Completar una tarea más rápido a costa de learning safety es un fallo de gobernanza.
+
 ---
 
-# Core Principle
+## Principio central
 
+```text
+Asistencia de IA ≠ autoridad autónoma
+```
 
-AI Assistance ≠ Autonomous Authority
-
-
-La IA recomienda.
+La IA recomienda y enseña.
 
 El humano decide.
 
+En MVP: **un Mentor**. No orquestación multi-agent.
+
 ---
 
-# Governance Objectives
+## Objetivos de gobernanza
 
-El modelo busca garantizar:
+Garantizar:
 
-- calidad;
-- seguridad;
+- calidad pedagógica y técnica;
+- learning safety y security;
 - privacidad;
 - transparencia;
-- evolución controlada.
+- evolución controlada (change management).
 
 ---
 
-# AI Decision Boundaries
+## Límites de decisión de la IA
 
 No todas las acciones tienen el mismo nivel de riesgo.
 
----
+### Acciones de bajo riesgo
 
-# Low Risk Actions
+Ejemplos: explicar conceptos; generar ejemplos pedagógicos; sugerir mejoras de razonamiento.
 
-Ejemplos:
-
-- explicar conceptos;
-- generar ejemplos;
-- sugerir mejoras.
-
-Puede ejecutarse automáticamente.
+Pueden ejecutarse de forma más automática (siempre auditables).
 
 ---
 
-# Medium Risk Actions
+### Acciones de riesgo medio
 
-Ejemplos:
+Ejemplos: recomendar arquitectura; modificar documentación; proponer cambios en un Practice Project.
 
-- recomendar arquitectura;
-- modificar documentación;
-- proponer cambios.
-
-Requiere revisión.
+Requieren revisión humana.
 
 ---
 
-# High Risk Actions
+### Acciones de alto riesgo
 
-Ejemplos:
+Ejemplos: modificar producción; acceder información sensible; tomar decisiones críticas de producto o seguridad.
 
-- modificar producción;
-- acceder información sensible;
-- tomar decisiones críticas.
-
-Requiere aprobación humana.
+Requieren aprobación humana explícita. En MVP, tools con side-effects: deny-by-default.
 
 ---
 
-# Human In The Loop
+## Human in the loop
 
-La participación humana dependerá del impacto.
+La participación humana depende del impacto.
 
-Modelo:
+```text
+Mentor sugiere
+      ?
+Humano revisa
+      ?
+Humano aprueba
+      ?
+Sistema ejecuta (si aplica)
+```
 
-
-AI Suggests
-
-↓
-
-Human Reviews
-
-↓
-
-Human Approves
-
-↓
-
-System Executes
-
+Autonomy nunca es el default.
 
 ---
 
-# Agent Governance
+## Gobernanza del Mentor (MVP)
 
-Cada agente debe definir:
+El Mentor debe definir de forma explícita:
 
+| Campo | Contenido |
+|-------|-----------|
+| Purpose | Mentoreo pedagógico alineado a la tesis |
+| Permissions | Mínimos necesarios (least privilege) |
+| Tools | Lista cerrada; deny-by-default para side-effects |
+| Limits | Qué nunca puede hacer |
+| Evaluation criteria | Capability rubric + safety |
 
-Purpose
-
-Permissions
-
-Tools
-
-Limits
-
-Evaluation Criteria
-
+No hay “flota de agentes” que gobernar en el MVP: hay un Mentor con boundaries claros.
 
 ---
 
-# Agent Permissions
+## Permisos (least privilege)
 
-Los permisos deben ser mínimos.
+El Mentor solamente recibe lo necesario para mentorear.
 
-Principio:
-
-
-Least Privilege
-
-
-Un agente solamente recibe lo necesario.
+Principio: **Least Privilege**.
 
 ---
 
-# Data Governance
+## Gobernanza de datos
 
-Los datos utilizados por IA deben cumplir:
-
-- autorización;
-- trazabilidad;
-- protección.
+Los datos utilizados por IA deben cumplir: autorización, trazabilidad y protección.
 
 ---
 
-# Context Governance
+## Gobernanza de contexto
 
-El contexto enviado a modelos debe:
-
-- ser necesario;
-- estar permitido;
-- ser verificable.
+El contexto enviado al model debe ser necesario, permitido y verificable (ver CONTEXT_ENGINEERING).
 
 ---
 
-# Model Governance
+## Gobernanza de models
 
-Cada modelo utilizado debe registrar:
+Cada model utilizado debe registrar: versión, proveedor, propósito y limitaciones.
 
-- versión;
-- proveedor;
-- propósito;
-- limitaciones.
+Independencia de proveedor donde la arquitectura lo permita (ver ADR-001).
 
 ---
 
-# AI Change Management
+## Change management de IA
 
-Los cambios importantes requieren:
+Cambios importantes del Mentor requieren:
 
-
-Proposal
-
-↓
-
-Review
-
-↓
-
-Testing
-
-↓
-
-Approval
-
-↓
-
-Deployment
-
+```text
+Proposal → Review → Testing (golden set) → Approval → Deployment
+```
 
 ---
 
-# AI Auditability
+## Auditabilidad
 
 El sistema debe poder responder:
 
-- qué agente actuó;
+- qué Mentor / agente actuó;
 - qué contexto recibió;
-- qué modelo utilizó;
-- qué resultado generó.
+- qué model utilizó;
+- qué resultado generó;
+- si hubo evaluación.
 
 ---
 
-# AI Logs
+## Logs de IA
 
-Debe registrarse:
+Debe registrarse: Request, Context (según política), Agent, Model, Response Metadata, Evaluation.
 
-
-Request
-
-Context
-
-Agent
-
-Model
-
-Response Metadata
-
-Evaluation
-
+Sin data innecesaria ni secretos en claro.
 
 ---
 
-# Evaluation Governance
+## Gobernanza de evaluación
 
-Toda capacidad IA debe medirse.
+Toda capability de IA debe medirse (ver AI_EVALUATION_FRAMEWORK).
 
-Criterios:
+| Criterio | Pregunta |
+|----------|----------|
+| Quality | ¿La respuesta es útil y pedagógica? |
+| Accuracy | ¿La información es correcta? |
+| Safety | ¿Respeta límites y learning safety? |
+| Capability / User Value | ¿Mejora pensar — diseñar — construir? |
 
-## Quality
-
-¿La respuesta es útil?
-
----
-
-## Accuracy
-
-¿La información es correcta?
+Task completion sola no basta.
 
 ---
 
-## Safety
+## Gestión de fallos
 
-¿Respeta límites?
+Los errores de IA se tratan como incidentes:
 
----
-
-## User Value
-
-¿Mejora la experiencia?
+```text
+Detection → Analysis → Correction → Learning
+```
 
 ---
 
-# Failure Management
+## Transparencia
 
-Los errores de IA deben tratarse como incidentes.
-
-Proceso:
-
-
-Detection
-
-↓
-
-Analysis
-
-↓
-
-Correction
-
-↓
-
-Learning
-
-
----
-
-# AI Transparency
-
-El usuario debe saber:
+El learner debe saber:
 
 - cuándo interactúa con IA;
-- qué capacidades tiene;
+- qué capacidades tiene el Mentor;
 - cuáles son sus límites.
 
 ---
 
-# Anti Patterns
+## Anti-patrones
 
-## Black Box AI
-
-Sistemas sin explicación.
-
----
-
-## Unlimited Agents
-
-Agentes con permisos excesivos.
+- **Black box AI** — sistemas sin explicación.
+- **Unlimited agents** — permisos excesivos o multi-agent sin Mentor validado.
+- **Uncontrolled evolution** — cambios de prompt/model sin seguimiento.
+- **Blind trust** — aceptar respuestas sin validación.
+- **Task completion over learning** — optimizar “cerrar la tarea” a costa de capability y safety.
 
 ---
 
-## Uncontrolled Evolution
+## Evolución futura
 
-Cambios de IA sin seguimiento.
-
----
-
-## Blind Trust
-
-Aceptar respuestas sin validación.
+Equipos de agentes, autonomía mayor y auditabilidad avanzada quedan en `docs/99-future/` hasta que el Mentor MVP demuestre lift de capability con safety aceptable.
 
 ---
 
-# Future Evolution
+## Declaración final
 
-Este modelo permitirá:
+Project ZUZU considera la gobernanza de IA como capacidad fundamental.
 
-- equipos de agentes;
-- IA empresarial;
-- auditoría avanzada;
-- cumplimiento normativo.
+La inteligencia artificial debe ser poderosa — y responsable.
 
----
-
-# Final Statement
-
-Project ZUZU considera la gobernanza de IA como una capacidad fundamental.
-
-La inteligencia artificial debe ser poderosa.
-
-Pero también debe ser responsable.
+Learning safety > task completion. Un Mentor. Ownership humano.

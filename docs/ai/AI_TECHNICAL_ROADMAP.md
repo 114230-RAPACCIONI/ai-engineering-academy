@@ -1,385 +1,118 @@
----
+﻿---
 artifact:
   id: ART-024
   type: AI Technical Roadmap
   status: Draft
-  version: 0.1.0
+  version: 0.3.0
   owner: CTO
   reviewers:
     - Founder
   created: 2026-07-07
+  revised: 2026-07-08
   initiative: INIT-001
   tags:
     - artificial-intelligence
     - roadmap
-    - architecture
-    - strategy
+    - learning
 ---
 
-# AI Technical Roadmap
+# Roadmap técnico de IA
 
-> "A great vision requires a disciplined path."
-
----
-
-# Introduction
-
-Este documento define la evolución técnica de las capacidades de inteligencia artificial dentro de Project ZUZU.
-
-El objetivo es transformar la visión de IA en una estrategia ejecutable.
+> Ley vinculante: [PRODUCT_THESIS.md](../00-constitution/PRODUCT_THESIS.md) — [ADR-007](../architecture/adr/ADR-007-product-identity-learning-first.md)
+>
+> Validar un Mentor antes de cualquier narrativa multi-agent o de autonomy.
+> Las fases 4–5 siguientes son **Future** (ver `docs/99-future/`) — no son compromisos.
 
 ---
 
-# Roadmap Philosophy
+## Filosofía
 
-ZUZU no construirá todas las capacidades desde el inicio.
+```text
+Validar primero → Escalar después → Optimizar al final
+```
 
-La evolución será incremental.
-
-Cada etapa debe:
-
-- validar hipótesis;
-- generar valor;
-- reducir incertidumbre.
+Cada etapa debe mejorar la **capability del learner**, no solo la velocidad de shipping.
 
 ---
 
-# Core Principle
+## Fase 1 — Learning asistido por IA (corto plazo)
 
+**Objetivo:** el Mentor acompaña el aprendizaje en el Path.
 
-Validate First
+Capabilities: chat contextual — explicación de conceptos — asistencia educativa — ejemplos.
 
-↓
-
-Scale Second
-
-↓
-
-Optimize Third
-
+Foco: utilidad, interacción, valor pedagógico.
 
 ---
 
-# AI Evolution Stages
+## Fase 2 — Mentor personalizado (objetivo MVP)
 
-La arquitectura evoluciona en fases.
+**Objetivo:** un Mentor adaptado al learner.
 
----
+Capabilities: memoria básica — perfil — Progress — recomendaciones ligeras.
 
-# Phase 1 — AI Assisted Learning
+Foco: continuidad y personalización **sin** enjambres de agentes.
 
-## Objective
+**MVP = esenciales de Fase 1 + Fase 2.**
 
-Crear una primera experiencia donde la IA acompañe al usuario.
-
----
-
-## Capabilities
-
-- chat contextual;
-- explicación de conceptos;
-- asistencia educativa;
-- generación de ejemplos.
+```text
+Un Learner — Un Goal — Un Mentor
+```
 
 ---
 
-## Focus
+## Fase 3 — Mentor en Practice Projects (post-MVP)
 
-Validar:
+**Objetivo:** el Mentor hace scaffolding de diseño/revisión dentro de Practice Projects (pedagogía, no delivery OS).
 
-- utilidad;
-- interacción;
-- valor educativo.
+Capabilities: preguntas sobre requisitos — exploración de trade-offs — revisión de artifacts — prompts de documentación.
 
----
-
-# Phase 2 — Personalized AI Mentor
-
-## Objective
-
-Crear una IA adaptada al usuario.
+Foco: colaboración humano + Mentor en la práctica — sigue siendo **un** agente.
 
 ---
 
-## Capabilities
+## Solo Future (pensamiento en cuarentena)
 
-- memoria básica;
-- perfiles;
-- progreso;
-- recomendaciones personalizadas.
+| Fase anterior | Estado | Regla |
+|---------------|--------|-------|
+| Flotas multi-agent (Product / Arch / Dev / QA / Security) | Future | Solo si la Golden Rule lo exige y el Mentor está validado |
+| Workflows de ingeniería autónomos | Future | Autonomy nunca es default; learning safety primero |
 
----
-
-## Focus
-
-Validar:
-
-- personalización;
-- continuidad.
+No programar esto en roadmaps de producto activos hasta que las métricas de Capability del Mentor aprueben.
 
 ---
 
-# Phase 3 — AI Engineering Assistant
-
-## Objective
-
-Acompañar construcción de software.
-
----
-
-## Capabilities
-
-- análisis de requisitos;
-- diseño arquitectónico;
-- revisión de código;
-- documentación.
-
----
-
-## Focus
-
-Validar:
-
-- colaboración humano + IA.
-
----
-
-# Phase 4 — Multi-Agent System
-
-## Objective
-
-Crear equipos de agentes especializados.
-
----
-
-## Capabilities
-
-Ejemplo:
-
-
-Product Agent
-
-Architecture Agent
-
-Developer Agent
-
-QA Agent
-
-Security Agent
-
-
----
-
-## Focus
-
-Coordinación inteligente.
-
----
-
-# Phase 5 — Autonomous Engineering Workflows
-
-## Objective
-
-Automatizar procesos completos.
-
----
-
-## Capabilities
-
-- análisis;
-- planificación;
-- implementación asistida;
-- validación.
-
----
-
-## Focus
-
-Aumentar productividad.
-
----
-
-# MVP AI Scope
-
-El MVP debe enfocarse en:
-
-
-One User
-
-One Goal
-
-One Powerful AI Experience
-
-
----
-
-# MVP Capabilities
+## Capabilities de IA en el MVP (explícitas)
 
 Incluye:
 
-- mentor IA;
-- contexto básico;
-- conocimiento del producto;
-- seguimiento de progreso.
+- Chat del Mentor ligado a contexto Path + Practice
+- Explicar / preguntar / guiar
+- Memoria básica del learner
+- Sin tools de side-effect (o deny-by-default)
+
+Excluye:
+
+- Orquestación multi-agent
+- Pipelines de coding autónomos
+- “Modes” de producto como agentes separados
+- Builder-as-codegen sin pedagogía
+
+Ver [MVP_SCOPE.md](../product/MVP_SCOPE.md) — [AI_PRODUCT_EXPERIENCE.md](../product/AI_PRODUCT_EXPERIENCE.md).
 
 ---
 
-# Out Of Scope MVP
+## Éxito de este roadmap
 
-No incluye:
+No es “enviamos agentes”.
 
-- equipos completos de agentes;
-- autonomía total;
-- infraestructura compleja;
-- entrenamiento propio de modelos.
+**Los learners mejoran en la Capability rubric y vuelven al Path.**
 
 ---
 
-# Technical Evolution
-
-La arquitectura crecerá progresivamente.
-
----
-
-## Initial Architecture
-
-
-Application
-
-↓
-
-AI Service
-
-↓
-
-External Model Provider
-
-
----
-
-## Intermediate Architecture
-
-
-Application
-
-↓
-
-AI Orchestration Layer
-
-↓
-
-Agents
-
-↓
-
-Context Engine
-
-↓
-
-Models
-
-
----
-
-## Advanced Architecture
-
-
-Application
-
-↓
-
-Agent Platform
-
-↓
-
-Multi Agent System
-
-↓
-
-Memory
-
-↓
-
-Knowledge
-
-↓
-
-Evaluation
-
-
----
-
-# Technology Independence
-
-ZUZU no dependerá de un proveedor específico.
-
-Principio:
-
-
-Capability First
-
-Technology Second
-
-
----
-
-# Build vs Buy Strategy
-
-Inicialmente:
-
-Comprar:
-
-- modelos;
-- infraestructura base.
-
-Construir:
-
-- experiencia;
-- contexto;
-- agentes;
-- conocimiento.
-
----
-
-# Technical Risks
-
-## Over Engineering
-
-Construir demasiado temprano.
-
----
-
-## Vendor Lock-In
-
-Depender de una tecnología.
-
----
-
-## Lack Of Evaluation
-
-No medir calidad.
-
----
-
-## Poor Context Design
-
-Enviar información incorrecta.
-
----
-
-# Success Criteria
-
-El roadmap será exitoso cuando:
-
-- usuarios mejoren su capacidad;
-- la IA sea confiable;
-- el sistema evolucione continuamente;
-- la arquitectura pueda escalar.
-
----
-
-# Final Statement
-
-Project ZUZU no busca construir la IA más grande.
-
-Busca construir la mejor colaboración entre humanos e inteligencia artificial.
+## Relacionados
+
+- [AI_ARCHITECTURE](./AI_ARCHITECTURE.md)
+- [AGENT_MODEL](./AGENT_MODEL.md)
+- [AI_EVALUATION_FRAMEWORK](./AI_EVALUATION_FRAMEWORK.md)
+- [SECURITY](../security/SECURITY.md)

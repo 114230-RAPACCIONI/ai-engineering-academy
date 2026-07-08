@@ -1,23 +1,27 @@
----
+﻿---
 artifact:
   id: ART-002
   type: Product Vision
-  status: Draft
-  version: 0.1.0
+  status: Canonical
+  version: 0.2.0
   owner: Founder
   reviewers:
     - CTO
   created: 2026-07-07
+  revised: 2026-07-08
   initiative: INIT-001
   tags:
     - product
     - vision
     - strategy
+    - learning
 ---
 
 # Product Vision
 
-> "The best way to predict the future is to create it."
+> Ley vinculante: [PRODUCT_THESIS.md](../00-constitution/PRODUCT_THESIS.md)
+>
+> Learning is the product. Projects are the learning environment. AI is the mentor.
 
 ---
 
@@ -35,7 +39,7 @@ pensamiento crítico, fundamentos de ingeniería y capacidad de adaptación.
 
 ---
 
-# Product Purpose
+# Propósito del producto
 
 El propósito de Project ZUZU es cerrar la brecha existente entre la forma tradicional de aprender desarrollo de software y la realidad actual de la industria tecnológica.
 
