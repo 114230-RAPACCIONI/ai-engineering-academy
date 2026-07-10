@@ -3,12 +3,12 @@ artifact:
   id: ART-002
   type: Product Vision
   status: Canonical
-  version: 0.2.0
+  version: 1.0.0
   owner: Founder
   reviewers:
     - CTO
   created: 2026-07-07
-  revised: 2026-07-08
+  revised: 2026-07-09
   initiative: INIT-001
   tags:
     - product

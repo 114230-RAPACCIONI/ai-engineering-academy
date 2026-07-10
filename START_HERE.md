@@ -15,7 +15,7 @@ Este repositorio es **spec + viajes + (después) código de la app** en el mismo
 | Capa | Qué es |
 |------|--------|
 | **Viajes** (`docs/knowledge/curriculum/`) | Paso a paso: desarrollo con IA desde cero hasta app productiva + DevSecOps |
-| **App ZUZU** (`src/` — pendiente) | UX tipo juego; primer viaje: **Gastos Hormiga** |
+| **App ZUZU** (`src/` — pendiente) | UX tipo juego; el learner elige el dominio de su Practice Project |
 | **Método** | El mismo SDD que enseñamos = el mismo SDD con el que construimos ZUZU |
 
 Decisiones del founder: [FOUNDER_DECISIONS.md](docs/00-constitution/FOUNDER_DECISIONS.md)
@@ -64,17 +64,19 @@ Decisiones del founder: [FOUNDER_DECISIONS.md](docs/00-constitution/FOUNDER_DECI
 1. [PRODUCT_THESIS](docs/00-constitution/PRODUCT_THESIS.md)
 2. [FOUNDER_DECISIONS](docs/00-constitution/FOUNDER_DECISIONS.md)
 3. [LEARNING_CURRICULUM](docs/knowledge/curriculum/LEARNING_CURRICULUM.md)
-4. Capítulos 1–3 (viaje **Gastos Hormiga** en la app)
-5. [ENGAGEMENT_DESIGN](docs/product/ENGAGEMENT_DESIGN.md) — motivación sin castigos
+4. Capítulos 1–3 (método SDD; ejemplo de referencia: Gastos Hormiga)
+5. [PRODUCT_EXPERIENCE_VISION §14](docs/product/PRODUCT_EXPERIENCE_VISION.md) — motivación sin castigos
 6. [DOC_AUDIT](docs/knowledge/DOC_AUDIT.md) — qué docs usar / ignorar al codear
 
 **Ignorar al implementar:** `BACKEND_*`, `DATABASE_*` bodies viejos, `PROJECT_CONSTITUTION.md` (ver audit).
 
 ---
 
-## Primer viaje: Gastos Hormiga
+## Dominio del proyecto: lo elige el learner
 
-Al crear cuenta en la app, el único viaje disponible será **Gastos Hormiga** — el "Hello World" de ZUZU.
+ZUZU enseña el mismo método SDD sin importar qué construya el learner — el dominio es tan intercambiable como el stack ([FOUNDER_DECISIONS §8](docs/00-constitution/FOUNDER_DECISIONS.md)). No hay un proyecto obligatorio.
+
+**Gastos Hormiga** es el ejemplo de referencia interno usado para escribir y validar los Capítulos 1–3 — sirve como plantilla de "así se ve bien hecho" si el learner no tiene una idea propia todavía, pero cualquier dominio (e-commerce, turnos, API, juego, lo que sea) es igualmente válido.
 
 El learner puede también clonar el repo y leer `docs/` sin la app.
 

@@ -4,8 +4,8 @@ artifact:
   id: ART-004
   type: User Journey
   status: Canonical
-  version: 0.2.0
-  revised: 2026-07-08
+  version: 1.0.0
+  revised: 2026-07-09
   owner: Founder
   reviewers:
     - CTO
@@ -266,7 +266,7 @@ Y acepta:
 
 Crear los fundamentos necesarios para pensar como ingeniero.
 
-**Curriculum (entrada al Stage 4):** [Capítulo 1 — De la idea al scope](../../knowledge/curriculum/chapters/CHAPTER_01_FROM_IDEA_TO_SCOPE.md) — problem statement, scope, decisiones y Practice Project en fase Planning **antes** de codear.
+**Curriculum (entrada al Stage 4):** [Capítulo 1 — De la idea al scope](../knowledge/curriculum/chapters/CHAPTER_01_FROM_IDEA_TO_SCOPE.md) — problem statement, scope, decisiones y Practice Project en fase Planning **antes** de codear.
 
 ---
 
@@ -317,7 +317,7 @@ Validación
 
 # Stage 5 — Building
 
-
+**Curriculum:** [Capítulo 2 — Requirements](../knowledge/curriculum/chapters/CHAPTER_02_REQUIREMENTS_BEFORE_CODE.md) y [Capítulo 3 — Diseño mínimo y trade-offs](../knowledge/curriculum/chapters/CHAPTER_03_MINIMAL_DESIGN_AND_TRADEOFFS.md) — de la idea acotada en el Stage 4 a un diseño listo para construir.
 
 ## Objetivo
 
@@ -364,7 +364,7 @@ Las decisiones siguen perteneciendo al learner.
 
 # Stage 6 — Acceleration
 
-
+**Curriculum:** Capítulo 4 en adelante — Planeado (ver [LEARNING_CURRICULUM §3](../knowledge/curriculum/LEARNING_CURRICULUM.md)). No se escribe hasta validar Fase 0 con un learner humano.
 
 ## Objetivo
 
@@ -411,7 +411,7 @@ Diseño sistemas donde IA aumenta mi capacidad.
 
 # Stage 7 — Autonomy
 
-
+**Curriculum:** Capítulos 7–8 — Planeado (Ops, DevSecOps continuo; ver [LEARNING_CURRICULUM §3](../knowledge/curriculum/LEARNING_CURRICULUM.md)).
 
 ## Objetivo
 
@@ -520,4 +520,13 @@ Project ZUZU no acompaña a una persona a completar un curso.
 Acompaña a una persona a desarrollar una capacidad permanente:
 
 la capacidad de aprender, construir y evolucionar junto a la tecnología.
+
+---
+
+## Relacionados
+
+- [PRODUCT_THESIS](../00-constitution/PRODUCT_THESIS.md)
+- [LEARNING_CURRICULUM](../knowledge/curriculum/LEARNING_CURRICULUM.md) — mapa completo de capítulos citados en cada stage
+- [MVP_SCOPE](./MVP_SCOPE.md)
+- [PRODUCT_EXPERIENCE_VISION](./PRODUCT_EXPERIENCE_VISION.md)
 

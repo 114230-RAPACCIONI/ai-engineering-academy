@@ -1,8 +1,10 @@
 # Gastos Hormiga — V1
 
+> **Ejemplo de referencia interno de ZUZU** — no un dominio obligatorio ([FOUNDER_DECISIONS §8](../../docs/00-constitution/FOUNDER_DECISIONS.md)). Este recorrido muestra el Capítulo 1 aplicado de punta a punta con un dominio concreto; tu Practice Project puede ser sobre cualquier otro dominio.
+
 ## Estado
 Fase: Planning (Capítulo 1)
-Learner: Claude (dry-run del Capítulo 1, sin plataforma)
+Recorrido: completado como referencia del Capítulo 1 (sin plataforma — ver [FOUNDER_DECISIONS §2](../../docs/00-constitution/FOUNDER_DECISIONS.md))
 Fecha inicio: 2026-07-08
 
 ---

@@ -50,8 +50,8 @@ artifact:
 |-----------|-----------|--------|
 | `PRODUCT_VISION.md` | Keep | Mantener; alinear con FOUNDER_DECISIONS si drift |
 | `USER_JOURNEY.md` | Keep | Refactor menor: enlazar viajes SDD |
-| `PRODUCT_EXPERIENCE_VISION.md` | Keep | Merge ideas con ENGAGEMENT_DESIGN |
-| `ENGAGEMENT_DESIGN.md` | Keep | Nuevo canónico UX motivación |
+| `PRODUCT_EXPERIENCE_VISION.md` | Keep — **fusión ejecutada 2026-07-09** | Absorbió ENGAGEMENT_DESIGN.md como §14 |
+| `ENGAGEMENT_DESIGN.md` | Merge — **ejecutado 2026-07-09** | Stub → ver PRODUCT_EXPERIENCE_VISION.md §14 |
 | `INFORMATION_ARCHITECTURE.md` | Refactor | Actualizar cuando exista PLATFORM_SPEC |
 | `AI_PRODUCT_EXPERIENCE.md` | Keep | Fuente Mentor UX |
 | `USER_MENTAL_MODEL.md` | Keep | Draft útil |
@@ -69,10 +69,10 @@ artifact:
 | Documento | Veredicto | Acción |
 |-----------|-----------|--------|
 | `adr/ADR-008`, `ADR-009` | Keep | Nuevos — stack y IA |
-| `BACKEND_ARCHITECTURE.md` | Archive | Prematuro; contradice ADR-008 hasta PLATFORM_SPEC |
-| `FRONTEND_ARCHITECTURE.md` | Archive | Reemplazar por ADR-008 + PLATFORM_SPEC |
+| `BACKEND_ARCHITECTURE.md` | Archive — **ejecutado 2026-07-09** | Superado por ADR-008; stub en su lugar |
+| `FRONTEND_ARCHITECTURE.md` | Archive — **ejecutado 2026-07-09** | Superado por ADR-008; stub en su lugar |
 | `SYSTEM_ARCHITECTURE.md` | Refactor | Recortar a diagrama MVP o archive |
-| `DATABASE_ARCHITECTURE.md` | Archive | Prisma/SQLite en ADR-008 |
+| `DATABASE_ARCHITECTURE.md` | Archive — **ejecutado 2026-07-09** | Superado por ADR-008; stub en su lugar |
 | `DATA_MODEL.md` | Refactor | Merge con DOMAIN_MODEL cuando implementemos |
 | `API_DESIGN.md` | Refactor | Post PLATFORM_SPEC |
 | `INFRASTRUCTURE_ARCHITECTURE.md` | Keep | Ya recortado MVP |

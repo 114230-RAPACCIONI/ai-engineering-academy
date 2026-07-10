@@ -65,121 +65,35 @@ Debe utilizarse para pensar mejor.
 
 # AI System Overview
 
-Arquitectura conceptual:
+Arquitectura conceptual — **una sola superficie de IA**, no un orquestador multi-agente:
 
-                USER
+```
+        USER
+          |
+   ZUZU APPLICATION
+          |
+        MENTOR  ←── Context (Path + Practice + Knowledge)
+          |     ←── Memory (progreso del learner)
+          |
+    Model Providers
+```
 
-                 |
-
-                 |
-
-          ZUZU APPLICATION
-
-                 |
-
-                 |
-
-          AI ORCHESTRATOR
-
-                 |
-
-    ----------------------------
-
-    |            |             |
-
- Agents       Context       Memory
-
-    |            |             |
-
-    ----------------------------
-
-                 |
-
-          Model Providers
+El Mentor es el único punto de entrada de IA en el MVP. No hay una capa de orquestación separada que reparta trabajo entre varios agentes — el detalle de qué contexto lee, con qué permisos y qué memoria usa está descripto en [AGENT_MODEL.md](./AGENT_MODEL.md), que es el documento canónico sobre el Mentor. Este documento describe el resto del pipeline (contexto, conocimiento, memoria, tools, evaluación) que alimenta a esa única entidad.
 
 ---
 
-# AI Orchestrator
+# Responsibilities del runtime de IA
 
-## Propósito
+El runtime del MVP debe manejar:
 
-El AI Orchestrator es el cerebro de coordinación.
-
-No genera respuestas directamente.
-
-Coordina capacidades.
-
----
-
-# Responsibilities
-
-Debe manejar:
-
-- un Mentor (única superficie de producto en el MVP);
+- el Mentor (única superficie de producto — ver [AGENT_MODEL.md](./AGENT_MODEL.md));
 - recuperación de contexto (Path + Practice + Knowledge);
 - permisos;
 - memoria;
 - tools (deny-by-default);
 - evaluación pedagógica.
 
----
-
-# Agent Layer
-
-En el MVP existe **un agent de producto: el Mentor**.
-
-Otros nombres (Architecture, Reviewer, Coach) son **comportamientos pedagógicos del mismo Mentor**, no agents/shippable surfaces separados.
-
-Multi-agent fleets = Future (`docs/99-future/`), solo después de validar capability del Mentor.
-
----
-
-# Tipos de agent (MVP)
-
-## Mentor Agent (canónico)
-
-Responsabilidad:
-
-Ayudar a **pensar, diseñar y construir** — enseñando.
-
-Ejemplos:
-
-- explicar conceptos;
-- proponer ejercicios;
-- adaptar dificultad;
-- cuestionar decisiones;
-- revisar practice work con foco pedagógico;
-- orientar el siguiente paso en el Learning Path.
-
----
-
-## Comportamientos futuros (no agents de producto)
-
-| Nombre | Cómo aparece en el MVP |
-|--------|------------------------|
-| Architecture | El Mentor explora trade-offs y diseño |
-| Code Review | El Mentor revisa artefactos de práctica |
-| Learning Coach | El Mentor orienta progreso en el Path |
-
----
-
-# Agent Model
-
-El Mentor contiene:
-
-
-Agent
-
-Instructions
-
-Knowledge
-
-Context Rules
-
-Tools
-
-Memory
-
+**No** existe un "AI Orchestrator" que coordine múltiples agentes: no hay más de una entidad a coordinar en el MVP. Si en el futuro el Mentor necesitara delegar en especialistas, esa decisión requiere un ADR — no es una extensión implícita de este documento (ver [PRODUCT_THESIS — jerarquía no negociable](../00-constitution/PRODUCT_THESIS.md): "Un Mentor de IA > plataformas multi-agent").
 
 ---
 
@@ -367,14 +281,9 @@ El usuario mantiene control final.
 
 ---
 
-# Future Evolution
+# Qué queda fuera de este documento
 
-La arquitectura permitirá:
-
-- agentes especializados;
-- equipos de agentes;
-- aprendizaje personalizado;
-- colaboración humano-IA.
+Equipos de agentes, especialización multi-agente y orquestación entre agentes no son parte de esta arquitectura mientras el MVP tenga un único Mentor. Cualquier evolución en esa dirección requiere primero evidencia de capability del Mentor único y un ADR explícito — no es una extensión implícita de "Future Evolution" (ver [AGENT_MODEL §6](./AGENT_MODEL.md)).
 
 ---
 

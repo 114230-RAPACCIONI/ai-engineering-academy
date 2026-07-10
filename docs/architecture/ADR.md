@@ -3,9 +3,9 @@ artifact:
   id: ART-012
   type: Architecture Decision Records Index
   status: Canonical
-  version: 0.3.0
+  version: 1.0.0
   owner: CTO
-  revised: 2026-07-08
+  revised: 2026-07-09
 ---
 
 # Architecture Decision Records

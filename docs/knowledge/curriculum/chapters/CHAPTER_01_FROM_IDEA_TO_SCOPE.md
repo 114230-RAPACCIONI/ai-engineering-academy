@@ -568,37 +568,45 @@ Cambios a artefactos:
 - [ ] Sin código de implementación (correcto)
 ```
 
-### 7.4 Ejemplo completado (recortado) — "Compras del hogar"
+### 7.4 Ejemplo completado (recortado) — Gastos Hormiga
+
+Este es el ejemplo de referencia interno de ZUZU — no un dominio obligatorio ([FOUNDER_DECISIONS §8](../../../00-constitution/FOUNDER_DECISIONS.md)). Los Capítulos 2 y 3 lo siguen aplicando porque ya está completo de punta a punta, pero tu Practice Project puede ser sobre cualquier otro dominio. Versión completa: [PRACTICE_PROJECT.md](../../../../practice-projects/gastos-hormiga/PRACTICE_PROJECT.md).
 
 ```markdown
-# Compras del hogar — V1
+# Gastos Hormiga — V1
 
 ## 1. Problem statement
-Quién: Mi familia (2 adultos).
-Problema: Compramos de más o nos olvidamos ítems clave en el super.
-Frecuencia: 1–2 veces por semana.
-Por qué falla lo actual: Lista en papel se pierde; WhatsApp mezcla con otros chats.
-Éxito: Salir del super con todo lo necesario sin compras duplicadas innecesarias.
+Quién: Un freelancer que gestiona sus propios gastos personales (yo).
+Problema: Gasto plata en cosas chicas (café, delivery, kiosco) sin darme cuenta,
+y a fin de mes no sé en qué se fue una parte del dinero.
+Frecuencia: Casi todos los días, varias veces por semana.
+Por qué falla lo actual: El resumen de la tarjeta mezcla todo sin categorías
+útiles; una nota del celular no tiene estructura, así que nunca la reviso.
+Éxito: Poder ver en menos de un minuto cuánto gasté esta semana en gastos
+chicos y en qué categorías, sin abrir el home banking.
 
 ## 3. Scope in
-1. Agregar ítem a lista
-2. Marcar ítem comprado
-3. Ver lista agrupada por categoría simple
+1. Registrar un gasto (monto + categoría + fecha automática)
+2. Ver la lista de gastos de la semana actual
+3. Ver el total gastado por categoría en la semana
 
 ## 5. Non-goals
-- Compartir lista en tiempo real con otros dispositivos
-- Escaneo de códigos de barras
-- Predicción con IA de qué comprar
+- Conectar con el banco o la tarjeta (sync automático)
+- Notificaciones o recordatorios
+- Predicción de gastos con IA
 
 ## 6. Success criteria
-- Preparar lista para una compra real en < 10 min
-- Usar en una compra real sin volver al papel
+- Cargar un gasto nuevo en menos de 15 segundos
+- Ver el total semanal por categoría en un solo vistazo
+- Usarlo 2 semanas seguidas sin volver a la nota del celular
 
 ## 8. Decision log
-| D-001 | V1 sin login | Login desde día 1 | Solo uso familiar en un dispositivo | 2026-07-08 |
-| D-002 | Datos solo locales | Cloud sync | Menor superficie de seguridad en V1 | 2026-07-08 |
-| D-003 | Categorías fijas (5) | Categorías custom | Menos decisiones de UX en V1 | 2026-07-08 |
+| D-001 | V1 sin conexión al banco/tarjeta | Sync automático | Menor superficie de seguridad; cargar a mano fuerza a "darme cuenta" del gasto | 2026-07-08 |
+| D-002 | Categorías fijas (5), no personalizables | Categorías custom | Menos decisiones de UX en V1; cubren ~90% de mis gastos hormiga reales | 2026-07-08 |
+| D-003 | Datos solo locales, sin login | Login + nube | Uso personal en un solo dispositivo; menor riesgo y más rápido de armar | 2026-07-08 |
 ```
+
+**Si elegís tu propio proyecto en vez de Gastos Hormiga** (modo repo/docs, ver [FOUNDER_DECISIONS §2](../../../00-constitution/FOUNDER_DECISIONS.md)), el formato es el mismo — solo cambia el contenido. Lo importante no es el proyecto, es que cada sección quede así de concreta.
 
 ### 7.5 Milestones del capítulo
 

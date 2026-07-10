@@ -26,22 +26,22 @@ artifact:
 
 ## 1. Qué es ZUZU
 
-| Tema | Decisión |
-|------|----------|
+| Tema | Decisión                                                                               |
+|------|----------------------------------------------------------------------------------------|
 | Producto | App que guía **viajes** paso a paso: desarrollo con IA desde cero hasta app productiva |
-| Objetivo del learner | Entender el proceso completo, incluyendo rol **DevSecOps** |
-| Repo | **Mismo repositorio**: `docs/` (spec + viajes) + código de la app |
-| Antes de codear | **Todo** definido: viajes + spec de plataforma + ADRs clave |
-| Implementación | Con ayuda de IA, siguiendo el spec — no prompt-first |
+| Objetivo del learner | Entender el proceso completo del desarrollo con IA, incluyendo rol **DevSecOps**       |
+| Repo | **Mismo repositorio**: `docs/` (spec + viajes) + código de la app                      |
+| Antes de codear | **Todo** definido: viajes + spec de plataforma + ADRs clave                            |
+| Implementación | Con ayuda de IA, siguiendo el spec — no prompt-first                                   |
 
 ---
 
 ## 2. Dos formas de aprender
 
-| Modo | Descripción |
-|------|-------------|
-| **App ZUZU** | UX amigable, tipo juego — el learner *siente que juega aprendiendo* |
-| **Repo / docs** | Clonar GitHub y recorrer `docs/` sin la app (alternativa válida) |
+| Modo | Descripción                                                       |
+|------|-------------------------------------------------------------------|
+| **App ZUZU** | UX amigable, tipo juego — el learner *siente que aprende jugando* |
+| **Repo / docs** | Clonar GitHub y recorrer `docs/` sin la app (alternativa válida)  |
 
 ---
 
@@ -55,7 +55,6 @@ artifact:
 | Proveedores | Arquitectura **multi-provider**; un proveedor **por defecto** (ver [ADR-009](../architecture/adr/ADR-009-ai-default-provider.md)) |
 | Código en producto | Sí, **solo después** de comprender el problema |
 | Editor integrado | No en el MVP |
-| Cursor | Herramienta externa recomendada para implementar |
 | Objetivo IA | Enseñar ingeniería, no acelerar la escritura de código |
 
 ---
@@ -118,16 +117,18 @@ Debe poder **seguir evolucionando el proyecto fuera de ZUZU**.
 
 ---
 
-## 8. Primer viaje: Gastos Hormiga
+## 8. Dominio del proyecto: independiente, no obligatorio
+
+> **Corrección 2026-07-09:** este documento decía que Gastos Hormiga era "el primer viaje obligatorio" al crear cuenta. Era un error de diseño — si la tesis exige independencia de **stack**, exige por la misma razón independencia de **dominio**. Un proyecto obligatorio es el mismo tipo de acoplamiento que un stack obligatorio.
 
 | Tema | Decisión |
 |------|----------|
-| Rol | **Primer viaje** disponible en la app al crear cuenta |
-| No es | Ejemplo aislado en `examples/` ni solo documentación |
-| Por qué | Problema real, simple, enseña ingeniería, recorre SDD completo, producto demostrable |
-| Nombre interno | **"Hello World" de ZUZU** |
+| Rol del dominio | El learner elige (o recibe sugerido, sin decidir aún el mecanismo) el dominio de su Practice Project — control de gastos, e-commerce, turnos, API, juego, lo que sea |
+| Qué no cambia | El método SDD (Cap. 1–8) y el rol del Mentor son iguales sin importar el dominio |
+| Gastos Hormiga | **Ejemplo de referencia interno** — el caso usado para escribir y validar los Capítulos 1–3 (ver [DOC_AUDIT.md](../knowledge/DOC_AUDIT.md)). Útil como plantilla de "así se ve bien hecho"; **no** es el proyecto obligatorio del MVP |
+| Pendiente (Post-MVP, no bloquea el MVP) | Si ZUZU ofrece una librería curada de dominios sugeridos al crear cuenta, o si el learner siempre trae su propia idea desde el día 1 — no decidido |
 
-Contenido pedagógico: Capítulos 1–3 (+ 4–8 cuando existan) aplicados a Gastos Hormiga.
+Contenido pedagógico existente: Capítulos 1–3 usan Gastos Hormiga como ejemplo completado de punta a punta — eso se mantiene como material de referencia, no como mandato de dominio.
 
 ---
 

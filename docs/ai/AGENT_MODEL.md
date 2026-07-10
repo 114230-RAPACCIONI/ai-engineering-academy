@@ -1,466 +1,107 @@
-﻿---
+---
 artifact:
   id: ART-017
   type: Agent Model
   status: Draft
-  version: 0.1.0
+  version: 0.2.0
   owner: CTO
   reviewers:
     - Founder
   created: 2026-07-07
+  revised: 2026-07-09
   initiative: INIT-001
   tags:
     - artificial-intelligence
-    - agents
+    - mentor
     - architecture
 ---
 
-# Agent Model
+# Modelo del Mentor
 
-> Ley vinculante: [PRODUCT_THESIS.md](../00-constitution/PRODUCT_THESIS.md)
+> Ley vinculante: [PRODUCT_THESIS.md](../00-constitution/PRODUCT_THESIS.md) — [FOUNDER_DECISIONS §3](../00-constitution/FOUNDER_DECISIONS.md)
 >
-> Agent de producto en el MVP = **solo Mentor**. Otros nombres son pedagogía futura, no superficies shippeables.
+> **En el MVP existe un único agente de producto: el Mentor.** No hay agentes múltiples, swarms, ni orquestación entre agentes. Este documento describe esa única entidad — no un framework general de agentes.
 
 ---
 
-# Introduction
+## 1. Qué es el Mentor
 
-Este documento define el modelo conceptual de agentes dentro de Project ZUZU.
+El Mentor es la única entidad de IA con la que interactúa el learner dentro de ZUZU.
 
-El objetivo es establecer:
+No es una interfaz conversacional genérica: es una entidad con propósito pedagógico específico, diseñada para ayudar a pensar — no para reemplazar el pensamiento del learner (ver [PRODUCT_THESIS](../00-constitution/PRODUCT_THESIS.md)).
 
-- qué es un agente;
-- qué responsabilidades tiene;
-- cómo interactúa;
-- cómo evoluciona.
+El Mentor combina:
 
----
-
-# What Is An Agent?
-
-Dentro de ZUZU, un agente es una entidad inteligente especializada que colabora con el usuario para alcanzar un objetivo específico.
-
-Un agent combina:
-
-
-Propósito
-
-Instructions
-
-Knowledge
-
-Context
-
-Tools
-
-Memory
-
-Evaluation
-
+| Componente | Qué es en el Mentor |
+|------------|----------------------|
+| **Propósito** | Acompañar aprendizaje y práctica de ingeniería colaborando con IA |
+| **Instrucciones** | Cómo debe comportarse: hacer preguntas, cuestionar, nunca generar la solución completa sin que el learner razone primero |
+| **Knowledge** | Curriculum, Content Standards, principios de ingeniería — no un dataset arbitrario |
+| **Context** | Learning Path del learner + su Practice Project + historial reciente |
+| **Tools** | Las mínimas necesarias para leer contexto y proponer — no ejecutar cambios de producción por su cuenta |
+| **Memory** | Progreso del learner y decisiones de su Practice Project (ver [MEMORY_ARCHITECTURE.md](./MEMORY_ARCHITECTURE.md)) |
+| **Evaluation** | Ganancia de capability del learner — no velocidad de respuesta ni satisfacción del chat (ver [AI_EVALUATION_FRAMEWORK.md](./AI_EVALUATION_FRAMEWORK.md)) |
 
 ---
 
-# Agent Philosophy
+## 2. Principios del Mentor
 
-Los agentes no existen para reemplazar al usuario.
+**Orientado a propósito.** El Mentor enseña ingeniería colaborando con IA. No es un asistente general de productividad.
 
-Existen para aumentar sus capacidades.
+**Consciente del contexto.** Sin el Learning Path y el Practice Project del learner, el Mentor es solo un modelo genérico respondiendo sin memoria del viaje.
 
----
+**Especializado, no universal.** El Mentor no intenta cubrir todos los temas posibles — cubre el curriculum de ZUZU con profundidad.
 
-# Agent Principles
-
-## Principio 1 — Orientado a propósito
-
-Cada agente debe tener una responsabilidad clara.
-
-Un agente que intenta hacer todo termina siendo poco confiable.
+**El learner mantiene el control.** El Mentor propone, pregunta y cuestiona. La decisión final — qué construir, qué aceptar de una respuesta de IA — es siempre del learner (ver [FOUNDER_DECISIONS §3](../00-constitution/FOUNDER_DECISIONS.md): "Objetivo IA: enseñar ingeniería, no acelerar la escritura de código").
 
 ---
 
-## Principle 2 — Context Aware
+## 3. Comportamientos del Mentor (no agentes separados)
 
-Un agente sin contexto es solamente un modelo generativo.
+El Mentor adapta su enfoque según el módulo del curriculum, pero sigue siendo **una sola entidad** — estos son modos de comportamiento, no agentes independientes ni superficies de producto separadas:
 
----
+| Comportamiento | Cuándo aparece |
+|-----------------|-----------------|
+| Guía de arquitectura | Al discutir trade-offs, requisitos y riesgos de diseño |
+| Revisor | Al evaluar la calidad de un artefacto de práctica (problem statement, requirements, design) |
+| Orientador de Path | Al ubicar al learner en su Learning Path y sugerir el próximo paso |
 
-## Principle 3 — Specialized Intelligence
-
-La especialización mejora la calidad.
-
----
-
-## Principle 4 — Human Control
-
-El usuario mantiene la decisión final.
+Ninguno de estos comportamientos se convierte en un agente shippeable separado del Mentor durante el MVP.
 
 ---
 
-# Agent Anatomy
+## 4. Permisos y límites
 
-Un agente ZUZU está compuesto por:
+El Mentor debe operar dentro de límites explícitos:
 
-         Agent
+- qué contexto puede leer (Learning Path + Practice Project del learner que lo invoca — nunca de otros learners);
+- qué puede proponer (explicaciones, preguntas, revisiones, sugerencias) frente a lo que no puede hacer por su cuenta (generar y aplicar código de producción sin supervisión, tomar decisiones de scope por el learner);
+- qué debe evaluarse (precisión, utilidad pedagógica, seguridad, alineación con el curriculum).
 
-           |
-
-| | | |
-
-Goal Instructions Knowledge Tools
-
-           |
-
-        Context
-
-           |
-
-        Memory
-
-           |
-
-      Evaluation
+La autonomía nunca es el default (ver [REPO_CONSTITUTION §4](../00-constitution/REPO_CONSTITUTION.md)).
 
 ---
 
-# Core Properties
+## 5. Anti-patrones que ZUZU evita
+
+**Mentor genérico sin límites.** Un Mentor que intenta responder cualquier cosa sobre cualquier tema deja de enseñar ingeniería con criterio.
+
+**Permisos sin restricción.** El Mentor no tiene acceso irrestricto a producción, a datos de otros learners, ni a ejecutar cambios sin que el learner los entienda.
+
+**Decisiones ocultas.** Toda sugerencia del Mentor debe venir acompañada de su razonamiento — nunca una respuesta sin justificación que el learner deba aceptar a ciegas.
+
+**Sin evaluación.** Un Mentor cuya calidad nadie mide no puede mejorar con criterio.
 
 ---
 
-# Identity
+## 6. Qué no es este documento
 
-Cada agente tiene identidad propia.
-
-Ejemplo:
-
-
-Name:
-
-Architecture Mentor Agent
-
-Propósito:
-
-Help users design software systems.
-
+Este documento no define un framework general de agentes, ni un modelo de orquestación multi-agente, ni una arquitectura que "permitirá" agentes de usuario o equipos de agentes en el futuro. Ese tipo de exploración, si alguna vez se justifica, requiere primero que el Mentor único demuestre ganancia de capability medible en learners reales — y en ese punto sería una decisión de producto documentada con un ADR, no una extensión implícita de este documento (ver [PRODUCT_THESIS — jerarquía no negociable](../00-constitution/PRODUCT_THESIS.md): "Un Mentor de IA > plataformas multi-agent").
 
 ---
 
-# Goal
+## Declaración final
 
-Define qué intenta conseguir.
+El Mentor no es una interfaz conversacional.
 
-Ejemplo:
-
-
-Review architecture decisions
-
-Explain tradeoffs
-
-Suggest improvements
-
-
----
-
-# Instructions
-
-Define cómo debe comportarse.
-
-Incluye:
-
-- comportamiento;
-- límites;
-- criterios.
-
----
-
-# Knowledge
-
-Información que el agente puede utilizar.
-
-Puede incluir:
-
-- documentación;
-- principios;
-- ejemplos;
-- referencias.
-
----
-
-# Context
-
-Información específica de la situación actual.
-
-Ejemplo:
-
-Usuario:
-
-
-Tomando una decisión arquitectónica
-
-
-Contexto:
-
-
-Proyecto actual
-
-Requisitos
-
-Restricciones
-
-Decisiones anteriores
-
-
----
-
-# Tools
-
-Capacidades externas.
-
-Ejemplos:
-
-
-Repository Analysis
-
-Code Search
-
-Documentation Search
-
-Testing Tools
-
-
----
-
-# Memory
-
-Información persistente.
-
-Tipos:
-
-
-Short Term Memory
-
-Long Term Memory
-
-
----
-
-# Evaluation
-
-Mecanismos para medir calidad.
-
-Ejemplos:
-
-- precisión;
-- utilidad;
-- seguridad;
-- alineación.
-
----
-
-# Agent Lifecycle
-
-Un agente atraviesa diferentes estados.
-
-
-Created
-
-↓
-
-Configured
-
-↓
-
-Available
-
-↓
-
-Executing
-
-↓
-
-Evaluated
-
-↓
-
-Improved
-
-
----
-
-# Agent Types
-
-## MVP (Canonical)
-
-### Mentor Agent
-
-**Objective:** Acompañar aprendizaje y práctica.
-
-Capabilities:
-
-- explicar;
-- adaptar dificultad;
-- proponer ejercicios;
-- cuestionar decisiones;
-- revisar practice work con foco pedagógico;
-- orientar próximos pasos en el Learning Path.
-
-Superficie shippeable del MVP = **solo Mentor**.
-
----
-
-## Comportamientos futuros (no agents de producto separados)
-
-Estos nombres pueden describir **comportamientos del Mentor** o especialistas posteriores.
-**No** son agents shippeables del MVP hasta que pasen las métricas de Capability del Mentor.
-
-| Nombre | Como pedagogía dentro del Mentor |
-|------|---------------------------|
-| Architecture | Trade-offs, requisitos, riesgos |
-| Reviewer | Calidad de practice artifacts |
-| Project | Contexto de Practice Project + próximos pasos |
-
----
-
-# Colaboración entre agents
-
-La colaboración multi-agent es **Future** (`docs/99-future/`).
-
-No implementar grafos de orquestación en el MVP.
-
-Patrón MVP:
-
-```
-Learner → Mentor (single) → Path + Practice context
-```
-
----
-
-# Agent Permissions
-
-Los agentes deben tener límites.
-
-Un agente debe saber:
-
-- qué información puede acceder;
-- qué herramientas puede usar;
-- qué acciones puede ejecutar.
-
----
-
-# Agent Security Model
-
-
-User Permission
-
-↓
-
-Context Permission
-
-↓
-
-Agent Permission
-
-↓
-
-Tool Permission
-
-
----
-
-# Agent Configuration
-
-Conceptualmente:
-
-
-Agent
-
-{
-
-name
-
-purpose
-
-instructions
-
-knowledgeSources
-
-allowedTools
-
-memoryPolicy
-
-evaluationRules
-
-}
-
-
----
-
-# Agent Evolution
-
-Los agentes deben poder mejorar.
-
-Pero toda evolución debe ser:
-
-- documentada;
-- evaluada;
-- versionada.
-
----
-
-# Agent Versioning
-
-Ejemplo:
-
-
-Architecture Agent v1.0
-
-↓
-
-Architecture Agent v1.1
-
-
-Cambios importantes deben generar nuevo registro.
-
----
-
-# Anti-patterns
-ZUZU evitará:
-
-## Generic Agent
-
-Un agente que hace todo.
-
----
-
-## Unlimited Permissions
-
-Agentes con acceso completo.
-
----
-
-## Hidden Decisions
-
-Agentes que toman decisiones sin explicación.
-
----
-
-## No Evaluation
-
-Agentes sin medición.
-
----
-
-# Future Vision
-
-La arquitectura permitirá:
-
-- agentes personalizados;
-- agentes creados por usuarios;
-- equipos de agentes;
-- agentes empresariales.
-
----
-
-# Declaración final
-Un agente dentro de Project ZUZU no es una interfaz conversacional.
-
-Es una entidad inteligente diseñada para colaborar, enseñar y mejorar la capacidad humana.
+Es una entidad diseñada para colaborar, enseñar y ampliar el criterio del learner — una sola, no varias, durante todo el MVP.

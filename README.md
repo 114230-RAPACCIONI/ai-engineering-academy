@@ -6,7 +6,7 @@
 
 ## Empezá acá
 
-**[START_HERE.md](START_HERE.md)** — ciclo SDD, decisiones founder, Gastos Hormiga, y orden de lectura.
+**[START_HERE.md](START_HERE.md)** — ciclo SDD, decisiones founder, dominio de práctica, y orden de lectura.
 
 Eso es lo único obligatorio para arrancar.
 
@@ -18,7 +18,7 @@ Eso es lo único obligatorio para arrancar.
 |-----|-----|
 | [Product Thesis](docs/00-constitution/PRODUCT_THESIS.md) | Identidad del producto |
 | [Repo Constitution](docs/00-constitution/REPO_CONSTITUTION.md) | Coherencia documental |
-| [FOUNDER_DECISIONS](docs/00-constitution/FOUNDER_DECISIONS.md) | Decisiones founder (stack, UX, Gastos Hormiga) |
+| [FOUNDER_DECISIONS](docs/00-constitution/FOUNDER_DECISIONS.md) | Decisiones founder (stack, UX, dominio de práctica) |
 | [ADR-008 / ADR-009](docs/architecture/ADR.md) | Stack + IA default |
 | [ADR-005 SDD](docs/architecture/adr/ADR-005-spec-driven-development.md) | Por qué spec-first |
 
@@ -39,7 +39,7 @@ Capítulos 4–8: pendientes — se escriben **antes** de la fase Implement (spe
 
 ## Plataforma (después del spec)
 
-[MVP Scope](docs/product/MVP_SCOPE.md) · [Engagement Design](docs/product/ENGAGEMENT_DESIGN.md) · [Domain Model](docs/architecture/DOMAIN_MODEL.md)
+[MVP Scope](docs/product/MVP_SCOPE.md) · [Product Experience Vision](docs/product/PRODUCT_EXPERIENCE_VISION.md) · [Domain Model](docs/architecture/DOMAIN_MODEL.md)
 
 Implementar la app cuando `PLATFORM_SPEC.md` esté cerrado. Ver [START_HERE.md](START_HERE.md).
 

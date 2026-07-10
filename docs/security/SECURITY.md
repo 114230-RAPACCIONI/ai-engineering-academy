@@ -3,12 +3,12 @@ artifact:
   id: ART-SEC-001
   type: Security
   status: Canonical
-  version: 0.3.0
+  version: 1.0.0
   owner: CTO
   reviewers:
     - Founder
   created: 2026-07-08
-  revised: 2026-07-08
+  revised: 2026-07-09
   initiative: INIT-001
   tags:
     - security

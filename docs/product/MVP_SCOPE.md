@@ -3,12 +3,12 @@ artifact:
   id: ART-008
   type: MVP Product Spec
   status: Canonical
-  version: 0.6.0
+  version: 1.0.0
   owner: Founder
   reviewers:
     - CTO
   created: 2026-07-07
-  revised: 2026-07-08
+  revised: 2026-07-09
   initiative: INIT-001
   tags:
     - product

@@ -3,12 +3,12 @@ artifact:
   id: ART-037
   type: Documentation Architecture
   status: Canonical
-  version: 0.3.0
+  version: 1.0.0
   owner: CTO
   reviewers:
     - Founder
   created: 2026-07-07
-  revised: 2026-07-08
+  revised: 2026-07-09
   initiative: INIT-001
   tags:
     - documentation

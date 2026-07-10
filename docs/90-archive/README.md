@@ -28,6 +28,9 @@ Documentos movidos aquí durante la recuperación de coherencia (2026-07-08).
 | `engineering/DEVELOPER_EXPERIENCE_ARCHITECTURE.md` | `docs/engineering/` | DX platform prematura |
 | `ai/PROMPT_SPECIFICATION_SYSTEM.md` | `docs/ai/` | Teatro de proceso antes del Mentor v1 |
 | `engineering/ENGINEERING_GOVERNANCE_ARCHITECTURE.md` | `docs/engineering/` | Mergeado al Handbook; cosplay de boards |
+| `architecture/BACKEND_ARCHITECTURE.md` | `docs/architecture/` | Superado por ADR-008 (stack elegido) |
+| `architecture/FRONTEND_ARCHITECTURE.md` | `docs/architecture/` | Superado por ADR-008 (stack elegido) |
+| `architecture/DATABASE_ARCHITECTURE.md` | `docs/architecture/` | Superado por ADR-008 (stack elegido) |
 
 ## Merged into Canonical (historial)
 
@@ -39,5 +42,6 @@ Documentos movidos aquí durante la recuperación de coherencia (2026-07-08).
 | `security/SECURITY_MODEL.md` | [SECURITY.md](../security/SECURITY.md) |
 | `security/SECURITY_ARCHITECTURE.md` | [SECURITY.md](../security/SECURITY.md) |
 | `engineering/ENGINEERING_GOVERNANCE_ARCHITECTURE.md` | [ENGINEERING_HANDBOOK.md](../engineering/ENGINEERING_HANDBOOK.md) |
+| `product/ENGAGEMENT_DESIGN.md` | [PRODUCT_EXPERIENCE_VISION.md §14](../product/PRODUCT_EXPERIENCE_VISION.md#14-motivación-y-engagement-inspiración-duolingo-no-copia) |
 
 Future (no archivado, no canónico): [`docs/99-future/`](../99-future/).
