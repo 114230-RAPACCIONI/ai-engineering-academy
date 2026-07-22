@@ -4,6 +4,7 @@ import { auth } from "@/modules/identity/auth";
 import { prisma } from "@/lib/prisma";
 import {
   buildPracticeMarkdown,
+  buildRequirementsMarkdown,
   getProjectForUser,
 } from "@/modules/projects/service";
 
@@ -38,10 +39,21 @@ export async function GET(_req: Request, context: RouteContext) {
 
   const zip = new JSZip();
   zip.file("PRACTICE_PROJECT.md", buildPracticeMarkdown(project));
+  zip.file(
+    "REQUIREMENTS.md",
+    buildRequirementsMarkdown({
+      title: project.title,
+      functionalReqs: project.functionalReqs,
+      nonFunctionalReqs: project.nonFunctionalReqs,
+      acceptanceCriteria: project.acceptanceCriteria,
+      traceability: project.traceability,
+      status: project.status,
+    }),
+  );
   zip.file("DECISION_LOG.md", decisionMd);
   zip.file(
     "README.md",
-    `# ${project.title}\n\nExport desde ZUZU — fase ${project.status}.\n\nArtefactos de planeamiento del learner. No es código de producto.\n`,
+    `# ${project.title}\n\nExport desde ZUZU — fase ${project.status}.\n\nArtefactos de planeamiento/requirements del learner. No es código de producto.\n`,
   );
 
   const buffer = await zip.generateAsync({ type: "nodebuffer" });

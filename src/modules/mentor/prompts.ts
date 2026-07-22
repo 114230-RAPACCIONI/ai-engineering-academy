@@ -95,6 +95,48 @@ const BY_MODULE: Record<string, MentorPrompt[]> = {
       text: "Según lo que sabés de mi Practice Project y decision log, ¿estoy listo para exportar el ZIP o qué falta?",
     },
   ],
+  "2-1-scope-to-reqs": [
+    {
+      id: "scope-gaps",
+      label: "Huecos scope→FR",
+      text: "Este es mi scope in. ¿Qué ítems no tienen todavía un FR claro?\n\n[pegá scope]",
+    },
+  ],
+  "2-2-functional-reqs": [
+    {
+      id: "fr-stack",
+      label: "¿Hay stack escondido?",
+      text: "Revisá mis FRs y señalá cualquier tecnología o UI prematura:\n\n[pegá FRs]",
+    },
+  ],
+  "2-4-acceptance": [
+    {
+      id: "ac-subjective",
+      label: "ACs subjetivos",
+      text: "¿Cuáles de estos ACs no son observables Given/When/Then?\n\n[pegá ACs]",
+    },
+  ],
+  "2-6-traceability": [
+    {
+      id: "orphan-fr",
+      label: "FRs huérfanos",
+      text: "Compará scope vs FRs. ¿Hay FRs sin origen en scope (creep)?",
+    },
+  ],
+  "2-8-ai-requirements": [
+    {
+      id: "no-invent",
+      label: "No inventes producto",
+      text: "Revisá mi borrador de requirements. Solo señalá ambigüedades, contradicciones y creep. No agregues features nuevas.",
+    },
+  ],
+  "2-practice": [
+    {
+      id: "dod-ch2",
+      label: "DoD Cap. 2",
+      text: "Recorré conmigo el Definition of Done del Capítulo 2 y desafiá evidencias flojas. Sin pedirme código.",
+    },
+  ],
 };
 
 export function promptsForModule(moduleSlug?: string | null): MentorPrompt[] {

@@ -13,7 +13,11 @@ const projectSchema = z.object({
   scopeOut: z.string().max(2000),
   nonGoals: z.string().max(2000),
   successCriteria: z.string().max(2000),
-  status: z.enum(["planning", "active", "done"]),
+  functionalReqs: z.string().max(8000),
+  nonFunctionalReqs: z.string().max(4000),
+  acceptanceCriteria: z.string().max(8000),
+  traceability: z.string().max(4000),
+  status: z.enum(["planning", "requirements", "active", "done"]),
 });
 
 export type ProjectActionResult = { ok: boolean; error?: string };
@@ -34,6 +38,10 @@ export async function savePracticeProject(
     scopeOut: formData.get("scopeOut") || "",
     nonGoals: formData.get("nonGoals") || "",
     successCriteria: formData.get("successCriteria") || "",
+    functionalReqs: formData.get("functionalReqs") || "",
+    nonFunctionalReqs: formData.get("nonFunctionalReqs") || "",
+    acceptanceCriteria: formData.get("acceptanceCriteria") || "",
+    traceability: formData.get("traceability") || "",
     status: formData.get("status") || "planning",
   });
 

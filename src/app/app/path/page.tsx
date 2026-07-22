@@ -1,29 +1,104 @@
+import Link from "next/link";
 import { redirect } from "next/navigation";
-import { PathJourney } from "@/components/PathJourney";
 import { auth } from "@/modules/identity/auth";
 import {
+  CHAPTER_01,
+  CHAPTER_02,
   getOrCreateJourney,
+  isChapter2Unlocked,
+  listLearningPaths,
   progressSummary,
 } from "@/modules/learning/journey";
 
-export default async function PathPage() {
+export default async function PathIndexPage() {
   const session = await auth();
   if (!session?.user?.id) redirect("/login");
 
-  const journey = await getOrCreateJourney(session.user.id);
-  const summary = progressSummary(journey.path.modules, journey.progress);
+  const paths = await listLearningPaths();
+  const unlockedCh2 = await isChapter2Unlocked(session.user.id);
+
+  const cards = await Promise.all(
+    paths.map(async (path) => {
+      const locked = path.slug === CHAPTER_02 && !unlockedCh2;
+      let percent = 0;
+      let status = "locked";
+      if (!locked) {
+        const journey = await getOrCreateJourney(session.user!.id, path.slug);
+        percent = progressSummary(journey.path.modules, journey.progress).percent;
+        status = journey.status;
+      }
+      return { path, locked, percent, status };
+    }),
+  );
 
   return (
-    <PathJourney
-      pathTitle={journey.path.title}
-      pathDescription={journey.path.description}
-      modules={journey.path.modules}
-      progress={journey.progress}
-      currentModuleId={journey.currentModuleId}
-      journeyStatus={journey.status}
-      percent={summary.percent}
-      completed={summary.completed}
-      total={summary.total}
-    />
+    <div className="space-y-8">
+      <section>
+        <p className="mb-2 text-xs tracking-[0.15em] text-[var(--ink-muted)] uppercase">
+          Learning Path
+        </p>
+        <h1 className="mb-2 text-3xl font-semibold tracking-tight">
+          Tu viaje SDD
+        </h1>
+        <p className="max-w-2xl text-[var(--ink-muted)]">
+          Capítulos del curriculum. El Cap. 2 se desbloquea al completar el Path
+          del Cap. 1 (prerrequisito del curriculum).
+        </p>
+      </section>
+
+      <ul className="space-y-4">
+        {cards.map(({ path, locked, percent, status }) => (
+          <li key={path.id}>
+            {locked ? (
+              <div className="rounded-xl border border-dashed border-[var(--line)] bg-[var(--surface)] p-5 opacity-80">
+                <p className="text-xs tracking-wide text-[var(--ink-muted)] uppercase">
+                  Capítulo {path.chapter} · Bloqueado
+                </p>
+                <h2 className="mt-1 text-xl font-medium">{path.title}</h2>
+                <p className="mt-2 text-sm text-[var(--ink-muted)]">
+                  {path.description}
+                </p>
+                <p className="mt-3 text-sm text-[var(--ink-muted)]">
+                  Completá el Path del{" "}
+                  <Link
+                    href={`/app/path/c/${CHAPTER_01}`}
+                    className="text-[var(--accent)] underline"
+                  >
+                    Capítulo 1
+                  </Link>{" "}
+                  para desbloquear.
+                </p>
+              </div>
+            ) : (
+              <Link
+                href={`/app/path/c/${path.slug}`}
+                className="block rounded-xl border border-[var(--line)] bg-[var(--surface)] p-5 hover:border-[var(--accent)]"
+              >
+                <p className="text-xs tracking-wide text-[var(--ink-muted)] uppercase">
+                  Capítulo {path.chapter}
+                  {status === "completed" ? " · Completado" : ""}
+                </p>
+                <h2 className="mt-1 text-xl font-medium">{path.title}</h2>
+                <p className="mt-2 text-sm text-[var(--ink-muted)]">
+                  {path.description}
+                </p>
+                <div className="mt-4">
+                  <div className="mb-1 flex justify-between text-xs text-[var(--ink-muted)]">
+                    <span>Progreso</span>
+                    <span>{percent}%</span>
+                  </div>
+                  <div className="h-2 overflow-hidden rounded-full bg-[var(--bg-deep)]">
+                    <div
+                      className="h-full rounded-full bg-[var(--accent)]"
+                      style={{ width: `${percent}%` }}
+                    />
+                  </div>
+                </div>
+              </Link>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }

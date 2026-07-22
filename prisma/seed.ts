@@ -1,4 +1,5 @@
 import { PrismaClient } from "@prisma/client";
+import { chapter2Modules } from "./chapter2-content";
 
 const prisma = new PrismaClient();
 
@@ -277,8 +278,117 @@ async function main() {
     });
   }
 
+  const path2 = await prisma.learningPath.upsert({
+    where: { slug: "chapter-02" },
+    update: {
+      title: "Capítulo 2 — Requirements antes del código",
+      description:
+        "Traducir scope en FRs, NFRs y ACs verificables. Todavía sin implementación. Prerrequisito: Cap. 1 cerrado.",
+      chapter: 2,
+      order: 2,
+    },
+    create: {
+      slug: "chapter-02",
+      title: "Capítulo 2 — Requirements antes del código",
+      description:
+        "Traducir scope en FRs, NFRs y ACs verificables. Todavía sin implementación. Prerrequisito: Cap. 1 cerrado.",
+      chapter: 2,
+      order: 2,
+    },
+  });
+
+  for (const mod of chapter2Modules) {
+    await prisma.module.upsert({
+      where: {
+        pathId_slug: { pathId: path2.id, slug: mod.slug },
+      },
+      update: {
+        title: mod.title,
+        summary: mod.summary,
+        goal: mod.goal,
+        context: mod.context,
+        expectedOutcome: mod.expectedOutcome,
+        body: mod.body,
+        feedback: mod.feedback,
+        order: mod.order,
+      },
+      create: {
+        pathId: path2.id,
+        ...mod,
+      },
+    });
+  }
+
+  const modules2 = await prisma.module.findMany({
+    where: { pathId: path2.id },
+  });
+  const bySlug2 = Object.fromEntries(modules2.map((m) => [m.slug, m.id]));
+
+  const concepts2 = [
+    {
+      slug: "functional-requirement",
+      title: "Requirement funcional (FR)",
+      summary: "Comportamiento verificable del sistema, sin stack.",
+      explanation:
+        "Un FR describe qué debe hacer el sistema de forma observable. No elige framework. Traza a un ítem de scope.",
+      example:
+        "FR-001: El usuario puede registrar un gasto con monto positivo, categoría y fecha.",
+      practicalUse:
+        "Si el FR nombra React o Postgres, reescribilo como comportamiento.",
+      relatedSlugs: "acceptance-criteria,traceability-matrix",
+      moduleId: bySlug2["2-2-functional-reqs"],
+      order: 10,
+    },
+    {
+      slug: "nfr-measurable",
+      title: "NFR medible",
+      summary: "Calidad de V1 con métrica o verificación explícita.",
+      explanation:
+        "Usabilidad, privacidad y rendimiento liviano necesitan umbral o forma de verificar. Sin eso son deseos.",
+      example:
+        "NFR-001: Crear gasto ≤ 15 s, usuario familiarizado, 3 intentos cronometrados.",
+      practicalUse: "Escribí ≥3 NFRs para V1 antes de Cap. 3.",
+      relatedSlugs: "functional-requirement,acceptance-criteria",
+      moduleId: bySlug2["2-3-nfrs"],
+      order: 11,
+    },
+    {
+      slug: "acceptance-criteria",
+      title: "Criterios de aceptación (AC)",
+      summary: "Escenarios Given/When/Then observables.",
+      explanation:
+        "Los ACs permiten decir sí/no sin subjetividad. Incluí happy path y límites. No describen implementación.",
+      example:
+        "Given monto ≤ 0, When confirma, Then no guarda y muestra error.",
+      practicalUse: "Cada FR Must necesita ≥1 AC testeable.",
+      relatedSlugs: "functional-requirement,traceability-matrix",
+      moduleId: bySlug2["2-4-acceptance"],
+      order: 12,
+    },
+    {
+      slug: "traceability-matrix",
+      title: "Trazabilidad scope → FR → AC",
+      summary: "Matriz liviana que corta scope creep.",
+      explanation:
+        "Si un FR no traza a scope, o es creep o falta actualizar el Cap. 1 conscientemente.",
+      example: "| Scope #1 | FR-001 | AC-001.1 | Success #1 |",
+      practicalUse: "Completá la matriz Must antes de cerrar Cap. 2.",
+      relatedSlugs: "functional-requirement,acceptance-criteria",
+      moduleId: bySlug2["2-6-traceability"],
+      order: 13,
+    },
+  ];
+
+  for (const c of concepts2) {
+    await prisma.knowledgeConcept.upsert({
+      where: { slug: c.slug },
+      update: { ...c },
+      create: { ...c },
+    });
+  }
+
   console.log(
-    `Seed OK: path=${path.slug}, modules=${chapter1Modules.length}, concepts=${concepts.length}`,
+    `Seed OK: ch1 modules=${chapter1Modules.length}, ch2 modules=${chapter2Modules.length}, concepts=${concepts.length + concepts2.length}`,
   );
 }
 

@@ -9,7 +9,12 @@ import {
   getOrCreateConversation,
   listDecisions,
 } from "@/modules/mentor/service";
-import { getOrCreateJourney } from "@/modules/learning/journey";
+import {
+  CHAPTER_01,
+  CHAPTER_02,
+  getOrCreateJourney,
+  isChapter2Unlocked,
+} from "@/modules/learning/journey";
 
 export default async function MentorPage() {
   const session = await auth();
@@ -21,7 +26,14 @@ export default async function MentorPage() {
   let currentModuleTitle: string | null = null;
   let moduleSlug: string | null = null;
   try {
-    const journey = await getOrCreateJourney(session.user.id);
+    const unlocked = await isChapter2Unlocked(session.user.id);
+    let journey = await getOrCreateJourney(session.user.id, CHAPTER_01);
+    if (unlocked) {
+      const j2 = await getOrCreateJourney(session.user.id, CHAPTER_02);
+      if (j2.status !== "completed" || journey.status === "completed") {
+        journey = j2;
+      }
+    }
     const current = journey.path.modules.find(
       (m) => m.id === journey.currentModuleId,
     );

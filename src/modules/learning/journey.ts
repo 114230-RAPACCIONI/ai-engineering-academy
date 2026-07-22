@@ -1,16 +1,29 @@
 import { prisma } from "@/lib/prisma";
 
-const PATH_SLUG = "chapter-01";
+export const CHAPTER_01 = "chapter-01";
+export const CHAPTER_02 = "chapter-02";
 
-export async function getOrCreateJourney(userId: string) {
+export async function listLearningPaths() {
+  return prisma.learningPath.findMany({
+    orderBy: { order: "asc" },
+    include: {
+      modules: { orderBy: { order: "asc" }, select: { id: true } },
+    },
+  });
+}
+
+export async function getOrCreateJourney(
+  userId: string,
+  pathSlug: string = CHAPTER_01,
+) {
   const path = await prisma.learningPath.findUnique({
-    where: { slug: PATH_SLUG },
+    where: { slug: pathSlug },
     include: { modules: { orderBy: { order: "asc" } } },
   });
 
   if (!path || path.modules.length === 0) {
     throw new Error(
-      "Learning Path no seedado. Ejecutá: npx tsx prisma/seed.ts",
+      `Learning Path "${pathSlug}" no seedado. Ejecutá: npm run db:seed`,
     );
   }
 
@@ -51,17 +64,43 @@ export async function getOrCreateJourney(userId: string) {
   return journey;
 }
 
+/** Cap. 2 requiere Cap. 1 journey completed (CHAPTER_02 prerrequisito). */
+export async function isChapter2Unlocked(userId: string) {
+  try {
+    const ch1 = await getOrCreateJourney(userId, CHAPTER_01);
+    return ch1.status === "completed";
+  } catch {
+    return false;
+  }
+}
+
 export async function getModuleForUser(userId: string, moduleSlug: string) {
-  const journey = await getOrCreateJourney(userId);
-  const mod = journey.path.modules.find((m) => m.slug === moduleSlug);
+  const mod = await prisma.module.findFirst({
+    where: { slug: moduleSlug },
+    include: { path: true },
+  });
   if (!mod) return null;
 
+  if (mod.path.slug === CHAPTER_02) {
+    const unlocked = await isChapter2Unlocked(userId);
+    if (!unlocked) {
+      return { locked: true as const, module: mod, journey: null, progress: null };
+    }
+  }
+
+  const journey = await getOrCreateJourney(userId, mod.path.slug);
   const progress = journey.progress.find((p) => p.moduleId === mod.id);
-  return { journey, module: mod, progress };
+  return { locked: false as const, journey, module: mod, progress };
 }
 
 export async function startModule(userId: string, moduleId: string) {
-  const journey = await getOrCreateJourney(userId);
+  const mod = await prisma.module.findUnique({
+    where: { id: moduleId },
+    include: { path: true },
+  });
+  if (!mod) return;
+
+  const journey = await getOrCreateJourney(userId, mod.path.slug);
   await prisma.moduleProgress.update({
     where: {
       journeyId_moduleId: { journeyId: journey.id, moduleId },
@@ -75,7 +114,13 @@ export async function startModule(userId: string, moduleId: string) {
 }
 
 export async function completeModule(userId: string, moduleId: string) {
-  const journey = await getOrCreateJourney(userId);
+  const mod = await prisma.module.findUnique({
+    where: { id: moduleId },
+    include: { path: true },
+  });
+  if (!mod) return;
+
+  const journey = await getOrCreateJourney(userId, mod.path.slug);
   const modules = journey.path.modules;
   const currentIndex = modules.findIndex((m) => m.id === moduleId);
   if (currentIndex < 0) return;

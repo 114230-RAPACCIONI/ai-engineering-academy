@@ -30,6 +30,10 @@ export function buildPracticeMarkdown(project: {
   scopeOut: string;
   nonGoals: string;
   successCriteria: string;
+  functionalReqs?: string;
+  nonFunctionalReqs?: string;
+  acceptanceCriteria?: string;
+  traceability?: string;
   status: string;
 }) {
   return `# ${project.title}
@@ -54,5 +58,33 @@ ${project.nonGoals || "(pendiente)"}
 
 ## 5. Success criteria
 ${project.successCriteria || "(pendiente)"}
+`;
+}
+
+export function buildRequirementsMarkdown(project: {
+  title: string;
+  functionalReqs: string;
+  nonFunctionalReqs: string;
+  acceptanceCriteria: string;
+  traceability: string;
+  status: string;
+}) {
+  return `# ${project.title} — Requirements V1
+
+## Estado
+Fase: ${project.status}
+Prerrequisito: Capítulo 1
+
+## 2. Requirements funcionales
+${project.functionalReqs || "(pendiente)"}
+
+## 3. Requirements no funcionales
+${project.nonFunctionalReqs || "(pendiente)"}
+
+## 4. Criterios de aceptación
+${project.acceptanceCriteria || "(pendiente)"}
+
+## 6. Matriz de trazabilidad
+${project.traceability || "(pendiente)"}
 `;
 }

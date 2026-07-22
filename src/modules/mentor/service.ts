@@ -68,6 +68,9 @@ export async function buildMentorContext(userId: string): Promise<string> {
         project.problemStatement
           ? `Problem: ${project.problemStatement.slice(0, 400)}`
           : "Problem statement: (vacío)",
+        project.functionalReqs
+          ? `FRs (extracto): ${project.functionalReqs.slice(0, 400)}`
+          : null,
       ]
         .filter(Boolean)
         .join("\n")

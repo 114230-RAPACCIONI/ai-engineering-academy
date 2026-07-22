@@ -33,7 +33,29 @@ export default async function ModulePage({ params }: PageProps) {
   const data = await getModuleForUser(session.user.id, slug);
   if (!data) notFound();
 
+  if (data.locked) {
+    return (
+      <div className="mx-auto max-w-xl space-y-4">
+        <Link href="/app/path" className="text-sm text-[var(--ink-muted)]">
+          ← Learning Path
+        </Link>
+        <h1 className="text-2xl font-semibold">{data.module.title}</h1>
+        <p className="text-[var(--ink-muted)]">
+          Este módulo es del Capítulo 2. Completá primero el Path del Capítulo 1.
+        </p>
+        <Link
+          href="/app/path/c/chapter-01"
+          className="inline-block text-[var(--accent)] underline"
+        >
+          Ir al Capítulo 1
+        </Link>
+      </div>
+    );
+  }
+
   const { journey, module: mod, progress } = data;
+  if (!journey) notFound();
+
   const status = progress?.status ?? "not_started";
 
   const concepts = await prisma.knowledgeConcept.findMany({
@@ -48,7 +70,7 @@ export default async function ModulePage({ params }: PageProps) {
   return (
     <article className="mx-auto max-w-2xl space-y-8">
       <div className="flex flex-wrap items-center justify-between gap-2 text-sm text-[var(--ink-muted)]">
-        <Link href="/app/path">← Learning Path</Link>
+        <Link href={`/app/path/c/${journey.path.slug}`}>← {journey.path.title}</Link>
         <span>
           Paso {mod.order} de {journey.path.modules.length}
         </span>
@@ -122,7 +144,7 @@ export default async function ModulePage({ params }: PageProps) {
         nextModuleSlug={next?.slug}
         nextModuleTitle={next?.title}
         relatedConceptSlug={concepts[0]?.slug}
-        isPracticeModule={mod.slug === "1-practice"}
+        isPracticeModule={mod.slug.endsWith("practice")}
       />
 
       <div className="flex justify-between text-sm text-[var(--ink-muted)]">

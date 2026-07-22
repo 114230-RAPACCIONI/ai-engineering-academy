@@ -29,6 +29,7 @@ type PathJourneyProps = {
   total: number;
   pathTitle: string;
   pathDescription: string;
+  chapter?: number;
 };
 
 export function PathJourney({
@@ -41,6 +42,7 @@ export function PathJourney({
   total,
   pathTitle,
   pathDescription,
+  chapter = 1,
 }: PathJourneyProps) {
   const current = modules.find((m) => m.id === currentModuleId);
   const isDone = journeyStatus === "completed";
@@ -49,7 +51,7 @@ export function PathJourney({
     <div className="space-y-8">
       <section>
         <p className="mb-2 text-xs tracking-[0.18em] text-[var(--ink-muted)] uppercase">
-          Learning Path
+          Learning Path · Cap. {chapter}
         </p>
         <h1 className="mb-2 text-3xl font-semibold tracking-tight md:text-4xl">
           {pathTitle}
@@ -60,27 +62,52 @@ export function PathJourney({
       {isDone ? (
         <section className="rounded-xl border border-[var(--accent)] bg-[var(--accent-soft)] px-5 py-5">
           <p className="text-lg font-medium text-[var(--accent)]">
-            Capítulo 1 cerrado en el Path
+            Capítulo {chapter} cerrado en el Path
           </p>
-          <blockquote className="mt-3 border-l-2 border-[var(--accent)] pl-4 text-sm italic text-[var(--ink)]">
-            “Todavía no construí la app — pero por primera vez sé qué estoy
-            construyendo y qué no. Quiero seguir.”
-          </blockquote>
-          <p className="mt-3 text-sm text-[var(--ink-muted)]">
-            Momento de éxito del curriculum (Cap. 1 §10.3). Completá el
-            Definition of Done, exportá el ZIP y hacé la autoevaluación post.
-          </p>
-          <div className="mt-4 flex flex-wrap gap-3 text-sm">
-            <Link
-              href="/app/projects"
-              className="font-medium text-[var(--accent)] underline"
-            >
-              Practice Project
-            </Link>
-            <Link href="/app/progress" className="text-[var(--ink-muted)] underline">
-              Progress + rúbrica
-            </Link>
-          </div>
+          {chapter === 1 ? (
+            <>
+              <blockquote className="mt-3 border-l-2 border-[var(--accent)] pl-4 text-sm italic text-[var(--ink)]">
+                “Todavía no construí la app — pero por primera vez sé qué estoy
+                construyendo y qué no. Quiero seguir.”
+              </blockquote>
+              <p className="mt-3 text-sm text-[var(--ink-muted)]">
+                Completá el DoD Cap. 1, exportá el ZIP y desbloqueá el Capítulo 2
+                (Requirements).
+              </p>
+              <div className="mt-4 flex flex-wrap gap-3 text-sm">
+                <Link
+                  href="/app/projects"
+                  className="font-medium text-[var(--accent)] underline"
+                >
+                  Practice Project
+                </Link>
+                <Link
+                  href="/app/path/c/chapter-02"
+                  className="text-[var(--ink-muted)] underline"
+                >
+                  Ir al Capítulo 2
+                </Link>
+              </div>
+            </>
+          ) : (
+            <>
+              <p className="mt-2 text-sm text-[var(--ink-muted)]">
+                Spec verificable listo. El Cap. 3 (diseño/trade-offs) llega
+                después — todavía sin código de producto.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-3 text-sm">
+                <Link
+                  href="/app/projects"
+                  className="font-medium text-[var(--accent)] underline"
+                >
+                  Revisar Requirements
+                </Link>
+                <Link href="/app/progress" className="text-[var(--ink-muted)] underline">
+                  Progress
+                </Link>
+              </div>
+            </>
+          )}
         </section>
       ) : null}
 
