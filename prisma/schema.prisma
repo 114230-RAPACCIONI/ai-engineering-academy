@@ -44,10 +44,26 @@ model Module {
   expectedOutcome String
   order           Int    @default(0)
 
-  path      LearningPath     @relation(fields: [pathId], references: [id], onDelete: Cascade)
-  progress  ModuleProgress[]
+  path       LearningPath     @relation(fields: [pathId], references: [id], onDelete: Cascade)
+  progress   ModuleProgress[]
+  concepts   KnowledgeConcept[]
 
   @@unique([pathId, slug])
+}
+
+model KnowledgeConcept {
+  id          String  @id @default(cuid())
+  slug        String  @unique
+  title       String
+  summary     String
+  explanation String
+  example     String
+  practicalUse String
+  relatedSlugs String @default("") // comma-separated slugs
+  moduleId    String?
+  order       Int     @default(0)
+
+  module Module? @relation(fields: [moduleId], references: [id], onDelete: SetNull)
 }
 
 model LearningJourney {

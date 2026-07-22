@@ -99,7 +99,109 @@ async function main() {
     });
   }
 
-  console.log(`Seed OK: path=${path.slug}, modules=${chapter1Modules.length}`);
+  const modules = await prisma.module.findMany({
+    where: { pathId: path.id },
+  });
+  const bySlug = Object.fromEntries(modules.map((m) => [m.slug, m.id]));
+
+  const concepts = [
+    {
+      slug: "frankenstein-pattern",
+      title: "Proyecto Frankenstein",
+      summary: "Patrón de fallo: idea muta, partes no encajan, nada cierra.",
+      explanation:
+        "Un proyecto Frankenstein aparece cuando cada sesión (humana o con IA) reinterpreta el objetivo. Hay actividad, pero no coherencia. Con IA es más frecuente porque la generación es rápida y el contexto se pierde entre prompts.",
+      example:
+        "Pedís 'haceme una app de finanzas', después 'agregá social', después 'mejor estilo Uber' — sin scope escrito. Al final hay pantallas sueltas y ningún V1 usable.",
+      practicalUse:
+        "Antes de pedir código, escribí problema + scope. Si no podés explicar el objetivo en 5 oraciones, no pedís implementación.",
+      relatedSlugs: "problem-statement,scope-in-out",
+      moduleId: bySlug["1-1-frankenstein"],
+      order: 1,
+    },
+    {
+      slug: "problem-statement",
+      title: "Problem statement",
+      summary: "Descripción corta del problema real, no de la solución.",
+      explanation:
+        "Un problem statement nombra a quién le duele, qué falla hoy, y por qué importa. No lista features. Sirve de ancla compartida entre vos y el Mentor.",
+      example:
+        "Las personas pierden de vista gastos chicos repetidos y no saben en qué se va el dinero a fin de mes — sin una forma simple de registrarlos al momento.",
+      practicalUse:
+        "Escribí 3–5 oraciones. Pedile al Mentor que busque soluciones disfrazadas, no que reescriba el producto.",
+      relatedSlugs: "frankenstein-pattern,scope-in-out",
+      moduleId: bySlug["1-2-problem-statement"],
+      order: 2,
+    },
+    {
+      slug: "scope-in-out",
+      title: "Scope in / out y non-goals",
+      summary: "Límites explícitos de V1 para no inflar el proyecto.",
+      explanation:
+        "Scope in: qué entra ahora (pocos ítems). Scope out: qué queda para después. Non-goals: qué no es este proyecto. Sin non-goals, cada conversación con IA reabre el borde.",
+      example:
+        "V1: registrar gasto, listar del mes, total. Out: presupuestos, bancos, multi-usuario. Non-goal: no es un banco ni un ERP.",
+      practicalUse:
+        "Máximo 5 ítems in. Cada vez que la IA sugiera una feature, preguntate: ¿está in, out o non-goal?",
+      relatedSlugs: "problem-statement,decision-log",
+      moduleId: bySlug["1-3-scope"],
+      order: 3,
+    },
+    {
+      slug: "decision-log",
+      title: "Decision log",
+      summary: "Registro breve de decisiones con razón — memoria del proyecto.",
+      explanation:
+        "El decision log evita reabrir debates y da contexto al Mentor. No es burocracia: es continuidad entre sesiones. Cada entrada: decisión, razón, fecha.",
+      example:
+        "Decisión: V1 solo carga manual de gastos. Razón: validar hábito antes de integrar bancos. Fecha: sesión 2.",
+      practicalUse:
+        "Antes de cada sesión con el Mentor, pegá las últimas 3–5 decisiones. Pedí que desafíe inconsistencias, no que invente un stack.",
+      relatedSlugs: "scope-in-out,mentor-as-teacher",
+      moduleId: bySlug["1-4-artifacts"],
+      order: 4,
+    },
+    {
+      slug: "mentor-as-teacher",
+      title: "Mentor como docente, no como reemplazo",
+      summary: "La IA enseña y pregunta; el learner decide.",
+      explanation:
+        "En ZUZU el Mentor amplifica criterio. Enseña antes de responder, pregunta antes de asumir, y admite incertidumbre. No escribe el producto por vos en el Capítulo 1.",
+      example:
+        "Mal: 'generame el PRACTICE_PROJECT completo'. Bien: '¿mi problem statement esconde una solución? Señalá ambigüedades.'",
+      practicalUse:
+        "Usá prompts de clarificación y feedback. Si la respuesta suena a plan de implementación prematuro, frená y volvé al scope.",
+      relatedSlugs: "frankenstein-pattern,decision-log",
+      moduleId: bySlug["1-5-mentor-planning"],
+      order: 5,
+    },
+    {
+      slug: "sdd-intro",
+      title: "Spec-Driven Development (intro)",
+      summary: "Alinear intent en un spec antes de que la IA implemente.",
+      explanation:
+        "SDD dice: la calidad del output de la IA sigue la calidad del spec. En ZUZU, la capability del learner es la calidad del spec que escribe. Cap. 1 arranca Specify.",
+      example:
+        "Ciclo: Constitution → Specify → Clarify → Plan → Tasks → Implement → Validate. Cap. 1 cubre Specify/Clarify liviano.",
+      practicalUse:
+        "No saltees a código. Cerrá problem + scope + decisions antes del Cap. 4 (Implement).",
+      relatedSlugs: "problem-statement,decision-log",
+      moduleId: bySlug["1-practice"],
+      order: 6,
+    },
+  ];
+
+  for (const c of concepts) {
+    await prisma.knowledgeConcept.upsert({
+      where: { slug: c.slug },
+      update: { ...c },
+      create: { ...c },
+    });
+  }
+
+  console.log(
+    `Seed OK: path=${path.slug}, modules=${chapter1Modules.length}, concepts=${concepts.length}`,
+  );
 }
 
 main()
