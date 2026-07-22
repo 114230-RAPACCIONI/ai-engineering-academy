@@ -46,12 +46,12 @@ La práctica operativa es **[Spec-Driven Development (SDD)](https://developer.mi
 
 | Fase | Qué es | Estado | Éxito |
 |------|--------|--------|-------|
-| **Fase 0 — SDD en repo** | Curriculum + Practice Project en markdown + Mentor externo | **Activo ahora** | 1 learner humano completa Cap. 1–3 (+ I1 cuando exista Cap. 4) y quiere seguir |
-| **Fase 1 — Plataforma** | App: Identity, Path, Knowledge, Mentor, Progress | Después de Fase 0 | Métricas falsables §9 con instrumento de capability |
+| **Fase 0 — SDD en repo** | Curriculum + Practice Project en markdown + Mentor | **Activo** | 1 learner humano completa Cap. 1–4 (I1) y quiere seguir a Cap. 5 |
+| **Fase 1 — Plataforma** | App: Identity, Path, Knowledge, Mentor, Progress | **En curso** (Cap. 1–4 en `src/`) | Métricas falsables §9 con instrumento de capability |
 
-**Regla:** no implementar Fase 1 ni extender arquitectura de plataforma hasta validar Fase 0.
+**Regla histórica:** no extender arquitectura de plataforma *antes* de tener curriculum usable hasta I1. Cap. 1–4 curriculum + Path ya cubren ese arco; la siguiente expansión de plataforma se ancla a Cap. 5+ o a validación con learner.
 
-Durante Fase 0, las capacidades C1–C6 abajo son **diseño objetivo** de la plataforma — no requisitos de implementación inmediata.
+Durante Fase 0, las capacidades C1–C6 abajo siguen siendo el **diseño objetivo**; lo implementado en `src/` debe trazarse a ellas sin inventar producto.
 
 ---
 

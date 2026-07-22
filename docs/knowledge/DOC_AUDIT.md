@@ -35,7 +35,7 @@ artifact:
 | `docs/product/MVP_SCOPE.md` | Spec producto MVP |
 | `docs/product/FOUNDER_DECISIONS` → ver arriba | |
 | `docs/knowledge/curriculum/LEARNING_CURRICULUM.md` | Mapa viajes |
-| `docs/knowledge/curriculum/chapters/CHAPTER_01–03` | Viajes escritos |
+| `docs/knowledge/curriculum/chapters/CHAPTER_01–04` | Viajes escritos (Cap. 5–8 planeados) |
 | `docs/architecture/DOMAIN_MODEL.md` | Dominio learner |
 | `docs/architecture/adr/ADR-001–009` | Decisiones |
 | `docs/security/SECURITY.md` | Seguridad MVP |
@@ -115,14 +115,16 @@ artifact:
 
 ## 6. Pendiente (no hacer en bloque sin review)
 
-1. **PLATFORM_SPEC.md** — spec unificado para IA Implement (siguiente paso).
-2. Ejecutar moves a `90-archive/` **por lotes** con PRs pequeños.
-3. **No delete** — solo archive según [90-archive/README.md](../90-archive/README.md).
+1. Validar Cap. 1–4 + I1 con un learner humano.
+2. **CHAPTER_05** + Path Cap. 5 (Testing / calidad).
+3. **PLATFORM_SPEC.md** — opcional, consolidar app vs MVP_SCOPE.
+4. Ejecutar moves a `90-archive/` **por lotes** con PRs pequeños.
+5. **No delete** — solo archive según [90-archive/README.md](../90-archive/README.md).
 
 ---
 
 ## 7. Para la IA al codear
 
-**Leer primero:** START_HERE → FOUNDER_DECISIONS → MVP_SCOPE → ADR-008/009 → curriculum Cap. 1–3.
+**Leer primero:** START_HERE → FOUNDER_DECISIONS → MVP_SCOPE → ADR-008/009 → curriculum Cap. 1–4.
 
 **Ignorar hasta refactor/archive:** BACKEND_*, DATABASE_*, SYSTEM_* bodies largos, PROJECT_CONSTITUTION.

@@ -3,12 +3,12 @@ artifact:
   id: ART-CURR-001
   type: Learning Curriculum
   status: Draft
-  version: 0.4.0
+  version: 0.5.0
   owner: Founder
   reviewers:
     - CTO
   created: 2026-07-08
-  revised: 2026-07-09
+  revised: 2026-07-22
   initiative: INIT-001
   tags:
     - curriculum
@@ -53,7 +53,7 @@ Referencia de industria: [Microsoft — Spec-Driven Development (2026)](https://
 | **Clarify** | Ambigüedades, edge cases | Decision log, notas Mentor | 1–2 |
 | **Plan** | Diseño, ADRs | `DESIGN.md`, `adr/` | [3](./chapters/CHAPTER_03_MINIMAL_DESIGN_AND_TRADEOFFS.md) |
 | **Tasks** | Incrementos verticales | I1, I2… en `DESIGN.md` | 3 |
-| **Implement** | Un incremento con IA | `src/` | 4 *(pendiente)* |
+| **Implement** | Un incremento con IA | código del Practice Project + bitácora | [4](./chapters/CHAPTER_04_INCREMENTAL_BUILD_WITH_AI.md) |
 | **Validate** | vs acceptance criteria | Tests / checklist | 5+ *(pendiente)* |
 
 **Principio SDD:** *Spec quality = output quality.* En ZUZU: *capability del learner = calidad del spec que escribe.*
@@ -66,7 +66,7 @@ No todo cambio requiere los 7 pasos (spikes ≤ 2 h están exentos — ver Cap. 
 
 El curriculum enseña el método SDD — no un dominio fijo. El learner elige (o clona) el dominio de su Practice Project; no hay un proyecto obligatorio ([FOUNDER_DECISIONS §8](../../00-constitution/FOUNDER_DECISIONS.md)).
 
-Los capítulos 1–3 muestran el método aplicado de punta a punta usando **Gastos Hormiga** como ejemplo de referencia — útil para comparar tu propio proceso, no un molde a copiar.
+Los capítulos 1–4 muestran el método aplicado de punta a punta (Cap. 1–3 con **Gastos Hormiga** como ejemplo de referencia; Cap. 4 sobre **tu** I1).
 
 ---
 
@@ -89,7 +89,7 @@ Cada capítulo enlaza a un documento propio bajo `docs/knowledge/curriculum/chap
 | 1 | De la idea al scope (sin Frankenstein) | **Disponible** | [CHAPTER_01](./chapters/CHAPTER_01_FROM_IDEA_TO_SCOPE.md) |
 | 2 | Requirements y decisiones antes del código | **Disponible** | [CHAPTER_02](./chapters/CHAPTER_02_REQUIREMENTS_BEFORE_CODE.md) |
 | 3 | Diseño mínimo viable y trade-offs | **Disponible** | [CHAPTER_03](./chapters/CHAPTER_03_MINIMAL_DESIGN_AND_TRADEOFFS.md) |
-| 4 | Construcción incremental con IA | Planeado | — |
+| 4 | Construcción incremental con IA | **Disponible** | [CHAPTER_04](./chapters/CHAPTER_04_INCREMENTAL_BUILD_WITH_AI.md) |
 | 5 | Testing y calidad como hábito | Planeado | — |
 | 6 | Seguridad desde el diseño | Planeado | — |
 | 7 | Ops: deploy, observabilidad, incidentes | Planeado | — |
@@ -133,11 +133,11 @@ El Mentor adapta ejemplos y ritmo según el perfil declarado; el **curriculum no
 
 El **producto activo** es recorrer el ciclo SDD con:
 
-- Este curriculum (Cap. 1–3 disponibles)
-- Tu Practice Project (`PRACTICE_PROJECT.md` → `REQUIREMENTS.md` → `DESIGN.md`)
-- Un Mentor externo (Cursor, Claude, etc.) que lee el spec cada sesión
+- Este curriculum (Cap. 1–4 disponibles; Cap. 5–8 planeados)
+- Tu Practice Project (`PRACTICE_PROJECT.md` → `REQUIREMENTS.md` → `DESIGN.md` → bitácora I1)
+- Mentor en plataforma y/o externo que lee el spec cada sesión
 
-**Éxito Fase 0:** un learner humano completa Specify → Plan y quiere seguir a Implement.
+**Éxito Fase 0 (ampliado):** un learner humano completa Specify → Plan → Implement I1 y quiere seguir a Validate (Cap. 5).
 
 Ver [START_HERE.md](../../START_HERE.md) y [MVP_SCOPE §1.1](../../product/MVP_SCOPE.md).
 
@@ -145,7 +145,7 @@ Ver [START_HERE.md](../../START_HERE.md) y [MVP_SCOPE §1.1](../../product/MVP_S
 
 [MVP_SCOPE](../../product/MVP_SCOPE.md) define la app para **escalar** el mismo ciclo SDD — **no** para reemplazarlo.
 
-Los capítulos 4–8 se escriben **después** de validar Fase 0 con un humano — no antes.
+La plataforma ya cubre Cap. 1–4 en `src/`. Los capítulos 5–8 se escriben y se llevan a la app **después** de validar con un humano el arco hasta I1 — no antes de haber cerrado Cap. 4.
 
 ---
 

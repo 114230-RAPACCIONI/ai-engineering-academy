@@ -1,7 +1,6 @@
 /**
  * Cap. 4 — Construcción incremental con IA
- * Fuente canónica disponible: CHAPTER_03 §9.4 / §14.2 + LEARNING_CURRICULUM (Implement).
- * CHAPTER_04.md aún no existe en docs; este seed no inventa producto — operacionaliza ese puente.
+ * Fuente canónica: CHAPTER_04_INCREMENTAL_BUILD_WITH_AI.md (+ puente CHAPTER_03 §9.4 / §14.2).
  */
 export const chapter4Modules = [
   {

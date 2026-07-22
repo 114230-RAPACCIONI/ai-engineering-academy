@@ -663,6 +663,7 @@ Mínimo aprobar: promedio ≥ 3, ningún 1.
 ## Relacionados
 
 - [CHAPTER_02](./CHAPTER_02_REQUIREMENTS_BEFORE_CODE.md)
+- [CHAPTER_04](./CHAPTER_04_INCREMENTAL_BUILD_WITH_AI.md)
 - [LEARNING_CURRICULUM.md](../LEARNING_CURRICULUM.md)
 - [ADR.md](../../../architecture/ADR.md) (ADRs del repo ZUZU — referencia de formato)
 
