@@ -6,6 +6,7 @@ import {
   buildPracticeMarkdown,
   buildRequirementsMarkdown,
   buildDesignMarkdown,
+  buildImplementMarkdown,
   getProjectForUser,
 } from "@/modules/projects/service";
 
@@ -61,10 +62,20 @@ export async function GET(_req: Request, context: RouteContext) {
       status: project.status,
     }),
   );
+  zip.file(
+    "IMPLEMENT_I1.md",
+    buildImplementMarkdown({
+      title: project.title,
+      i1Log: project.i1Log,
+      acValidation: project.acValidation,
+      codeReviewNotes: project.codeReviewNotes,
+      status: project.status,
+    }),
+  );
   zip.file("DECISION_LOG.md", decisionMd);
   zip.file(
     "README.md",
-    `# ${project.title}\n\nExport desde ZUZU — fase ${project.status}.\n\nArtefactos de planeamiento/requirements del learner. No es código de producto.\n`,
+    `# ${project.title}\n\nExport desde ZUZU — fase ${project.status}.\n\nArtefactos de planeamiento / requirements / design / bitácora I1. El código de producto vive fuera de ZUZU.\n`,
   );
 
   const buffer = await zip.generateAsync({ type: "nodebuffer" });

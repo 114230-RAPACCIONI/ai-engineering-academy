@@ -8,7 +8,7 @@ import { auth } from "@/modules/identity/auth";
 const score = z.coerce.number().int().min(1).max(5);
 
 const assessmentSchema = z.object({
-  chapter: z.coerce.number().int().min(1).max(3),
+  chapter: z.coerce.number().int().min(1).max(4),
   kind: z.enum(["pre", "post"]),
   clarityProblem: score,
   scope: score,

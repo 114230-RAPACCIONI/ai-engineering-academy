@@ -34,6 +34,8 @@ export default async function ModulePage({ params }: PageProps) {
   if (!data) notFound();
 
   if (data.locked) {
+    const ch = data.module.path.chapter;
+    const prev = ch === 4 ? 3 : ch === 3 ? 2 : 1;
     return (
       <div className="mx-auto max-w-xl space-y-4">
         <Link href="/app/path" className="text-sm text-[var(--ink-muted)]">
@@ -41,13 +43,14 @@ export default async function ModulePage({ params }: PageProps) {
         </Link>
         <h1 className="text-2xl font-semibold">{data.module.title}</h1>
         <p className="text-[var(--ink-muted)]">
-          Este módulo es del Capítulo 2. Completá primero el Path del Capítulo 1.
+          Este módulo es del Capítulo {ch}. Completá primero el Path del
+          Capítulo {prev}.
         </p>
         <Link
-          href="/app/path/c/chapter-01"
+          href={`/app/path/c/chapter-0${prev}`}
           className="inline-block text-[var(--accent)] underline"
         >
-          Ir al Capítulo 1
+          Ir al Capítulo {prev}
         </Link>
       </div>
     );

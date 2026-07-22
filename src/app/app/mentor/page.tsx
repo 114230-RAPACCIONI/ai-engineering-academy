@@ -12,8 +12,12 @@ import {
 import {
   CHAPTER_01,
   CHAPTER_02,
+  CHAPTER_03,
+  CHAPTER_04,
   getOrCreateJourney,
   isChapter2Unlocked,
+  isChapter3Unlocked,
+  isChapter4Unlocked,
 } from "@/modules/learning/journey";
 
 export default async function MentorPage() {
@@ -26,14 +30,31 @@ export default async function MentorPage() {
   let currentModuleTitle: string | null = null;
   let moduleSlug: string | null = null;
   try {
-    const unlocked = await isChapter2Unlocked(session.user.id);
+    const unlocked2 = await isChapter2Unlocked(session.user.id);
+    const unlocked3 = await isChapter3Unlocked(session.user.id);
+    const unlocked4 = await isChapter4Unlocked(session.user.id);
+
     let journey = await getOrCreateJourney(session.user.id, CHAPTER_01);
-    if (unlocked) {
+
+    if (unlocked2) {
       const j2 = await getOrCreateJourney(session.user.id, CHAPTER_02);
       if (j2.status !== "completed" || journey.status === "completed") {
         journey = j2;
       }
     }
+    if (unlocked3) {
+      const j3 = await getOrCreateJourney(session.user.id, CHAPTER_03);
+      if (j3.status !== "completed" || journey.status === "completed") {
+        journey = j3;
+      }
+    }
+    if (unlocked4) {
+      const j4 = await getOrCreateJourney(session.user.id, CHAPTER_04);
+      if (j4.status !== "completed" || journey.status === "completed") {
+        journey = j4;
+      }
+    }
+
     const current = journey.path.modules.find(
       (m) => m.id === journey.currentModuleId,
     );

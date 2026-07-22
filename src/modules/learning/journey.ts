@@ -3,6 +3,7 @@ import { prisma } from "@/lib/prisma";
 export const CHAPTER_01 = "chapter-01";
 export const CHAPTER_02 = "chapter-02";
 export const CHAPTER_03 = "chapter-03";
+export const CHAPTER_04 = "chapter-04";
 
 export async function listLearningPaths() {
   return prisma.learningPath.findMany({
@@ -87,6 +88,18 @@ export async function isChapter3Unlocked(userId: string) {
   }
 }
 
+/** Cap. 4 requiere Cap. 3 journey completed (puente CHAPTER_03 §14.2). */
+export async function isChapter4Unlocked(userId: string) {
+  try {
+    const unlocked3 = await isChapter3Unlocked(userId);
+    if (!unlocked3) return false;
+    const ch3 = await getOrCreateJourney(userId, CHAPTER_03);
+    return ch3.status === "completed";
+  } catch {
+    return false;
+  }
+}
+
 export async function getModuleForUser(userId: string, moduleSlug: string) {
   const mod = await prisma.module.findFirst({
     where: { slug: moduleSlug },
@@ -103,6 +116,13 @@ export async function getModuleForUser(userId: string, moduleSlug: string) {
 
   if (mod.path.slug === CHAPTER_03) {
     const unlocked = await isChapter3Unlocked(userId);
+    if (!unlocked) {
+      return { locked: true as const, module: mod, journey: null, progress: null };
+    }
+  }
+
+  if (mod.path.slug === CHAPTER_04) {
+    const unlocked = await isChapter4Unlocked(userId);
     if (!unlocked) {
       return { locked: true as const, module: mod, journey: null, progress: null };
     }

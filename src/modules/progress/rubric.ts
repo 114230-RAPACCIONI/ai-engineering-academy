@@ -128,9 +128,49 @@ export const CAPABILITY_CRITERIA_CH3: CriterionDef[] = [
   },
 ];
 
+/** Cap. 4 — puente CHAPTER_03 §14.2 + DoD I1 §9.4 */
+export const CAPABILITY_CRITERIA_CH4: CriterionDef[] = [
+  {
+    key: "clarityProblem",
+    label: "Fidelidad al spec",
+    hint1: "Código ignora FR/AC/ADR",
+    hint3: "I1 cubre ACs pedidos",
+    hint5: "Sin drift; cambios justificados",
+  },
+  {
+    key: "scope",
+    label: "Disciplina incremental",
+    hint1: "Mezcló I2+ o V1 entera",
+    hint3: "Solo I1 hasta cerrar",
+    hint5: "I1 cerrado con evidencia antes de seguir",
+  },
+  {
+    key: "decisions",
+    label: "Review de código IA",
+    hint1: "Pegó sin leer",
+    hint3: "Revisó y corrigió puntos clave",
+    hint5: "Puede explicar cada cambio",
+  },
+  {
+    key: "aiUse",
+    label: "Validación de ACs",
+    hint1: "No probó ACs",
+    hint3: "ACs I1 verificados manualmente",
+    hint5: "Evidencia pass/fail + re-test",
+  },
+  {
+    key: "antiFrankenstein",
+    label: "IA como colaborador",
+    hint1: "IA autora del producto",
+    hint3: "Prompts acotados al slice",
+    hint5: "Rechazó creep y secretos; vos decidís",
+  },
+];
+
 export function criteriaForChapter(chapter: number): CriterionDef[] {
   if (chapter === 2) return CAPABILITY_CRITERIA_CH2;
   if (chapter === 3) return CAPABILITY_CRITERIA_CH3;
+  if (chapter === 4) return CAPABILITY_CRITERIA_CH4;
   return CAPABILITY_CRITERIA_CH1;
 }
 

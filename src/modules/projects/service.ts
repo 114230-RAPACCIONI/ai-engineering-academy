@@ -112,3 +112,28 @@ ${project.adrs || "(pendiente)"}
 ${project.incrementPlan || "(pendiente)"}
 `;
 }
+
+export function buildImplementMarkdown(project: {
+  title: string;
+  i1Log: string;
+  acValidation: string;
+  codeReviewNotes: string;
+  status: string;
+}) {
+  return `# ${project.title} — Implement I1
+
+## Estado
+Fase: ${project.status}
+Prerrequisito: DESIGN.md + I1 del Cap. 3
+Nota: el código vive fuera de ZUZU; esto es bitácora y evidencia.
+
+## 1. Bitácora Incremento 1
+${project.i1Log || "(pendiente)"}
+
+## 2. Validación de ACs (pass/fail)
+${project.acValidation || "(pendiente)"}
+
+## 3. Review de código (IA + humano)
+${project.codeReviewNotes || "(pendiente)"}
+`;
+}

@@ -21,6 +21,9 @@ type ProjectLike = {
   designDoc?: string;
   adrs?: string;
   incrementPlan?: string;
+  i1Log?: string;
+  acValidation?: string;
+  codeReviewNotes?: string;
 };
 
 function hasText(value: string, min = 20) {
@@ -185,7 +188,51 @@ export function buildChapter3Checklist(input: {
     {
       id: "status-design",
       label: "Estado Design (sin V1 completa implementada)",
-      done: project.status === "design" || project.status === "done",
+      done:
+        project.status === "design" ||
+        project.status === "implementing" ||
+        project.status === "done",
+      href: "/app/projects",
+    },
+  ];
+}
+
+/** Definition of Done — Capítulo 4 (I1; puente CHAPTER_03 §9.4 / §14.2). */
+export function buildChapter4Checklist(input: {
+  project: ProjectLike;
+  pathPercent: number;
+}): ChecklistItem[] {
+  const { project, pathPercent } = input;
+
+  return [
+    {
+      id: "i1-log",
+      label: "Bitácora I1 (qué existe fuera de ZUZU / qué falta)",
+      done: hasText(project.i1Log ?? "", 40),
+      href: "/app/projects",
+    },
+    {
+      id: "ac-val",
+      label: "ACs de I1 con evidencia pass/fail",
+      done: hasText(project.acValidation ?? "", 40),
+      href: "/app/projects",
+    },
+    {
+      id: "review",
+      label: "Review de código IA documentada",
+      done: hasText(project.codeReviewNotes ?? "", 30),
+      href: "/app/projects",
+    },
+    {
+      id: "path-ch4",
+      label: "Avance Path Cap. 4 (≥50%)",
+      done: pathPercent >= 50,
+      href: "/app/path/c/chapter-04",
+    },
+    {
+      id: "status-impl",
+      label: "Estado Implementing o Done (I1, no V1 completa)",
+      done: project.status === "implementing" || project.status === "done",
       href: "/app/projects",
     },
   ];

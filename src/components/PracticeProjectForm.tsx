@@ -23,10 +23,14 @@ type ProjectFormProps = {
     designDoc: string;
     adrs: string;
     incrementPlan: string;
+    i1Log: string;
+    acValidation: string;
+    codeReviewNotes: string;
     status: string;
   };
   showChapter2Fields?: boolean;
   showChapter3Fields?: boolean;
+  showChapter4Fields?: boolean;
 };
 
 const fieldClass =
@@ -38,6 +42,7 @@ export function PracticeProjectForm({
   project,
   showChapter2Fields = false,
   showChapter3Fields = false,
+  showChapter4Fields = false,
 }: ProjectFormProps) {
   const bound = savePracticeProject.bind(null, project.id);
   const [state, formAction, pending] = useActionState(bound, initial);
@@ -70,6 +75,7 @@ export function PracticeProjectForm({
           <option value="planning">Planning (Cap. 1)</option>
           <option value="requirements">Requirements (Cap. 2)</option>
           <option value="design">Design (Cap. 3)</option>
+          <option value="implementing">Implementing (Cap. 4 · I1)</option>
           <option value="active">Active</option>
           <option value="done">Done</option>
         </select>
@@ -129,7 +135,9 @@ export function PracticeProjectForm({
             name="functionalReqs"
             label="Requirements funcionales (FR)"
             hint="FR-00x · prioridad · origen scope · descripción sin stack."
-            placeholder={"### FR-001 — …\n- Prioridad: Must\n- Origen scope: #1\n- Descripción: …"}
+            placeholder={
+              "### FR-001 — …\n- Prioridad: Must\n- Origen scope: #1\n- Descripción: …"
+            }
             defaultValue={project.functionalReqs}
             rows={6}
           />
@@ -210,6 +218,57 @@ export function PracticeProjectForm({
           <input type="hidden" name="designDoc" value={project.designDoc} />
           <input type="hidden" name="adrs" value={project.adrs} />
           <input type="hidden" name="incrementPlan" value={project.incrementPlan} />
+        </>
+      )}
+
+      {showChapter4Fields ? (
+        <>
+          <p className="pt-2 text-xs font-medium tracking-wide text-[var(--ink-muted)] uppercase">
+            Capítulo 4 — Implement I1
+          </p>
+          <p className="text-xs text-[var(--ink-muted)]">
+            El código vive en tu IDE. Acá registrás evidencia y criterio.
+          </p>
+          <Field
+            name="i1Log"
+            label="Bitácora I1"
+            hint="Qué partes ya existen fuera de ZUZU, qué falta, bloqueos."
+            placeholder={
+              "- Repo: …\n- UI create: ok\n- Persistencia: en curso\n- Falta: listado semana"
+            }
+            defaultValue={project.i1Log}
+            rows={5}
+          />
+          <Field
+            name="acValidation"
+            label="Validación de ACs (I1)"
+            hint="Pass/fail + evidencia observable por AC del slice."
+            placeholder={
+              "AC-001.1 PASS — Given… Then…\nAC-001.2 FAIL — reload pierde datos → fix…"
+            }
+            defaultValue={project.acValidation}
+            rows={5}
+          />
+          <Field
+            name="codeReviewNotes"
+            label="Review de código IA"
+            hint="Qué aceptaste, qué reescribiste, por qué (vs ADR/spec)."
+            placeholder={
+              "- Rechacé logging de montos en consola (NFR)\n- Reescribí capa repo para respetar ADR-001"
+            }
+            defaultValue={project.codeReviewNotes}
+            rows={5}
+          />
+        </>
+      ) : (
+        <>
+          <input type="hidden" name="i1Log" value={project.i1Log} />
+          <input type="hidden" name="acValidation" value={project.acValidation} />
+          <input
+            type="hidden"
+            name="codeReviewNotes"
+            value={project.codeReviewNotes}
+          />
         </>
       )}
 

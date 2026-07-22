@@ -110,11 +110,11 @@ export function PathJourney({
                 </Link>
               </div>
             </>
-          ) : (
+          ) : chapter === 3 ? (
             <>
               <p className="mt-2 text-sm text-[var(--ink-muted)]">
-                Diseño e I1 definidos. El Cap. 4 (Implement) llega después —
-                todavía no es “codear toda la V1”.
+                Diseño e I1 definidos. Seguí a Implement (Cap. 4): construí solo
+                el slice — el código vive fuera de ZUZU.
               </p>
               <div className="mt-4 flex flex-wrap gap-3 text-sm">
                 <Link
@@ -122,6 +122,27 @@ export function PathJourney({
                   className="font-medium text-[var(--accent)] underline"
                 >
                   Revisar Design
+                </Link>
+                <Link
+                  href="/app/path/c/chapter-04"
+                  className="text-[var(--ink-muted)] underline"
+                >
+                  Ir al Capítulo 4
+                </Link>
+              </div>
+            </>
+          ) : (
+            <>
+              <p className="mt-2 text-sm text-[var(--ink-muted)]">
+                I1 cerrado con evidencia. No es “terminar la V1”: el siguiente
+                slice (I2+) se decide con el mismo ritmo.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-3 text-sm">
+                <Link
+                  href="/app/projects"
+                  className="font-medium text-[var(--accent)] underline"
+                >
+                  Bitácora I1
                 </Link>
                 <Link href="/app/progress" className="text-[var(--ink-muted)] underline">
                   Progress

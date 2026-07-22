@@ -1,6 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import { chapter2Modules } from "./chapter2-content";
 import { chapter3Modules } from "./chapter3-content";
+import { chapter4Modules } from "./chapter4-content";
 
 const prisma = new PrismaClient();
 
@@ -481,8 +482,101 @@ async function main() {
     });
   }
 
+  const path4 = await prisma.learningPath.upsert({
+    where: { slug: "chapter-04" },
+    update: {
+      title: "Capítulo 4 — Construcción incremental con IA",
+      description:
+        "Implementá I1 fuera de ZUZU. Bitácora, review y ACs acá. Prerrequisito: Cap. 3 cerrado.",
+      chapter: 4,
+      order: 4,
+    },
+    create: {
+      slug: "chapter-04",
+      title: "Capítulo 4 — Construcción incremental con IA",
+      description:
+        "Implementá I1 fuera de ZUZU. Bitácora, review y ACs acá. Prerrequisito: Cap. 3 cerrado.",
+      chapter: 4,
+      order: 4,
+    },
+  });
+
+  for (const mod of chapter4Modules) {
+    await prisma.module.upsert({
+      where: {
+        pathId_slug: { pathId: path4.id, slug: mod.slug },
+      },
+      update: {
+        title: mod.title,
+        summary: mod.summary,
+        goal: mod.goal,
+        context: mod.context,
+        expectedOutcome: mod.expectedOutcome,
+        body: mod.body,
+        feedback: mod.feedback,
+        order: mod.order,
+      },
+      create: {
+        pathId: path4.id,
+        ...mod,
+      },
+    });
+  }
+
+  const modules4 = await prisma.module.findMany({
+    where: { pathId: path4.id },
+  });
+  const bySlug4 = Object.fromEntries(modules4.map((m) => [m.slug, m.id]));
+
+  const concepts4 = [
+    {
+      slug: "spec-before-code",
+      title: "Spec antes del teclado",
+      summary: "Releer FR/AC/ADR/I1 antes de pedir código.",
+      explanation:
+        "Sin contrato a mano, el prompt reinterpretará el objetivo. Cap. 4 arranca con el spec del Cap. 3, no con “implementá la app”.",
+      example: "Pegá AC-001.1–3 + ADR-001 en el prompt; pedí solo ese slice.",
+      practicalUse: "Checklist de apertura de sesión IDE antes del primer prompt.",
+      relatedSlugs: "ai-code-review,ac-validation",
+      moduleId: bySlug4["4-1-spec-before-code"],
+      order: 30,
+    },
+    {
+      slug: "ai-code-review",
+      title: "Review de código generado",
+      summary: "Diff vs spec: drift, secretos, complejidad.",
+      explanation:
+        "Si no podés explicar el cambio, no está listo — aunque “funcione”. La IA propone; vos aprobás.",
+      example: "Reescribiste una función porque violaba el ADR de persistencia.",
+      practicalUse: "Documentá en Practice Project qué aceptaste y qué rechazaste.",
+      relatedSlugs: "spec-before-code,ac-validation",
+      moduleId: bySlug4["4-5-review-ai-code"],
+      order: 31,
+    },
+    {
+      slug: "ac-validation",
+      title: "Validación de ACs (I1)",
+      summary: "Given/When/Then con evidencia pass/fail.",
+      explanation:
+        "DoD del Incremento 1: ACs en verde, no “mucho código”. Fallos → fix → re-validar.",
+      example: "AC-001.2 fail tras reload → corregir persistencia → pass.",
+      practicalUse: "Lista AC I1 en Practice Project antes de declarar I1 cerrado.",
+      relatedSlugs: "spec-before-code,ai-code-review",
+      moduleId: bySlug4["4-6-validate-acs"],
+      order: 32,
+    },
+  ];
+
+  for (const c of concepts4) {
+    await prisma.knowledgeConcept.upsert({
+      where: { slug: c.slug },
+      update: { ...c },
+      create: { ...c },
+    });
+  }
+
   console.log(
-    `Seed OK: ch1=${chapter1Modules.length}, ch2=${chapter2Modules.length}, ch3=${chapter3Modules.length}, concepts=${concepts.length + concepts2.length + concepts3.length}`,
+    `Seed OK: ch1=${chapter1Modules.length}, ch2=${chapter2Modules.length}, ch3=${chapter3Modules.length}, ch4=${chapter4Modules.length}, concepts=${concepts.length + concepts2.length + concepts3.length + concepts4.length}`,
   );
 }
 

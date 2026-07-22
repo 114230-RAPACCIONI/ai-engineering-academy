@@ -150,14 +150,17 @@ model PracticeProject {
   designDoc        String   @default("")
   adrs             String   @default("")
   incrementPlan    String   @default("")
-  status           String   @default("planning") // planning | requirements | design | active | done
+  i1Log            String   @default("")
+  acValidation     String   @default("")
+  codeReviewNotes  String   @default("")
+  status           String   @default("planning") // planning | requirements | design | implementing | active | done
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
-/// Rúbrica por capítulo (CHAPTER_01 §8 / CHAPTER_02 §11 / CHAPTER_03 §12)
+/// Rúbrica por capítulo (Cap. 1–4; Cap. 4 puente CHAPTER_03 §14.2)
 model CapabilityAssessment {
   id               String   @id @default(cuid())
   userId           String

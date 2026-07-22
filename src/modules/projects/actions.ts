@@ -20,7 +20,17 @@ const projectSchema = z.object({
   designDoc: z.string().max(8000),
   adrs: z.string().max(8000),
   incrementPlan: z.string().max(4000),
-  status: z.enum(["planning", "requirements", "design", "active", "done"]),
+  i1Log: z.string().max(8000),
+  acValidation: z.string().max(8000),
+  codeReviewNotes: z.string().max(8000),
+  status: z.enum([
+    "planning",
+    "requirements",
+    "design",
+    "implementing",
+    "active",
+    "done",
+  ]),
 });
 
 export type ProjectActionResult = { ok: boolean; error?: string };
@@ -48,6 +58,9 @@ export async function savePracticeProject(
     designDoc: formData.get("designDoc") || "",
     adrs: formData.get("adrs") || "",
     incrementPlan: formData.get("incrementPlan") || "",
+    i1Log: formData.get("i1Log") || "",
+    acValidation: formData.get("acValidation") || "",
+    codeReviewNotes: formData.get("codeReviewNotes") || "",
     status: formData.get("status") || "planning",
   });
 

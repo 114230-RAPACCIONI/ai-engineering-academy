@@ -9,6 +9,7 @@ import {
   getOrCreateJourney,
   isChapter2Unlocked,
   isChapter3Unlocked,
+  isChapter4Unlocked,
   progressSummary,
 } from "@/modules/learning/journey";
 import {
@@ -20,6 +21,9 @@ import { averageScore } from "@/modules/progress/rubric";
 
 const statusLabel: Record<string, string> = {
   planning: "Planning",
+  requirements: "Requirements",
+  design: "Design",
+  implementing: "Implementing",
   active: "Active",
   done: "Done",
   not_started: "Pendiente",
@@ -39,6 +43,7 @@ export default async function ProgressPage() {
   });
   const unlockedCh2 = await isChapter2Unlocked(session.user.id);
   const unlockedCh3 = await isChapter3Unlocked(session.user.id);
+  const unlockedCh4 = await isChapter4Unlocked(session.user.id);
 
   const checklist = buildChapter1Checklist({
     project,
@@ -76,6 +81,7 @@ export default async function ProgressPage() {
   const ch1 = await loadPair(1);
   const ch2 = unlockedCh2 ? await loadPair(2) : null;
   const ch3 = unlockedCh3 ? await loadPair(3) : null;
+  const ch4 = unlockedCh4 ? await loadPair(4) : null;
 
   return (
     <div className="space-y-8">
@@ -196,6 +202,7 @@ export default async function ProgressPage() {
       <RubricBlock chapter={1} pair={ch1} />
       {ch2 ? <RubricBlock chapter={2} pair={ch2} /> : null}
       {ch3 ? <RubricBlock chapter={3} pair={ch3} /> : null}
+      {ch4 ? <RubricBlock chapter={4} pair={ch4} /> : null}
     </div>
   );
 }

@@ -5,9 +5,11 @@ import {
   CHAPTER_01,
   CHAPTER_02,
   CHAPTER_03,
+  CHAPTER_04,
   getOrCreateJourney,
   isChapter2Unlocked,
   isChapter3Unlocked,
+  isChapter4Unlocked,
   listLearningPaths,
   progressSummary,
 } from "@/modules/learning/journey";
@@ -19,12 +21,14 @@ export default async function PathIndexPage() {
   const paths = await listLearningPaths();
   const unlockedCh2 = await isChapter2Unlocked(session.user.id);
   const unlockedCh3 = await isChapter3Unlocked(session.user.id);
+  const unlockedCh4 = await isChapter4Unlocked(session.user.id);
 
   const cards = await Promise.all(
     paths.map(async (path) => {
       const locked =
         (path.slug === CHAPTER_02 && !unlockedCh2) ||
-        (path.slug === CHAPTER_03 && !unlockedCh3);
+        (path.slug === CHAPTER_03 && !unlockedCh3) ||
+        (path.slug === CHAPTER_04 && !unlockedCh4);
       let percent = 0;
       let status = "locked";
       if (!locked) {
@@ -36,6 +40,12 @@ export default async function PathIndexPage() {
     }),
   );
 
+  const unlockHint: Record<string, { href: string; label: string }> = {
+    [CHAPTER_02]: { href: `/app/path/c/${CHAPTER_01}`, label: "Cap. 1" },
+    [CHAPTER_03]: { href: `/app/path/c/${CHAPTER_02}`, label: "Cap. 2" },
+    [CHAPTER_04]: { href: `/app/path/c/${CHAPTER_03}`, label: "Cap. 3" },
+  };
+
   return (
     <div className="space-y-8">
       <section>
@@ -46,8 +56,8 @@ export default async function PathIndexPage() {
           Tu viaje SDD
         </h1>
         <p className="max-w-2xl text-[var(--ink-muted)]">
-          Cap. 1 → Cap. 2 → Cap. 3. Cada capítulo se desbloquea al cerrar el Path
-          del anterior (prerrequisitos del curriculum).
+          Cap. 1 → Cap. 2 → Cap. 3 → Cap. 4. Cada capítulo se desbloquea al
+          cerrar el Path del anterior.
         </p>
       </section>
 
@@ -65,25 +75,14 @@ export default async function PathIndexPage() {
                 </p>
                 <p className="mt-3 text-sm text-[var(--ink-muted)]">
                   Completá el Path del capítulo anterior para desbloquear.
-                  {path.slug === CHAPTER_02 ? (
+                  {unlockHint[path.slug] ? (
                     <>
                       {" "}
                       <Link
-                        href={`/app/path/c/${CHAPTER_01}`}
+                        href={unlockHint[path.slug].href}
                         className="text-[var(--accent)] underline"
                       >
-                        Cap. 1
-                      </Link>
-                    </>
-                  ) : null}
-                  {path.slug === CHAPTER_03 ? (
-                    <>
-                      {" "}
-                      <Link
-                        href={`/app/path/c/${CHAPTER_02}`}
-                        className="text-[var(--accent)] underline"
-                      >
-                        Cap. 2
+                        {unlockHint[path.slug].label}
                       </Link>
                     </>
                   ) : null}

@@ -137,6 +137,69 @@ const BY_MODULE: Record<string, MentorPrompt[]> = {
       text: "Recorré conmigo el Definition of Done del Capítulo 2 y desafiá evidencias flojas. Sin pedirme código.",
     },
   ],
+  "3-2-minimal-vs-enterprise": [
+    {
+      id: "over-eng",
+      label: "¿Over-engineering?",
+      text: "Revisá este diseño y señalá capas o servicios que no exige ningún FR/NFR Must:\n\n[pegá diseño]",
+    },
+  ],
+  "3-7-adrs": [
+    {
+      id: "adr-alts",
+      label: "Alternativas flojas",
+      text: "En este ADR, ¿las alternativas son reales o strawman? ¿Faltan consecuencias?\n\n[pegá ADR]",
+    },
+  ],
+  "3-8-increment-1": [
+    {
+      id: "i1-scope",
+      label: "I1 demasiado grande",
+      text: "Este es mi I1. ¿Es un vertical slice o metí I2 disfrazado?\n\n[pegá plan I1]",
+    },
+  ],
+  "3-practice": [
+    {
+      id: "dod-ch3",
+      label: "DoD Cap. 3",
+      text: "Recorré el DoD Cap. 3 (diseño, ADRs, I1). No me pidas implementar todavía.",
+    },
+  ],
+  "4-1-spec-before-code": [
+    {
+      id: "session-contract",
+      label: "Contrato de sesión",
+      text: "Voy a abrir el IDE. Ayudame a listar qué FRs/ACs/ADRs debo pegar para no reinterpretar I1. Sin generar código.",
+    },
+  ],
+  "4-3-mentor-agreement": [
+    {
+      id: "working-agreement",
+      label: "Working agreement",
+      text: "Proponé reglas de sesión anti-Frankenstein para I1 (vos preguntás/revisás; yo no te dejo ser autor del producto).",
+    },
+  ],
+  "4-5-review-ai-code": [
+    {
+      id: "review-diff",
+      label: "Revisar diff",
+      text: "Te resumo un cambio que generó la IA. Señalá drift vs ACs/ADRs y qué reescribiría. No reescribas el código completo:\n\n[descripción]",
+    },
+  ],
+  "4-6-validate-acs": [
+    {
+      id: "ac-evidence",
+      label: "Evidencia floja",
+      text: "Estos son mis resultados de ACs I1. ¿Cuáles no son observables o faltan?\n\n[pegá pass/fail]",
+    },
+  ],
+  "4-practice": [
+    {
+      id: "dod-ch4",
+      label: "DoD Cap. 4",
+      text: "Recorré el DoD Cap. 4 para I1 (bitácora, ACs, review, sin I2). Desafiá evidencias flojas.",
+    },
+  ],
 };
 
 export function promptsForModule(moduleSlug?: string | null): MentorPrompt[] {
