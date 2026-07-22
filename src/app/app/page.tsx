@@ -1,12 +1,27 @@
 import Link from "next/link";
 import { auth } from "@/modules/identity/auth";
 import { prisma } from "@/lib/prisma";
+import {
+  getOrCreateJourney,
+  progressSummary,
+} from "@/modules/learning/journey";
 
 export default async function AppHomePage() {
   const session = await auth();
   const user = session?.user?.id
     ? await prisma.user.findUnique({ where: { id: session.user.id } })
     : null;
+
+  let pathSummary: { percent: number; title: string } | null = null;
+  if (session?.user?.id) {
+    try {
+      const journey = await getOrCreateJourney(session.user.id);
+      const summary = progressSummary(journey.path.modules, journey.progress);
+      pathSummary = { percent: summary.percent, title: journey.path.title };
+    } catch {
+      pathSummary = null;
+    }
+  }
 
   return (
     <div className="space-y-8">
@@ -19,6 +34,22 @@ export default async function AppHomePage() {
           aprender a pensar, diseñar y construir con un Mentor de IA.
         </p>
       </section>
+
+      {pathSummary ? (
+        <section className="rounded-lg border border-[var(--accent)] bg-[var(--surface)] p-5">
+          <p className="mb-1 text-sm text-[var(--ink-muted)]">Tu viaje actual</p>
+          <h2 className="mb-2 font-medium">{pathSummary.title}</h2>
+          <p className="mb-3 text-sm text-[var(--ink-muted)]">
+            {pathSummary.percent}% del capítulo
+          </p>
+          <Link
+            href="/app/path"
+            className="text-sm font-medium text-[var(--accent)] underline"
+          >
+            Continuar Learning Path
+          </Link>
+        </section>
+      ) : null}
 
       <section className="grid gap-4 md:grid-cols-2">
         <Link
@@ -58,11 +89,6 @@ export default async function AppHomePage() {
           </p>
         </Link>
       </section>
-
-      <p className="text-sm text-[var(--ink-muted)]">
-        Las secciones Path, Knowledge, Mentor, Projects y Progress se completan en
-        las próximas fases. La navegación ya está lista.
-      </p>
     </div>
   );
 }

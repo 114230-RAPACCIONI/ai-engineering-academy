@@ -16,4 +16,66 @@ model User {
   objectives   String   @default("")
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
+
+  journeys LearningJourney[]
+}
+
+model LearningPath {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  description String
+  chapter     Int
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+
+  modules  Module[]
+  journeys LearningJourney[]
+}
+
+model Module {
+  id              String @id @default(cuid())
+  pathId          String
+  slug            String
+  title           String
+  summary         String
+  goal            String
+  context         String
+  expectedOutcome String
+  order           Int    @default(0)
+
+  path      LearningPath     @relation(fields: [pathId], references: [id], onDelete: Cascade)
+  progress  ModuleProgress[]
+
+  @@unique([pathId, slug])
+}
+
+model LearningJourney {
+  id              String   @id @default(cuid())
+  userId          String
+  pathId          String
+  status          String   @default("active") // active | completed
+  currentModuleId String?
+  startedAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  user     User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  path     LearningPath     @relation(fields: [pathId], references: [id], onDelete: Cascade)
+  progress ModuleProgress[]
+
+  @@unique([userId, pathId])
+}
+
+model ModuleProgress {
+  id          String    @id @default(cuid())
+  journeyId   String
+  moduleId    String
+  status      String    @default("not_started") // not_started | in_progress | completed
+  completedAt DateTime?
+  updatedAt   DateTime  @updatedAt
+
+  journey LearningJourney @relation(fields: [journeyId], references: [id], onDelete: Cascade)
+  module  Module          @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+
+  @@unique([journeyId, moduleId])
 }

@@ -45,6 +45,7 @@ Stack: Next.js 15 + TypeScript + Prisma + SQLite ([ADR-008](docs/architecture/ad
 cp .env.example .env   # si no tenés .env
 npm install
 npx prisma db push
+npm run db:seed
 npm run dev
 ```
 
@@ -60,4 +61,4 @@ Producto: [MVP Scope](docs/product/MVP_SCOPE.md) · Dominio: [Domain Model](docs
 
 ---
 
-**Estado:** Implementación Fase 1 (scaffold + auth + layout). Spec canónico en `docs/`.
+**Estado:** Implementación Fase 1–2 (auth, layout, Learning Path Cap. 1).
