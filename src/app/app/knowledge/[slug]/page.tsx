@@ -77,6 +77,29 @@ export default async function ConceptPage({ params }: PageProps) {
           </ul>
         </section>
       ) : null}
+
+      <section className="grid gap-2 sm:grid-cols-2">
+        {concept.module ? (
+          <Link
+            href={`/app/path/${concept.module.slug}`}
+            className="rounded-lg border border-[var(--line)] bg-[var(--surface)] px-4 py-3 text-sm hover:border-[var(--accent)]"
+          >
+            <span className="block font-medium">Aplicar en el Path</span>
+            <span className="text-xs text-[var(--ink-muted)]">
+              {concept.module.title}
+            </span>
+          </Link>
+        ) : null}
+        <Link
+          href="/app/projects"
+          className="rounded-lg border border-[var(--line)] bg-[var(--surface)] px-4 py-3 text-sm hover:border-[var(--accent)]"
+        >
+          <span className="block font-medium">Escribir en Practice Project</span>
+          <span className="text-xs text-[var(--ink-muted)]">
+            Dejá evidencia, no solo lectura
+          </span>
+        </Link>
+      </section>
     </article>
   );
 }
