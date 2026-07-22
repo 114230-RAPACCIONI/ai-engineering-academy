@@ -110,7 +110,11 @@ export default async function ModulePage({ params }: PageProps) {
         cuando solo lo leíste.
       </p>
 
-      <ModuleActions moduleId={mod.id} status={status} />
+      <ModuleActions
+        moduleId={mod.id}
+        status={status}
+        feedback={mod.feedback}
+      />
 
       <ModuleNextSteps
         moduleSlug={mod.slug}

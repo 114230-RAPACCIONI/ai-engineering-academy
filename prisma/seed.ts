@@ -10,6 +10,8 @@ const chapter1Modules = [
     goal: "Explicar qué es un proyecto Frankenstein y por qué la IA lo empeora.",
     context: "Capítulo 1 · Specify — antes de pedir código.",
     expectedOutcome: "Podés describir el anti-patrón con un ejemplo propio.",
+    feedback:
+      "Buen paso: ya podés nombrar el anti-patrón. Eso es criterio, no código.",
     order: 1,
     body: `Un proyecto Frankenstein es software donde la idea original ya no coincide con lo construido, distintas partes asumen cosas distintas, y cada sesión (humana o con IA) reinterpreta el objetivo.
 
@@ -29,6 +31,8 @@ Práctica: pensá un proyecto propio (o uno que abandonaste). Escribí en una fr
     goal: "Formular el problema real en 3–5 oraciones.",
     context: "Capítulo 1 · Specify.",
     expectedOutcome: "Problem statement validable (no lista de features).",
+    feedback:
+      "Si tu statement resiste “¿qué feature escondés?”, vas bien.",
     order: 2,
     body: `Un problem statement nombra a quién le duele, qué falla hoy y por qué importa. No lista features. No elige stack.
 
@@ -50,6 +54,8 @@ Pedile al Mentor que busque soluciones escondidas, no que reescriba el producto.
     goal: "Definir qué entra, qué sale y qué no es el proyecto.",
     context: "Capítulo 1 · Specify.",
     expectedOutcome: "Scope con ≤5 ítems in y non-goals escritos.",
+    feedback:
+      "Scope con non-goals es defensa contra Frankenstein futuro. Bien.",
     order: 3,
     body: `Scope in: qué entra en V1 (máximo 5 ítems).
 Scope out: qué queda explícitamente para después.
@@ -71,6 +77,8 @@ Regla: si la IA sugiere una feature, clasificala in / out / non-goal antes de ac
     goal: "Documentar al menos 3 decisiones iniciales con razón.",
     context: "Capítulo 1 · Clarify.",
     expectedOutcome: "Decision log usable en la próxima sesión con el Mentor.",
+    feedback:
+      "Decisiones con razón = memoria entre sesiones. El Mentor te lo va a agradecer.",
     order: 4,
     body: `Los artefactos del Capítulo 1 no son burocracia: son memoria entre sesiones.
 
@@ -90,6 +98,8 @@ Antes de hablar con el Mentor, pegá las últimas 3–5 decisiones. Pedí que de
     goal: "Planear con IA sin delegar el criterio.",
     context: "Capítulo 1 · Mentor.",
     expectedOutcome: "Notas de sesión donde vos decidís y la IA desafía.",
+    feedback:
+      "Usar IA para clarificar (no para autoría) es el hábito ZUZU.",
     order: 5,
     body: `En ZUZU el Mentor amplifica criterio. Enseña antes de responder, pregunta antes de asumir, y admite incertidumbre.
 
@@ -107,6 +117,8 @@ En este capítulo no se espera código de producto. Se espera criterio documenta
     goal: "Cerrar Definition of Done del Capítulo 1 con artefactos mínimos.",
     context: "Capítulo 1 · Practice Project.",
     expectedOutcome: "PRACTICE_PROJECT.md con problem, scope, decisions y notas Mentor.",
+    feedback:
+      "Capítulo 1 se cierra con artefactos, no con app. Exportá el ZIP cuando el DoD esté sólido.",
     order: 6,
     body: `Definition of Done — Capítulo 1:
 • Problem statement de 3–5 oraciones
@@ -155,6 +167,7 @@ async function main() {
         context: mod.context,
         expectedOutcome: mod.expectedOutcome,
         body: mod.body,
+        feedback: mod.feedback,
         order: mod.order,
       },
       create: {

@@ -21,6 +21,7 @@ model User {
   conversations Conversation[]
   decisions     DecisionLogEntry[]
   projects      PracticeProject[]
+  assessments   CapabilityAssessment[]
 }
 
 model LearningPath {
@@ -46,6 +47,7 @@ model Module {
   context         String
   expectedOutcome String
   body            String @default("")
+  feedback        String @default("")
   order           Int    @default(0)
 
   path     LearningPath       @relation(fields: [pathId], references: [id], onDelete: Cascade)
@@ -146,4 +148,22 @@ model PracticeProject {
   updatedAt        DateTime @updatedAt
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+/// Rúbrica Cap. 1 (CHAPTER_01 §8) — instrumento MVP_SCOPE §9
+model CapabilityAssessment {
+  id               String   @id @default(cuid())
+  userId           String
+  kind             String // pre | post
+  clarityProblem   Int // 1-5
+  scope            Int
+  decisions        Int
+  aiUse            Int
+  antiFrankenstein Int
+  note             String   @default("")
+  createdAt        DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, kind])
 }

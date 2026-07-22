@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import { CapabilityForm } from "@/components/CapabilityForm";
 import { DefinitionChecklist } from "@/components/DefinitionChecklist";
 import { auth } from "@/modules/identity/auth";
 import { prisma } from "@/lib/prisma";
@@ -12,6 +13,7 @@ import {
   checklistSummary,
 } from "@/modules/projects/checklist";
 import { getOrCreateProject } from "@/modules/projects/service";
+import { averageScore } from "@/modules/progress/rubric";
 
 const statusLabel: Record<string, string> = {
   planning: "Planning",
@@ -43,6 +45,29 @@ export default async function ProgressPage() {
   const current = journey.path.modules.find(
     (m) => m.id === journey.currentModuleId,
   );
+
+  const pre = await prisma.capabilityAssessment.findFirst({
+    where: { userId: session.user.id, kind: "pre" },
+    orderBy: { createdAt: "desc" },
+  });
+  const post = await prisma.capabilityAssessment.findFirst({
+    where: { userId: session.user.id, kind: "post" },
+    orderBy: { createdAt: "desc" },
+  });
+
+  const scoreOf = (a: typeof pre) =>
+    a
+      ? averageScore({
+          clarityProblem: a.clarityProblem,
+          scope: a.scope,
+          decisions: a.decisions,
+          aiUse: a.aiUse,
+          antiFrankenstein: a.antiFrankenstein,
+        })
+      : null;
+
+  const preScore = scoreOf(pre);
+  const postScore = scoreOf(post);
 
   return (
     <div className="space-y-8">
@@ -159,6 +184,58 @@ export default async function ProgressPage() {
           subtitle="Evidencia de capability del Capítulo 1."
         />
       </div>
+
+      <section className="rounded-xl border border-[var(--line)] bg-[var(--surface)] p-5">
+        <h2 className="mb-1 font-medium">Rúbrica de capability (Cap. 1)</h2>
+        <p className="mb-4 text-sm text-[var(--ink-muted)]">
+          Instrumento de validación (MVP_SCOPE §9). Escala 1–5 · aprobar: promedio
+          ≥ 3 sin criterio en 1.
+        </p>
+
+        <div className="mb-6 grid gap-3 sm:grid-cols-2">
+          <div className="rounded-lg border border-[var(--line)] bg-[var(--bg)]/40 p-3 text-sm">
+            <p className="text-xs text-[var(--ink-muted)] uppercase">Pre</p>
+            {preScore ? (
+              <p className="mt-1">
+                Promedio {preScore.avg}
+                {preScore.passes ? " · baseline ok" : " · hay huecos"}
+              </p>
+            ) : (
+              <p className="mt-1 text-[var(--ink-muted)]">Sin baseline</p>
+            )}
+          </div>
+          <div className="rounded-lg border border-[var(--line)] bg-[var(--bg)]/40 p-3 text-sm">
+            <p className="text-xs text-[var(--ink-muted)] uppercase">Post</p>
+            {postScore ? (
+              <p className="mt-1">
+                Promedio {postScore.avg}
+                {postScore.passes ? " · Cap. 1 ok" : " · aún no aprueba"}
+                {preScore
+                  ? ` · Δ ${(postScore.avg - preScore.avg).toFixed(1)}`
+                  : ""}
+              </p>
+            ) : (
+              <p className="mt-1 text-[var(--ink-muted)]">Pendiente de cierre</p>
+            )}
+          </div>
+        </div>
+
+        {!pre ? <CapabilityForm kind="pre" /> : null}
+        {pre && !post ? (
+          <div className="mt-4">
+            <p className="mb-3 text-sm text-[var(--ink-muted)]">
+              Cuando cierres Path + DoD, registrá el post.
+            </p>
+            <CapabilityForm kind="post" />
+          </div>
+        ) : null}
+        {pre && post ? (
+          <p className="text-sm text-[var(--accent)]">
+            Pre y post guardados. Eso permite validar la hipótesis de
+            transformación.
+          </p>
+        ) : null}
+      </section>
     </div>
   );
 }

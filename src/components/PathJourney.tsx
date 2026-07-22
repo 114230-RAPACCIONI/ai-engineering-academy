@@ -58,20 +58,27 @@ export function PathJourney({
       </section>
 
       {isDone ? (
-        <section className="rounded-xl border border-[var(--accent)] bg-[var(--accent-soft)] px-5 py-4">
+        <section className="rounded-xl border border-[var(--accent)] bg-[var(--accent-soft)] px-5 py-5">
           <p className="text-lg font-medium text-[var(--accent)]">
-            Capítulo 1 cerrado
+            Capítulo 1 cerrado en el Path
           </p>
-          <p className="mt-1 text-sm text-[var(--ink-muted)]">
-            Buen trabajo. Llevá tus artefactos al Practice Project y exportá el
-            ZIP. El Capítulo 2 llega después.
+          <blockquote className="mt-3 border-l-2 border-[var(--accent)] pl-4 text-sm italic text-[var(--ink)]">
+            “Todavía no construí la app — pero por primera vez sé qué estoy
+            construyendo y qué no. Quiero seguir.”
+          </blockquote>
+          <p className="mt-3 text-sm text-[var(--ink-muted)]">
+            Momento de éxito del curriculum (Cap. 1 §10.3). Completá el
+            Definition of Done, exportá el ZIP y hacé la autoevaluación post.
           </p>
-          <div className="mt-3 flex flex-wrap gap-3 text-sm">
-            <Link href="/app/projects" className="font-medium text-[var(--accent)] underline">
-              Ir a Practice Project
+          <div className="mt-4 flex flex-wrap gap-3 text-sm">
+            <Link
+              href="/app/projects"
+              className="font-medium text-[var(--accent)] underline"
+            >
+              Practice Project
             </Link>
             <Link href="/app/progress" className="text-[var(--ink-muted)] underline">
-              Ver Progress
+              Progress + rúbrica
             </Link>
           </div>
         </section>

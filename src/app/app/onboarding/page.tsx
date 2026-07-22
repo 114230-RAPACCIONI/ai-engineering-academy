@@ -1,7 +1,10 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import { CapabilityForm } from "@/components/CapabilityForm";
+import { DomainPicker } from "@/components/DomainPicker";
 import { auth } from "@/modules/identity/auth";
 import { getOrCreateJourney } from "@/modules/learning/journey";
+import { prisma } from "@/lib/prisma";
 import { getOrCreateProject } from "@/modules/projects/service";
 
 export default async function OnboardingPage() {
@@ -9,8 +12,13 @@ export default async function OnboardingPage() {
   if (!session?.user?.id) redirect("/login");
 
   const journey = await getOrCreateJourney(session.user.id);
-  await getOrCreateProject(session.user.id);
+  const project = await getOrCreateProject(session.user.id);
   const first = journey.path.modules[0];
+
+  const pre = await prisma.capabilityAssessment.findFirst({
+    where: { userId: session.user.id, kind: "pre" },
+    orderBy: { createdAt: "desc" },
+  });
 
   return (
     <div className="mx-auto max-w-2xl space-y-8">
@@ -27,6 +35,23 @@ export default async function OnboardingPage() {
         </p>
       </section>
 
+      <DomainPicker initialDomain={project.domain} />
+
+      <section className="rounded-xl border border-[var(--line)] bg-[var(--surface)] p-5">
+        <h2 className="mb-1 font-medium">Baseline de capability (pre)</h2>
+        <p className="mb-4 text-sm text-[var(--ink-muted)]">
+          Instrumento de MVP_SCOPE §9 · rúbrica Cap. 1. Autoevaluate ahora; al
+          cerrar el capítulo comparás el post.
+        </p>
+        {pre ? (
+          <p className="text-sm text-[var(--accent)]">
+            Baseline guardada. Podés seguir al Path.
+          </p>
+        ) : (
+          <CapabilityForm kind="pre" />
+        )}
+      </section>
+
       <ol className="space-y-4">
         <Step
           n={1}
@@ -36,17 +61,17 @@ export default async function OnboardingPage() {
         <Step
           n={2}
           title="Escribí tu Practice Project"
-          body="El dominio lo elegís vos. Dejá evidencia: problem statement, scope, non-goals."
+          body="Dominio propio. Evidencia: problem statement, scope, non-goals."
         />
         <Step
           n={3}
           title="Usá el Mentor (o notas de reflexión)"
-          body="Pedí clarificación. Si aún no tenés API key, guardá notas: también cuentan."
+          body="Pedí clarificación. Sin API key, las notas también cuentan."
         />
       </ol>
 
       <section className="rounded-xl border border-[var(--accent)] bg-[var(--surface)] p-5">
-        <p className="text-sm text-[var(--ink-muted)]">Primer paso</p>
+        <p className="text-sm text-[var(--ink-muted)]">Primer paso del Path</p>
         <h2 className="mt-1 font-medium">
           {first?.title ?? "Módulo 1.1 — El problema del Frankenstein"}
         </h2>
