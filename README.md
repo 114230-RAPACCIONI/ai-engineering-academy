@@ -51,6 +51,8 @@ npm run dev
 
 Abrí [http://localhost:3000](http://localhost:3000) — registro → `/app`.
 
+Para el Mentor: seteá `ANTHROPIC_API_KEY` en `.env` (ADR-009).
+
 Producto: [MVP Scope](docs/product/MVP_SCOPE.md) · Dominio: [Domain Model](docs/architecture/DOMAIN_MODEL.md)
 
 ---
@@ -61,4 +63,4 @@ Producto: [MVP Scope](docs/product/MVP_SCOPE.md) · Dominio: [Domain Model](docs
 
 ---
 
-**Estado:** Implementación Fase 1–2 (auth, layout, Learning Path Cap. 1).
+**Estado:** Implementación Fase 1–4 (auth, Path, Knowledge, Mentor). Pendiente: Practice Project + Progress (Fase 5).

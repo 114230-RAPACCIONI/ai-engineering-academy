@@ -17,7 +17,9 @@ model User {
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
 
-  journeys LearningJourney[]
+  journeys      LearningJourney[]
+  conversations Conversation[]
+  decisions     DecisionLogEntry[]
 }
 
 model LearningPath {
@@ -44,24 +46,24 @@ model Module {
   expectedOutcome String
   order           Int    @default(0)
 
-  path       LearningPath     @relation(fields: [pathId], references: [id], onDelete: Cascade)
-  progress   ModuleProgress[]
-  concepts   KnowledgeConcept[]
+  path     LearningPath       @relation(fields: [pathId], references: [id], onDelete: Cascade)
+  progress ModuleProgress[]
+  concepts KnowledgeConcept[]
 
   @@unique([pathId, slug])
 }
 
 model KnowledgeConcept {
-  id          String  @id @default(cuid())
-  slug        String  @unique
-  title       String
-  summary     String
-  explanation String
-  example     String
+  id           String  @id @default(cuid())
+  slug         String  @unique
+  title        String
+  summary      String
+  explanation  String
+  example      String
   practicalUse String
-  relatedSlugs String @default("") // comma-separated slugs
-  moduleId    String?
-  order       Int     @default(0)
+  relatedSlugs String  @default("") // comma-separated slugs
+  moduleId     String?
+  order        Int     @default(0)
 
   module Module? @relation(fields: [moduleId], references: [id], onDelete: SetNull)
 }
@@ -94,4 +96,35 @@ model ModuleProgress {
   module  Module          @relation(fields: [moduleId], references: [id], onDelete: Cascade)
 
   @@unique([journeyId, moduleId])
+}
+
+model Conversation {
+  id        String   @id @default(cuid())
+  userId    String
+  title     String   @default("Sesión con el Mentor")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user     User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  messages Message[]
+}
+
+model Message {
+  id             String   @id @default(cuid())
+  conversationId String
+  role           String // user | assistant | system
+  content        String
+  createdAt      DateTime @default(now())
+
+  conversation Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+}
+
+model DecisionLogEntry {
+  id        String   @id @default(cuid())
+  userId    String
+  decision  String
+  reason    String
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
