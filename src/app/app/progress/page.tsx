@@ -5,7 +5,10 @@ import { DefinitionChecklist } from "@/components/DefinitionChecklist";
 import { auth } from "@/modules/identity/auth";
 import { prisma } from "@/lib/prisma";
 import {
+  CHAPTER_01,
   getOrCreateJourney,
+  isChapter2Unlocked,
+  isChapter3Unlocked,
   progressSummary,
 } from "@/modules/learning/journey";
 import {
@@ -28,12 +31,14 @@ export default async function ProgressPage() {
   const session = await auth();
   if (!session?.user?.id) redirect("/login");
 
-  const journey = await getOrCreateJourney(session.user.id);
+  const journey = await getOrCreateJourney(session.user.id, CHAPTER_01);
   const summary = progressSummary(journey.path.modules, journey.progress);
   const project = await getOrCreateProject(session.user.id);
   const decisions = await prisma.decisionLogEntry.count({
     where: { userId: session.user.id },
   });
+  const unlockedCh2 = await isChapter2Unlocked(session.user.id);
+  const unlockedCh3 = await isChapter3Unlocked(session.user.id);
 
   const checklist = buildChapter1Checklist({
     project,
@@ -46,28 +51,31 @@ export default async function ProgressPage() {
     (m) => m.id === journey.currentModuleId,
   );
 
-  const pre = await prisma.capabilityAssessment.findFirst({
-    where: { userId: session.user.id, kind: "pre" },
-    orderBy: { createdAt: "desc" },
-  });
-  const post = await prisma.capabilityAssessment.findFirst({
-    where: { userId: session.user.id, kind: "post" },
-    orderBy: { createdAt: "desc" },
-  });
+  async function loadPair(chapter: number) {
+    const pre = await prisma.capabilityAssessment.findFirst({
+      where: { userId: session!.user!.id, kind: "pre", chapter },
+      orderBy: { createdAt: "desc" },
+    });
+    const post = await prisma.capabilityAssessment.findFirst({
+      where: { userId: session!.user!.id, kind: "post", chapter },
+      orderBy: { createdAt: "desc" },
+    });
+    const scoreOf = (a: typeof pre) =>
+      a
+        ? averageScore({
+            clarityProblem: a.clarityProblem,
+            scope: a.scope,
+            decisions: a.decisions,
+            aiUse: a.aiUse,
+            antiFrankenstein: a.antiFrankenstein,
+          })
+        : null;
+    return { pre, post, preScore: scoreOf(pre), postScore: scoreOf(post) };
+  }
 
-  const scoreOf = (a: typeof pre) =>
-    a
-      ? averageScore({
-          clarityProblem: a.clarityProblem,
-          scope: a.scope,
-          decisions: a.decisions,
-          aiUse: a.aiUse,
-          antiFrankenstein: a.antiFrankenstein,
-        })
-      : null;
-
-  const preScore = scoreOf(pre);
-  const postScore = scoreOf(post);
+  const ch1 = await loadPair(1);
+  const ch2 = unlockedCh2 ? await loadPair(2) : null;
+  const ch3 = unlockedCh3 ? await loadPair(3) : null;
 
   return (
     <div className="space-y-8">
@@ -185,58 +193,69 @@ export default async function ProgressPage() {
         />
       </div>
 
-      <section className="rounded-xl border border-[var(--line)] bg-[var(--surface)] p-5">
-        <h2 className="mb-1 font-medium">Rúbrica de capability (Cap. 1)</h2>
-        <p className="mb-4 text-sm text-[var(--ink-muted)]">
-          Instrumento de validación (MVP_SCOPE §9). Escala 1–5 · aprobar: promedio
-          ≥ 3 sin criterio en 1.
-        </p>
-
-        <div className="mb-6 grid gap-3 sm:grid-cols-2">
-          <div className="rounded-lg border border-[var(--line)] bg-[var(--bg)]/40 p-3 text-sm">
-            <p className="text-xs text-[var(--ink-muted)] uppercase">Pre</p>
-            {preScore ? (
-              <p className="mt-1">
-                Promedio {preScore.avg}
-                {preScore.passes ? " · baseline ok" : " · hay huecos"}
-              </p>
-            ) : (
-              <p className="mt-1 text-[var(--ink-muted)]">Sin baseline</p>
-            )}
-          </div>
-          <div className="rounded-lg border border-[var(--line)] bg-[var(--bg)]/40 p-3 text-sm">
-            <p className="text-xs text-[var(--ink-muted)] uppercase">Post</p>
-            {postScore ? (
-              <p className="mt-1">
-                Promedio {postScore.avg}
-                {postScore.passes ? " · Cap. 1 ok" : " · aún no aprueba"}
-                {preScore
-                  ? ` · Δ ${(postScore.avg - preScore.avg).toFixed(1)}`
-                  : ""}
-              </p>
-            ) : (
-              <p className="mt-1 text-[var(--ink-muted)]">Pendiente de cierre</p>
-            )}
-          </div>
-        </div>
-
-        {!pre ? <CapabilityForm kind="pre" /> : null}
-        {pre && !post ? (
-          <div className="mt-4">
-            <p className="mb-3 text-sm text-[var(--ink-muted)]">
-              Cuando cierres Path + DoD, registrá el post.
-            </p>
-            <CapabilityForm kind="post" />
-          </div>
-        ) : null}
-        {pre && post ? (
-          <p className="text-sm text-[var(--accent)]">
-            Pre y post guardados. Eso permite validar la hipótesis de
-            transformación.
-          </p>
-        ) : null}
-      </section>
+      <RubricBlock chapter={1} pair={ch1} />
+      {ch2 ? <RubricBlock chapter={2} pair={ch2} /> : null}
+      {ch3 ? <RubricBlock chapter={3} pair={ch3} /> : null}
     </div>
+  );
+}
+
+function RubricBlock({
+  chapter,
+  pair,
+}: {
+  chapter: number;
+  pair: {
+    pre: { id: string } | null;
+    post: { id: string } | null;
+    preScore: { avg: number; passes: boolean } | null;
+    postScore: { avg: number; passes: boolean } | null;
+  };
+}) {
+  const { pre, post, preScore, postScore } = pair;
+  return (
+    <section className="rounded-xl border border-[var(--line)] bg-[var(--surface)] p-5">
+      <h2 className="mb-1 font-medium">Rúbrica de capability (Cap. {chapter})</h2>
+      <p className="mb-4 text-sm text-[var(--ink-muted)]">
+        Escala 1–5 · aprobar: promedio ≥ 3 sin criterio en 1.
+      </p>
+      <div className="mb-6 grid gap-3 sm:grid-cols-2">
+        <div className="rounded-lg border border-[var(--line)] bg-[var(--bg)]/40 p-3 text-sm">
+          <p className="text-xs text-[var(--ink-muted)] uppercase">Pre</p>
+          {preScore ? (
+            <p className="mt-1">
+              Promedio {preScore.avg}
+              {preScore.passes ? " · baseline ok" : " · hay huecos"}
+            </p>
+          ) : (
+            <p className="mt-1 text-[var(--ink-muted)]">Sin baseline</p>
+          )}
+        </div>
+        <div className="rounded-lg border border-[var(--line)] bg-[var(--bg)]/40 p-3 text-sm">
+          <p className="text-xs text-[var(--ink-muted)] uppercase">Post</p>
+          {postScore ? (
+            <p className="mt-1">
+              Promedio {postScore.avg}
+              {postScore.passes ? ` · Cap. ${chapter} ok` : " · aún no aprueba"}
+              {preScore ? ` · Δ ${(postScore.avg - preScore.avg).toFixed(1)}` : ""}
+            </p>
+          ) : (
+            <p className="mt-1 text-[var(--ink-muted)]">Pendiente de cierre</p>
+          )}
+        </div>
+      </div>
+      {!pre ? <CapabilityForm kind="pre" chapter={chapter} /> : null}
+      {pre && !post ? (
+        <div className="mt-4">
+          <CapabilityForm kind="post" chapter={chapter} />
+        </div>
+      ) : null}
+      {pre && post ? (
+        <p className="text-sm text-[var(--accent)]">
+          Pre y post Cap. {chapter} guardados.
+        </p>
+      ) : null}
+    </section>
   );
 }
 

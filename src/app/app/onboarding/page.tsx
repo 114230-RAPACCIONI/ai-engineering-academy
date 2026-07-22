@@ -40,15 +40,14 @@ export default async function OnboardingPage() {
       <section className="rounded-xl border border-[var(--line)] bg-[var(--surface)] p-5">
         <h2 className="mb-1 font-medium">Baseline de capability (pre)</h2>
         <p className="mb-4 text-sm text-[var(--ink-muted)]">
-          Instrumento de MVP_SCOPE §9 · rúbrica Cap. 1. Autoevaluate ahora; al
-          cerrar el capítulo comparás el post.
+          Instrumento Cap. 1. Al cerrar el capítulo comparás el post.
         </p>
         {pre ? (
           <p className="text-sm text-[var(--accent)]">
             Baseline guardada. Podés seguir al Path.
           </p>
         ) : (
-          <CapabilityForm kind="pre" />
+          <CapabilityForm kind="pre" chapter={1} />
         )}
       </section>
 

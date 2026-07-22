@@ -2,6 +2,7 @@ import { prisma } from "@/lib/prisma";
 
 export const CHAPTER_01 = "chapter-01";
 export const CHAPTER_02 = "chapter-02";
+export const CHAPTER_03 = "chapter-03";
 
 export async function listLearningPaths() {
   return prisma.learningPath.findMany({
@@ -74,6 +75,18 @@ export async function isChapter2Unlocked(userId: string) {
   }
 }
 
+/** Cap. 3 requiere Cap. 2 journey completed (CHAPTER_03 prerrequisito). */
+export async function isChapter3Unlocked(userId: string) {
+  try {
+    const unlocked2 = await isChapter2Unlocked(userId);
+    if (!unlocked2) return false;
+    const ch2 = await getOrCreateJourney(userId, CHAPTER_02);
+    return ch2.status === "completed";
+  } catch {
+    return false;
+  }
+}
+
 export async function getModuleForUser(userId: string, moduleSlug: string) {
   const mod = await prisma.module.findFirst({
     where: { slug: moduleSlug },
@@ -83,6 +96,13 @@ export async function getModuleForUser(userId: string, moduleSlug: string) {
 
   if (mod.path.slug === CHAPTER_02) {
     const unlocked = await isChapter2Unlocked(userId);
+    if (!unlocked) {
+      return { locked: true as const, module: mod, journey: null, progress: null };
+    }
+  }
+
+  if (mod.path.slug === CHAPTER_03) {
+    const unlocked = await isChapter3Unlocked(userId);
     if (!unlocked) {
       return { locked: true as const, module: mod, journey: null, progress: null };
     }

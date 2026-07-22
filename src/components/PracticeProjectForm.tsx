@@ -20,9 +20,13 @@ type ProjectFormProps = {
     nonFunctionalReqs: string;
     acceptanceCriteria: string;
     traceability: string;
+    designDoc: string;
+    adrs: string;
+    incrementPlan: string;
     status: string;
   };
   showChapter2Fields?: boolean;
+  showChapter3Fields?: boolean;
 };
 
 const fieldClass =
@@ -33,6 +37,7 @@ const initial: ProjectActionResult | null = null;
 export function PracticeProjectForm({
   project,
   showChapter2Fields = false,
+  showChapter3Fields = false,
 }: ProjectFormProps) {
   const bound = savePracticeProject.bind(null, project.id);
   const [state, formAction, pending] = useActionState(bound, initial);
@@ -64,6 +69,7 @@ export function PracticeProjectForm({
         <select name="status" defaultValue={project.status} className={fieldClass}>
           <option value="planning">Planning (Cap. 1)</option>
           <option value="requirements">Requirements (Cap. 2)</option>
+          <option value="design">Design (Cap. 3)</option>
           <option value="active">Active</option>
           <option value="done">Done</option>
         </select>
@@ -166,6 +172,44 @@ export function PracticeProjectForm({
             value={project.acceptanceCriteria}
           />
           <input type="hidden" name="traceability" value={project.traceability} />
+        </>
+      )}
+
+      {showChapter3Fields ? (
+        <>
+          <p className="pt-2 text-xs font-medium tracking-wide text-[var(--ink-muted)] uppercase">
+            Capítulo 3 — Design
+          </p>
+          <Field
+            name="designDoc"
+            label="Diseño (componentes, flujos, modelo)"
+            hint="Cubre FR Must. Sin over-engineering."
+            placeholder={"## Componentes\n| Comp | Resp | FR |\n\n## Flujos\n…"}
+            defaultValue={project.designDoc}
+            rows={6}
+          />
+          <Field
+            name="adrs"
+            label="ADRs (≥2)"
+            hint="Contexto · Decisión · Alternativas · Consecuencias."
+            placeholder={"### ADR-001 — Persistencia\n## Contexto\n…"}
+            defaultValue={project.adrs}
+            rows={6}
+          />
+          <Field
+            name="incrementPlan"
+            label="Plan de incrementos (I1+)"
+            hint="I1 vertical slice con ACs."
+            placeholder={"| ID | Alcance | FR/AC | Notas |\n| I1 | Crear+listar | FR-001 | … |"}
+            defaultValue={project.incrementPlan}
+            rows={4}
+          />
+        </>
+      ) : (
+        <>
+          <input type="hidden" name="designDoc" value={project.designDoc} />
+          <input type="hidden" name="adrs" value={project.adrs} />
+          <input type="hidden" name="incrementPlan" value={project.incrementPlan} />
         </>
       )}
 

@@ -18,6 +18,9 @@ type ProjectLike = {
   nonFunctionalReqs?: string;
   acceptanceCriteria?: string;
   traceability?: string;
+  designDoc?: string;
+  adrs?: string;
+  incrementPlan?: string;
 };
 
 function hasText(value: string, min = 20) {
@@ -139,7 +142,50 @@ export function buildChapter2Checklist(input: {
       id: "status-req",
       label: "Estado Requirements (sin código de implementación)",
       done:
-        project.status === "requirements" || project.status === "done",
+        project.status === "requirements" ||
+        project.status === "design" ||
+        project.status === "done",
+      href: "/app/projects",
+    },
+  ];
+}
+
+/** Definition of Done — Capítulo 3 (CHAPTER_03 §11.2). */
+export function buildChapter3Checklist(input: {
+  project: ProjectLike;
+  pathPercent: number;
+}): ChecklistItem[] {
+  const { project, pathPercent } = input;
+
+  return [
+    {
+      id: "design",
+      label: "DESIGN.md / diseño cubre FR Must",
+      done: hasText(project.designDoc ?? "", 40),
+      href: "/app/projects",
+    },
+    {
+      id: "adrs",
+      label: "≥2 ADRs (contexto, alternativas, consecuencias)",
+      done: hasText(project.adrs ?? "", 60),
+      href: "/app/projects",
+    },
+    {
+      id: "i1",
+      label: "Incremento 1 definido con ACs",
+      done: hasText(project.incrementPlan ?? "", 30),
+      href: "/app/projects",
+    },
+    {
+      id: "path-ch3",
+      label: "Avance Path Cap. 3 (≥50%)",
+      done: pathPercent >= 50,
+      href: "/app/path/c/chapter-03",
+    },
+    {
+      id: "status-design",
+      label: "Estado Design (sin V1 completa implementada)",
+      done: project.status === "design" || project.status === "done",
       href: "/app/projects",
     },
   ];

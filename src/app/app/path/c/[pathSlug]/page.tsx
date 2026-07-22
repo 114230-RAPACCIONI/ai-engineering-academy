@@ -4,8 +4,10 @@ import { PathJourney } from "@/components/PathJourney";
 import { auth } from "@/modules/identity/auth";
 import {
   CHAPTER_02,
+  CHAPTER_03,
   getOrCreateJourney,
   isChapter2Unlocked,
+  isChapter3Unlocked,
   progressSummary,
 } from "@/modules/learning/journey";
 
@@ -37,6 +39,29 @@ export default async function ChapterJourneyPage({ params }: PageProps) {
             className="inline-block text-[var(--accent)] underline"
           >
             Ir al Capítulo 1
+          </Link>
+        </div>
+      );
+    }
+  }
+
+  if (pathSlug === CHAPTER_03) {
+    const unlocked = await isChapter3Unlocked(session.user.id);
+    if (!unlocked) {
+      return (
+        <div className="max-w-xl space-y-4">
+          <Link href="/app/path" className="text-sm text-[var(--ink-muted)]">
+            ← Learning Path
+          </Link>
+          <h1 className="text-2xl font-semibold">Capítulo 3 bloqueado</h1>
+          <p className="text-[var(--ink-muted)]">
+            El curriculum exige Cap. 2 completado antes de Design.
+          </p>
+          <Link
+            href="/app/path/c/chapter-02"
+            className="inline-block text-[var(--accent)] underline"
+          >
+            Ir al Capítulo 2
           </Link>
         </div>
       );

@@ -1,5 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import { chapter2Modules } from "./chapter2-content";
+import { chapter3Modules } from "./chapter3-content";
 
 const prisma = new PrismaClient();
 
@@ -387,8 +388,101 @@ async function main() {
     });
   }
 
+  const path3 = await prisma.learningPath.upsert({
+    where: { slug: "chapter-03" },
+    update: {
+      title: "Capítulo 3 — Diseño mínimo y trade-offs",
+      description:
+        "Diseño V1, ADRs e Incremento 1. Prerrequisito: Cap. 2 cerrado. Sin implementar V1 completa.",
+      chapter: 3,
+      order: 3,
+    },
+    create: {
+      slug: "chapter-03",
+      title: "Capítulo 3 — Diseño mínimo y trade-offs",
+      description:
+        "Diseño V1, ADRs e Incremento 1. Prerrequisito: Cap. 2 cerrado. Sin implementar V1 completa.",
+      chapter: 3,
+      order: 3,
+    },
+  });
+
+  for (const mod of chapter3Modules) {
+    await prisma.module.upsert({
+      where: {
+        pathId_slug: { pathId: path3.id, slug: mod.slug },
+      },
+      update: {
+        title: mod.title,
+        summary: mod.summary,
+        goal: mod.goal,
+        context: mod.context,
+        expectedOutcome: mod.expectedOutcome,
+        body: mod.body,
+        feedback: mod.feedback,
+        order: mod.order,
+      },
+      create: {
+        pathId: path3.id,
+        ...mod,
+      },
+    });
+  }
+
+  const modules3 = await prisma.module.findMany({
+    where: { pathId: path3.id },
+  });
+  const bySlug3 = Object.fromEntries(modules3.map((m) => [m.slug, m.id]));
+
+  const concepts3 = [
+    {
+      slug: "minimal-design",
+      title: "Diseño mínimo viable",
+      summary: "Lo mínimo que cumple FR Must y NFR de V1.",
+      explanation:
+        "Over-engineering es Frankenstein de arquitectura. El diseño debe trazarse a requirements, no a moda.",
+      example: "Monolito modular local > microservicios para un tracker personal V1.",
+      practicalUse: "Antes de agregar una capa, preguntá qué FR/NFR la exige.",
+      relatedSlugs: "adr-practice,vertical-slice",
+      moduleId: bySlug3["3-2-minimal-vs-enterprise"],
+      order: 20,
+    },
+    {
+      slug: "adr-practice",
+      title: "Architecture Decision Record",
+      summary: "Decisión técnica con alternativas y consecuencias.",
+      explanation:
+        "Un ADR documenta por qué elegiste X y qué descartaste. Es memoria para Cap. 4+.",
+      example: "ADR-001 Persistencia local: SQLite vs localStorage — elegimos… porque…",
+      practicalUse: "≥2 ADRs en Cap. 3 (stack/estructura y persistencia son típicos).",
+      relatedSlugs: "minimal-design,vertical-slice",
+      moduleId: bySlug3["3-7-adrs"],
+      order: 21,
+    },
+    {
+      slug: "vertical-slice",
+      title: "Incremento vertical (I1)",
+      summary: "Slice usable UI→lógica→datos, no capa horizontal gigante.",
+      explanation:
+        "I1 debe cerrar ACs concretos. Arquitectura sin UI no es incremento de aprendizaje útil en Cap. 4.",
+      example: "Crear + listar gastos con validación y persistencia = I1.",
+      practicalUse: "Definí I1 en Cap. 3; implementalo en Cap. 4.",
+      relatedSlugs: "minimal-design,adr-practice",
+      moduleId: bySlug3["3-8-increment-1"],
+      order: 22,
+    },
+  ];
+
+  for (const c of concepts3) {
+    await prisma.knowledgeConcept.upsert({
+      where: { slug: c.slug },
+      update: { ...c },
+      create: { ...c },
+    });
+  }
+
   console.log(
-    `Seed OK: ch1 modules=${chapter1Modules.length}, ch2 modules=${chapter2Modules.length}, concepts=${concepts.length + concepts2.length}`,
+    `Seed OK: ch1=${chapter1Modules.length}, ch2=${chapter2Modules.length}, ch3=${chapter3Modules.length}, concepts=${concepts.length + concepts2.length + concepts3.length}`,
   );
 }
 

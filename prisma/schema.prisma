@@ -147,19 +147,23 @@ model PracticeProject {
   nonFunctionalReqs String  @default("")
   acceptanceCriteria String @default("")
   traceability     String   @default("")
-  status           String   @default("planning") // planning | requirements | active | done
+  designDoc        String   @default("")
+  adrs             String   @default("")
+  incrementPlan    String   @default("")
+  status           String   @default("planning") // planning | requirements | design | active | done
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
-/// Rúbrica Cap. 1 (CHAPTER_01 §8) — instrumento MVP_SCOPE §9
+/// Rúbrica por capítulo (CHAPTER_01 §8 / CHAPTER_02 §11 / CHAPTER_03 §12)
 model CapabilityAssessment {
   id               String   @id @default(cuid())
   userId           String
+  chapter          Int      @default(1)
   kind             String // pre | post
-  clarityProblem   Int // 1-5
+  clarityProblem   Int // 1-5 — semántica según capítulo
   scope            Int
   decisions        Int
   aiUse            Int
@@ -169,5 +173,5 @@ model CapabilityAssessment {
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  @@index([userId, kind])
+  @@index([userId, chapter, kind])
 }

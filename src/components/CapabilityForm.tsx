@@ -5,28 +5,31 @@ import {
   saveCapabilityAssessment,
   type AssessmentResult,
 } from "@/modules/progress/actions";
-import { CAPABILITY_CRITERIA } from "@/modules/progress/rubric";
+import { criteriaForChapter } from "@/modules/progress/rubric";
 
 type Props = {
   kind: "pre" | "post";
+  chapter?: number;
 };
 
 const initial: AssessmentResult | null = null;
 
-export function CapabilityForm({ kind }: Props) {
+export function CapabilityForm({ kind, chapter = 1 }: Props) {
   const [state, formAction, pending] = useActionState(
     saveCapabilityAssessment,
     initial,
   );
+  const criteria = criteriaForChapter(chapter);
 
   return (
     <form action={formAction} className="space-y-4">
       <input type="hidden" name="kind" value={kind} />
+      <input type="hidden" name="chapter" value={String(chapter)} />
       <p className="text-sm text-[var(--ink-muted)]">
-        Escala 1–5 (rúbrica Cap. 1). Mínimo para aprobar: promedio ≥ 3 y ningún
-        criterio en 1.
+        Escala 1–5 (rúbrica Cap. {chapter}). Mínimo para aprobar: promedio ≥ 3 y
+        ningún criterio en 1.
       </p>
-      {CAPABILITY_CRITERIA.map((c) => (
+      {criteria.map((c) => (
         <label key={c.key} className="flex flex-col gap-1 text-sm">
           <span className="font-medium">{c.label}</span>
           <span className="text-xs text-[var(--ink-muted)]">
@@ -73,8 +76,8 @@ export function CapabilityForm({ kind }: Props) {
         {pending
           ? "Guardando…"
           : kind === "pre"
-            ? "Guardar baseline (pre)"
-            : "Guardar cierre (post)"}
+            ? `Guardar baseline Cap. ${chapter} (pre)`
+            : `Guardar cierre Cap. ${chapter} (post)`}
       </button>
     </form>
   );

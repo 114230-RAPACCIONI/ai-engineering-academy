@@ -17,7 +17,10 @@ const projectSchema = z.object({
   nonFunctionalReqs: z.string().max(4000),
   acceptanceCriteria: z.string().max(8000),
   traceability: z.string().max(4000),
-  status: z.enum(["planning", "requirements", "active", "done"]),
+  designDoc: z.string().max(8000),
+  adrs: z.string().max(8000),
+  incrementPlan: z.string().max(4000),
+  status: z.enum(["planning", "requirements", "design", "active", "done"]),
 });
 
 export type ProjectActionResult = { ok: boolean; error?: string };
@@ -42,6 +45,9 @@ export async function savePracticeProject(
     nonFunctionalReqs: formData.get("nonFunctionalReqs") || "",
     acceptanceCriteria: formData.get("acceptanceCriteria") || "",
     traceability: formData.get("traceability") || "",
+    designDoc: formData.get("designDoc") || "",
+    adrs: formData.get("adrs") || "",
+    incrementPlan: formData.get("incrementPlan") || "",
     status: formData.get("status") || "planning",
   });
 

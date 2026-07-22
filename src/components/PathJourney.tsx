@@ -89,11 +89,11 @@ export function PathJourney({
                 </Link>
               </div>
             </>
-          ) : (
+          ) : chapter === 2 ? (
             <>
               <p className="mt-2 text-sm text-[var(--ink-muted)]">
-                Spec verificable listo. El Cap. 3 (diseño/trade-offs) llega
-                después — todavía sin código de producto.
+                Spec verificable listo. Seguí a Design (Cap. 3) — todavía sin
+                código de producto.
               </p>
               <div className="mt-4 flex flex-wrap gap-3 text-sm">
                 <Link
@@ -101,6 +101,27 @@ export function PathJourney({
                   className="font-medium text-[var(--accent)] underline"
                 >
                   Revisar Requirements
+                </Link>
+                <Link
+                  href="/app/path/c/chapter-03"
+                  className="text-[var(--ink-muted)] underline"
+                >
+                  Ir al Capítulo 3
+                </Link>
+              </div>
+            </>
+          ) : (
+            <>
+              <p className="mt-2 text-sm text-[var(--ink-muted)]">
+                Diseño e I1 definidos. El Cap. 4 (Implement) llega después —
+                todavía no es “codear toda la V1”.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-3 text-sm">
+                <Link
+                  href="/app/projects"
+                  className="font-medium text-[var(--accent)] underline"
+                >
+                  Revisar Design
                 </Link>
                 <Link href="/app/progress" className="text-[var(--ink-muted)] underline">
                   Progress

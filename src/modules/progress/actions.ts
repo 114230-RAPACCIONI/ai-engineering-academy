@@ -8,6 +8,7 @@ import { auth } from "@/modules/identity/auth";
 const score = z.coerce.number().int().min(1).max(5);
 
 const assessmentSchema = z.object({
+  chapter: z.coerce.number().int().min(1).max(3),
   kind: z.enum(["pre", "post"]),
   clarityProblem: score,
   scope: score,
@@ -27,6 +28,7 @@ export async function saveCapabilityAssessment(
   if (!session?.user?.id) return { ok: false, error: "No autenticado" };
 
   const parsed = assessmentSchema.safeParse({
+    chapter: formData.get("chapter") || "1",
     kind: formData.get("kind"),
     clarityProblem: formData.get("clarityProblem"),
     scope: formData.get("scope"),

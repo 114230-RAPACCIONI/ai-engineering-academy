@@ -4,8 +4,10 @@ import { auth } from "@/modules/identity/auth";
 import {
   CHAPTER_01,
   CHAPTER_02,
+  CHAPTER_03,
   getOrCreateJourney,
   isChapter2Unlocked,
+  isChapter3Unlocked,
   listLearningPaths,
   progressSummary,
 } from "@/modules/learning/journey";
@@ -16,10 +18,13 @@ export default async function PathIndexPage() {
 
   const paths = await listLearningPaths();
   const unlockedCh2 = await isChapter2Unlocked(session.user.id);
+  const unlockedCh3 = await isChapter3Unlocked(session.user.id);
 
   const cards = await Promise.all(
     paths.map(async (path) => {
-      const locked = path.slug === CHAPTER_02 && !unlockedCh2;
+      const locked =
+        (path.slug === CHAPTER_02 && !unlockedCh2) ||
+        (path.slug === CHAPTER_03 && !unlockedCh3);
       let percent = 0;
       let status = "locked";
       if (!locked) {
@@ -41,8 +46,8 @@ export default async function PathIndexPage() {
           Tu viaje SDD
         </h1>
         <p className="max-w-2xl text-[var(--ink-muted)]">
-          Capítulos del curriculum. El Cap. 2 se desbloquea al completar el Path
-          del Cap. 1 (prerrequisito del curriculum).
+          Cap. 1 → Cap. 2 → Cap. 3. Cada capítulo se desbloquea al cerrar el Path
+          del anterior (prerrequisitos del curriculum).
         </p>
       </section>
 
@@ -59,14 +64,29 @@ export default async function PathIndexPage() {
                   {path.description}
                 </p>
                 <p className="mt-3 text-sm text-[var(--ink-muted)]">
-                  Completá el Path del{" "}
-                  <Link
-                    href={`/app/path/c/${CHAPTER_01}`}
-                    className="text-[var(--accent)] underline"
-                  >
-                    Capítulo 1
-                  </Link>{" "}
-                  para desbloquear.
+                  Completá el Path del capítulo anterior para desbloquear.
+                  {path.slug === CHAPTER_02 ? (
+                    <>
+                      {" "}
+                      <Link
+                        href={`/app/path/c/${CHAPTER_01}`}
+                        className="text-[var(--accent)] underline"
+                      >
+                        Cap. 1
+                      </Link>
+                    </>
+                  ) : null}
+                  {path.slug === CHAPTER_03 ? (
+                    <>
+                      {" "}
+                      <Link
+                        href={`/app/path/c/${CHAPTER_02}`}
+                        className="text-[var(--accent)] underline"
+                      >
+                        Cap. 2
+                      </Link>
+                    </>
+                  ) : null}
                 </p>
               </div>
             ) : (

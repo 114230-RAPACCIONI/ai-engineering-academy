@@ -5,6 +5,7 @@ import { prisma } from "@/lib/prisma";
 import {
   buildPracticeMarkdown,
   buildRequirementsMarkdown,
+  buildDesignMarkdown,
   getProjectForUser,
 } from "@/modules/projects/service";
 
@@ -47,6 +48,16 @@ export async function GET(_req: Request, context: RouteContext) {
       nonFunctionalReqs: project.nonFunctionalReqs,
       acceptanceCriteria: project.acceptanceCriteria,
       traceability: project.traceability,
+      status: project.status,
+    }),
+  );
+  zip.file(
+    "DESIGN.md",
+    buildDesignMarkdown({
+      title: project.title,
+      designDoc: project.designDoc,
+      adrs: project.adrs,
+      incrementPlan: project.incrementPlan,
       status: project.status,
     }),
   );

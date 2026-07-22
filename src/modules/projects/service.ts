@@ -88,3 +88,27 @@ ${project.acceptanceCriteria || "(pendiente)"}
 ${project.traceability || "(pendiente)"}
 `;
 }
+
+export function buildDesignMarkdown(project: {
+  title: string;
+  designDoc: string;
+  adrs: string;
+  incrementPlan: string;
+  status: string;
+}) {
+  return `# ${project.title} — Design V1
+
+## Estado
+Fase: ${project.status}
+Requisitos: REQUIREMENTS.md
+
+## 1–6. Diseño
+${project.designDoc || "(pendiente)"}
+
+## 7. ADRs
+${project.adrs || "(pendiente)"}
+
+## 8. Plan de incrementos
+${project.incrementPlan || "(pendiente)"}
+`;
+}
