@@ -45,6 +45,7 @@ model Module {
   goal            String
   context         String
   expectedOutcome String
+  body            String @default("")
   order           Int    @default(0)
 
   path     LearningPath       @relation(fields: [pathId], references: [id], onDelete: Cascade)

@@ -11,6 +11,16 @@ const chapter1Modules = [
     context: "Capítulo 1 · Specify — antes de pedir código.",
     expectedOutcome: "Podés describir el anti-patrón con un ejemplo propio.",
     order: 1,
+    body: `Un proyecto Frankenstein es software donde la idea original ya no coincide con lo construido, distintas partes asumen cosas distintas, y cada sesión (humana o con IA) reinterpreta el objetivo.
+
+No es un insulto al developer: es un patrón de fallo del proceso. Con IA es más frecuente, no menos — porque la generación es rápida y el contexto se pierde entre prompts.
+
+Señales típicas:
+• Hay mucha actividad, pero nada “termina” de forma útil.
+• No podés explicar con coherencia por qué existe cada parte.
+• Pedís “haceme X”, después “agregá Y”, después “mejor como Z”, sin scope escrito.
+
+Práctica: pensá un proyecto propio (o uno que abandonaste). Escribí en una frase dónde se rompió el hilo. Eso es tu ejemplo de Frankenstein.`,
   },
   {
     slug: "1-2-problem-statement",
@@ -20,6 +30,18 @@ const chapter1Modules = [
     context: "Capítulo 1 · Specify.",
     expectedOutcome: "Problem statement validable (no lista de features).",
     order: 2,
+    body: `Un problem statement nombra a quién le duele, qué falla hoy y por qué importa. No lista features. No elige stack.
+
+Mal (solución disfrazada): “Necesito una app React con dashboard de gastos y login OAuth.”
+Bien (problema): “Las personas pierden de vista gastos chicos repetidos y no saben en qué se va el dinero a fin de mes — sin una forma simple de registrarlos al momento.”
+
+Plantilla mental:
+1. Quién sufre el problema
+2. Qué pasa hoy (comportamiento / fricción)
+3. Por qué importa (costo, tiempo, riesgo)
+4. Qué quedaría mejor si se resolviera (sin decir cómo)
+
+Pedile al Mentor que busque soluciones escondidas, no que reescriba el producto.`,
   },
   {
     slug: "1-3-scope",
@@ -29,6 +51,18 @@ const chapter1Modules = [
     context: "Capítulo 1 · Specify.",
     expectedOutcome: "Scope con ≤5 ítems in y non-goals escritos.",
     order: 3,
+    body: `Scope in: qué entra en V1 (máximo 5 ítems).
+Scope out: qué queda explícitamente para después.
+Non-goals: qué no es este proyecto (aunque suene tentador).
+
+Sin non-goals, cada conversación con IA reabre el borde del producto.
+
+Ejemplo:
+• In: registrar gasto, listar del mes, ver total
+• Out: presupuestos, bancos, multi-usuario
+• Non-goal: no es un banco ni un ERP
+
+Regla: si la IA sugiere una feature, clasificala in / out / non-goal antes de aceptarla.`,
   },
   {
     slug: "1-4-artifacts",
@@ -38,6 +72,16 @@ const chapter1Modules = [
     context: "Capítulo 1 · Clarify.",
     expectedOutcome: "Decision log usable en la próxima sesión con el Mentor.",
     order: 4,
+    body: `Los artefactos del Capítulo 1 no son burocracia: son memoria entre sesiones.
+
+Mínimo útil:
+• PRACTICE_PROJECT.md (problema, scope, criterios)
+• Decision log (decisión + razón + fecha)
+
+Ejemplo de entrada:
+“Decisión: V1 solo carga manual de gastos. Razón: validar el hábito antes de integrar bancos.”
+
+Antes de hablar con el Mentor, pegá las últimas 3–5 decisiones. Pedí que desafíe inconsistencias — no que invente un stack.`,
   },
   {
     slug: "1-5-mentor-planning",
@@ -47,6 +91,14 @@ const chapter1Modules = [
     context: "Capítulo 1 · Mentor.",
     expectedOutcome: "Notas de sesión donde vos decidís y la IA desafía.",
     order: 5,
+    body: `En ZUZU el Mentor amplifica criterio. Enseña antes de responder, pregunta antes de asumir, y admite incertidumbre.
+
+Mal: “Generame el PRACTICE_PROJECT completo.”
+Bien: “¿Mi problem statement esconde una solución? Señalá ambigüedades.”
+
+Si la respuesta suena a plan de implementación prematuro, frená y volvé al scope.
+
+En este capítulo no se espera código de producto. Se espera criterio documentado.`,
   },
   {
     slug: "1-practice",
@@ -56,6 +108,18 @@ const chapter1Modules = [
     context: "Capítulo 1 · Practice Project.",
     expectedOutcome: "PRACTICE_PROJECT.md con problem, scope, decisions y notas Mentor.",
     order: 6,
+    body: `Definition of Done — Capítulo 1:
+• Problem statement de 3–5 oraciones
+• Usuario objetivo V1
+• Scope in (≤5), scope out y non-goals
+• Success criteria medibles
+• Al menos 3 entradas en decision log
+• Notas de al menos una sesión con el Mentor (o reflexión escrita si aún no tenés API key)
+• Estado del proyecto: Planning (sin código de producto)
+
+El dominio lo elegís vos. Gastos Hormiga es solo ejemplo de referencia.
+
+Cuando cierres esto, exportá el ZIP desde Projects y marcá este módulo completado.`,
   },
 ];
 
@@ -90,6 +154,7 @@ async function main() {
         goal: mod.goal,
         context: mod.context,
         expectedOutcome: mod.expectedOutcome,
+        body: mod.body,
         order: mod.order,
       },
       create: {

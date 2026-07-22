@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useTransition } from "react";
 import {
   markModuleCompleted,
@@ -13,6 +14,7 @@ type ModuleActionsProps = {
 
 export function ModuleActions({ moduleId, status }: ModuleActionsProps) {
   const [pending, startTransition] = useTransition();
+  const router = useRouter();
 
   return (
     <div className="flex flex-wrap gap-3">
@@ -23,6 +25,7 @@ export function ModuleActions({ moduleId, status }: ModuleActionsProps) {
           onClick={() =>
             startTransition(async () => {
               await markModuleStarted(moduleId);
+              router.refresh();
             })
           }
           className="rounded-md border border-[var(--line)] bg-[var(--surface)] px-4 py-2.5 text-sm disabled:opacity-60"
@@ -37,6 +40,7 @@ export function ModuleActions({ moduleId, status }: ModuleActionsProps) {
           onClick={() =>
             startTransition(async () => {
               await markModuleCompleted(moduleId);
+              router.refresh();
             })
           }
           className="rounded-md bg-[var(--accent)] px-4 py-2.5 text-sm font-medium text-white disabled:opacity-60"
@@ -44,7 +48,9 @@ export function ModuleActions({ moduleId, status }: ModuleActionsProps) {
           {pending ? "Guardando…" : "Marcar completado"}
         </button>
       ) : (
-        <p className="text-sm text-[var(--accent)]">Módulo completado.</p>
+        <p className="rounded-md bg-[var(--accent-soft)] px-3 py-2 text-sm text-[var(--accent)]">
+          Módulo completado. Buen paso.
+        </p>
       )}
     </div>
   );
