@@ -16,7 +16,7 @@ export default async function OnboardingPage() {
   const first = journey.path.modules[0];
 
   const pre = await prisma.capabilityAssessment.findFirst({
-    where: { userId: session.user.id, kind: "pre" },
+    where: { userId: session.user.id, kind: "pre", chapter: 1 },
     orderBy: { createdAt: "desc" },
   });
 
