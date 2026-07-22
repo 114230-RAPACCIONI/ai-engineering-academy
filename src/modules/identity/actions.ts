@@ -56,7 +56,7 @@ export async function registerUser(
     await signIn("credentials", {
       email,
       password: parsed.data.password,
-      redirectTo: "/app",
+      redirectTo: "/app/onboarding",
     });
   } catch (error) {
     if (error instanceof AuthError) {

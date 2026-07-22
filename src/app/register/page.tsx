@@ -19,7 +19,7 @@ export default function RegisterPage() {
       </Link>
       <h1 className="mb-2 text-3xl font-semibold">Crear cuenta</h1>
       <p className="mb-8 text-[var(--ink-muted)]">
-        Definí quién sos y qué querés lograr. El Mentor usará esto como contexto.
+        Definí quién sos y qué querés lograr. Después te llevamos al Capítulo 1.
       </p>
       <form action={formAction} className="flex flex-col gap-4">
         <label className="flex flex-col gap-1 text-sm">
