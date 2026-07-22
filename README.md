@@ -37,11 +37,20 @@ Capítulos 4–8: pendientes — se escriben **antes** de la fase Implement (spe
 
 ---
 
-## Plataforma (después del spec)
+## App (MVP en construcción)
 
-[MVP Scope](docs/product/MVP_SCOPE.md) · [Product Experience Vision](docs/product/PRODUCT_EXPERIENCE_VISION.md) · [Domain Model](docs/architecture/DOMAIN_MODEL.md)
+Stack: Next.js 15 + TypeScript + Prisma + SQLite ([ADR-008](docs/architecture/adr/ADR-008-stack-selection.md)).
 
-Implementar la app cuando `PLATFORM_SPEC.md` esté cerrado. Ver [START_HERE.md](START_HERE.md).
+```bash
+cp .env.example .env   # si no tenés .env
+npm install
+npx prisma db push
+npm run dev
+```
+
+Abrí [http://localhost:3000](http://localhost:3000) — registro → `/app`.
+
+Producto: [MVP Scope](docs/product/MVP_SCOPE.md) · Dominio: [Domain Model](docs/architecture/DOMAIN_MODEL.md)
 
 ---
 
@@ -51,4 +60,4 @@ Implementar la app cuando `PLATFORM_SPEC.md` esté cerrado. Ver [START_HERE.md](
 
 ---
 
-**Estado:** Spec activo — curriculum Cap. 1–3, ADRs stack/IA, founder decisions. Siguiente: `PLATFORM_SPEC.md` + Cap. 4–8.
+**Estado:** Implementación Fase 1 (scaffold + auth + layout). Spec canónico en `docs/`.
