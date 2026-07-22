@@ -56,11 +56,29 @@ export async function buildMentorContext(userId: string): Promise<string> {
           )
           .join("\n");
 
+  const project = await prisma.practiceProject.findFirst({
+    where: { userId },
+    orderBy: { updatedAt: "desc" },
+  });
+
+  const projectBlock = project
+    ? [
+        `Practice Project: ${project.title} (${project.status})`,
+        project.domain ? `Dominio: ${project.domain}` : null,
+        project.problemStatement
+          ? `Problem: ${project.problemStatement.slice(0, 400)}`
+          : "Problem statement: (vacío)",
+      ]
+        .filter(Boolean)
+        .join("\n")
+    : "Practice Project: aún no creado.";
+
   return [
     `Learner: ${user.name}`,
     `Experiencia: ${user.experience}`,
     `Objetivos: ${user.objectives || "(sin definir)"}`,
     pathBlock,
+    projectBlock,
     decisionBlock,
   ].join("\n");
 }

@@ -63,4 +63,4 @@ Producto: [MVP Scope](docs/product/MVP_SCOPE.md) · Dominio: [Domain Model](docs
 
 ---
 
-**Estado:** Implementación Fase 1–4 (auth, Path, Knowledge, Mentor). Pendiente: Practice Project + Progress (Fase 5).
+**Estado:** MVP funcional Fases 1–5 (Identity, Path, Knowledge, Mentor, Practice Project, Progress).

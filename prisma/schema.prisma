@@ -20,6 +20,7 @@ model User {
   journeys      LearningJourney[]
   conversations Conversation[]
   decisions     DecisionLogEntry[]
+  projects      PracticeProject[]
 }
 
 model LearningPath {
@@ -125,6 +126,23 @@ model DecisionLogEntry {
   decision  String
   reason    String
   createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model PracticeProject {
+  id               String   @id @default(cuid())
+  userId           String
+  title            String
+  domain           String   @default("")
+  problemStatement String   @default("")
+  scopeIn          String   @default("")
+  scopeOut         String   @default("")
+  nonGoals         String   @default("")
+  successCriteria  String   @default("")
+  status           String   @default("planning") // planning | active | done
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
